@@ -37,7 +37,4 @@ func get_selected_item() -> TileResource:
 
 
 func consume_selected() -> void:
-	if !_selected:
-		return
 	_selected.set_resource(null)
-	_selected = null
