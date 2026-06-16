@@ -25,5 +25,10 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 		return
 
 	var item = _slot_machine.get_selected_item()
+	if !item:
+		return
+	if !slot.is_legal_play(item):
+		return
+
 	slot.set_tile(item)	
 	_slot_machine.consume_selected()

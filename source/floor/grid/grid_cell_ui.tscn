@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://belulk2juo1pi" path="res://source/floor/grid/grid_cell_ui.gd" id="1_2wshm"]
 [ext_resource type="PackedScene" uid="uid://dqx08ig43fc2c" path="res://source/floor/tile_ui.tscn" id="1_t4iqd"]
+[ext_resource type="Texture2D" uid="uid://duqko1r4o2uj3" path="res://assets/icons/slot-machine.svg" id="3_51i1i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddob5"]
 content_margin_left = 0.0
@@ -34,9 +35,24 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ddob5")
 script = ExtResource("1_2wshm")
 
 [node name="TileUI" parent="." unique_id=1894309720 instance=ExtResource("1_t4iqd")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=819590485]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2wshm")
+
+[node name="Door" type="MarginContainer" parent="." unique_id=328438486]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="Door" unique_id=317255718]
+layout_mode = 2
+texture = ExtResource("3_51i1i")
+expand_mode = 2
