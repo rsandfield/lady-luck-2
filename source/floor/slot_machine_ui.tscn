@@ -17,6 +17,7 @@ script = ExtResource("1_gru50")
 
 [node name="SlotCell" parent="." unique_id=1813477598 instance=ExtResource("2_8nnqb")]
 layout_mode = 2
+mouse_default_cursor_shape = 6
 
 [node name="SlotCell2" parent="." unique_id=748204921 instance=ExtResource("2_8nnqb")]
 layout_mode = 2
