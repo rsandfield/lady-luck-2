@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ifug0jpefy57"]
+
+[ext_resource type="Script" uid="uid://cbyseky6gkv2d" path="res://source/scripts/level.gd" id="1_8ytwg"]
+[ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_3h5dt"]
+
+[node name="Level" type="Node2D" unique_id=854162818]
+script = ExtResource("1_8ytwg")
+
+[node name="PlayArea" type="Panel" parent="." unique_id=878161051]
+offset_left = 147.0
+offset_top = 63.0
+offset_right = 1042.0
+offset_bottom = 595.0
+
+[node name="Label" type="RichTextLabel" parent="PlayArea" unique_id=1286549017]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 249.0
+offset_right = 487.0
+offset_bottom = 303.0
+bbcode_enabled = true
+text = "[i]Play Area[/i]"
+horizontal_alignment = 1
+
+[node name="MainMenu" type="Button" parent="." unique_id=133252502]
+offset_left = 14.0
+offset_top = 15.0
+offset_right = 134.0
+offset_bottom = 55.0
+theme = ExtResource("2_3h5dt")
+text = "Main Menu"
+
+[node name="Restart" type="Button" parent="." unique_id=1099381198]
+offset_left = 14.0
+offset_top = 63.0
+offset_right = 134.0
+offset_bottom = 103.0
+theme = ExtResource("2_3h5dt")
+text = "Restart"
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

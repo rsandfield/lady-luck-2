@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://c27ofiqth47k7"]
+
+[ext_resource type="Script" uid="uid://t6d0u0p6wfjx" path="res://source/scripts/debug.gd" id="1_7lhk4"]
+
+[node name="Debug" type="Node2D" unique_id=581243771]
+script = ExtResource("1_7lhk4")
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=343833227]
+offset_right = 1154.0
+offset_bottom = 648.0
+mouse_filter = 2
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="BoxContainer" unique_id=1380125548]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CheckBox1s" type="CheckBox" parent="BoxContainer/VBoxContainer1" unique_id=1237682568]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CheckBox500ms" type="CheckBox" parent="BoxContainer/VBoxContainer1" unique_id=1698325005]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CheckBox100ms" type="CheckBox" parent="BoxContainer/VBoxContainer1" unique_id=338674954]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CheckBox0s" type="CheckBox" parent="BoxContainer/VBoxContainer1" unique_id=2006214328]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="BoxContainer" unique_id=607768025]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 5
+
+[node name="Label1s" type="Label" parent="BoxContainer/VBoxContainer2" unique_id=2000350417]
+layout_mode = 2
+mouse_filter = 1
+text = "1.0 Second Transitions"
+
+[node name="Label500ms" type="Label" parent="BoxContainer/VBoxContainer2" unique_id=622304124]
+layout_mode = 2
+mouse_filter = 1
+text = "0.5 Second Transitions"
+
+[node name="Label100ms" type="Label" parent="BoxContainer/VBoxContainer2" unique_id=689784429]
+layout_mode = 2
+mouse_filter = 1
+text = "0.1 Second Transitions"
+
+[node name="Label0s" type="Label" parent="BoxContainer/VBoxContainer2" unique_id=2003576543]
+layout_mode = 2
+mouse_filter = 1
+text = "No Transitions"
+
+[node name="TestTransitions" type="Button" parent="." unique_id=1796625961]
+offset_left = 215.0
+offset_top = 8.0
+offset_right = 281.0
+offset_bottom = 39.0
+text = "Test"
+
+[node name="TestUserDataFolder" type="Button" parent="." unique_id=2125285920]
+offset_left = 928.0
+offset_top = 13.0
+offset_right = 1138.0
+offset_bottom = 44.0
+text = "Open User Data Folder"
+
+[connection signal="toggled" from="BoxContainer/VBoxContainer1/CheckBox1s" to="." method="_on_change_transition_pressed" binds= [1.0]]
+[connection signal="toggled" from="BoxContainer/VBoxContainer1/CheckBox500ms" to="." method="_on_change_transition_pressed" binds= [0.5]]
+[connection signal="toggled" from="BoxContainer/VBoxContainer1/CheckBox100ms" to="." method="_on_change_transition_pressed" binds= [0.1]]
+[connection signal="toggled" from="BoxContainer/VBoxContainer1/CheckBox0s" to="." method="_on_change_transition_pressed" binds= [0.0]]
+[connection signal="gui_input" from="BoxContainer/VBoxContainer2/Label1s" to="." method="_on_label_gui_input" binds= [1.0]]
+[connection signal="gui_input" from="BoxContainer/VBoxContainer2/Label500ms" to="." method="_on_label_gui_input" binds= [0.5]]
+[connection signal="gui_input" from="BoxContainer/VBoxContainer2/Label100ms" to="." method="_on_label_gui_input" binds= [0.1]]
+[connection signal="gui_input" from="BoxContainer/VBoxContainer2/Label0s" to="." method="_on_label_gui_input" binds= [0.0]]
+[connection signal="pressed" from="TestTransitions" to="." method="_on_test_transitions_pressed"]
+[connection signal="pressed" from="TestUserDataFolder" to="." method="_on_test_user_data_folder_pressed"]

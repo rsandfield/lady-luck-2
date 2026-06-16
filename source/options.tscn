@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cxa7ah36qfrlp"]
+
+[ext_resource type="Script" uid="uid://b3ek0xc1x5agn" path="res://source/scripts/options.gd" id="1_lr2x8"]
+[ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_w1k6h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2y7ai"]
+bg_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+
+[node name="Options" type="Node2D" unique_id=198330338]
+script = ExtResource("1_lr2x8")
+
+[node name="Panel" type="Panel" parent="." unique_id=374007398]
+offset_right = 1154.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2y7ai")
+
+[node name="Label" type="Label" parent="." unique_id=629674430]
+offset_right = 1154.0
+offset_bottom = 648.0
+text = "Build menu options if and when they improve the experience
+
+
+
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=513067336]
+offset_top = 550.0
+offset_right = 1154.0
+offset_bottom = 590.0
+
+[node name="Control" type="Control" parent="CenterContainer" unique_id=461977303]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="CenterContainer/Control" unique_id=179147428]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -16.0
+offset_right = 45.0
+offset_bottom = 24.0
+theme = ExtResource("2_w1k6h")
+text = "Go Back"
+
+[connection signal="pressed" from="CenterContainer/Control/Back" to="." method="_on_back_pressed"]

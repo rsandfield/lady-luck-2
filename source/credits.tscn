@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bee001npe2hx5"]
+
+[ext_resource type="Script" uid="uid://b7mjqsrihvtwn" path="res://source/scripts/credits.gd" id="1_fqt5c"]
+[ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_muyvs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_px1gm"]
+bg_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+
+[node name="Credits" type="Node2D" unique_id=689131116]
+script = ExtResource("1_fqt5c")
+
+[node name="Panel" type="Panel" parent="." unique_id=1331129217]
+offset_right = 1154.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_px1gm")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=975058325]
+offset_right = 1154.0
+offset_bottom = 648.0
+bbcode_enabled = true
+text = "Give credit to those who worked on the project
+
+Thank people and organizations who helped along the way
+
+
+
+
+
+
+
+
+
+Sample Music by Ethan Grafton
+Track 1: Hyperfishation 
+Track 2: Melody's Melodies 
+Track 3: Just A Feeling
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1937274954]
+offset_top = 550.0
+offset_right = 1154.0
+offset_bottom = 590.0
+
+[node name="Control" type="Control" parent="CenterContainer" unique_id=935054224]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="CenterContainer/Control" unique_id=203286646]
+layout_mode = 0
+offset_left = -45.0
+offset_right = 45.0
+offset_bottom = 40.0
+theme = ExtResource("2_muyvs")
+text = "Go Back"
+
+[connection signal="pressed" from="CenterContainer/Control/Back" to="." method="_on_back_pressed"]

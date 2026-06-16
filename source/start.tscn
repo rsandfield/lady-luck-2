@@ -1,0 +1,399 @@
+[gd_scene format=3 uid="uid://b6eghekexdors"]
+
+[ext_resource type="Script" uid="uid://5el0paxnlnxc" path="res://source/scripts/start.gd" id="1_d1xti"]
+[ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_5ah3m"]
+[ext_resource type="FontFile" uid="uid://cr1saxylaqak3" path="res://assets/fonts/RobotoMono-Regular.ttf" id="2_iugiy"]
+[ext_resource type="StyleBox" uid="uid://bjjs87buslrdx" path="res://assets/themes/style_box_flat_blue_light.tres" id="3_d4h25"]
+[ext_resource type="StyleBox" uid="uid://cxmouk6dkrx6e" path="res://assets/themes/style_box_flat_green_light.tres" id="4_e5c4t"]
+[ext_resource type="StyleBox" uid="uid://c3do76iwbhxsa" path="res://assets/themes/style_box_flat_purple_light.tres" id="5_7aew8"]
+[ext_resource type="StyleBox" uid="uid://xkwkgc8dt653" path="res://assets/themes/style_box_flat_green_light_hover.tres" id="6_5ah3m"]
+[ext_resource type="Texture2D" uid="uid://ba7au0uuwrled" path="res://assets/icons/load.png" id="6_y8fap"]
+[ext_resource type="StyleBox" uid="uid://b22y23a1u23dl" path="res://assets/themes/style_box_flat_purple_light_hover.tres" id="8_dbyvq"]
+[ext_resource type="StyleBox" uid="uid://6w58cphnta5n" path="res://assets/themes/style_box_flat_blue_light_hover.tres" id="10_c1v46"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ah3m"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Start" type="Node2D" unique_id=162000955]
+script = ExtResource("1_d1xti")
+
+[node name="Title" type="Label" parent="." unique_id=1968054480]
+offset_top = 50.0
+offset_right = 1154.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 40
+text = "Title"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1522962569]
+offset_right = 1154.0
+offset_bottom = 648.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="ButtonControl" type="Control" parent="MarginContainer" unique_id=1078408262]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_lock_ = true
+
+[node name="ButtonContainer" type="BoxContainer" parent="MarginContainer/ButtonControl" unique_id=1491979649]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -72.0
+offset_right = 70.0
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_5ah3m")
+theme_override_constants/separation = 15
+alignment = 1
+vertical = true
+
+[node name="NewGame" type="Button" parent="MarginContainer/ButtonControl/ButtonContainer" unique_id=1335015180]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_5ah3m")
+text = "New Game"
+
+[node name="Options" type="Button" parent="MarginContainer/ButtonControl/ButtonContainer" unique_id=529480410]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_5ah3m")
+text = "Options"
+
+[node name="Credits" type="Button" parent="MarginContainer/ButtonControl/ButtonContainer" unique_id=40762536]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_5ah3m")
+text = "Credits"
+
+[node name="Exit" type="Button" parent="MarginContainer/ButtonControl/ButtonContainer" unique_id=584267615]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_5ah3m")
+text = "Exit"
+
+[node name="VersionControl" type="Control" parent="MarginContainer" unique_id=1368525362]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+metadata/_edit_lock_ = true
+
+[node name="Version" type="Label" parent="MarginContainer/VersionControl" unique_id=159951637]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 23.0
+text = "version: 0.0.0"
+horizontal_alignment = 1
+
+[node name="DetailsControl" type="Control" parent="MarginContainer" unique_id=1076272779]
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="ExplainTextBox" type="RichTextLabel" parent="MarginContainer/DetailsControl" unique_id=1897823026]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 136.0
+offset_right = 399.0
+offset_bottom = 542.0
+bbcode_enabled = true
+text = "
+Short explaination of how to play game
+
+[ul]
+Thing 1
+Thing 2
+...
+Profit
+[/ul]
+"
+metadata/_edit_lock_ = true
+
+[node name="CreditsTextBox" type="RichTextLabel" parent="MarginContainer/DetailsControl" unique_id=962761374]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 136.0
+offset_right = 1127.0
+offset_bottom = 546.0
+theme_override_constants/text_highlight_h_padding = 0
+theme_override_constants/text_highlight_v_padding = 0
+bbcode_enabled = true
+text = "
+People who worked on the game
+
+[ul]
+Person 1 - ...
+Person 2 - ...
+etc...
+[/ul]
+"
+metadata/_edit_lock_ = true
+
+[node name="SoundControl" type="Control" parent="MarginContainer" unique_id=573095274]
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="MusicButton" type="CheckButton" parent="MarginContainer/SoundControl" unique_id=497256041]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 70.0
+offset_top = 582.0
+offset_right = 114.0
+offset_bottom = 606.0
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/SoundControl/MusicButton" unique_id=394998798]
+layout_mode = 0
+offset_left = -50.0
+offset_top = -1.0
+offset_right = 4.0
+offset_bottom = 22.0
+text = "Music: "
+
+[node name="MusicLevel" type="Label" parent="MarginContainer/SoundControl/MusicButton" unique_id=537332023]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 41.0
+offset_right = 80.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_iugiy")
+text = "100%"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/SoundControl/MusicButton" unique_id=60319379]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 83.0
+offset_top = 4.0
+offset_right = 219.0
+offset_bottom = 20.0
+
+[node name="MusicPanel" type="Panel" parent="MarginContainer/SoundControl/MusicButton" unique_id=1947853596]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0
+offset_top = 1.0
+offset_right = 222.0
+offset_bottom = 23.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Music1" type="Button" parent="MarginContainer/SoundControl/MusicButton" unique_id=355765080]
+layout_mode = 0
+offset_left = 229.0
+offset_top = -1.0
+offset_right = 253.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 12
+text = "1"
+
+[node name="Panel" type="Panel" parent="MarginContainer/SoundControl/MusicButton/Music1" unique_id=904568014]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 26.0
+offset_bottom = 27.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ah3m")
+
+[node name="Music2" type="Button" parent="MarginContainer/SoundControl/MusicButton" unique_id=165535234]
+layout_mode = 0
+offset_left = 258.0
+offset_top = -1.0
+offset_right = 282.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 12
+text = "2"
+
+[node name="Panel" type="Panel" parent="MarginContainer/SoundControl/MusicButton/Music2" unique_id=55047538]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 26.0
+offset_bottom = 27.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ah3m")
+
+[node name="Music3" type="Button" parent="MarginContainer/SoundControl/MusicButton" unique_id=740863114]
+layout_mode = 0
+offset_left = 287.0
+offset_top = -1.0
+offset_right = 311.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 12
+text = "3"
+
+[node name="Panel" type="Panel" parent="MarginContainer/SoundControl/MusicButton/Music3" unique_id=607508801]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 26.0
+offset_bottom = 27.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ah3m")
+
+[node name="Restart" type="Button" parent="MarginContainer/SoundControl/MusicButton" unique_id=1941333151]
+layout_mode = 0
+offset_left = 316.0
+offset_top = -1.0
+offset_right = 340.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 12
+
+[node name="Icon" type="Sprite2D" parent="MarginContainer/SoundControl/MusicButton/Restart" unique_id=1795974497]
+position = Vector2(12, 13)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_y8fap")
+
+[node name="SoundsButton" type="CheckButton" parent="MarginContainer/SoundControl" unique_id=1430947188]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 70.0
+offset_top = 615.0
+offset_right = 114.0
+offset_bottom = 639.0
+
+[node name="SoundsLabel" type="Label" parent="MarginContainer/SoundControl/SoundsButton" unique_id=986957726]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -1.0
+offset_right = 6.0
+offset_bottom = 22.0
+text = "Sounds: "
+
+[node name="SoundsLevel" type="Label" parent="MarginContainer/SoundControl/SoundsButton" unique_id=949196996]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 28.0
+offset_right = 94.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_iugiy")
+text = "100%"
+horizontal_alignment = 1
+
+[node name="SoundsSlider" type="HSlider" parent="MarginContainer/SoundControl/SoundsButton" unique_id=435492461]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 83.0
+offset_top = 4.0
+offset_right = 219.0
+offset_bottom = 20.0
+
+[node name="SoundPanel" type="Panel" parent="MarginContainer/SoundControl/SoundsButton" unique_id=1052000305]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0
+offset_top = 1.0
+offset_right = 222.0
+offset_bottom = 23.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="SoundTest" type="Button" parent="MarginContainer/SoundControl/SoundsButton" unique_id=1233213675]
+layout_mode = 0
+offset_left = 229.0
+offset_top = -1.0
+offset_right = 266.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 12
+text = "Test"
+
+[node name="ThemeControl" type="Control" parent="MarginContainer" unique_id=832848017]
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/ThemeControl" unique_id=1385239883]
+layout_mode = 0
+offset_top = 523.0
+offset_right = 1154.0
+offset_bottom = 563.0
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="MarginContainer/ThemeControl/CenterContainer" unique_id=2009810284]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Button1" type="Button" parent="MarginContainer/ThemeControl/CenterContainer/Control" unique_id=1578148195]
+layout_mode = 0
+offset_left = -86.0
+offset_top = -20.0
+offset_right = -46.0
+offset_bottom = 20.0
+
+[node name="Button2" type="Button" parent="MarginContainer/ThemeControl/CenterContainer/Control" unique_id=37919202]
+layout_mode = 0
+offset_left = -42.0
+offset_top = -20.0
+offset_right = -2.0
+offset_bottom = 20.0
+theme_override_styles/normal = ExtResource("4_e5c4t")
+theme_override_styles/pressed = ExtResource("4_e5c4t")
+theme_override_styles/hover = ExtResource("6_5ah3m")
+theme_override_styles/disabled = ExtResource("4_e5c4t")
+theme_override_styles/focus = ExtResource("4_e5c4t")
+
+[node name="Button3" type="Button" parent="MarginContainer/ThemeControl/CenterContainer/Control" unique_id=1460122101]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -20.0
+offset_right = 42.0
+offset_bottom = 20.0
+theme_override_styles/normal = ExtResource("5_7aew8")
+theme_override_styles/pressed = ExtResource("5_7aew8")
+theme_override_styles/hover = ExtResource("8_dbyvq")
+theme_override_styles/disabled = ExtResource("5_7aew8")
+theme_override_styles/focus = ExtResource("5_7aew8")
+
+[node name="Button4" type="Button" parent="MarginContainer/ThemeControl/CenterContainer/Control" unique_id=534342748]
+layout_mode = 0
+offset_left = 47.0
+offset_top = -20.0
+offset_right = 87.0
+offset_bottom = 20.0
+theme_override_styles/normal = ExtResource("3_d4h25")
+theme_override_styles/pressed = ExtResource("3_d4h25")
+theme_override_styles/hover = ExtResource("10_c1v46")
+theme_override_styles/disabled = ExtResource("3_d4h25")
+theme_override_styles/focus = ExtResource("3_d4h25")
+
+[connection signal="pressed" from="MarginContainer/ButtonControl/ButtonContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonControl/ButtonContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonControl/ButtonContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonControl/ButtonContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="toggled" from="MarginContainer/SoundControl/MusicButton" to="." method="_on_music_button_toggled"]
+[connection signal="value_changed" from="MarginContainer/SoundControl/MusicButton/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/SoundControl/MusicButton/Music1" to="." method="_on_music_pressed" binds= [1]]
+[connection signal="pressed" from="MarginContainer/SoundControl/MusicButton/Music2" to="." method="_on_music_pressed" binds= [2]]
+[connection signal="pressed" from="MarginContainer/SoundControl/MusicButton/Music3" to="." method="_on_music_pressed" binds= [3]]
+[connection signal="pressed" from="MarginContainer/SoundControl/MusicButton/Restart" to="." method="_on_music_restart_pressed"]
+[connection signal="toggled" from="MarginContainer/SoundControl/SoundsButton" to="." method="_on_sounds_button_toggled"]
+[connection signal="drag_ended" from="MarginContainer/SoundControl/SoundsButton/SoundsSlider" to="." method="_on_sounds_slider_drag_ended"]
+[connection signal="value_changed" from="MarginContainer/SoundControl/SoundsButton/SoundsSlider" to="." method="_on_sounds_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/SoundControl/SoundsButton/SoundTest" to="." method="_on_sound_test_pressed"]
+[connection signal="pressed" from="MarginContainer/ThemeControl/CenterContainer/Control/Button1" to="." method="_on_button_theme_change" binds= ["default"]]
+[connection signal="pressed" from="MarginContainer/ThemeControl/CenterContainer/Control/Button2" to="." method="_on_button_theme_change" binds= ["green"]]
+[connection signal="pressed" from="MarginContainer/ThemeControl/CenterContainer/Control/Button3" to="." method="_on_button_theme_change" binds= ["purple"]]
+[connection signal="pressed" from="MarginContainer/ThemeControl/CenterContainer/Control/Button4" to="." method="_on_button_theme_change" binds= ["blue"]]
