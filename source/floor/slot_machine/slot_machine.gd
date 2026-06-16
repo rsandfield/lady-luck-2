@@ -27,17 +27,17 @@ func spin_wheels() -> void:
 
 
 func select_wheel(wheel: SlotWheel) -> void:
-	print("Selecting")
 	_selected = wheel
 
 
 func get_selected_item() -> TileResource:
 	if !_selected:
-		print("No wheel selected")
 		return null
-	print("Wheel selected")
 	return _selected.get_reward()
 
 
 func consume_selected() -> void:
+	if !_selected:
+		return
 	_selected.set_resource(null)
+	_selected = null
