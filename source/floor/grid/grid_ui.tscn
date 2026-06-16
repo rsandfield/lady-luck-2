@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://cksm1x0jrd8ge"]
+
+[ext_resource type="Script" uid="uid://cqs0i362r71jr" path="res://source/floor/grid/grid_ui.gd" id="1_ojt5u"]
+[ext_resource type="PackedScene" uid="uid://byn7ec3f5hba3" path="res://source/floor/grid/grid_cell_ui.tscn" id="2_7fr7u"]
+
+[node name="Grid" type="GridContainer" unique_id=599105573]
+columns = 5
+script = ExtResource("1_ojt5u")
+
+[node name="GridCell0" parent="." unique_id=1071552136 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell1" parent="." unique_id=1508126348 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell2" parent="." unique_id=1503078198 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell3" parent="." unique_id=593705054 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell4" parent="." unique_id=215635349 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell5" parent="." unique_id=1482013018 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell6" parent="." unique_id=2041223891 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell7" parent="." unique_id=1217763604 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell8" parent="." unique_id=976772508 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell9" parent="." unique_id=1620570678 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell10" parent="." unique_id=1396557386 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell11" parent="." unique_id=1477170461 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell12" parent="." unique_id=1913890373 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell13" parent="." unique_id=1199407233 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell14" parent="." unique_id=1717052109 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell15" parent="." unique_id=1860320371 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell16" parent="." unique_id=1264780919 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell17" parent="." unique_id=1107811075 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell18" parent="." unique_id=1148349766 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell19" parent="." unique_id=2117779323 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell20" parent="." unique_id=737627446 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell21" parent="." unique_id=76492131 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell22" parent="." unique_id=1422111115 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell23" parent="." unique_id=142564361 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell24" parent="." unique_id=508987895 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell25" parent="." unique_id=1547160536 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell26" parent="." unique_id=1731509032 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell27" parent="." unique_id=574064083 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell28" parent="." unique_id=398166737 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell29" parent="." unique_id=1425987722 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell30" parent="." unique_id=1930160150 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell31" parent="." unique_id=782030933 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell32" parent="." unique_id=34356602 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell33" parent="." unique_id=264168218 instance=ExtResource("2_7fr7u")]
+layout_mode = 2
+
+[node name="GridCell34" parent="." unique_id=1155261175 instance=ExtResource("2_7fr7u")]
+layout_mode = 2

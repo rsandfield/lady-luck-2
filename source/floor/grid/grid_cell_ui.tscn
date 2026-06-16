@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://byn7ec3f5hba3"]
+
+[ext_resource type="Script" uid="uid://belulk2juo1pi" path="res://source/floor/grid/grid_cell_ui.gd" id="1_2wshm"]
+[ext_resource type="PackedScene" uid="uid://dqx08ig43fc2c" path="res://source/floor/tile_ui.tscn" id="1_t4iqd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddob5"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wshm"]
+
+[node name="GridCell" type="PanelContainer" unique_id=1071552136]
+custom_minimum_size = Vector2(75, 75)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ddob5")
+script = ExtResource("1_2wshm")
+
+[node name="TileUI" parent="." unique_id=1894309720 instance=ExtResource("1_t4iqd")]
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=819590485]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2wshm")

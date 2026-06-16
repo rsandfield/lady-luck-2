@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cu2o14flw07o6"]
+
+[ext_resource type="Script" uid="uid://vakxrvgs6bgh" path="res://source/floor/slot_machine/slot_machine_ui.gd" id="1_gru50"]
+[ext_resource type="PackedScene" uid="uid://bdyhkm8xfwp6t" path="res://source/floor/slot_machine/slot_wheel_ui.tscn" id="2_8nnqb"]
+
+[sub_resource type="Gradient" id="Gradient_vqkr4"]
+offsets = PackedFloat32Array(0, 0.63, 0.64)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p1kb0"]
+gradient = SubResource("Gradient_vqkr4")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="SlotMachine" type="HBoxContainer" unique_id=188532546]
+script = ExtResource("1_gru50")
+
+[node name="SlotCell" parent="." unique_id=1813477598 instance=ExtResource("2_8nnqb")]
+layout_mode = 2
+
+[node name="SlotCell2" parent="." unique_id=748204921 instance=ExtResource("2_8nnqb")]
+layout_mode = 2
+
+[node name="SlotCell3" parent="." unique_id=1144017552 instance=ExtResource("2_8nnqb")]
+layout_mode = 2
+
+[node name="SlotCell4" parent="." unique_id=594852378 instance=ExtResource("2_8nnqb")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=1964202832]
+layout_mode = 2
+icon = SubResource("GradientTexture2D_p1kb0")
