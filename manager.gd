@@ -20,8 +20,15 @@ func _ready():
 
 func _check_manager_state() -> void: 
 	
-	if manager_state == "Start" : 
-		$Start.show()
+	if manager_state == "Start" || manager_state == "Test" : 
+		
+		if manager_state == "Start": 
+			$Start.show()
+			$TestLevel.hide()
+		if manager_state == "Test": 
+			$Start.hide()
+			$TestLevel.show()
+			
 		$Level.hide()
 		$Credits.hide()
 		$Options.hide()
@@ -125,3 +132,11 @@ func _on_start_quit_appliation() -> void:
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 	
 	pass
+
+
+func _on_test_game() -> void:
+	
+	manager_state = "Test"
+	_on_play_transition()
+	
+	pass # Replace with function body.

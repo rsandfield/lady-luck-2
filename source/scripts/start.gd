@@ -3,6 +3,7 @@ extends Node2D
 
 @onready var game_version = %Version
 
+signal start_test_game
 signal start_new_game
 signal show_options
 signal show_credits
@@ -47,6 +48,12 @@ func _on_new_game_pressed() -> void:
 	
 	pass
 
+
+func _on_test_game_pressed() -> void:
+	
+	emit_signal( "start_test_game" )
+	
+	pass
 
 func _on_options_pressed() -> void:
 	

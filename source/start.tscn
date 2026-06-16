@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ba7au0uuwrled" path="res://assets/icons/load.png" id="6_y8fap"]
 [ext_resource type="StyleBox" uid="uid://b22y23a1u23dl" path="res://assets/themes/style_box_flat_purple_light_hover.tres" id="8_dbyvq"]
 [ext_resource type="StyleBox" uid="uid://6w58cphnta5n" path="res://assets/themes/style_box_flat_blue_light_hover.tres" id="10_c1v46"]
+[ext_resource type="Texture2D" uid="uid://bhh6s8dqe2s4n" path="res://assets/art/placeholder-goddess.png" id="11_dbyvq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ah3m"]
 bg_color = Color(1, 1, 1, 0)
@@ -31,7 +32,7 @@ offset_top = 50.0
 offset_right = 1154.0
 offset_bottom = 105.0
 theme_override_font_sizes/font_size = 40
-text = "Title"
+text = "Lady Luck's Door"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1522962569]
@@ -63,6 +64,13 @@ theme = ExtResource("2_5ah3m")
 theme_override_constants/separation = 15
 alignment = 1
 vertical = true
+
+[node name="TestGame" type="Button" parent="MarginContainer/ButtonControl/ButtonContainer" unique_id=200926344]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_5ah3m")
+text = "[Test] Game"
 
 [node name="NewGame" type="Button" parent="MarginContainer/ButtonControl/ButtonContainer" unique_id=1335015180]
 custom_minimum_size = Vector2(0, 40)
@@ -108,6 +116,7 @@ text = "version: 0.0.0"
 horizontal_alignment = 1
 
 [node name="DetailsControl" type="Control" parent="MarginContainer" unique_id=1076272779]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
@@ -379,6 +388,16 @@ theme_override_styles/hover = ExtResource("10_c1v46")
 theme_override_styles/disabled = ExtResource("3_d4h25")
 theme_override_styles/focus = ExtResource("3_d4h25")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1594215197]
+offset_left = 753.0
+offset_top = 15.0
+offset_right = 1667.0
+offset_bottom = 1430.0
+scale = Vector2(0.4, 0.4)
+mouse_filter = 2
+texture = ExtResource("11_dbyvq")
+
+[connection signal="pressed" from="MarginContainer/ButtonControl/ButtonContainer/TestGame" to="." method="_on_test_game_pressed"]
 [connection signal="pressed" from="MarginContainer/ButtonControl/ButtonContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/ButtonControl/ButtonContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/ButtonControl/ButtonContainer/Credits" to="." method="_on_credits_pressed"]

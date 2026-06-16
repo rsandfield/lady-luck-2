@@ -2,22 +2,23 @@
 
 [ext_resource type="Script" uid="uid://cbyseky6gkv2d" path="res://source/scripts/level.gd" id="1_8ytwg"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_3h5dt"]
+[ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="3_caait"]
 
 [node name="Level" type="Node2D" unique_id=854162818]
 script = ExtResource("1_8ytwg")
 
 [node name="PlayArea" type="Panel" parent="." unique_id=878161051]
-offset_left = 147.0
-offset_top = 63.0
-offset_right = 1042.0
-offset_bottom = 595.0
+offset_left = 239.0
+offset_top = 60.0
+offset_right = 779.0
+offset_bottom = 592.0
 
 [node name="Label" type="RichTextLabel" parent="PlayArea" unique_id=1286549017]
 layout_mode = 0
-offset_left = 378.0
-offset_top = 249.0
-offset_right = 487.0
-offset_bottom = 303.0
+offset_left = 206.0
+offset_top = 236.0
+offset_right = 315.0
+offset_bottom = 290.0
 bbcode_enabled = true
 text = "[i]Play Area[/i]"
 horizontal_alignment = 1
@@ -37,6 +38,15 @@ offset_right = 134.0
 offset_bottom = 103.0
 theme = ExtResource("2_3h5dt")
 text = "Restart"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=297781478]
+offset_left = 831.0
+offset_top = 15.0
+offset_right = 1841.0
+offset_bottom = 1369.0
+scale = Vector2(0.3, 0.3)
+mouse_filter = 2
+texture = ExtResource("3_caait")
 
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

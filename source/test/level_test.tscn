@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dmdfdbpc5pwgk"]
+
+[ext_resource type="Script" uid="uid://cbyseky6gkv2d" path="res://source/scripts/level.gd" id="1_57jnt"]
+[ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_20axw"]
+[ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="4_ff1e8"]
+[ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="5_tpn00"]
+
+[node name="TestLevel" type="Node2D" unique_id=854162818]
+script = ExtResource("1_57jnt")
+
+[node name="PlayArea" type="Panel" parent="." unique_id=878161051]
+offset_left = 1189.0
+offset_top = 24.0
+offset_right = 2084.0
+offset_bottom = 556.0
+
+[node name="Label" type="RichTextLabel" parent="PlayArea" unique_id=1286549017]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 249.0
+offset_right = 487.0
+offset_bottom = 303.0
+bbcode_enabled = true
+text = "[i]Play Area[/i]"
+horizontal_alignment = 1
+
+[node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("5_tpn00")]
+offset_left = 34.0
+offset_right = 1121.0
+offset_bottom = 649.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=512748620]
+offset_left = 150.0
+offset_top = 18.0
+offset_right = 1160.0
+offset_bottom = 1372.0
+scale = Vector2(0.3, 0.3)
+mouse_filter = 2
+texture = ExtResource("4_ff1e8")
+flip_h = true
+
+[node name="MainMenu" type="Button" parent="." unique_id=133252502]
+offset_left = 14.0
+offset_top = 15.0
+offset_right = 134.0
+offset_bottom = 55.0
+theme = ExtResource("2_20axw")
+text = "Main Menu"
+
+[node name="Restart" type="Button" parent="." unique_id=1099381198]
+offset_left = 14.0
+offset_top = 63.0
+offset_right = 134.0
+offset_bottom = 103.0
+theme = ExtResource("2_20axw")
+text = "Restart"
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

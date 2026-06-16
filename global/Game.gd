@@ -1,3 +1,3 @@
 extends Node
 
-var debug_enabled = true
+var debug_enabled = false
