@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://crkhrk6yuidho"]
+
+[ext_resource type="Script" uid="uid://1qqy2mf214td" path="res://source/floor/mouse/mouse_detection.gd" id="1_nnu87"]
+
+[node name="MouseDetection" type="Control" unique_id=1829138684]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nnu87")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
