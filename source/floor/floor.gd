@@ -36,6 +36,9 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 	slot.set_tile(item)
 	_slot_machine.consume_selected()
 
+	if _grid.all_paths_finished():
+		print("Ya did it")
+
 
 func _on_slot_machine_moving_tile( is_moving : bool ) -> void:
 	#print_debug( "_on_slot_machine_moving_tile: ")
