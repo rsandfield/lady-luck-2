@@ -1,6 +1,6 @@
 extends Node
 
-var version_game = "2026.0605.01"
+var version_game = "2026.0616.01"
 var version_cfg = 0
 
 #var default_save = OS.get_unique_id()

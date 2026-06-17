@@ -56,3 +56,5 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 texture = ExtResource("3_51i1i")
 expand_mode = 2
+
+[connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
