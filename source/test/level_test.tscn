@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_tpn00"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_20axw"]
+[ext_resource type="PackedScene" uid="uid://c5v013ojkhlvr" path="res://source/animations/spinner.tscn" id="2_tpn00"]
 [ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="4_ff1e8"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="5_ff1e8"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="5_tpn00"]
@@ -12,12 +13,13 @@ script = ExtResource("1_tpn00")
 [node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("5_tpn00")]
 offset_right = 1087.0
 offset_bottom = 649.0
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=512748620]
-offset_left = 150.0
-offset_top = 18.0
-offset_right = 1160.0
-offset_bottom = 1372.0
+offset_left = 205.0
+offset_top = 3.0
+offset_right = 1215.0
+offset_bottom = 1357.0
 scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 texture = ExtResource("4_ff1e8")
@@ -41,6 +43,12 @@ text = "Restart"
 
 [node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("5_ff1e8")]
 visible = false
+
+[node name="Spinner" parent="." unique_id=1325377327 instance=ExtResource("2_tpn00")]
+offset_left = 26.0
+offset_top = 382.0
+offset_right = 26.0
+offset_bottom = 382.0
 
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
