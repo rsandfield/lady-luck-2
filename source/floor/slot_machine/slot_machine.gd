@@ -22,8 +22,10 @@ func set_wheel_count(count: int) -> void:
 
 
 func spin_wheels() -> void:
-	for wheel in _wheels:
+	for i in range(_wheels.size() - 1, -1, -1):
+		var wheel = _wheels[i]
 		wheel.spin()
+		await _ui.get_tree().create_timer(0.5).timeout
 
 
 func select_wheel(wheel: SlotWheel) -> void:

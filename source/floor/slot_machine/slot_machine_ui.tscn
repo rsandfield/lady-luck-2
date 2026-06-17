@@ -13,19 +13,20 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="SlotMachine" type="HBoxContainer" unique_id=188532546]
+theme_override_constants/separation = 20
+alignment = 1
 script = ExtResource("1_gru50")
 
-[node name="SlotCell1" parent="." unique_id=1813477598 instance=ExtResource("2_8nnqb")]
-layout_mode = 2
-mouse_default_cursor_shape = 6
-
-[node name="SlotCell2" parent="." unique_id=748204921 instance=ExtResource("2_8nnqb")]
+[node name="SlotWheel" parent="." unique_id=1975195812 instance=ExtResource("2_8nnqb")]
 layout_mode = 2
 
-[node name="SlotCell3" parent="." unique_id=1144017552 instance=ExtResource("2_8nnqb")]
+[node name="SlotWheel2" parent="." unique_id=1096081602 instance=ExtResource("2_8nnqb")]
 layout_mode = 2
 
-[node name="SlotCell4" parent="." unique_id=594852378 instance=ExtResource("2_8nnqb")]
+[node name="SlotWheel3" parent="." unique_id=608457773 instance=ExtResource("2_8nnqb")]
+layout_mode = 2
+
+[node name="SlotWheel4" parent="." unique_id=877449426 instance=ExtResource("2_8nnqb")]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=1964202832]

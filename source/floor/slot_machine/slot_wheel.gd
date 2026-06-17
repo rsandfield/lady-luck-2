@@ -14,8 +14,11 @@ func set_ui(new_ui: SlotWheelUI):
 
 
 func spin() -> void:
-	_tile = TileResource.random_two_side()
-	set_resource(_tile)
+	var tiles: Array[TileResource] = []
+	for i in 8:
+		tiles.append(TileResource.random_two_side())
+	_tile = tiles[0]
+	_ui.spin(tiles)
 
 
 func set_resource(resource: TileResource) -> void:

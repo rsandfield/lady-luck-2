@@ -3,6 +3,7 @@ extends PanelContainer
 
 
 @export var _size: Vector2i = Vector2i(5, 7)
+@export var _wheels := 4
 
 var _slot_machine: SlotMachine
 var _grid: Grid
@@ -13,7 +14,7 @@ signal moving_tile ( is_clicked : bool )
 func _ready():
 	_slot_machine = SlotMachine.new()
 	_slot_machine.set_ui(%SlotMachine)
-	_slot_machine.set_wheel_count(4)
+	_slot_machine.set_wheel_count(_wheels)
 	
 	_grid = Grid.new()
 	_grid.set_ui(%Grid)
