@@ -22,3 +22,11 @@ func _on_floor_moving_tile( is_moving : bool ) -> void:
 	if !is_moving: _mouse_object.hide()
 	
 	pass
+
+
+func _on_switch_pressed() -> void:
+	
+	$LadyLuckLight.visible = $LadyLuckDark.visible
+	$LadyLuckDark.visible = !$LadyLuckLight.visible
+	
+	pass

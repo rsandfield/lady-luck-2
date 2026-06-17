@@ -395,7 +395,7 @@ bg_color = Color(0.29586652, 0.29586652, 0.29586637, 1)
 shader = ExtResource("3_fpvq1")
 shader_parameter/time = 0.0
 shader_parameter/frame_scope = 3.0
-shader_parameter/use_system_time = false
+shader_parameter/use_system_time = true
 shader_parameter/time_accel = 5.0
 
 [node name="Spinner" type="Control" unique_id=1325377327]
@@ -481,10 +481,10 @@ text = "Slots"
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1773014202]
 material = SubResource("ShaderMaterial_ejitm")
 layout_mode = 0
-offset_left = 102.0
-offset_top = -150.0
-offset_right = 188.0
-offset_bottom = -69.0
+offset_left = 35.0
+offset_top = -183.0
+offset_right = 131.0
+offset_bottom = -85.0
 
 [connection signal="pressed" from="Button0" to="." method="_on_button_0_pressed"]
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
