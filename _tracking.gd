@@ -25,7 +25,7 @@ Cause: ...
 Reported 2026.0616.01 
 Status: New / Tracking
 Godot: 4.6.3
-Issue: Dragging from an empty spot on the 
+Issue: Dragging from an empty spot on the slots shows up with the previous tile 
 Cause: Even though the object in the slot machine is hidden it still exists and can be grabbed again
 
 

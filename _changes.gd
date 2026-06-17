@@ -51,6 +51,11 @@ HAVE YOU UPDATED THE BUILD VERSION AND DISABLED DEBUG?
 
 
 
+2024.0616.01: 
+- Drag and drop
+- Win condition
+- Multiple road types
+
 2026.0615.01: 
 - Initial Build
 
