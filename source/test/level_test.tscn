@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="4_ff1e8"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="5_ff1e8"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="5_tpn00"]
-[ext_resource type="PackedScene" uid="uid://crkhrk6yuidho" path="res://source/floor/mouse/mouse_detection.tscn" id="6_tpn00"]
 
 [node name="TestLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_tpn00")
@@ -41,12 +40,9 @@ theme = ExtResource("2_20axw")
 text = "Restart"
 
 [node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("5_ff1e8")]
+visible = false
 
-[node name="MouseDetection" parent="." unique_id=1829138684 instance=ExtResource("6_tpn00")]
-offset_right = 1154.0
-offset_bottom = 648.0
-
+[connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
-[connection signal="mouse_clicked" from="MouseDetection" to="." method="_on_mouse_clicked"]
-[connection signal="mouse_moved" from="MouseDetection" to="." method="_on_move_mouse_object"]
+[connection signal="tile_released" from="MouseObject" to="Floor" method="_on_mouse_object_tile_released"]

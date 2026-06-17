@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bo1dgiub0w3xr"]
+
+[ext_resource type="Script" uid="uid://b8y7rdl6wrgh4" path="res://source/floor/floor.gd" id="1_vqkr4"]
+[ext_resource type="PackedScene" uid="uid://cu2o14flw07o6" path="res://source/floor/slot_machine_ui.tscn" id="2_p1kb0"]
+[ext_resource type="PackedScene" uid="uid://cksm1x0jrd8ge" path="res://source/floor/grid/grid_ui.tscn" id="3_vqkr4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqkr4"]
+
+[node name="Floor" type="PanelContainer" unique_id=2015660795]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vqkr4")
+script = ExtResource("1_vqkr4")
+_size = Vector2i(5, 8)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1601718213]
+layout_mode = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1328285526]
+layout_mode = 2
+alignment = 1
+
+[node name="Slots" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=437422763]
+layout_mode = 2
+alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/Slots" unique_id=182174465]
+layout_mode = 2
+
+[node name="SlotMachine" parent="MarginContainer/HBoxContainer/Slots/PanelContainer" unique_id=188532546 instance=ExtResource("2_p1kb0")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=424488339]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=822311295]
+layout_mode = 2
+alignment = 1
+
+[node name="Grid" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=599105573 instance=ExtResource("3_vqkr4")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="moving_tile" from="MarginContainer/HBoxContainer/Slots/PanelContainer/SlotMachine" to="." method="_on_slot_machine_moving_tile"]
