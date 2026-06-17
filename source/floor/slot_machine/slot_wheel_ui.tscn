@@ -39,3 +39,5 @@ mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_b2j45")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

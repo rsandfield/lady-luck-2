@@ -7,28 +7,46 @@ extends PanelContainer
 var _slot_machine: SlotMachine
 var _grid: Grid
 
+signal moving_tile ( is_clicked : bool )
+
 
 func _ready():
 	_slot_machine = SlotMachine.new()
 	_slot_machine.set_ui(%SlotMachine)
 	_slot_machine.set_wheel_count(4)
-
+	
 	_grid = Grid.new()
 	_grid.set_ui(%Grid)
 	_grid.grid_cell_pressed.connect(_on_grid_cell_pressed)
-
+	
 	_grid.set_grid_size(_size)
 
 
 func _on_grid_cell_pressed(slot: GridCell) -> void:
+	
 	if slot.is_occupied():
 		return
-
+	
 	var item = _slot_machine.get_selected_item()
 	if !item:
 		return
 	if !slot.is_legal_play(item):
 		return
-
-	slot.set_tile(item)	
+	
+	slot.set_tile(item)
 	_slot_machine.consume_selected()
+
+
+func _on_slot_machine_moving_tile( is_moving : bool ) -> void:
+	#print_debug( "_on_slot_machine_moving_tile: ")
+	
+	moving_tile.emit( is_moving )
+	
+	pass
+
+func _on_mouse_object_tile_released() -> void:
+	#print_debug("_on_mouse_object_tile_released...")
+	
+	Game.grid_tile_hovered.emit_signal("pressed")
+	
+	pass
