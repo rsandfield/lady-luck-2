@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_tpn00"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_20axw"]
 [ext_resource type="PackedScene" uid="uid://c5v013ojkhlvr" path="res://source/animations/spinner.tscn" id="2_tpn00"]
+[ext_resource type="Texture2D" uid="uid://by85tavmk3ort" path="res://assets/art/placeholder-ladyluck.png" id="3_l8klr"]
 [ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="4_ff1e8"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="5_ff1e8"]
+[ext_resource type="Texture2D" uid="uid://di5rsokaqyg66" path="res://assets/art/placeholder-slygoddess.png" id="5_k07vv"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="5_tpn00"]
 
 [node name="TestLevel" type="Node2D" unique_id=442386131]
@@ -15,14 +17,43 @@ offset_right = 1087.0
 offset_bottom = 649.0
 metadata/_edit_lock_ = true
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=512748620]
-offset_left = 205.0
-offset_top = 3.0
-offset_right = 1215.0
-offset_bottom = 1357.0
+[node name="Switch" type="Button" parent="." unique_id=1717973040]
+offset_left = 442.0
+offset_top = 17.0
+offset_right = 501.0
+offset_bottom = 48.0
+text = "Switch
+"
+
+[node name="LadyLuckLight" type="TextureRect" parent="." unique_id=1059972106]
+offset_left = 223.0
+offset_top = 2.0
+offset_right = 1233.0
+offset_bottom = 1552.0
+scale = Vector2(0.3, 0.3)
+mouse_filter = 2
+texture = ExtResource("3_l8klr")
+flip_h = true
+
+[node name="LadyLuckDark" type="TextureRect" parent="." unique_id=512748620]
+visible = false
+offset_left = 214.0
+offset_top = 75.0
+offset_right = 1224.0
+offset_bottom = 1429.0
 scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 texture = ExtResource("4_ff1e8")
+flip_h = true
+
+[node name="LadyLuckSly" type="TextureRect" parent="." unique_id=265231321]
+offset_left = 938.99994
+offset_top = 112.99999
+offset_right = 1233.0
+offset_bottom = 742.0
+scale = Vector2(0.7, 0.7)
+mouse_filter = 2
+texture = ExtResource("5_k07vv")
 flip_h = true
 
 [node name="MainMenu" type="Button" parent="." unique_id=133252502]
@@ -51,6 +82,7 @@ offset_right = 26.0
 offset_bottom = 382.0
 
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
+[connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="tile_released" from="MouseObject" to="Floor" method="_on_mouse_object_tile_released"]

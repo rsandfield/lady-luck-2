@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://5el0paxnlnxc" path="res://source/scripts/start.gd" id="1_d1xti"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_5ah3m"]
 [ext_resource type="FontFile" uid="uid://cr1saxylaqak3" path="res://assets/fonts/RobotoMono-Regular.ttf" id="2_iugiy"]
+[ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="2_y1c4o"]
 [ext_resource type="StyleBox" uid="uid://bjjs87buslrdx" path="res://assets/themes/style_box_flat_blue_light.tres" id="3_d4h25"]
+[ext_resource type="FontFile" uid="uid://jmess3785fje" path="res://assets/fonts/ViaodaLibre-Regular.ttf" id="3_o7yua"]
 [ext_resource type="StyleBox" uid="uid://cxmouk6dkrx6e" path="res://assets/themes/style_box_flat_green_light.tres" id="4_e5c4t"]
 [ext_resource type="StyleBox" uid="uid://c3do76iwbhxsa" path="res://assets/themes/style_box_flat_purple_light.tres" id="5_7aew8"]
 [ext_resource type="StyleBox" uid="uid://xkwkgc8dt653" path="res://assets/themes/style_box_flat_green_light_hover.tres" id="6_5ah3m"]
@@ -11,6 +13,7 @@
 [ext_resource type="StyleBox" uid="uid://b22y23a1u23dl" path="res://assets/themes/style_box_flat_purple_light_hover.tres" id="8_dbyvq"]
 [ext_resource type="StyleBox" uid="uid://6w58cphnta5n" path="res://assets/themes/style_box_flat_blue_light_hover.tres" id="10_c1v46"]
 [ext_resource type="Texture2D" uid="uid://bhh6s8dqe2s4n" path="res://assets/art/placeholder-goddess.png" id="11_dbyvq"]
+[ext_resource type="Texture2D" uid="uid://do8ks0314xoks" path="res://assets/art/placeholder-luckdoor.png" id="14_kfqdp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ah3m"]
 bg_color = Color(1, 1, 1, 0)
@@ -27,12 +30,24 @@ corner_radius_bottom_left = 2
 [node name="Start" type="Node2D" unique_id=162000955]
 script = ExtResource("1_d1xti")
 
-[node name="Title" type="Label" parent="." unique_id=1968054480]
-offset_top = 50.0
-offset_right = 1154.0
-offset_bottom = 105.0
+[node name="Title1" type="Label" parent="." unique_id=1968054480]
+offset_left = -3.0
+offset_top = -5.0
+offset_right = 1151.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("2_y1c4o")
 theme_override_font_sizes/font_size = 40
-text = "Lady Luck's Door"
+text = "Amarante: Lady Luck's Door"
+horizontal_alignment = 1
+
+[node name="Title2" type="Label" parent="." unique_id=1704592043]
+offset_left = -7.0
+offset_top = 50.0
+offset_right = 1147.0
+offset_bottom = 108.0
+theme_override_fonts/font = ExtResource("3_o7yua")
+theme_override_font_sizes/font_size = 40
+text = "ViaodaLibre: Lady Luck's Door"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1522962569]
@@ -388,7 +403,7 @@ theme_override_styles/hover = ExtResource("10_c1v46")
 theme_override_styles/disabled = ExtResource("3_d4h25")
 theme_override_styles/focus = ExtResource("3_d4h25")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1594215197]
+[node name="Goddess" type="TextureRect" parent="." unique_id=1594215197]
 offset_left = 753.0
 offset_top = 15.0
 offset_right = 1667.0
@@ -396,6 +411,13 @@ offset_bottom = 1430.0
 scale = Vector2(0.4, 0.4)
 mouse_filter = 2
 texture = ExtResource("11_dbyvq")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1179900158]
+offset_left = 125.0
+offset_top = 129.0
+offset_right = 520.0
+offset_bottom = 501.0
+texture_normal = ExtResource("14_kfqdp")
 
 [connection signal="pressed" from="MarginContainer/ButtonControl/ButtonContainer/TestGame" to="." method="_on_test_game_pressed"]
 [connection signal="pressed" from="MarginContainer/ButtonControl/ButtonContainer/NewGame" to="." method="_on_new_game_pressed"]
