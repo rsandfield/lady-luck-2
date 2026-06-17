@@ -4,58 +4,100 @@ signal grid_cell_pressed(cell: GridCell)
 
 
 var _ui: GridUI
+var _size: Vector2i
 var _cells: Array[GridCell]
+var _color_count: int
 
 func set_ui(new_ui: GridUI) -> void:
 	_ui = new_ui
 
 
-func set_grid_size(new_size: Vector2i) -> void:
+func set_grid_size(new_size: Vector2i, color_count: int = 2) -> void:
 	_cells = []
 	
-	var width = new_size.x
-	var height = new_size.y
-	_rebuild_grid(width, height)
-	_ui.set_grid(width, _cells)
+	_size = new_size
+	_color_count = color_count
+	_rebuild_grid()
+	_ui.set_grid(_size.x, _cells)
 
-	_set_bottom_row(width, height)
-	_set_door(width)
+	_set_bottom_row()
+	_set_door()
 
 
-func _rebuild_grid(width: int, height: int) -> void:
-	for i in width * height:
+func _rebuild_grid() -> void:
+	for i in _size.x * _size.y:
 		var cell = GridCell.new()
 		cell.grid_cell_pressed.connect(grid_cell_pressed.emit)
 		_cells.append(cell)
-		if i % width > 0:
+		if i % _size.x > 0:
 			var west_neighbor = _cells[i - 1]
 			west_neighbor.set_neighbor(TileResource.Direction.EAST, cell)
 			cell.set_neighbor(TileResource.Direction.WEST, west_neighbor)
-		if i > width:
-			var north_neighbor = _cells[i - width]
+		if i >= _size.x:
+			var north_neighbor = _cells[i - _size.x]
 			north_neighbor.set_neighbor(TileResource.Direction.SOUTH, cell)
 			cell.set_neighbor(TileResource.Direction.NORTH, north_neighbor)
 
 
-func _set_bottom_row(width: int, height: int):
-	var starters = range(width)
-	var bottom_start = width * (height - 1)
-	for i in width:
-		var ti = bottom_start + i
+func _set_bottom_row():
+	var bottom_start = _size.x * (_size.y - 1)
+	var starters = range(_size.x)
+	starters.shuffle()
+	for i in _size.x:
+		var ti = bottom_start + starters[i]
 		var cell = _cells[ti]
 		var sides: Array[int] = [0, 0, 0, 0]
-		if i == starters[0]:
-			sides[0] = 1
+		if i < _color_count:
+			sides[0] = i + 1
 		var tile = TileResource.new(sides)
 		cell.set_tile(tile)
 
 
-func _set_door(width):
-	var i = width +  randi() % width
-	var cell = _cells[i]
-	var sides: Array[int] = [0, 0, 0, 1]
+func _set_door():
+	var it = _size.x + 1 + randi() % (_size.x - 2)
+	var cell = _cells[it]
+	var sides: Array[int] = [0, 0, 0, 0]
+	for i in _color_count:
+		sides[i] = i + 1
 	sides.shuffle()
 	var tile = TileResource.new(sides)
 	tile.is_door = true
 	cell.set_tile(tile)
+
+
+func all_paths_finished() -> bool:
+	for color in _color_count:
+		if !_is_color_connected(color + 1):
+			return false
+	return true
 	
+
+func _is_color_connected(color: int) -> bool:
+	var bottom_start = _size.x * (_size.y - 1)
+	for i in _size.x:
+		var cell = _cells[bottom_start + i]
+		if cell.get_side(TileResource.Direction.NORTH) == color:
+			var path = _depth_search(color, [], cell)
+			return _door_visited(path)
+	return false
+
+
+func _depth_search(color: int, visited: Array[GridCell], cell: GridCell) -> Array[GridCell]:
+	visited.append(cell)
+	if cell.is_door():
+		return visited
+
+	for direction in TileResource.Direction.values():
+		var neighbor = cell.get_neighbor(direction)
+		if !neighbor || visited.has(neighbor):
+			continue
+		if cell.get_side(direction) == color && neighbor.get_side(TileResource.opposite(direction)) == color:
+			visited = _depth_search(color, visited, neighbor)
+	return visited
+
+
+func _door_visited(visited: Array[GridCell]) -> bool:
+	for cell in visited:
+		if cell.is_door():
+			return true
+	return false

@@ -25,12 +25,10 @@ var is_door: bool = false
 
 @export var _sides: Array[int] = []
 
-static func random_two_side() -> TileResource:
-	var side_indices = [0, 1, 2, 3]
-	side_indices.shuffle()
-	var sides: Array[int] = [0, 0, 0, 0]
-	sides[side_indices[0]] = 1
-	sides[side_indices[1]] = 1
+static func random_two_side(possible_colors: int = 2) -> TileResource:
+	var color := randi() % possible_colors + 1
+	var sides: Array[int] = [0, 0, color, color]
+	sides.shuffle()
 	return TileResource.new(sides)
 
 
