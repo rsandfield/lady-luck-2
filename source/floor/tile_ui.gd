@@ -28,6 +28,9 @@ func set_resource(new_resource: TileResource) -> void:
 	if !resource:
 		return
 
+	if !is_node_ready():
+		await ready
+
 	var sides = resource.get_sides()
 	for i in 4:
 		side_ui[i].modulate = COLORS[sides[i]]
@@ -43,5 +46,3 @@ func set_visible_is_moving( is_moving: bool, modulate_color: Color ) -> void:
 	down.visible  = !is_moving
 	left.visible  = !is_moving 
 	right.visible = !is_moving
-	
-	pass
