@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ddcg8olkhgjc6"]
+
+[ext_resource type="Script" uid="uid://2x4auo6odaxm" path="res://source/floor/wheel/pie_slice.gd" id="1_r0q3d"]
+
+[node name="PieSlice" type="Node2D" unique_id=1297377242]
+script = ExtResource("1_r0q3d")
+metadata/_custom_type_script = "uid://2x4auo6odaxm"

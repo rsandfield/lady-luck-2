@@ -77,3 +77,7 @@ func play(slot: GridCell) -> void:
 
 func ui_scene() -> PackedScene:
 	return preload("./tile_ui.tscn")
+
+
+func wheel_color() -> Color:
+	return Color.GREEN
