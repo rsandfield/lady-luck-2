@@ -8,6 +8,7 @@ extends PanelContainer
 var _slot_machine: SlotMachine
 var _grid: Grid
 var _spinner: Spinner
+var _lady: LadyLuck
 
 signal moving_tile ( is_clicked : bool )
 
@@ -25,16 +26,12 @@ func _ready():
 	_spinner = Spinner.new()
 	_spinner.set_ui(%Spinner)
 	_spinner.set_row_count(_size.y)
-	var items: Array[ItemResource] = [
-		BombResource.new(),
-		TileResource.random_two_side(2),
-		ItemResource.new(),
-		BombResource.new(),
-		TileResource.random_two_side(2),
-		ItemResource.new(),
-	]
-	_spinner.set_items(items)
+	_spinner.set_item_count(6)
 	_slot_machine.lever_pulled.connect(_spinner.spin)
+
+	_lady = LadyLuck.new()
+	_lady.set_grid(_grid)
+	_spinner.result.connect(_lady.cause_chaos)
 
 
 func _on_grid_cell_pressed(slot: GridCell) -> void:

@@ -7,7 +7,6 @@ func ui_scene() -> PackedScene:
 
 
 func is_legal_play(_cell: GridCell) -> bool:
-	push_error("All item resource types must override is_legal_play()")
 	return false
 
 
