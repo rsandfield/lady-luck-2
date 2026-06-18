@@ -34,6 +34,10 @@ func get_side(direction: TileResource.Direction) -> int:
 	return _tile.get_side(direction)
 
 
+func position() -> Vector2:
+	return _ui.global_position
+
+
 func is_occupied() -> bool:
 	return _tile != null
 

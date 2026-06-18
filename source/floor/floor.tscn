@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://b8y7rdl6wrgh4" path="res://source/floor/floor.gd" id="1_vqkr4"]
 [ext_resource type="PackedScene" uid="uid://clwj4o2t31n4g" path="res://source/floor/wheel/spinner_ui.tscn" id="2_bey53"]
 [ext_resource type="PackedScene" uid="uid://cu2o14flw07o6" path="res://source/floor/slot_machine/slot_machine_ui.tscn" id="2_p1kb0"]
+[ext_resource type="PackedScene" uid="uid://3gtimcic0h85" path="res://source/floor/lady_luck/lady_luck.tscn" id="3_bey53"]
 [ext_resource type="PackedScene" uid="uid://cksm1x0jrd8ge" path="res://source/floor/grid/grid_ui.tscn" id="3_vqkr4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqkr4"]
 
 [node name="Floor" type="PanelContainer" unique_id=2015660795]
+custom_minimum_size = Vector2(1152, 648)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,16 +20,16 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_vqkr4")
 script = ExtResource("1_vqkr4")
 _size = Vector2i(5, 8)
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1601718213]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1450049681]
 layout_mode = 2
-theme_override_constants/margin_left = 150
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 150
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1328285526]
 layout_mode = 2
-alignment = 1
+alignment = 2
 
 [node name="Slots" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=437422763]
 layout_mode = 2
@@ -38,20 +40,28 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/Slots" unique_id=290917943]
+[node name="LadyLuck" parent="MarginContainer/HBoxContainer/Slots" unique_id=799243148 instance=ExtResource("3_bey53")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/Slots" unique_id=182174465]
 layout_mode = 2
 
-[node name="SlotMachine" parent="MarginContainer/HBoxContainer/Slots/PanelContainer" unique_id=188532546 instance=ExtResource("2_p1kb0")]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Slots/PanelContainer" unique_id=1923615028]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 25
+
+[node name="SlotMachine" parent="MarginContainer/HBoxContainer/Slots/PanelContainer/MarginContainer" unique_id=188532546 instance=ExtResource("2_p1kb0")]
 unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=424488339]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=822311295]
 layout_mode = 2
@@ -61,5 +71,5 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 
-[connection signal="moving_tile" from="MarginContainer/HBoxContainer/Slots/PanelContainer/SlotMachine" to="." method="_on_slot_machine_moving_tile"]
-[connection signal="spin_sound_play" from="MarginContainer/HBoxContainer/Slots/PanelContainer/SlotMachine" to="." method="_on_slot_machine_play_sound"]
+[connection signal="moving_tile" from="MarginContainer/HBoxContainer/Slots/PanelContainer/MarginContainer/SlotMachine" to="." method="_on_slot_machine_moving_tile"]
+[connection signal="spin_sound_play" from="MarginContainer/HBoxContainer/Slots/PanelContainer/MarginContainer/SlotMachine" to="." method="_on_slot_machine_play_sound"]

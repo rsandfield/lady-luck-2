@@ -31,6 +31,7 @@ func _ready():
 	_slot_machine.lever_pulled.connect(_spinner.spin)
 
 	_lady = LadyLuck.new()
+	_lady.set_ui(%LadyLuck)
 	_lady.set_grid(_grid)
 	_spinner.result.connect(_lady.cause_chaos)
 

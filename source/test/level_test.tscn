@@ -5,11 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://by85tavmk3ort" path="res://assets/art/placeholder-ladyluck.png" id="3_l8klr"]
 [ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="4_ff1e8"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="5_ff1e8"]
-[ext_resource type="Texture2D" uid="uid://di5rsokaqyg66" path="res://assets/art/placeholder-slygoddess.png" id="5_k07vv"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="5_tpn00"]
-[ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="9_jttlp"]
 [ext_resource type="PackedScene" uid="uid://314toow75o83" path="res://source/animations/explosion.tscn" id="10_jttlp"]
-[ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="10_m3ls3"]
+[ext_resource type="PackedScene" path="res://source/tutorial.tscn" id="10_m3ls3"]
 
 [node name="TestLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_tpn00")
@@ -35,19 +33,15 @@ mouse_filter = 2
 texture = ExtResource("4_ff1e8")
 flip_h = true
 
-[node name="LadyLuckSly" type="TextureRect" parent="." unique_id=265231321]
-offset_left = 960.0
-offset_top = 110.0
-offset_right = 1254.0001
-offset_bottom = 739.0
-scale = Vector2(0.7, 0.7)
-mouse_filter = 2
-texture = ExtResource("5_k07vv")
-flip_h = true
-
 [node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("5_tpn00")]
-offset_right = 1087.0
-offset_bottom = 649.0
+custom_minimum_size = Vector2(1152, 648)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 989.0
+offset_bottom = 549.0
+grow_horizontal = 1
+grow_vertical = 1
 metadata/_edit_lock_ = true
 
 [node name="Switch" type="Button" parent="." unique_id=1717973040]
@@ -75,42 +69,6 @@ text = "Restart"
 
 [node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("5_ff1e8")]
 visible = false
-
-[node name="TextEditS1" type="TextEdit" parent="." unique_id=2065293396]
-offset_left = 106.0
-offset_top = 609.0
-offset_right = 141.0
-offset_bottom = 652.0
-theme_override_fonts/font = ExtResource("9_jttlp")
-theme_override_font_sizes/font_size = 24
-text = "%"
-
-[node name="TextEditS2" type="TextEdit" parent="." unique_id=1607134135]
-offset_left = 217.0
-offset_top = 609.0
-offset_right = 252.0
-offset_bottom = 652.0
-theme_override_fonts/font = ExtResource("9_jttlp")
-theme_override_font_sizes/font_size = 24
-text = "%"
-
-[node name="TextEditS3" type="TextEdit" parent="." unique_id=856068135]
-offset_left = 333.0
-offset_top = 609.0
-offset_right = 368.0
-offset_bottom = 652.0
-theme_override_fonts/font = ExtResource("9_jttlp")
-theme_override_font_sizes/font_size = 24
-text = "%"
-
-[node name="TextEditS4" type="TextEdit" parent="." unique_id=1827536343]
-offset_left = 450.0
-offset_top = 609.0
-offset_right = 485.0
-offset_bottom = 652.0
-theme_override_fonts/font = ExtResource("9_jttlp")
-theme_override_font_sizes/font_size = 24
-text = "%"
 
 [node name="SoundSlots1" type="Button" parent="." unique_id=1364189756]
 offset_left = 21.0
