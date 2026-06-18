@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://clwj4o2t31n4g"]
+
+[ext_resource type="Script" uid="uid://ctsa72q5go3t7" path="res://source/floor/wheel/spinner_ui.gd" id="1_7vooo"]
+[ext_resource type="PackedScene" uid="uid://c0u2a7n3ilx1e" path="res://source/floor/wheel/spinner_wheel_ui.tscn" id="1_a1al3"]
+[ext_resource type="PackedScene" uid="uid://n5256gebrqyr" path="res://source/floor/grid/flag.tscn" id="3_r4kml"]
+
+[node name="Spinner" type="Control" unique_id=1656173699]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vooo")
+metadata/_custom_type_script = "uid://ctsa72q5go3t7"
+
+[node name="OuterWheel" parent="." unique_id=1632899431 instance=ExtResource("1_a1al3")]
+layout_mode = 1
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="InnerWheel" parent="." unique_id=1783539739 instance=ExtResource("1_a1al3")]
+layout_mode = 1
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+radius = 60.0
+
+[node name="OuterFlag" parent="." unique_id=1882001034 instance=ExtResource("3_r4kml")]
+layout_mode = 1
+offset_left = 12.5
+offset_top = -107.5
+offset_bottom = -82.5
+rotation = 1.5707964
+
+[node name="InnerFlag" parent="." unique_id=327539090 instance=ExtResource("3_r4kml")]
+layout_mode = 1
+offset_left = 12.5
+offset_top = -67.5
+offset_bottom = -42.5
+rotation = 1.5707964

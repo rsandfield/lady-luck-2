@@ -34,7 +34,6 @@ func set_grid(width: int, cells: Array[GridCell]) -> void:
 		cell.set_ui(cell_ui)
 		
 		if x % width == width - 1:
-			print(y, " ", rows)
 			_add_flag(true, ROW_COLORS[rows - y])
 			y += 1
 			
