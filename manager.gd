@@ -20,14 +20,20 @@ func _ready():
 
 func _check_manager_state() -> void: 
 	
-	if manager_state == "Start" || manager_state == "Test" : 
+	if manager_state == "Start" || manager_state == "Test" || manager_state == "Alt" : 
 		
 		if manager_state == "Start": 
 			$Start.show()
 			$TestLevel.hide()
+			$TestAltLevel.hide()
 		if manager_state == "Test": 
 			$Start.hide()
 			$TestLevel.show()
+			$TestAltLevel.hide()
+		if manager_state == "Alt": 
+			$Start.hide()
+			$TestLevel.hide()
+			$TestAltLevel.show()
 			
 		$Level.hide()
 		$Credits.hide()
@@ -145,6 +151,14 @@ func _on_start_quit_appliation() -> void:
 func _on_test_game() -> void:
 	
 	manager_state = "Test"
+	_on_play_transition()
+	
+	pass # Replace with function body.
+	
+func _on_test_alt_game() -> void:
+	print_debug("_on_test_alt_game... " )
+	
+	manager_state = "Alt"
 	_on_play_transition()
 	
 	pass # Replace with function body.

@@ -1,0 +1,388 @@
+[gd_scene format=3 uid="uid://q26m7tt0syiv"]
+
+[ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_1k1e1"]
+[ext_resource type="Texture2D" uid="uid://deo7ermpq3am" path="res://assets/art/background-green.png" id="2_ihnwo"]
+[ext_resource type="Texture2D" uid="uid://d2cit3lp2k6dk" path="res://assets/art/placeholder-luckcards.png" id="3_b58l3"]
+[ext_resource type="Texture2D" uid="uid://by85tavmk3ort" path="res://assets/art/placeholder-ladyluck.png" id="4_3f7hu"]
+[ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="5_fkpom"]
+[ext_resource type="Texture2D" uid="uid://di5rsokaqyg66" path="res://assets/art/placeholder-slygoddess.png" id="6_dr7xf"]
+[ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="7_l4jha"]
+[ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="8_248bq"]
+[ext_resource type="Texture2D" uid="uid://bwg3gd1y1epdj" path="res://assets/icons/bomb.png" id="9_7fpfp"]
+[ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="10_nwggm"]
+[ext_resource type="PackedScene" uid="uid://314toow75o83" path="res://source/animations/explosion.tscn" id="11_5o2ll"]
+[ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="12_jcaet"]
+[ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="13_b6kwo"]
+[ext_resource type="Texture2D" uid="uid://br538pffgrles" path="res://assets/art/button-placeholder-main.png" id="14_lukrn"]
+[ext_resource type="Texture2D" uid="uid://b861e46gnkt8p" path="res://assets/art/button-placeholder-retry.png" id="15_nj6ht"]
+
+[node name="TestAltLevel" type="Node2D" unique_id=442386131]
+script = ExtResource("1_1k1e1")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1061456643]
+offset_right = 1154.0
+offset_bottom = 648.0
+texture = ExtResource("2_ihnwo")
+
+[node name="LadyLuckColor" type="TextureRect" parent="." unique_id=1723959359]
+offset_left = 81.0
+offset_top = 46.0
+offset_right = 505.0
+offset_bottom = 466.0
+mouse_filter = 2
+texture = ExtResource("3_b58l3")
+
+[node name="LadyLuckLight" type="TextureRect" parent="." unique_id=1059972106]
+visible = false
+offset_left = 161.0
+offset_top = 11.0
+offset_right = 1171.0
+offset_bottom = 1561.0
+scale = Vector2(0.3, 0.3)
+mouse_filter = 2
+texture = ExtResource("4_3f7hu")
+flip_h = true
+
+[node name="LadyLuckDark" type="TextureRect" parent="." unique_id=512748620]
+visible = false
+offset_left = 149.0
+offset_top = 75.0
+offset_right = 1159.0
+offset_bottom = 1429.0
+scale = Vector2(0.3, 0.3)
+mouse_filter = 2
+texture = ExtResource("5_fkpom")
+flip_h = true
+
+[node name="LadyLuckSly" type="TextureRect" parent="." unique_id=265231321]
+offset_left = 1192.0
+offset_top = 64.99999
+offset_right = 1486.0001
+offset_bottom = 694.0
+scale = Vector2(0.7, 0.7)
+mouse_filter = 2
+texture = ExtResource("6_dr7xf")
+flip_h = true
+
+[node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("7_l4jha")]
+offset_right = 1087.0
+offset_bottom = 649.0
+metadata/_edit_lock_ = true
+
+[node name="Switch" type="Button" parent="." unique_id=1717973040]
+offset_left = -280.0
+offset_top = 172.0
+offset_right = -160.0
+offset_bottom = 212.0
+text = "Test Art Type"
+
+[node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("8_248bq")]
+visible = false
+
+[node name="Bomb1" type="Sprite2D" parent="." unique_id=1174123643]
+position = Vector2(799, -467)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_7fpfp")
+
+[node name="Bomb2" type="Sprite2D" parent="." unique_id=1666890606]
+position = Vector2(795, -391)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_7fpfp")
+
+[node name="Bomb3" type="Sprite2D" parent="." unique_id=1414449022]
+position = Vector2(795, -311)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_7fpfp")
+
+[node name="Bomb4" type="Sprite2D" parent="." unique_id=1862381449]
+position = Vector2(791, -238)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_7fpfp")
+
+[node name="Bomb5" type="Sprite2D" parent="." unique_id=119691683]
+position = Vector2(792, -155)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_7fpfp")
+
+[node name="TextEdit1" type="TextEdit" parent="." unique_id=1310180711]
+offset_left = 981.0
+offset_top = -494.0
+offset_right = 1016.0
+offset_bottom = -451.0
+theme_override_fonts/font = ExtResource("10_nwggm")
+theme_override_font_sizes/font_size = 24
+text = "%"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+tab_input_mode = false
+virtual_keyboard_enabled = false
+
+[node name="TextEdit2" type="TextEdit" parent="." unique_id=1876208271]
+offset_left = 980.0
+offset_top = -418.0
+offset_right = 1015.0
+offset_bottom = -375.0
+theme_override_fonts/font = ExtResource("10_nwggm")
+theme_override_font_sizes/font_size = 24
+text = "%"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+tab_input_mode = false
+virtual_keyboard_enabled = false
+
+[node name="TextEdit3" type="TextEdit" parent="." unique_id=1392657217]
+offset_left = 980.0
+offset_top = -338.0
+offset_right = 1015.0
+offset_bottom = -295.0
+theme_override_fonts/font = ExtResource("10_nwggm")
+theme_override_font_sizes/font_size = 24
+text = "%"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+tab_input_mode = false
+virtual_keyboard_enabled = false
+
+[node name="TextEdit4" type="TextEdit" parent="." unique_id=1966661210]
+offset_left = 976.0
+offset_top = -266.0
+offset_right = 1011.0
+offset_bottom = -223.0
+theme_override_fonts/font = ExtResource("10_nwggm")
+theme_override_font_sizes/font_size = 24
+text = "%"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+tab_input_mode = false
+virtual_keyboard_enabled = false
+
+[node name="TextEdit5" type="TextEdit" parent="." unique_id=1968511721]
+offset_left = 976.0
+offset_top = -189.0
+offset_right = 1011.0
+offset_bottom = -146.0
+theme_override_fonts/font = ExtResource("10_nwggm")
+theme_override_font_sizes/font_size = 24
+text = "%"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+tab_input_mode = false
+virtual_keyboard_enabled = false
+
+[node name="TextEditS1" type="TextEdit" parent="." unique_id=2065293396]
+offset_left = 106.0
+offset_top = 609.0
+offset_right = 141.0
+offset_bottom = 652.0
+theme_override_fonts/font = ExtResource("10_nwggm")
+theme_override_font_sizes/font_size = 24
+text = "%"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+tab_input_mode = false
+virtual_keyboard_enabled = false
+
+[node name="TextEditS2" type="TextEdit" parent="." unique_id=1607134135]
+offset_left = 217.0
+offset_top = 609.0
+offset_right = 252.0
+offset_bottom = 652.0
+theme_override_fonts/font = ExtResource("10_nwggm")
+theme_override_font_sizes/font_size = 24
+text = "%"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+tab_input_mode = false
+virtual_keyboard_enabled = false
+
+[node name="TextEditS3" type="TextEdit" parent="." unique_id=856068135]
+offset_left = 333.0
+offset_top = 609.0
+offset_right = 368.0
+offset_bottom = 652.0
+theme_override_fonts/font = ExtResource("10_nwggm")
+theme_override_font_sizes/font_size = 24
+text = "%"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+tab_input_mode = false
+virtual_keyboard_enabled = false
+
+[node name="TextEditS4" type="TextEdit" parent="." unique_id=1827536343]
+offset_left = 450.0
+offset_top = 609.0
+offset_right = 485.0
+offset_bottom = 652.0
+theme_override_fonts/font = ExtResource("10_nwggm")
+theme_override_font_sizes/font_size = 24
+text = "%"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+tab_input_mode = false
+virtual_keyboard_enabled = false
+
+[node name="SoundSlots1" type="Button" parent="." unique_id=1364189756]
+offset_left = -279.0
+offset_top = 226.0
+offset_right = -161.0
+offset_bottom = 257.0
+text = "Slots1 Sound"
+
+[node name="SoundSlots2" type="Button" parent="." unique_id=1567797999]
+offset_left = -279.0
+offset_top = 270.0
+offset_right = -162.0
+offset_bottom = 301.0
+text = "Slots2 Sound"
+
+[node name="Bomb" parent="." unique_id=1605726017 instance=ExtResource("11_5o2ll")]
+position = Vector2(415, -204)
+scale = Vector2(0.5, 0.5)
+
+[node name="Tutorial" parent="." unique_id=993889986 instance=ExtResource("12_jcaet")]
+unique_name_in_owner = true
+visible = false
+
+[node name="MainMenu" type="TextureButton" parent="." unique_id=1674836647]
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 163.0
+offset_bottom = 58.0
+theme = ExtResource("13_b6kwo")
+texture_normal = ExtResource("14_lukrn")
+texture_pressed = ExtResource("14_lukrn")
+texture_hover = ExtResource("14_lukrn")
+texture_disabled = ExtResource("14_lukrn")
+texture_focused = ExtResource("14_lukrn")
+
+[node name="Label" type="Label" parent="MainMenu" unique_id=436401985]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 143.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.6361663, 0.25448444, 0.09677493, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_nwggm")
+theme_override_font_sizes/font_size = 30
+text = "(Esc) Menu"
+
+[node name="Restart" type="TextureButton" parent="." unique_id=108580267]
+offset_left = 14.0
+offset_top = 63.0
+offset_right = 163.0
+offset_bottom = 110.0
+theme = ExtResource("13_b6kwo")
+texture_normal = ExtResource("15_nj6ht")
+texture_pressed = ExtResource("15_nj6ht")
+texture_hover = ExtResource("15_nj6ht")
+texture_disabled = ExtResource("15_nj6ht")
+texture_focused = ExtResource("15_nj6ht")
+
+[node name="Label2" type="Label" parent="Restart" unique_id=76890835]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 126.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.6361663, 0.25448444, 0.09677493, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_nwggm")
+theme_override_font_sizes/font_size = 30
+text = "(X) Retry"
+
+[node name="Help" type="TextureButton" parent="." unique_id=534559555]
+offset_left = 14.0
+offset_top = 115.0
+offset_right = 163.0
+offset_bottom = 162.0
+theme = ExtResource("13_b6kwo")
+texture_normal = ExtResource("14_lukrn")
+texture_pressed = ExtResource("14_lukrn")
+texture_hover = ExtResource("14_lukrn")
+texture_disabled = ExtResource("14_lukrn")
+texture_focused = ExtResource("14_lukrn")
+
+[node name="Label" type="Label" parent="Help" unique_id=1126827559]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 6.0
+offset_right = 121.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.6361663, 0.25448444, 0.09677493, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_nwggm")
+theme_override_font_sizes/font_size = 30
+text = "(?) Help"
+
+[connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
+[connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]
+[connection signal="tile_released" from="MouseObject" to="Floor" method="_on_mouse_object_tile_released"]
+[connection signal="pressed" from="SoundSlots1" to="." method="_on_slots_sound" binds= ["slots1"]]
+[connection signal="pressed" from="SoundSlots2" to="." method="_on_slots_sound" binds= ["slots2"]]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Help" to="." method="_on_help_pressed"]
