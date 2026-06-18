@@ -55,6 +55,6 @@ func _on_slot_machine_moving_tile( is_moving : bool ) -> void:
 
 
 func _on_mouse_object_tile_released() -> void:
-	#print_debug("_on_mouse_object_tile_released...")
-	
-	Game.grid_tile_hovered.emit_signal("pressed")
+	if !Game.grid_tile_hovered:
+		return
+	Game.grid_tile_hovered.pressed.emit()

@@ -14,13 +14,15 @@ func _ready():
 
 func _process(_delta: float) -> void:
 	
+	var hovered = get_global_rect().has_point(get_global_mouse_position())
+
 	# switch the active time and save the data in the game file
-	if $Button.is_hovered() && !is_active_tile: 
+	if hovered && !is_active_tile:
 		is_active_tile = true
 		Game.grid_tile_hovered = self
-	
+
 	# clear the game information of the hovered object
-	if !$Button.is_hovered() && is_active_tile: 
+	if !hovered && is_active_tile:
 		is_active_tile = false
 		Game.grid_tile_hovered = null
 
