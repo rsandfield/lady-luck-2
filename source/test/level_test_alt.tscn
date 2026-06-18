@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://by85tavmk3ort" path="res://assets/art/placeholder-ladyluck.png" id="4_3f7hu"]
 [ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="5_fkpom"]
 [ext_resource type="Texture2D" uid="uid://di5rsokaqyg66" path="res://assets/art/placeholder-slygoddess.png" id="6_dr7xf"]
+[ext_resource type="Texture2D" uid="uid://t38yiy2q6q67" path="res://assets/icons/lightbulb.png" id="7_1k1e1"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="7_l4jha"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="8_248bq"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="10_nwggm"]
@@ -14,6 +15,216 @@
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="13_b6kwo"]
 [ext_resource type="Texture2D" uid="uid://br538pffgrles" path="res://assets/art/button-placeholder-main.png" id="14_lukrn"]
 [ext_resource type="Texture2D" uid="uid://b861e46gnkt8p" path="res://assets/art/button-placeholder-retry.png" id="15_nj6ht"]
+
+[sub_resource type="Animation" id="Animation_ihnwo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightbulbL1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightbulbL2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b58l3"]
+resource_name = "spinL"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightbulbL1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightbulbL2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LightbulbL3:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.3, 0.40000004),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LightbulbL4:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.39999998, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LightbulbL5:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 0.6, 0.70000005),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LightbulbL6:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.59999996, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LightbulbL7:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.7, 0.8, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+
+[sub_resource type="Animation" id="Animation_3f7hu"]
+resource_name = "spinR"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightbulbR1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6999999, 0.79999995, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightbulbR2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LightbulbR3:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 0.59999996, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LightbulbR4:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 0.49999997, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LightbulbR5:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.29999998, 0.39999995, 0.49999997),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LightbulbR6:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.19999999, 0.29999995, 0.39999995),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LightbulbR7:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.099999934, 0.19999996, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkpom"]
+_data = {
+&"RESET": SubResource("Animation_ihnwo"),
+&"spinL": SubResource("Animation_b58l3"),
+&"spinR": SubResource("Animation_3f7hu")
+}
 
 [node name="TestAltLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_1k1e1")
@@ -63,6 +274,116 @@ scale = Vector2(0.7, 0.7)
 mouse_filter = 2
 texture = ExtResource("6_dr7xf")
 flip_h = true
+
+[node name="Lights" type="Control" parent="." unique_id=2106890114]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayerL" type="AnimationPlayer" parent="Lights" unique_id=2024404905]
+libraries/ = SubResource("AnimationLibrary_fkpom")
+autoplay = &"spinL"
+
+[node name="AnimationPlayerR" type="AnimationPlayer" parent="Lights" unique_id=1645060]
+libraries/ = SubResource("AnimationLibrary_fkpom")
+autoplay = &"spinR"
+
+[node name="LightbulbL1" type="Sprite2D" parent="Lights" unique_id=1643664903]
+position = Vector2(604, 49.000008)
+rotation = -1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbL2" type="Sprite2D" parent="Lights" unique_id=1732959926]
+position = Vector2(603.75, 127.74999)
+rotation = -1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbL3" type="Sprite2D" parent="Lights" unique_id=1384367689]
+self_modulate = Color(1, 1, 1, 0.39215684)
+position = Vector2(603.75, 206.75)
+rotation = -1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbL4" type="Sprite2D" parent="Lights" unique_id=228743970]
+self_modulate = Color(1, 1, 1, 0.39215684)
+position = Vector2(603.75, 285.75)
+rotation = -1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbL5" type="Sprite2D" parent="Lights" unique_id=1662539843]
+self_modulate = Color(1, 1, 1, 0.39215684)
+position = Vector2(603.75, 364.75)
+rotation = -1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbL6" type="Sprite2D" parent="Lights" unique_id=1993575566]
+self_modulate = Color(1, 1, 1, 0.39215684)
+position = Vector2(603.75, 443.75)
+rotation = -1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbL7" type="Sprite2D" parent="Lights" unique_id=1294945434]
+self_modulate = Color(1, 1, 1, 0.39215684)
+position = Vector2(603.75, 522.75)
+rotation = -1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbR1" type="Sprite2D" parent="Lights" unique_id=1747727539]
+self_modulate = Color(1, 1, 1, 0.39215684)
+position = Vector2(1024, 49.000008)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbR2" type="Sprite2D" parent="Lights" unique_id=563999169]
+self_modulate = Color(1, 1, 1, 0.39215684)
+position = Vector2(1023.75, 127.74999)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbR3" type="Sprite2D" parent="Lights" unique_id=578190687]
+self_modulate = Color(1, 1, 1, 0.39215684)
+position = Vector2(1023.75, 206.75)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbR4" type="Sprite2D" parent="Lights" unique_id=1484655241]
+self_modulate = Color(1, 1, 1, 0.39215684)
+position = Vector2(1023.75, 285.75)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbR5" type="Sprite2D" parent="Lights" unique_id=422221413]
+self_modulate = Color(1, 1, 1, 0.39215684)
+position = Vector2(1023.75, 364.75)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbR6" type="Sprite2D" parent="Lights" unique_id=370152368]
+self_modulate = Color(1, 1, 1, 0.39215684)
+position = Vector2(1023.75, 443.75)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
+
+[node name="LightbulbR7" type="Sprite2D" parent="Lights" unique_id=1697802095]
+self_modulate = Color(1, 1, 1, 0.39215684)
+position = Vector2(1023.75, 522.75)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1k1e1")
 
 [node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("7_l4jha")]
 offset_right = 1087.0
