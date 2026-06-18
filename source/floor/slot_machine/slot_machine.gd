@@ -1,6 +1,9 @@
 class_name SlotMachine
 
 
+signal lever_pulled
+
+
 var _ui: SlotMachineUI
 var _wheels: Array[SlotWheel] = []
 var _selected: SlotWheel
@@ -9,6 +12,7 @@ var _selected: SlotWheel
 func set_ui(new_ui: SlotMachineUI) -> void:
 	_ui = new_ui
 	_ui.spin_requested.connect(spin_wheels)
+	_ui.spin_requested.connect(lever_pulled.emit)
 
 
 func set_wheel_count(count: int) -> void:

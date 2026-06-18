@@ -44,8 +44,6 @@ func spin(to: int) -> void:
 
 	var target_rotation = _slices[to].rotation
 	var delta := fmod(target_rotation - rotation, TAU)
-	if delta == 0:
-		return
 
 	if clockwise:
 		if delta > 0:

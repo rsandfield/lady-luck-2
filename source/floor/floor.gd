@@ -34,6 +34,7 @@ func _ready():
 		ItemResource.new(),
 	]
 	_spinner.set_items(items)
+	_slot_machine.lever_pulled.connect(_spinner.spin)
 
 
 func _on_grid_cell_pressed(slot: GridCell) -> void:
