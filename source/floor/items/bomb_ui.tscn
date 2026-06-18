@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ciom3mfekw3lc"]
+
+[ext_resource type="Script" uid="uid://6h26jw7ebkbs" path="res://source/floor/items/bomb_ui.gd" id="1_wl3p2"]
+[ext_resource type="Texture2D" uid="uid://bvq135wpkqx2o" path="res://assets/icons/unlit-bomb.svg" id="2_mf6ay"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf6ay"]
+
+[node name="BombUI" type="PanelContainer" unique_id=670917988]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mf6ay")
+script = ExtResource("1_wl3p2")
+metadata/_custom_type_script = "uid://6h26jw7ebkbs"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=422417009]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("2_mf6ay")
+expand_mode = 2

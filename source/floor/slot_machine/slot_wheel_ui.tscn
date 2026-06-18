@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bdyhkm8xfwp6t"]
 
 [ext_resource type="Script" uid="uid://dcnmyieiuf5je" path="res://source/floor/slot_machine/slot_wheel_ui.gd" id="1_5cm0c"]
-[ext_resource type="PackedScene" uid="uid://dqx08ig43fc2c" path="res://source/floor/tile_ui.tscn" id="1_fxvf1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2j45"]
 content_margin_left = 0.0
@@ -30,6 +29,135 @@ fill_to = Vector2(0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2j45"]
 
+[sub_resource type="Animation" id="Animation_cycle"]
+resource_name = "cycle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner/Slot1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.0, 1.5, 1.749, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(10, -37.5), Vector2(10, 37.5), Vector2(10, 112.5), Vector2(10, 187.5), Vector2(10, 187.5), Vector2(10, -75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spinner/Slot1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spinner/Slot2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.0, 1.249, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(10, 37.5), Vector2(10, 112.5), Vector2(10, 187.5), Vector2(10, 187.5), Vector2(10, -75)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spinner/Slot2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.0, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Spinner/Slot3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.749, 0.75, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(10, 112.5), Vector2(10, 187.5), Vector2(10, 187.5), Vector2(10, -75), Vector2(10, 37.5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Spinner/Slot3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Spinner/Slot4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.249, 0.25, 1.0, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(10, 187.5), Vector2(10, 187.5), Vector2(10, -75), Vector2(10, 37.5), Vector2(10, 112.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Spinner/Slot4:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.0, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [3],
+"method": &"_on_slot_swap"
+}, {
+"args": [2],
+"method": &"_on_slot_swap"
+}, {
+"args": [1],
+"method": &"_on_slot_swap"
+}, {
+"args": [0],
+"method": &"_on_slot_swap"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wheel"]
+_data = {
+&"cycle": SubResource("Animation_cycle")
+}
+
 [node name="SlotWheel" type="PanelContainer" unique_id=1975195812]
 custom_minimum_size = Vector2(95, 150)
 anchors_preset = 8
@@ -51,53 +179,28 @@ unique_name_in_owner = true
 clip_contents = true
 layout_mode = 2
 
-[node name="TileUI" parent="Spinner" unique_id=1894309720 instance=ExtResource("1_fxvf1")]
+[node name="Slot1" type="Control" parent="Spinner"]
 layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 10.0
-offset_top = 37.5
-offset_right = 85.0
-offset_bottom = 112.5
-grow_horizontal = 1
-grow_vertical = 1
-size_flags_horizontal = 0
-size_flags_vertical = 4
+position = Vector2(10, -37.5)
+size = Vector2(75, 75)
 
-[node name="TileUI2" parent="Spinner" unique_id=1871204475 instance=ExtResource("1_fxvf1")]
+[node name="Slot2" type="Control" parent="Spinner"]
 layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 10.0
-offset_top = -37.5
-offset_right = 85.0
-offset_bottom = 37.5
-grow_horizontal = 1
-grow_vertical = 1
-size_flags_horizontal = 0
-size_flags_vertical = 4
+position = Vector2(10, 37.5)
+size = Vector2(75, 75)
 
-[node name="TileUI3" parent="Spinner" unique_id=1704509895 instance=ExtResource("1_fxvf1")]
+[node name="Slot3" type="Control" parent="Spinner"]
 layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 10.0
-offset_top = 112.5
-offset_right = 85.0
-offset_bottom = 187.5
-grow_horizontal = 1
-grow_vertical = 1
-size_flags_horizontal = 0
-size_flags_vertical = 4
+position = Vector2(10, 112.5)
+size = Vector2(75, 75)
+
+[node name="Slot4" type="Control" parent="Spinner"]
+layout_mode = 0
+position = Vector2(10, 187.5)
+size = Vector2(75, 75)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries/ = SubResource("AnimationLibrary_wheel")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1909298441]
 layout_mode = 2

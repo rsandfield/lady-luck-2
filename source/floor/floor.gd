@@ -24,17 +24,13 @@ func _ready():
 
 
 func _on_grid_cell_pressed(slot: GridCell) -> void:
-	
-	if slot.is_occupied():
-		return
-	
 	var item = _slot_machine.get_selected_item()
 	if !item:
 		return
 	if !slot.is_legal_play(item):
 		return
 	
-	slot.set_tile(item)
+	item.play(slot)
 	_slot_machine.consume_selected()
 
 	if _grid.all_paths_finished():
@@ -45,12 +41,9 @@ func _on_slot_machine_moving_tile( is_moving : bool ) -> void:
 	#print_debug( "_on_slot_machine_moving_tile: ")
 	
 	moving_tile.emit( is_moving )
-	
-	pass
+
 
 func _on_mouse_object_tile_released() -> void:
 	#print_debug("_on_mouse_object_tile_released...")
 	
 	Game.grid_tile_hovered.emit_signal("pressed")
-	
-	pass

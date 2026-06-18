@@ -5,7 +5,8 @@ signal grid_cell_pressed(cell: GridCell)
 
 
 var _ui: GridCellUI
-var _tile: TileResource
+var _tile: ItemResource
+var is_fixed: bool = false
 
 var _neighbors: Dictionary[TileResource.Direction, GridCell]
 
@@ -41,21 +42,8 @@ func is_door() -> bool:
 	return _tile && _tile.is_door
 
 
-func is_legal_play(tile: TileResource) -> bool:
-	# var matches = 0
-	for direction in TileResource.Direction.values():
-		if !_neighbors.has(direction):
-			if tile.get_side(direction) > 0:
-				return false
-			continue
-
-		var _neighbor = _neighbors[direction]
-		if !_neighbor.is_legal_neighbor(TileResource.opposite(direction), tile):
-			return false
-		# if _neighbor.is_occupied() && !_neighbor.is_door():
-		# 	matches += 1
-	return true
-	# return matches > 0
+func is_legal_play(item: ItemResource) -> bool:
+	return item.is_legal_play(self)
 		
 
 func is_legal_neighbor(direction: TileResource.Direction, tile: TileResource) -> bool:
@@ -67,6 +55,11 @@ func is_legal_neighbor(direction: TileResource.Direction, tile: TileResource) ->
 func set_tile(tile: TileResource) -> void:
 	_tile = tile
 	_ui.set_tile(tile)
+
+
+func clear() -> void:
+	_ui.set_tile(null)
+	_tile = null
 
 
 func _pressed() -> void:

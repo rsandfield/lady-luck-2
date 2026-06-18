@@ -5,7 +5,7 @@ signal slot_wheel_pressed(wheel: SlotWheel)
 
 
 var _ui: SlotWheelUI
-var _tile: TileResource
+var _item: ItemResource
 
 
 func set_ui(new_ui: SlotWheelUI):
@@ -14,20 +14,25 @@ func set_ui(new_ui: SlotWheelUI):
 
 
 func spin() -> void:
-	var tiles: Array[TileResource] = []
+	var items: Array[ItemResource] = []
 	for i in 8:
-		tiles.append(TileResource.random_two_side())
-	_tile = tiles[0]
-	_ui.spin(tiles)
+		items.append(TileResource.random_two_side())
+	items.append(BombResource.new())
+	items.shuffle()
+	_item = items[-2]
+	await _ui.spin(items)
 
 
-func set_resource(resource: TileResource) -> void:
-	_tile = resource
-	_ui.populate(_tile)
+func set_resource(resource: ItemResource) -> void:
+	_item = resource
+	if resource:
+		_ui.populate(_item)
+	else:
+		_ui.clear_center()
 
 
-func get_reward() -> TileResource:
-	return _tile
+func get_reward() -> ItemResource:
+	return _item
 
 
 func _pressed() -> void:
