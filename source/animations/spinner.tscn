@@ -398,10 +398,13 @@ shader_parameter/frame_scope = 3.0
 shader_parameter/use_system_time = true
 shader_parameter/time_accel = 5.0
 
-[node name="Spinner" type="Control" unique_id=1325377327]
+[node name="TestSpinner" type="Control" unique_id=1325377327]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_o7elm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1347281352]
+libraries/ = SubResource("AnimationLibrary_xpc5s")
 
 [node name="TileUI1" parent="." unique_id=1894309720 instance=ExtResource("1_1heng")]
 layout_mode = 1
@@ -424,13 +427,10 @@ pivot_offset = Vector2(37, 38)
 
 [node name="TileUI4" parent="." unique_id=2011675026 instance=ExtResource("1_1heng")]
 layout_mode = 1
-offset_top = 150.0
+offset_top = -150.0
 offset_right = 75.0
-offset_bottom = 225.00009
+offset_bottom = -74.99991
 pivot_offset = Vector2(37, 38)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1347281352]
-libraries/ = SubResource("AnimationLibrary_xpc5s")
 
 [node name="Panel1" type="Panel" parent="." unique_id=1178447516]
 layout_mode = 0
@@ -481,10 +481,10 @@ text = "Slots"
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1773014202]
 material = SubResource("ShaderMaterial_ejitm")
 layout_mode = 0
-offset_left = 35.0
-offset_top = -183.0
-offset_right = 131.0
-offset_bottom = -85.0
+offset_left = 263.0
+offset_top = -205.0
+offset_right = 359.0
+offset_bottom = -107.0
 
 [connection signal="pressed" from="Button0" to="." method="_on_button_0_pressed"]
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]

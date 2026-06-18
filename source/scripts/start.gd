@@ -203,9 +203,9 @@ func _on_music_pressed(track: int) -> void:
 
 func _update_music() -> void:
 	
-	$MarginContainer/SoundControl/MusicButton/Music1/Panel.visible = (Data.setting_music_type == 1)
-	$MarginContainer/SoundControl/MusicButton/Music2/Panel.visible = (Data.setting_music_type == 2)
-	$MarginContainer/SoundControl/MusicButton/Music3/Panel.visible = (Data.setting_music_type == 3)
+	$InterfaceContainer/SoundControl/MusicButton/Music1/Panel.visible = (Data.setting_music_type == 1)
+	$InterfaceContainer/SoundControl/MusicButton/Music2/Panel.visible = (Data.setting_music_type == 2)
+	$InterfaceContainer/SoundControl/MusicButton/Music3/Panel.visible = (Data.setting_music_type == 3)
 	
 	emit_signal("update_music")
 	

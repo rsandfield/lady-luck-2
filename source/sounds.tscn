@@ -3,6 +3,8 @@
 [ext_resource type="AudioStream" uid="uid://dh7sose6r7a7q" path="res://assets/sound/test_music.mp3" id="1_g4kf4"]
 [ext_resource type="Script" uid="uid://bxc8mhak5fknk" path="res://source/scripts/sounds.gd" id="1_x0t4m"]
 [ext_resource type="AudioStream" uid="uid://bogsx64ssvgiv" path="res://assets/sound/test_sfx.mp3" id="3_4lxu0"]
+[ext_resource type="AudioStream" uid="uid://8mik1mr0b67p" path="res://assets/sound/slots1.mp3" id="4_woeun"]
+[ext_resource type="AudioStream" uid="uid://qkn4cqm23ymr" path="res://assets/sound/slots2.mp3" id="5_g56u4"]
 
 [node name="Sounds" type="Node2D" unique_id=1616631272]
 script = ExtResource("1_x0t4m")
@@ -15,4 +17,14 @@ bus = &"Music"
 [node name="Chime" type="AudioStreamPlayer2D" parent="." unique_id=1121235154]
 unique_name_in_owner = true
 stream = ExtResource("3_4lxu0")
+bus = &"SFX"
+
+[node name="Slots1" type="AudioStreamPlayer2D" parent="." unique_id=1554741759]
+unique_name_in_owner = true
+stream = ExtResource("4_woeun")
+bus = &"SFX"
+
+[node name="Slots2" type="AudioStreamPlayer2D" parent="." unique_id=745377453]
+unique_name_in_owner = true
+stream = ExtResource("5_g56u4")
 bus = &"SFX"

@@ -3,6 +3,8 @@ extends Level
 
 @onready var _mouse_object : MouseObject = $MouseObject
 
+signal slots_sound ( sound_type : String )
+
 
 func _on_move_mouse_object( _mouse_new_position : Vector2 ): 
 	
@@ -28,5 +30,11 @@ func _on_switch_pressed() -> void:
 	
 	$LadyLuckLight.visible = $LadyLuckDark.visible
 	$LadyLuckDark.visible = !$LadyLuckLight.visible
+	
+	pass
+
+func _on_slots_sound( sound_type : String ) -> void: 
+	
+	slots_sound.emit( sound_type )
 	
 	pass

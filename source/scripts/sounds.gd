@@ -5,6 +5,8 @@ var track_1 = "res://assets/sound/track_1_hyperfishation.mp3"
 var track_2 = "res://assets/sound/track_2_melodys_melodies.mp3"
 var track_3 = "res://assets/sound/track_3_just_a_feeling.mp3"
 
+var sound_test_time = 0 
+
 
 func _ready():
 	
@@ -12,9 +14,22 @@ func _ready():
 	
 	pass
 
+func _process(_delta: float) -> void:
+	
+	if sound_test_time != 0 && sound_test_time < Time.get_ticks_msec():
+		sound_test_time = 0
+		_stop_all_sounds()
+	
+	pass
+
 func _on_start_play_test_sound() -> void:
 	
-	%Chime.play()
+	#%Chime.play()
+	#_on_slot_machine_sound("slots1")
+	_on_slot_machine_sound("slots2")
+	
+	sound_test_time = Time.get_ticks_msec() + 800
+	print_debug( Time.get_ticks_msec() )
 	
 	pass
 
@@ -61,5 +76,24 @@ func _set_music_track() -> void:
 	if Data.setting_music_type == 3 : %Music.stream = load(track_3) 
 	
 	%Music.play()
+	
+	pass
+
+func _on_slot_machine_sound( type : String ) -> void: 
+	
+	if type == "slots1": 
+		_stop_all_sounds()
+		%Slots1.play()
+	
+	if type == "slots2": 
+		_stop_all_sounds()
+		%Slots2.play()
+	
+	pass
+
+func _stop_all_sounds() -> void:  
+	
+	%Slots1.stop()
+	%Slots2.stop()
 	
 	pass

@@ -1,0 +1,4 @@
+[gd_resource type="Theme" format=3 uid="uid://dpjv5lllxju8b"]
+
+[resource]
+CheckButton/colors/button_checked_color = Color(0.7884269, 0.43418047, 1, 1)
