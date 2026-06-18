@@ -2,14 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cqs0i362r71jr" path="res://source/floor/grid/grid_ui.gd" id="1_ojt5u"]
 [ext_resource type="PackedScene" uid="uid://byn7ec3f5hba3" path="res://source/floor/grid/grid_cell_ui.tscn" id="2_7fr7u"]
-[ext_resource type="PackedScene" uid="uid://n5256gebrqyr" path="res://source/floor/grid/flag.tscn" id="2_fok3d"]
 
 [node name="Grid" type="GridContainer" unique_id=599105573]
-columns = 7
+columns = 5
 script = ExtResource("1_ojt5u")
-
-[node name="Flag" parent="." unique_id=1882001034 instance=ExtResource("2_fok3d")]
-layout_mode = 2
 
 [node name="GridCell0" parent="." unique_id=1071552136 instance=ExtResource("2_7fr7u")]
 layout_mode = 2
@@ -24,13 +20,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="GridCell4" parent="." unique_id=215635349 instance=ExtResource("2_7fr7u")]
-layout_mode = 2
-
-[node name="Flag2" parent="." unique_id=1297518426 instance=ExtResource("2_fok3d")]
-layout_mode = 2
-flip_h = true
-
-[node name="Flag3" parent="." unique_id=1224434551 instance=ExtResource("2_fok3d")]
 layout_mode = 2
 
 [node name="GridCell5" parent="." unique_id=1482013018 instance=ExtResource("2_7fr7u")]
@@ -48,13 +37,6 @@ layout_mode = 2
 [node name="GridCell9" parent="." unique_id=1620570678 instance=ExtResource("2_7fr7u")]
 layout_mode = 2
 
-[node name="Flag4" parent="." unique_id=508310869 instance=ExtResource("2_fok3d")]
-layout_mode = 2
-flip_h = true
-
-[node name="Flag5" parent="." unique_id=1245263867 instance=ExtResource("2_fok3d")]
-layout_mode = 2
-
 [node name="GridCell10" parent="." unique_id=1396557386 instance=ExtResource("2_7fr7u")]
 layout_mode = 2
 
@@ -68,13 +50,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="GridCell14" parent="." unique_id=1717052109 instance=ExtResource("2_7fr7u")]
-layout_mode = 2
-
-[node name="Flag6" parent="." unique_id=1840628092 instance=ExtResource("2_fok3d")]
-layout_mode = 2
-flip_h = true
-
-[node name="Flag7" parent="." unique_id=809711873 instance=ExtResource("2_fok3d")]
 layout_mode = 2
 
 [node name="GridCell15" parent="." unique_id=1860320371 instance=ExtResource("2_7fr7u")]
@@ -92,13 +67,6 @@ layout_mode = 2
 [node name="GridCell19" parent="." unique_id=2117779323 instance=ExtResource("2_7fr7u")]
 layout_mode = 2
 
-[node name="Flag8" parent="." unique_id=1973958891 instance=ExtResource("2_fok3d")]
-layout_mode = 2
-flip_h = true
-
-[node name="Flag9" parent="." unique_id=450798759 instance=ExtResource("2_fok3d")]
-layout_mode = 2
-
 [node name="GridCell20" parent="." unique_id=737627446 instance=ExtResource("2_7fr7u")]
 layout_mode = 2
 
@@ -112,13 +80,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="GridCell24" parent="." unique_id=508987895 instance=ExtResource("2_7fr7u")]
-layout_mode = 2
-
-[node name="Flag10" parent="." unique_id=1986049553 instance=ExtResource("2_fok3d")]
-layout_mode = 2
-flip_h = true
-
-[node name="Flag11" parent="." unique_id=2077738756 instance=ExtResource("2_fok3d")]
 layout_mode = 2
 
 [node name="GridCell25" parent="." unique_id=1547160536 instance=ExtResource("2_7fr7u")]
@@ -136,13 +97,6 @@ layout_mode = 2
 [node name="GridCell29" parent="." unique_id=1425987722 instance=ExtResource("2_7fr7u")]
 layout_mode = 2
 
-[node name="Flag12" parent="." unique_id=2133628180 instance=ExtResource("2_fok3d")]
-layout_mode = 2
-flip_h = true
-
-[node name="Flag13" parent="." unique_id=632966630 instance=ExtResource("2_fok3d")]
-layout_mode = 2
-
 [node name="GridCell30" parent="." unique_id=1930160150 instance=ExtResource("2_7fr7u")]
 layout_mode = 2
 
@@ -157,7 +111,3 @@ layout_mode = 2
 
 [node name="GridCell34" parent="." unique_id=1155261175 instance=ExtResource("2_7fr7u")]
 layout_mode = 2
-
-[node name="Flag14" parent="." unique_id=133423596 instance=ExtResource("2_fok3d")]
-layout_mode = 2
-flip_h = true

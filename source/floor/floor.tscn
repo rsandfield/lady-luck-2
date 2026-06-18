@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bo1dgiub0w3xr"]
 
 [ext_resource type="Script" uid="uid://b8y7rdl6wrgh4" path="res://source/floor/floor.gd" id="1_vqkr4"]
-[ext_resource type="PackedScene" uid="uid://clwj4o2t31n4g" path="res://source/floor/wheel/spinner_ui.tscn" id="2_bey53"]
 [ext_resource type="PackedScene" uid="uid://cu2o14flw07o6" path="res://source/floor/slot_machine/slot_machine_ui.tscn" id="2_p1kb0"]
 [ext_resource type="PackedScene" uid="uid://cksm1x0jrd8ge" path="res://source/floor/grid/grid_ui.tscn" id="3_vqkr4"]
 
@@ -32,30 +31,6 @@ alignment = 1
 [node name="Slots" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=437422763]
 layout_mode = 2
 alignment = 2
-
-[node name="Spinner" parent="MarginContainer/HBoxContainer/Slots" unique_id=1656173699 instance=ExtResource("2_bey53")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 8
-
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/Slots/Spinner" unique_id=113627982]
-custom_minimum_size = Vector2(30, 30)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/Slots" unique_id=290917943]
-layout_mode = 2
-size_flags_vertical = 3
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/Slots" unique_id=182174465]
 layout_mode = 2

@@ -12,8 +12,3 @@ func play(slot: GridCell) -> void:
 
 func ui_scene() -> PackedScene:
 	return preload("./bomb_ui.tscn")
-
-
-func wheel_color() -> Color:
-	return Color.PURPLE
-
