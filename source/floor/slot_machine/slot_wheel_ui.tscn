@@ -1,33 +1,7 @@
 [gd_scene format=3 uid="uid://bdyhkm8xfwp6t"]
 
 [ext_resource type="Script" uid="uid://dcnmyieiuf5je" path="res://source/floor/slot_machine/slot_wheel_ui.gd" id="1_5cm0c"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2j45"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0, 0, 0, 0)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.8, 0.72156864, 0, 1)
-corner_detail = 5
-expand_margin_top = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="Gradient" id="Gradient_b2j45"]
-offsets = PackedFloat32Array(0, 0.2, 0.8, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_u4l2h"]
-gradient = SubResource("Gradient_b2j45")
-width = 75
-height = 75
-fill_to = Vector2(0, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2j45"]
+[ext_resource type="Texture2D" uid="uid://d4dokgb8ho2qa" path="res://assets/art/metal-tileset-CC0.png" id="2_b2j45"]
 
 [sub_resource type="Animation" id="Animation_cycle"]
 resource_name = "cycle"
@@ -40,7 +14,7 @@ tracks/0/path = NodePath("Spinner/Slot1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.0, 1.5, 1.749, 1.75),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 1.749, 1.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(10, -37.5), Vector2(10, 37.5), Vector2(10, 112.5), Vector2(10, 187.5), Vector2(10, 187.5), Vector2(10, -75)]
@@ -64,7 +38,7 @@ tracks/2/path = NodePath("Spinner/Slot2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.0, 1.249, 1.25),
+"times": PackedFloat32Array(0, 0.5, 1, 1.249, 1.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(10, 37.5), Vector2(10, 112.5), Vector2(10, 187.5), Vector2(10, 187.5), Vector2(10, -75)]
@@ -76,7 +50,7 @@ tracks/3/path = NodePath("Spinner/Slot2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.0, 1.25),
+"times": PackedFloat32Array(0, 1, 1.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -112,7 +86,7 @@ tracks/6/path = NodePath("Spinner/Slot4:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.249, 0.25, 1.0, 1.5),
+"times": PackedFloat32Array(0, 0.249, 0.25, 1, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(10, 187.5), Vector2(10, 187.5), Vector2(10, -75), Vector2(10, 37.5), Vector2(10, 112.5)]
@@ -136,7 +110,7 @@ tracks/8/path = NodePath(".")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.0, 1.5),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
 "args": [3],
@@ -158,6 +132,18 @@ _data = {
 &"cycle": SubResource("Animation_cycle")
 }
 
+[sub_resource type="Gradient" id="Gradient_b2j45"]
+offsets = PackedFloat32Array(0, 0.2, 0.8, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u4l2h"]
+gradient = SubResource("Gradient_b2j45")
+width = 75
+height = 75
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2j45"]
+
 [node name="SlotWheel" type="PanelContainer" unique_id=1975195812]
 custom_minimum_size = Vector2(95, 150)
 anchors_preset = 8
@@ -171,35 +157,50 @@ offset_right = 57.5
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_b2j45")
 script = ExtResource("1_5cm0c")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=951285970]
+position = Vector2(46.499973, 74.99999)
+scale = Vector2(1.0208334, 1.8125001)
+texture = ExtResource("2_b2j45")
+hframes = 8
+vframes = 14
+frame = 35
 
 [node name="Spinner" type="Control" parent="." unique_id=334840613]
 unique_name_in_owner = true
 clip_contents = true
 layout_mode = 2
 
-[node name="Slot1" type="Control" parent="Spinner"]
-layout_mode = 0
-position = Vector2(10, -37.5)
-size = Vector2(75, 75)
+[node name="Slot1" type="Control" parent="Spinner" unique_id=1290064735]
+anchors_preset = 0
+offset_left = 10.0
+offset_top = -37.5
+offset_right = 85.0
+offset_bottom = 37.5
 
-[node name="Slot2" type="Control" parent="Spinner"]
-layout_mode = 0
-position = Vector2(10, 37.5)
-size = Vector2(75, 75)
+[node name="Slot2" type="Control" parent="Spinner" unique_id=1970291197]
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 37.5
+offset_right = 85.0
+offset_bottom = 112.5
 
-[node name="Slot3" type="Control" parent="Spinner"]
-layout_mode = 0
-position = Vector2(10, 112.5)
-size = Vector2(75, 75)
+[node name="Slot3" type="Control" parent="Spinner" unique_id=767511695]
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 112.5
+offset_right = 85.0
+offset_bottom = 187.5
 
-[node name="Slot4" type="Control" parent="Spinner"]
-layout_mode = 0
-position = Vector2(10, 187.5)
-size = Vector2(75, 75)
+[node name="Slot4" type="Control" parent="Spinner" unique_id=1080912901]
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 187.5
+offset_right = 85.0
+offset_bottom = 262.5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1324897281]
 libraries/ = SubResource("AnimationLibrary_wheel")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1909298441]

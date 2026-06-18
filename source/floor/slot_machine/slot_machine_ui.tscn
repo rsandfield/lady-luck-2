@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://vakxrvgs6bgh" path="res://source/floor/slot_machine/slot_machine_ui.gd" id="1_gru50"]
 [ext_resource type="PackedScene" uid="uid://bdyhkm8xfwp6t" path="res://source/floor/slot_machine/slot_wheel_ui.tscn" id="2_8nnqb"]
 [ext_resource type="Texture2D" uid="uid://cym4ab1giibqq" path="res://assets/icons/red_circle.tres" id="3_vr6dc"]
+[ext_resource type="Texture2D" uid="uid://d4dokgb8ho2qa" path="res://assets/art/metal-tileset-CC0.png" id="3_wmcta"]
 
 [sub_resource type="Gradient" id="Gradient_vr6dc"]
 offsets = PackedFloat32Array(0.64)
@@ -12,6 +13,9 @@ colors = PackedColorArray(1, 1, 1, 0)
 gradient = SubResource("Gradient_vr6dc")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vr6dc"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_x2wtt"]
 length = 0.001
@@ -66,8 +70,18 @@ layout_mode = 2
 [node name="SlotWheel4" parent="." unique_id=877449426 instance=ExtResource("2_8nnqb")]
 layout_mode = 2
 
+[node name="Background" type="Sprite2D" parent="." unique_id=1707087731]
+position = Vector2(494.5, 77.5)
+scale = Vector2(0.90624976, 1.6979165)
+texture = ExtResource("3_wmcta")
+hframes = 8
+vframes = 14
+frame = 35
+
 [node name="Button" type="Button" parent="." unique_id=1964202832]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+action_mode = 0
 icon = SubResource("GradientTexture2D_wmcta")
 
 [node name="Panel" type="Panel" parent="Button" unique_id=183177856]
@@ -77,6 +91,7 @@ offset_left = 30.0
 offset_top = 31.0
 offset_right = 40.0
 offset_bottom = 131.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vr6dc")
 
 [node name="Lever" type="Sprite2D" parent="." unique_id=1897849990]
 position = Vector2(496, 36)
@@ -86,4 +101,4 @@ texture = ExtResource("3_vr6dc")
 root_node = NodePath("../Button")
 libraries/ = SubResource("AnimationLibrary_11yfp")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_lever_pulled"]

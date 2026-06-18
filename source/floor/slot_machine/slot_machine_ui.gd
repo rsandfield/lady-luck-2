@@ -2,6 +2,7 @@ class_name SlotMachineUI
 extends Node
 
 signal spin_requested
+signal spin_sound_play
 signal moving_tile ( is_clicked : bool )
 
 const WheelUIScene = preload("./slot_wheel_ui.tscn")
@@ -11,6 +12,7 @@ var wheels: Array[SlotWheelUI] = []
 func _ready():
 	populate_wheels([])
 	$Button.pressed.connect(spin_requested.emit)
+	$Button.pressed.connect(spin_sound_play.emit)
 
 
 func populate_wheels(new_wheels: Array[SlotWheel]) -> void:
@@ -38,8 +40,9 @@ func _on_slot_cell_moving_tile( is_moving : bool ) -> void:
 	pass
 
 
-func _on_button_pressed() -> void:
+func _on_lever_pulled() -> void:
 	
 	$AnimationPlayer.play("lever_pull")
+	
 	
 	pass

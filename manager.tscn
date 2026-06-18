@@ -123,4 +123,5 @@ libraries/ = SubResource("AnimationLibrary_34fp1")
 [connection signal="return_to_menu" from="TestLevel" to="." method="_on_return_to_menu"]
 [connection signal="slots_sound" from="TestLevel" to="Sounds" method="_on_slot_machine_sound"]
 [connection signal="return_to_menu" from="TestAltLevel" to="." method="_on_return_to_menu"]
+[connection signal="slots_sound" from="TestAltLevel" to="Sounds" method="_on_slot_machine_sound"]
 [connection signal="animation_finished" from="Transitions" to="." method="_on_transitions_animation_finished"]
