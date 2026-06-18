@@ -3,6 +3,9 @@ class_name SpinnerWheelUI
 extends Control
 
 
+signal finished
+
+
 @export var radius := 100.0
 @export var line_width := 2.0
 
@@ -28,6 +31,7 @@ func make_pie(slices: Array[Color]) -> void:
 		slice.position = size / 2
 		slice.line_width = line_width
 		add_child(slice)
+		move_child(slice, 0)
 		_slices.append(slice)
 
 		slice.rotate(i * TAU / float(count))
@@ -39,10 +43,9 @@ func spin(to: int) -> void:
 	var slice_count = len(_slices)
 	@warning_ignore("INTEGER_DIVISION")
 	var rotations = to / slice_count
-	to %= slice_count
-	print(to)
+	to = posmod(to, slice_count)
 
-	var target_rotation = _slices[to].rotation
+	var target_rotation = -_slices[to].rotation
 	var delta := fmod(target_rotation - rotation, TAU)
 
 	if clockwise:
@@ -73,3 +76,4 @@ func spin(to: int) -> void:
 	else:
 		rot += TAU
 	tween.tween_property(self, "rotation", rot, 0.5)
+	tween.finished.connect(finished.emit)

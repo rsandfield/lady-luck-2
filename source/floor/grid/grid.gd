@@ -102,3 +102,7 @@ func _door_visited(visited: Array[GridCell]) -> bool:
 		if cell.is_door():
 			return true
 	return false
+
+
+func get_row(row: int) -> Array[GridCell]:
+	return _cells.slice(row * _size.x, row * (_size.x + 1))
