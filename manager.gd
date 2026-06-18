@@ -110,12 +110,15 @@ func _on_play_transition() -> void:
 	
 	pass
 
-func _set_window_position(): 
+func _set_window_position():
 	#print_debug("_on_set_window_position...")
-	
+
+	if OS.get_name() == "Web":
+		return
+
 	# starts minimized and transparent to hide the startup transition
 	# set the mode to windowed and set the last user set position at startup
-	
+
 	get_window().mode = Window.Mode.MODE_WINDOWED
 	
 	get_window().borderless = false
