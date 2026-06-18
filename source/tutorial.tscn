@@ -1,0 +1,345 @@
+[gd_scene format=3 uid="uid://dfc8q1bm3gkum"]
+
+[ext_resource type="Script" uid="uid://cxnivv587wn01" path="res://source/scripts/tutorial.gd" id="1_mim7t"]
+[ext_resource type="StyleBox" uid="uid://b4f3nm00krk7d" path="res://assets/themes/style_box_flat_green_light_empty.tres" id="2_jo60t"]
+[ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="2_kv874"]
+[ext_resource type="Theme" uid="uid://c67s0u66fsib8" path="res://assets/themes/tutorial_theme.tres" id="3_kv874"]
+[ext_resource type="StyleBox" uid="uid://cxmouk6dkrx6e" path="res://assets/themes/style_box_flat_green_light.tres" id="3_y28j1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mim7t"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Tutorial" type="Control" unique_id=993889986]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1154.0
+offset_bottom = 648.0
+script = ExtResource("1_mim7t")
+
+[node name="Panel1" type="Panel" parent="." unique_id=1056269566]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 465.0
+offset_right = 67.0
+offset_bottom = 668.0
+
+[node name="Panel2" type="Panel" parent="." unique_id=1403359765]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 465.0
+offset_right = 611.0
+offset_bottom = 695.0
+
+[node name="Panel3" type="Panel" parent="." unique_id=524468592]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = -20.0
+offset_right = 1163.0
+offset_bottom = 682.0
+
+[node name="PanelLuck" type="Panel" parent="." unique_id=1567959409]
+layout_mode = 0
+offset_left = -88.0
+offset_top = -69.0
+offset_right = 611.0
+offset_bottom = 465.0
+
+[node name="PanelGrid" type="Panel" parent="." unique_id=510186832]
+layout_mode = 0
+offset_left = 611.0
+offset_top = -122.0
+offset_right = 1016.0
+offset_bottom = 785.0
+
+[node name="PanelSlots" type="Panel" parent="." unique_id=8236084]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 465.0
+offset_right = 533.0
+offset_bottom = 765.0
+
+[node name="HighlightSlots" type="Panel" parent="." unique_id=1194960194]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 466.0
+offset_right = 529.0
+offset_bottom = 649.0
+theme_override_styles/panel = ExtResource("2_jo60t")
+
+[node name="HighlightGrid" type="Panel" parent="." unique_id=61669822]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 3.0
+offset_right = 1016.0
+offset_bottom = 646.0
+theme_override_styles/panel = ExtResource("2_jo60t")
+
+[node name="HighlightLuck" type="Panel" parent="." unique_id=954046611]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 609.0
+offset_bottom = 464.0
+theme_override_styles/panel = ExtResource("2_jo60t")
+
+[node name="Dialog0" type="Panel" parent="." unique_id=1755537624]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 245.0
+offset_top = 282.0
+offset_right = 477.0
+offset_bottom = 424.0
+theme_override_styles/panel = ExtResource("3_y28j1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialog0" unique_id=2105531460]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 220.0
+offset_bottom = 130.0
+theme_override_fonts/normal_font = ExtResource("2_kv874")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Welcome to Lady Luck's Door!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dialog1" type="Panel" parent="." unique_id=1090317603]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 245.0
+offset_top = 282.0
+offset_right = 477.0
+offset_bottom = 424.0
+theme_override_styles/panel = ExtResource("3_y28j1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialog1" unique_id=1753351922]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 220.0
+offset_bottom = 130.0
+theme_override_fonts/normal_font = ExtResource("2_kv874")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Pick up tiles from this area"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dialog2" type="Panel" parent="." unique_id=71286394]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 245.0
+offset_top = 282.0
+offset_right = 477.0
+offset_bottom = 424.0
+theme_override_styles/panel = ExtResource("3_y28j1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialog2" unique_id=1230338138]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 220.0
+offset_bottom = 130.0
+theme_override_fonts/normal_font = ExtResource("2_kv874")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Drop tiles here to make a path to my door"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dialog3" type="Panel" parent="." unique_id=275322970]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 245.0
+offset_top = 282.0
+offset_right = 477.0
+offset_bottom = 424.0
+theme_override_styles/panel = ExtResource("3_y28j1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialog3" unique_id=393910542]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 220.0
+offset_bottom = 130.0
+theme_override_fonts/normal_font = ExtResource("2_kv874")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "If you are lucky then I might help you"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dialog4" type="Panel" parent="." unique_id=894958690]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 245.0
+offset_top = 282.0
+offset_right = 477.0
+offset_bottom = 424.0
+theme_override_styles/panel = ExtResource("3_y28j1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialog4" unique_id=844933638]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 220.0
+offset_bottom = 130.0
+theme_override_fonts/normal_font = ExtResource("2_kv874")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "If you are unlucky then, well... boom!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dialog5" type="Panel" parent="." unique_id=971536283]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 245.0
+offset_top = 282.0
+offset_right = 477.0
+offset_bottom = 424.0
+theme_override_styles/panel = ExtResource("3_y28j1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialog5" unique_id=1455623269]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 220.0
+offset_bottom = 130.0
+theme_override_fonts/normal_font = ExtResource("2_kv874")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Calculate your risk carefully"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=808864935]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -144.0
+offset_top = -163.0
+offset_right = 1214.0
+offset_bottom = 807.0
+
+[node name="Help1" type="Button" parent="." unique_id=1859149641]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 290.0
+offset_top = 429.0
+offset_right = 314.0
+offset_bottom = 456.0
+theme = ExtResource("3_kv874")
+theme_override_font_sizes/font_size = 12
+text = "1"
+
+[node name="Panel" type="Panel" parent="Help1" unique_id=1253010163]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 25.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mim7t")
+
+[node name="Help2" type="Button" parent="." unique_id=27279206]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 319.0
+offset_top = 429.0
+offset_right = 343.0
+offset_bottom = 456.0
+theme = ExtResource("3_kv874")
+theme_override_font_sizes/font_size = 12
+text = "2"
+
+[node name="Panel" type="Panel" parent="Help2" unique_id=210444171]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 25.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mim7t")
+
+[node name="Help3" type="Button" parent="." unique_id=272733540]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 348.0
+offset_top = 429.0
+offset_right = 372.0
+offset_bottom = 456.0
+theme = ExtResource("3_kv874")
+theme_override_font_sizes/font_size = 12
+text = "3"
+
+[node name="Panel" type="Panel" parent="Help3" unique_id=1861611974]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 25.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mim7t")
+
+[node name="Help4" type="Button" parent="." unique_id=34867081]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 377.0
+offset_top = 429.0
+offset_right = 401.0
+offset_bottom = 456.0
+theme = ExtResource("3_kv874")
+theme_override_font_sizes/font_size = 12
+text = "4"
+
+[node name="Panel" type="Panel" parent="Help4" unique_id=917942256]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 25.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mim7t")
+
+[node name="Help5" type="Button" parent="." unique_id=2036483037]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 406.0
+offset_top = 429.0
+offset_right = 430.0
+offset_bottom = 456.0
+theme = ExtResource("3_kv874")
+theme_override_font_sizes/font_size = 12
+text = "5"
+
+[node name="Panel" type="Panel" parent="Help5" unique_id=2065241830]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 25.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mim7t")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Help1" to="." method="_on_change_tutorial_state" binds= [1]]
+[connection signal="pressed" from="Help2" to="." method="_on_change_tutorial_state" binds= [2]]
+[connection signal="pressed" from="Help3" to="." method="_on_change_tutorial_state" binds= [3]]
+[connection signal="pressed" from="Help4" to="." method="_on_change_tutorial_state" binds= [4]]
+[connection signal="pressed" from="Help5" to="." method="_on_change_tutorial_state" binds= [5]]

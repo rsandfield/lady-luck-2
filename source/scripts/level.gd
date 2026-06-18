@@ -3,6 +3,7 @@ extends Node2D
 
 
 signal return_to_menu
+signal restart_game
 
 
 func _on_main_menu_pressed() -> void:
@@ -12,7 +13,8 @@ func _on_main_menu_pressed() -> void:
 	pass
 
 func _on_restart_pressed() -> void:
-	
 	print_debug("currently does nothing...")
+	
+	emit_signal("restart_game")
 	
 	pass
