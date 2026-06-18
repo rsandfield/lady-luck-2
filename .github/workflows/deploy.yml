@@ -21,7 +21,7 @@ jobs:
     outputs:
       artifact-id: ${{ steps.upload-artifact.outputs.artifact-id }}
     container:
-      image: docker://barichello/godot-ci:4.5.1
+      image: docker://barichello/godot-ci:4.6
     steps:
       - name: Checkout
         uses: actions/checkout@v5
