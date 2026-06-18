@@ -29,7 +29,6 @@ func _on_start_play_test_sound() -> void:
 	_on_slot_machine_sound("slots2")
 	
 	sound_test_time = Time.get_ticks_msec() + 800
-	print_debug( Time.get_ticks_msec() )
 	
 	pass
 

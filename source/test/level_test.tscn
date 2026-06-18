@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="5_tpn00"]
 [ext_resource type="Texture2D" uid="uid://bwg3gd1y1epdj" path="res://assets/icons/bomb.png" id="8_xy7ao"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="9_jttlp"]
+[ext_resource type="PackedScene" uid="uid://314toow75o83" path="res://source/animations/explosion.tscn" id="10_jttlp"]
 
 [node name="TestLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_tpn00")
@@ -194,6 +195,10 @@ offset_top = 294.0
 offset_right = 138.0
 offset_bottom = 325.0
 text = "Slots2 Sound"
+
+[node name="Bomb" parent="." unique_id=1605726017 instance=ExtResource("10_jttlp")]
+position = Vector2(435, 50)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]

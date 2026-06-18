@@ -16,18 +16,10 @@ bg_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
 [node name="Credits" type="Node2D" unique_id=689131116]
 script = ExtResource("1_fqt5c")
 
-[node name="Panel" type="Panel" parent="." unique_id=1331129217]
+[node name="Background" type="Panel" parent="." unique_id=1331129217]
 offset_right = 1154.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_px1gm")
-metadata/_edit_lock_ = true
-
-[node name="BackControl" type="Button" parent="." unique_id=1763663459]
-modulate = Color(1, 1, 1, 0)
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(1154, 648)
-offset_right = 1154.0
-offset_bottom = 648.0
 metadata/_edit_lock_ = true
 
 [node name="CreditsTitle" type="RichTextLabel" parent="." unique_id=1455156169]
@@ -106,6 +98,14 @@ Stephen Frister : Implementation & Animation
 
 Music by Ethan Grafton"
 
+[node name="BackControl" type="Button" parent="." unique_id=1763663459]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1154, 648)
+offset_right = 1154.0
+offset_bottom = 648.0
+metadata/_edit_lock_ = true
+
 [node name="Panel_Squad" type="Panel" parent="." unique_id=292052250]
 offset_left = 30.0
 offset_top = 78.0
@@ -148,5 +148,5 @@ texture = ExtResource("6_7n2ak")
 position = Vector2(555, 246)
 texture = ExtResource("8_nkten")
 
-[connection signal="pressed" from="BackControl" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="CenterContainer/Control/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BackControl" to="." method="_on_back_pressed"]

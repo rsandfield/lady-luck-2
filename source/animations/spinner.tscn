@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dqx08ig43fc2c" path="res://source/floor/tile_ui.tscn" id="1_1heng"]
 [ext_resource type="Script" uid="uid://bnh4cwkli3qir" path="res://source/animations/spinner.gd" id="1_o7elm"]
-[ext_resource type="Shader" uid="uid://b6wquqjcbg6kw" path="res://assets/shaders/fireball.gdshader" id="3_fpvq1"]
 
 [sub_resource type="Animation" id="Animation_o7elm"]
 length = 0.001
@@ -391,13 +390,6 @@ _data = {
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1heng"]
 bg_color = Color(0.29586652, 0.29586652, 0.29586637, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejitm"]
-shader = ExtResource("3_fpvq1")
-shader_parameter/time = 0.0
-shader_parameter/frame_scope = 3.0
-shader_parameter/use_system_time = true
-shader_parameter/time_accel = 5.0
-
 [node name="TestSpinner" type="Control" unique_id=1325377327]
 layout_mode = 3
 anchors_preset = 0
@@ -427,9 +419,9 @@ pivot_offset = Vector2(37, 38)
 
 [node name="TileUI4" parent="." unique_id=2011675026 instance=ExtResource("1_1heng")]
 layout_mode = 1
-offset_top = -150.0
+offset_top = 150.0
 offset_right = 75.0
-offset_bottom = -74.99991
+offset_bottom = 225.00009
 pivot_offset = Vector2(37, 38)
 
 [node name="Panel1" type="Panel" parent="." unique_id=1178447516]
@@ -477,14 +469,6 @@ offset_top = 99.0
 offset_right = 181.0
 offset_bottom = 134.0
 text = "Slots"
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1773014202]
-material = SubResource("ShaderMaterial_ejitm")
-layout_mode = 0
-offset_left = 263.0
-offset_top = -205.0
-offset_right = 359.0
-offset_bottom = -107.0
 
 [connection signal="pressed" from="Button0" to="." method="_on_button_0_pressed"]
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]

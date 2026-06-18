@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://314toow75o83"]
+
+[ext_resource type="Script" uid="uid://ch6xa5jhufsq4" path="res://source/animations/explosion.gd" id="1_fm22i"]
+[ext_resource type="Shader" uid="uid://b6wquqjcbg6kw" path="res://assets/shaders/fireball.gdshader" id="2_73xq2"]
+[ext_resource type="Shader" uid="uid://bmikew75f3yo3" path="res://assets/shaders/explosion.gdshader" id="2_g0hob"]
+[ext_resource type="Texture2D" uid="uid://bwg3gd1y1epdj" path="res://assets/icons/bomb.png" id="3_73xq2"]
+[ext_resource type="Texture2D" uid="uid://breg5njrnuxux" path="res://assets/icons/pixel.png" id="3_g0hob"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73xq2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7p12l"]
+shader = ExtResource("2_73xq2")
+shader_parameter/time = 0.0
+shader_parameter/frame_scope = 3.0
+shader_parameter/use_system_time = true
+shader_parameter/time_accel = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fm22i"]
+shader = ExtResource("2_g0hob")
+shader_parameter/spread = 180.0
+shader_parameter/inherit_emitter_velocity_ratio = 0.0
+shader_parameter/initial_linear_velocity_min = 100.0
+shader_parameter/initial_linear_velocity_max = 100.0
+shader_parameter/orbit_velocity_min = 0.0
+shader_parameter/orbit_velocity_max = 0.0
+shader_parameter/radial_velocity_min = 0.0
+shader_parameter/radial_velocity_max = 0.0
+shader_parameter/linear_accel_min = 0.0
+shader_parameter/linear_accel_max = 0.0
+shader_parameter/radial_accel_min = 0.0
+shader_parameter/radial_accel_max = 0.0
+shader_parameter/tangent_accel_min = 0.0
+shader_parameter/tangent_accel_max = 0.0
+shader_parameter/damping_min = 0.0
+shader_parameter/damping_max = 0.0
+shader_parameter/scale_min = 1.0
+shader_parameter/scale_max = 1.0
+shader_parameter/lifetime_randomness = 0.0
+shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
+shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
+shader_parameter/emission_box_extents = Vector3(128, 128, 0)
+shader_parameter/sprite = ExtResource("3_73xq2")
+
+[sub_resource type="Animation" id="Animation_73xq2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7p12l"]
+resource_name = "explode"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.03333333, 0.099999994, 0.49999997),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jha36"]
+_data = {
+&"RESET": SubResource("Animation_73xq2"),
+&"explode": SubResource("Animation_7p12l")
+}
+
+[node name="Bomb" type="Node2D" unique_id=1605726017]
+script = ExtResource("1_fm22i")
+
+[node name="Panel" type="Panel" parent="." unique_id=452236708]
+modulate = Color(1, 1, 1, 0)
+clip_children = 1
+light_mask = 16384
+visibility_layer = 16384
+offset_left = -121.0
+offset_top = -77.0
+offset_right = 90.0
+offset_bottom = 107.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_73xq2")
+
+[node name="Fire" type="ColorRect" parent="Panel" unique_id=1736893850]
+light_mask = 16384
+visibility_layer = 16384
+material = SubResource("ShaderMaterial_7p12l")
+layout_mode = 0
+offset_left = -21.0
+offset_top = -18.0
+offset_right = 236.0
+offset_bottom = 206.0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1953439848]
+texture = ExtResource("3_73xq2")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=931842978]
+emitting = false
+amount = 50000
+texture = ExtResource("3_g0hob")
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+local_coords = true
+process_material = SubResource("ShaderMaterial_fm22i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=56152562]
+libraries/ = SubResource("AnimationLibrary_jha36")
+
+[node name="TestExplode" type="Button" parent="." unique_id=1142391942]
+offset_left = -227.0
+offset_top = -43.0
+offset_right = -135.0
+offset_bottom = -10.0
+text = "Explode"
+
+[node name="TestReset" type="Button" parent="." unique_id=480084441]
+offset_left = -228.0
+offset_top = -82.0
+offset_right = -136.0
+offset_bottom = -49.0
+text = "Reset"
+
+[connection signal="pressed" from="TestExplode" to="." method="_on_call_explode"]
+[connection signal="pressed" from="TestReset" to="." method="_on_call_reset"]

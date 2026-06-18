@@ -2,22 +2,59 @@
 
 [ext_resource type="Script" uid="uid://vakxrvgs6bgh" path="res://source/floor/slot_machine/slot_machine_ui.gd" id="1_gru50"]
 [ext_resource type="PackedScene" uid="uid://bdyhkm8xfwp6t" path="res://source/floor/slot_machine/slot_wheel_ui.tscn" id="2_8nnqb"]
+[ext_resource type="Texture2D" uid="uid://cym4ab1giibqq" path="res://assets/icons/red_circle.tres" id="3_vr6dc"]
 
-[sub_resource type="Gradient" id="Gradient_vqkr4"]
-offsets = PackedFloat32Array(0, 0.63, 0.64)
-colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0)
+[sub_resource type="Gradient" id="Gradient_vr6dc"]
+offsets = PackedFloat32Array(0.64)
+colors = PackedColorArray(1, 1, 1, 0)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_p1kb0"]
-gradient = SubResource("Gradient_vqkr4")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wmcta"]
+gradient = SubResource("Gradient_vr6dc")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_x2wtt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Lever:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(496, 36)]
+}
+
+[sub_resource type="Animation" id="Animation_mpnq0"]
+resource_name = "lever_pull"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Lever:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(496, 36), Vector2(496, 115), Vector2(496, 36)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_11yfp"]
+_data = {
+&"RESET": SubResource("Animation_x2wtt"),
+&"lever_pull": SubResource("Animation_mpnq0")
+}
 
 [node name="SlotMachine" type="HBoxContainer" unique_id=188532546]
 theme_override_constants/separation = 20
 alignment = 1
 script = ExtResource("1_gru50")
 
-[node name="SlotWheel" parent="." unique_id=1975195812 instance=ExtResource("2_8nnqb")]
+[node name="SlotWheel1" parent="." unique_id=1975195812 instance=ExtResource("2_8nnqb")]
 layout_mode = 2
 
 [node name="SlotWheel2" parent="." unique_id=1096081602 instance=ExtResource("2_8nnqb")]
@@ -31,4 +68,22 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=1964202832]
 layout_mode = 2
-icon = SubResource("GradientTexture2D_p1kb0")
+icon = SubResource("GradientTexture2D_wmcta")
+
+[node name="Panel" type="Panel" parent="Button" unique_id=183177856]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 30.0
+offset_top = 31.0
+offset_right = 40.0
+offset_bottom = 131.0
+
+[node name="Lever" type="Sprite2D" parent="." unique_id=1897849990]
+position = Vector2(496, 36)
+texture = ExtResource("3_vr6dc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=105258332]
+root_node = NodePath("../Button")
+libraries/ = SubResource("AnimationLibrary_11yfp")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
