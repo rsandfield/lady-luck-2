@@ -36,3 +36,10 @@ func _on_slot_cell_moving_tile( is_moving : bool ) -> void:
 	moving_tile.emit( is_moving )
 	
 	pass
+
+
+func _on_button_pressed() -> void:
+	
+	$AnimationPlayer.play("lever_pull")
+	
+	pass

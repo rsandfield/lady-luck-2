@@ -53,7 +53,10 @@ func _on_transitions_animation_finished(anim_name: StringName) -> void:
 	
 	if anim_name == "fadein":
 		_check_manager_state() 
-		%Transitions.play( "fadeout", -1, 1.0 / Data.setting_transition )
+		%Transitions.play( "fadeout", -1, 1.0 / Data.default_transition )
+		
+		# change to this if you want the user to be able to control the transition time
+		#%Transitions.play( "fadeout", -1, 1.0 / Data.setting_transition )
 	
 	pass
 
@@ -89,10 +92,15 @@ func _on_play_transition() -> void:
 	#print_debug( "_on_transition_test_pressed... " )
 	#print_debug("transition: " + str(Data.setting_transition) )
 	
-	if Data.setting_transition > 0: 
-		%Transitions.play( "fadein", -1, 1.0 / Data.setting_transition )
-	else: 
-		_check_manager_state()
+	# hard code the transition speed to be 0.5
+	%Transitions.play( "fadein", -1, 1.0 / Data.default_transition )
+	
+	# if we are allowing the user to change the fade in speed
+	# then use the code below
+	#if Data.setting_transition > 0: 
+		#%Transitions.play( "fadein", -1, 1.0 / Data.setting_transition )
+	#else: 
+		#_check_manager_state()
 	
 	pass
 

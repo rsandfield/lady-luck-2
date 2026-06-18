@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://b7mjqsrihvtwn" path="res://source/scripts/credits.gd" id="1_fqt5c"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="2_mm0m6"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_muyvs"]
+[ext_resource type="StyleBox" uid="uid://c3do76iwbhxsa" path="res://assets/themes/style_box_flat_purple_light.tres" id="4_kh4jm"]
 [ext_resource type="Texture2D" uid="uid://c13vq6pn3pmar" path="res://assets/art/pigsquad-banner.png" id="4_nkten"]
+[ext_resource type="StyleBox" uid="uid://b22y23a1u23dl" path="res://assets/themes/style_box_flat_purple_light_hover.tres" id="5_7n2ak"]
 [ext_resource type="Texture2D" uid="uid://b6lahcmed0rc0" path="res://assets/art/pigsquad-ssj-june.png" id="5_kh4jm"]
 [ext_resource type="Texture2D" uid="uid://b288r0yu5c4dh" path="res://assets/art/godot-madewith.jpg" id="6_7n2ak"]
-[ext_resource type="Texture2D" uid="uid://bwv1mnitc3qpk" path="res://assets/art/placeholder-creditsluck.png" id="7_3lhws"]
+[ext_resource type="Texture2D" uid="uid://c46ewlhbk4xpw" path="res://assets/art/placeholder-luckcredits.png" id="8_nkten"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_px1gm"]
 bg_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
@@ -14,7 +16,7 @@ bg_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
 [node name="Credits" type="Node2D" unique_id=689131116]
 script = ExtResource("1_fqt5c")
 
-[node name="Panel" type="Panel" parent="." unique_id=1331129217]
+[node name="Background" type="Panel" parent="." unique_id=1331129217]
 offset_right = 1154.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_px1gm")
@@ -25,6 +27,7 @@ offset_left = 1.0
 offset_top = 10.0
 offset_right = 1154.0
 offset_bottom = 56.0
+theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_mm0m6")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
@@ -57,9 +60,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1937274954]
-offset_top = 571.0
-offset_right = 1154.0
-offset_bottom = 611.0
+offset_left = 506.0
+offset_top = 568.0
+offset_right = 1660.0
+offset_bottom = 608.0
 
 [node name="Control" type="Control" parent="CenterContainer" unique_id=935054224]
 layout_mode = 2
@@ -70,13 +74,20 @@ offset_left = -45.0
 offset_right = 45.0
 offset_bottom = 40.0
 theme = ExtResource("2_muyvs")
+theme_override_styles/normal = ExtResource("4_kh4jm")
+theme_override_styles/pressed = ExtResource("5_7n2ak")
+theme_override_styles/hover = ExtResource("5_7n2ak")
+theme_override_styles/disabled = ExtResource("4_kh4jm")
+theme_override_styles/focus = ExtResource("4_kh4jm")
 text = "Go Back"
 
-[node name="RichTextLabel1" type="RichTextLabel" parent="." unique_id=968115274]
-offset_left = 265.0
-offset_top = 386.0
-offset_right = 880.0
-offset_bottom = 610.0
+[node name="CreditsText" type="RichTextLabel" parent="." unique_id=968115274]
+offset_left = 264.0
+offset_top = 434.0
+offset_right = 879.0
+offset_bottom = 658.0
+mouse_filter = 2
+theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("2_mm0m6")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -86,25 +97,56 @@ Robert Sandfield : Programming & Game Design
 Stephen Frister : Implementation & Animation
 
 Music by Ethan Grafton"
+
+[node name="BackControl" type="Button" parent="." unique_id=1763663459]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1154, 648)
+offset_right = 1154.0
+offset_bottom = 648.0
 metadata/_edit_lock_ = true
 
-[node name="PigsquadBanner" type="Sprite2D" parent="." unique_id=48483125]
-position = Vector2(256.00006, 121.479996)
+[node name="Panel_Squad" type="Panel" parent="." unique_id=292052250]
+offset_left = 30.0
+offset_top = 78.0
+offset_right = 435.0
+offset_bottom = 410.0
+theme_override_styles/panel = ExtResource("4_kh4jm")
+
+[node name="Label" type="LinkButton" parent="Panel_Squad" unique_id=125632969]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 16.0
+offset_right = 392.0
+offset_bottom = 37.0
+theme_override_fonts/font = ExtResource("2_mm0m6")
+text = "https://pigsquad.com/summerslowjams"
+
+[node name="PigsquadBanner" type="Sprite2D" parent="Panel_Squad" unique_id=48483125]
+position = Vector2(201.99998, 87)
 scale = Vector2(0.61, 0.61)
 texture = ExtResource("4_nkten")
 
-[node name="PigsquadSsjJune" type="Sprite2D" parent="." unique_id=763178137]
-position = Vector2(256, 256.48)
+[node name="PigsquadSsjJune" type="Sprite2D" parent="Panel_Squad" unique_id=763178137]
+position = Vector2(202, 221)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_kh4jm")
 
-[node name="GodotMadeWith" type="Sprite2D" parent="." unique_id=1853175556]
-position = Vector2(902, 209)
+[node name="Panel_Godot" type="Panel" parent="." unique_id=850464119]
+offset_left = 718.0
+offset_top = 77.0
+offset_right = 1123.0
+offset_bottom = 409.0
+theme_override_styles/panel = ExtResource("4_kh4jm")
+
+[node name="GodotMadeWith" type="Sprite2D" parent="Panel_Godot" unique_id=1853175556]
+position = Vector2(203.00006, 166)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("6_7n2ak")
 
 [node name="PlaceholderCreditsluck" type="Sprite2D" parent="." unique_id=710333687]
-position = Vector2(569, 248)
-texture = ExtResource("7_3lhws")
+position = Vector2(555, 246)
+texture = ExtResource("8_nkten")
 
 [connection signal="pressed" from="CenterContainer/Control/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BackControl" to="." method="_on_back_pressed"]

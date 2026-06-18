@@ -13,7 +13,7 @@ var version_cfg = 0
 var settings_loaded = false
 
 var default_position = Vector2( 100, 100 )
-var default_transition = 0.0
+var default_transition = 0.3
 
 var default_volume_sfx    = 25
 var default_volume_music  = 25

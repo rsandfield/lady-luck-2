@@ -2,34 +2,23 @@
 
 [ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_tpn00"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_20axw"]
-[ext_resource type="PackedScene" uid="uid://c5v013ojkhlvr" path="res://source/animations/spinner.tscn" id="2_tpn00"]
 [ext_resource type="Texture2D" uid="uid://by85tavmk3ort" path="res://assets/art/placeholder-ladyluck.png" id="3_l8klr"]
 [ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="4_ff1e8"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="5_ff1e8"]
 [ext_resource type="Texture2D" uid="uid://di5rsokaqyg66" path="res://assets/art/placeholder-slygoddess.png" id="5_k07vv"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="5_tpn00"]
+[ext_resource type="Texture2D" uid="uid://bwg3gd1y1epdj" path="res://assets/icons/bomb.png" id="8_xy7ao"]
+[ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="9_jttlp"]
+[ext_resource type="PackedScene" uid="uid://314toow75o83" path="res://source/animations/explosion.tscn" id="10_jttlp"]
 
 [node name="TestLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_tpn00")
 
-[node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("5_tpn00")]
-offset_right = 1087.0
-offset_bottom = 649.0
-metadata/_edit_lock_ = true
-
-[node name="Switch" type="Button" parent="." unique_id=1717973040]
-offset_left = 442.0
-offset_top = 17.0
-offset_right = 501.0
-offset_bottom = 48.0
-text = "Switch
-"
-
 [node name="LadyLuckLight" type="TextureRect" parent="." unique_id=1059972106]
-offset_left = 223.0
-offset_top = 2.0
-offset_right = 1233.0
-offset_bottom = 1552.0
+offset_left = 161.0
+offset_top = 11.0
+offset_right = 1171.0
+offset_bottom = 1561.0
 scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 texture = ExtResource("3_l8klr")
@@ -37,9 +26,9 @@ flip_h = true
 
 [node name="LadyLuckDark" type="TextureRect" parent="." unique_id=512748620]
 visible = false
-offset_left = 214.0
+offset_left = 149.0
 offset_top = 75.0
-offset_right = 1224.0
+offset_right = 1159.0
 offset_bottom = 1429.0
 scale = Vector2(0.3, 0.3)
 mouse_filter = 2
@@ -47,14 +36,26 @@ texture = ExtResource("4_ff1e8")
 flip_h = true
 
 [node name="LadyLuckSly" type="TextureRect" parent="." unique_id=265231321]
-offset_left = 938.99994
-offset_top = 112.99999
-offset_right = 1233.0
-offset_bottom = 742.0
+offset_left = 960.0
+offset_top = 110.0
+offset_right = 1254.0001
+offset_bottom = 739.0
 scale = Vector2(0.7, 0.7)
 mouse_filter = 2
 texture = ExtResource("5_k07vv")
 flip_h = true
+
+[node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("5_tpn00")]
+offset_right = 1087.0
+offset_bottom = 649.0
+metadata/_edit_lock_ = true
+
+[node name="Switch" type="Button" parent="." unique_id=1717973040]
+offset_left = 16.0
+offset_top = 133.0
+offset_right = 136.0
+offset_bottom = 173.0
+text = "Test Art Type"
 
 [node name="MainMenu" type="Button" parent="." unique_id=133252502]
 offset_left = 14.0
@@ -75,14 +76,134 @@ text = "Restart"
 [node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("5_ff1e8")]
 visible = false
 
-[node name="Spinner" parent="." unique_id=1325377327 instance=ExtResource("2_tpn00")]
-offset_left = 26.0
-offset_top = 382.0
-offset_right = 26.0
-offset_bottom = 382.0
+[node name="Bomb1" type="Sprite2D" parent="." unique_id=1174123643]
+position = Vector2(575, 88)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xy7ao")
+
+[node name="Bomb2" type="Sprite2D" parent="." unique_id=1666890606]
+position = Vector2(571, 164)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xy7ao")
+
+[node name="Bomb3" type="Sprite2D" parent="." unique_id=1414449022]
+position = Vector2(571, 244)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xy7ao")
+
+[node name="Bomb4" type="Sprite2D" parent="." unique_id=1862381449]
+position = Vector2(567, 317)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xy7ao")
+
+[node name="Bomb5" type="Sprite2D" parent="." unique_id=119691683]
+position = Vector2(568, 400)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xy7ao")
+
+[node name="TextEdit1" type="TextEdit" parent="." unique_id=1310180711]
+offset_left = 494.0
+offset_top = 75.0
+offset_right = 529.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("9_jttlp")
+theme_override_font_sizes/font_size = 24
+text = "%"
+
+[node name="TextEdit2" type="TextEdit" parent="." unique_id=1876208271]
+offset_left = 493.0
+offset_top = 151.0
+offset_right = 528.0
+offset_bottom = 194.0
+theme_override_fonts/font = ExtResource("9_jttlp")
+theme_override_font_sizes/font_size = 24
+text = "%"
+
+[node name="TextEdit3" type="TextEdit" parent="." unique_id=1392657217]
+offset_left = 493.0
+offset_top = 231.0
+offset_right = 528.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("9_jttlp")
+theme_override_font_sizes/font_size = 24
+text = "%"
+
+[node name="TextEdit4" type="TextEdit" parent="." unique_id=1966661210]
+offset_left = 489.0
+offset_top = 303.0
+offset_right = 524.0
+offset_bottom = 346.0
+theme_override_fonts/font = ExtResource("9_jttlp")
+theme_override_font_sizes/font_size = 24
+text = "%"
+
+[node name="TextEdit5" type="TextEdit" parent="." unique_id=1968511721]
+offset_left = 489.0
+offset_top = 380.0
+offset_right = 524.0
+offset_bottom = 423.0
+theme_override_fonts/font = ExtResource("9_jttlp")
+theme_override_font_sizes/font_size = 24
+text = "%"
+
+[node name="TextEditS1" type="TextEdit" parent="." unique_id=2065293396]
+offset_left = 106.0
+offset_top = 609.0
+offset_right = 141.0
+offset_bottom = 652.0
+theme_override_fonts/font = ExtResource("9_jttlp")
+theme_override_font_sizes/font_size = 24
+text = "%"
+
+[node name="TextEditS2" type="TextEdit" parent="." unique_id=1607134135]
+offset_left = 217.0
+offset_top = 609.0
+offset_right = 252.0
+offset_bottom = 652.0
+theme_override_fonts/font = ExtResource("9_jttlp")
+theme_override_font_sizes/font_size = 24
+text = "%"
+
+[node name="TextEditS3" type="TextEdit" parent="." unique_id=856068135]
+offset_left = 333.0
+offset_top = 609.0
+offset_right = 368.0
+offset_bottom = 652.0
+theme_override_fonts/font = ExtResource("9_jttlp")
+theme_override_font_sizes/font_size = 24
+text = "%"
+
+[node name="TextEditS4" type="TextEdit" parent="." unique_id=1827536343]
+offset_left = 450.0
+offset_top = 609.0
+offset_right = 485.0
+offset_bottom = 652.0
+theme_override_fonts/font = ExtResource("9_jttlp")
+theme_override_font_sizes/font_size = 24
+text = "%"
+
+[node name="SoundSlots1" type="Button" parent="." unique_id=1364189756]
+offset_left = 21.0
+offset_top = 255.0
+offset_right = 139.0
+offset_bottom = 286.0
+text = "Slots1 Sound"
+
+[node name="SoundSlots2" type="Button" parent="." unique_id=1567797999]
+offset_left = 21.0
+offset_top = 294.0
+offset_right = 138.0
+offset_bottom = 325.0
+text = "Slots2 Sound"
+
+[node name="Bomb" parent="." unique_id=1605726017 instance=ExtResource("10_jttlp")]
+position = Vector2(435, 50)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="tile_released" from="MouseObject" to="Floor" method="_on_mouse_object_tile_released"]
+[connection signal="pressed" from="SoundSlots1" to="." method="_on_slots_sound" binds= ["slots1"]]
+[connection signal="pressed" from="SoundSlots2" to="." method="_on_slots_sound" binds= ["slots2"]]
