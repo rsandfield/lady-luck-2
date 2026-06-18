@@ -156,7 +156,7 @@ func _on_test_game() -> void:
 	pass # Replace with function body.
 	
 func _on_test_alt_game() -> void:
-	print_debug("_on_test_alt_game... " )
+	#print_debug("_on_test_alt_game... " )
 	
 	manager_state = "Alt"
 	_on_play_transition()

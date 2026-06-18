@@ -58,6 +58,8 @@ func _on_floor_moving_tile( is_moving : bool ) -> void:
 	
 	pass
 
+
+# function is temporary and can be removed after we've settled on art
 var switch_luck = 0 
 func _on_switch_pressed() -> void:
 	
@@ -70,7 +72,7 @@ func _on_switch_pressed() -> void:
 	
 	pass
 
-func _on_slots_sound( sound_type : String ) -> void: 
+func _on_slots_sound( sound_type : String = "slots2" ) -> void: 
 	
 	slots_sound.emit( sound_type )
 	

@@ -62,3 +62,4 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [connection signal="moving_tile" from="MarginContainer/HBoxContainer/Slots/PanelContainer/SlotMachine" to="." method="_on_slot_machine_moving_tile"]
+[connection signal="spin_sound_play" from="MarginContainer/HBoxContainer/Slots/PanelContainer/SlotMachine" to="." method="_on_slot_machine_play_sound"]

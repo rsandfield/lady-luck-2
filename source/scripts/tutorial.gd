@@ -37,25 +37,24 @@ func _input(_event: InputEvent) -> void:
 	pass
 
 func _on_show_self() -> void:
-	print_debug("_on_show_self, state: " + str(tutorial_state) )
+	#print_debug("_on_show_self, state: " + str(tutorial_state) )
 	
 	self.show()
 	
 	_on_change_tutorial_state(0)
 	
-	
 	pass
 
 func _on_change_tutorial_state( new_state : int ) -> void: 
-	print_debug("_on_change_tutorial_state, old: " + str(tutorial_state) )
-	print_debug("_on_change_tutorial_state, new: " + str(new_state) )
+	#print_debug("_on_change_tutorial_state, old: " + str(tutorial_state) )
+	#print_debug("_on_change_tutorial_state, new: " + str(new_state) )
 	
 	tutorial_state = new_state
 	
 	if tutorial_state < 0 : 
 		tutorial_state = 0 
 	
-	print_debug("_on_change_tutorial_state, after: " + str(tutorial_state) )
+	#print_debug("_on_change_tutorial_state, after: " + str(tutorial_state) )
 	
 	if tutorial_state > 5 : 
 		self.hide()
@@ -79,7 +78,7 @@ func _set_button_highlighted():
 	pass
 
 func _set_dialog_visible(): 
-	print_debug("_set_dialog_visible, state: " + str(tutorial_state) )
+	#print_debug("_set_dialog_visible, state: " + str(tutorial_state) )
 	
 	%Dialog0.visible = tutorial_state == 0 
 	%Dialog1.visible = tutorial_state == 1 
@@ -107,7 +106,7 @@ func _set_panel_visibility():
 	pass
 
 func _on_button_pressed() -> void:
-	print_debug("_on_button_pressed...")
+	#print_debug("_on_button_pressed...")
 	
 	tutorial_state += 1
 	_on_change_tutorial_state( tutorial_state )

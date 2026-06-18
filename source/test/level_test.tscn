@@ -135,6 +135,7 @@ unique_name_in_owner = true
 visible = false
 
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
+[connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]
 [connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
