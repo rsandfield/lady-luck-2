@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cxa7ah36qfrlp" path="res://source/options.tscn" id="6_vt3ln"]
 [ext_resource type="PackedScene" uid="uid://uttewusolp5u" path="res://source/sounds.tscn" id="7_earfo"]
 [ext_resource type="PackedScene" uid="uid://dmdfdbpc5pwgk" path="res://source/test/level_test.tscn" id="8_rtlyh"]
+[ext_resource type="PackedScene" uid="uid://q26m7tt0syiv" path="res://source/test/level_test_alt.tscn" id="9_odshp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjoni"]
 bg_color = Color(0, 0, 0, 1)
@@ -88,6 +89,9 @@ visible = false
 [node name="TestLevel" parent="." unique_id=1479691771 instance=ExtResource("8_rtlyh")]
 visible = false
 
+[node name="TestAltLevel" parent="." unique_id=442386131 instance=ExtResource("9_odshp")]
+visible = false
+
 [node name="Screen" type="Panel" parent="." unique_id=1871046253]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -109,6 +113,7 @@ libraries/ = SubResource("AnimationLibrary_34fp1")
 [connection signal="show_credits" from="Start" to="." method="_on_start_show_credits"]
 [connection signal="show_options" from="Start" to="." method="_on_start_show_options"]
 [connection signal="start_new_game" from="Start" to="." method="_on_start_new_game"]
+[connection signal="start_test_alt_game" from="Start" to="." method="_on_test_alt_game"]
 [connection signal="start_test_game" from="Start" to="." method="_on_test_game"]
 [connection signal="update_music" from="Start" to="Sounds" method="_on_start_update_music"]
 [connection signal="volume_changed" from="Start" to="Sounds" method="_set_sound_level"]
@@ -117,4 +122,5 @@ libraries/ = SubResource("AnimationLibrary_34fp1")
 [connection signal="return_to_menu" from="Options" to="." method="_on_return_to_menu"]
 [connection signal="return_to_menu" from="TestLevel" to="." method="_on_return_to_menu"]
 [connection signal="slots_sound" from="TestLevel" to="Sounds" method="_on_slot_machine_sound"]
+[connection signal="return_to_menu" from="TestAltLevel" to="." method="_on_return_to_menu"]
 [connection signal="animation_finished" from="Transitions" to="." method="_on_transitions_animation_finished"]

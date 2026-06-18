@@ -100,6 +100,13 @@ size_flags_vertical = 4
 theme = ExtResource("2_5ah3m")
 text = "[Test] Game"
 
+[node name="TestAlt" type="Button" parent="InterfaceContainer/ButtonControl/ButtonContainer" unique_id=1434168110]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_5ah3m")
+text = "[Test Alt] Game"
+
 [node name="NewGame" type="Button" parent="InterfaceContainer/ButtonControl/ButtonContainer" unique_id=1335015180]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
@@ -496,6 +503,7 @@ text = "Mikey [mymonkey]
       Stephen Frister"
 
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/TestGame" to="." method="_on_test_game_pressed"]
+[connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/TestAlt" to="." method="_on_test_alt_game_pressed"]
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/Credits" to="." method="_on_credits_pressed"]

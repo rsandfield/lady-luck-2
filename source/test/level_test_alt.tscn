@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://br538pffgrles" path="res://assets/art/button-placeholder-main.png" id="14_lukrn"]
 [ext_resource type="Texture2D" uid="uid://b861e46gnkt8p" path="res://assets/art/button-placeholder-retry.png" id="15_nj6ht"]
 
-[node name="TestLevel" type="Node2D" unique_id=442386131]
+[node name="TestAltLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_1k1e1")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1061456643]
@@ -70,45 +70,45 @@ offset_bottom = 649.0
 metadata/_edit_lock_ = true
 
 [node name="Switch" type="Button" parent="." unique_id=1717973040]
-offset_left = -157.0
-offset_top = 166.0
-offset_right = -37.0
-offset_bottom = 206.0
+offset_left = -280.0
+offset_top = 172.0
+offset_right = -160.0
+offset_bottom = 212.0
 text = "Test Art Type"
 
 [node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("8_248bq")]
 visible = false
 
 [node name="Bomb1" type="Sprite2D" parent="." unique_id=1174123643]
-position = Vector2(575, 88)
+position = Vector2(799, -467)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_7fpfp")
 
 [node name="Bomb2" type="Sprite2D" parent="." unique_id=1666890606]
-position = Vector2(571, 164)
+position = Vector2(795, -391)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_7fpfp")
 
 [node name="Bomb3" type="Sprite2D" parent="." unique_id=1414449022]
-position = Vector2(571, 244)
+position = Vector2(795, -311)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_7fpfp")
 
 [node name="Bomb4" type="Sprite2D" parent="." unique_id=1862381449]
-position = Vector2(567, 317)
+position = Vector2(791, -238)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_7fpfp")
 
 [node name="Bomb5" type="Sprite2D" parent="." unique_id=119691683]
-position = Vector2(568, 400)
+position = Vector2(792, -155)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_7fpfp")
 
 [node name="TextEdit1" type="TextEdit" parent="." unique_id=1310180711]
-offset_left = 494.0
-offset_top = 75.0
-offset_right = 529.0
-offset_bottom = 118.0
+offset_left = 981.0
+offset_top = -494.0
+offset_right = 1016.0
+offset_bottom = -451.0
 theme_override_fonts/font = ExtResource("10_nwggm")
 theme_override_font_sizes/font_size = 24
 text = "%"
@@ -125,10 +125,10 @@ tab_input_mode = false
 virtual_keyboard_enabled = false
 
 [node name="TextEdit2" type="TextEdit" parent="." unique_id=1876208271]
-offset_left = 493.0
-offset_top = 151.0
-offset_right = 528.0
-offset_bottom = 194.0
+offset_left = 980.0
+offset_top = -418.0
+offset_right = 1015.0
+offset_bottom = -375.0
 theme_override_fonts/font = ExtResource("10_nwggm")
 theme_override_font_sizes/font_size = 24
 text = "%"
@@ -145,10 +145,10 @@ tab_input_mode = false
 virtual_keyboard_enabled = false
 
 [node name="TextEdit3" type="TextEdit" parent="." unique_id=1392657217]
-offset_left = 493.0
-offset_top = 231.0
-offset_right = 528.0
-offset_bottom = 274.0
+offset_left = 980.0
+offset_top = -338.0
+offset_right = 1015.0
+offset_bottom = -295.0
 theme_override_fonts/font = ExtResource("10_nwggm")
 theme_override_font_sizes/font_size = 24
 text = "%"
@@ -165,10 +165,10 @@ tab_input_mode = false
 virtual_keyboard_enabled = false
 
 [node name="TextEdit4" type="TextEdit" parent="." unique_id=1966661210]
-offset_left = 489.0
-offset_top = 303.0
-offset_right = 524.0
-offset_bottom = 346.0
+offset_left = 976.0
+offset_top = -266.0
+offset_right = 1011.0
+offset_bottom = -223.0
 theme_override_fonts/font = ExtResource("10_nwggm")
 theme_override_font_sizes/font_size = 24
 text = "%"
@@ -185,10 +185,10 @@ tab_input_mode = false
 virtual_keyboard_enabled = false
 
 [node name="TextEdit5" type="TextEdit" parent="." unique_id=1968511721]
-offset_left = 489.0
-offset_top = 380.0
-offset_right = 524.0
-offset_bottom = 423.0
+offset_left = 976.0
+offset_top = -189.0
+offset_right = 1011.0
+offset_bottom = -146.0
 theme_override_fonts/font = ExtResource("10_nwggm")
 theme_override_font_sizes/font_size = 24
 text = "%"
@@ -285,21 +285,21 @@ tab_input_mode = false
 virtual_keyboard_enabled = false
 
 [node name="SoundSlots1" type="Button" parent="." unique_id=1364189756]
-offset_left = -156.0
-offset_top = 220.0
-offset_right = -38.0
-offset_bottom = 251.0
+offset_left = -279.0
+offset_top = 226.0
+offset_right = -161.0
+offset_bottom = 257.0
 text = "Slots1 Sound"
 
 [node name="SoundSlots2" type="Button" parent="." unique_id=1567797999]
-offset_left = -156.0
-offset_top = 264.0
-offset_right = -39.0
-offset_bottom = 295.0
+offset_left = -279.0
+offset_top = 270.0
+offset_right = -162.0
+offset_bottom = 301.0
 text = "Slots2 Sound"
 
 [node name="Bomb" parent="." unique_id=1605726017 instance=ExtResource("11_5o2ll")]
-position = Vector2(446, -75)
+position = Vector2(415, -204)
 scale = Vector2(0.5, 0.5)
 
 [node name="Tutorial" parent="." unique_id=993889986 instance=ExtResource("12_jcaet")]

@@ -7,6 +7,7 @@ signal restart_game
 
 
 func _on_main_menu_pressed() -> void:
+	print_debug("_on_main_menu_pressed...")
 	
 	emit_signal("return_to_menu")
 	
