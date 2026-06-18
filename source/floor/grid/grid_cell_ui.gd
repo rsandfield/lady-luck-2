@@ -27,4 +27,5 @@ func _process(_delta: float) -> void:
 func set_tile(tile: TileResource) -> void:
 	_tile_ui.set_resource(tile)
 	_tile_ui.visible = tile != null
+	_tile_ui.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_door_icon.visible = tile && tile.is_door

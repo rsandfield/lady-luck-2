@@ -19,6 +19,8 @@ func set_wheel_count(count: int) -> void:
 		wheels.append(wheel)
 	_wheels = wheels
 	_ui.populate_wheels(wheels)
+	for wheel in _wheels:
+		wheel.set_resource(BombResource.new())
 
 
 func spin_wheels() -> void:
@@ -32,7 +34,7 @@ func select_wheel(wheel: SlotWheel) -> void:
 	_selected = wheel
 
 
-func get_selected_item() -> TileResource:
+func get_selected_item() -> ItemResource:
 	if !_selected:
 		return null
 	return _selected.get_reward()

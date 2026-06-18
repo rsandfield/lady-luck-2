@@ -1,5 +1,5 @@
 class_name TileUI
-extends PanelContainer
+extends ItemUI
 
 const COLORS: Array[Color] = [
 	Color(0, 0, 0, 0),
@@ -7,12 +7,6 @@ const COLORS: Array[Color] = [
 	Color.GREEN,
 	Color.BLUE
 ]
-
-const tile_color_show = Color(1.0, 1.0, 1.0, 1.0)
-const tile_color_hide = Color(0.0, 0.0, 0.0, 0.0)
-
-var tile_is_moving = false
-
 
 @onready var left := $Left
 @onready var right := $Right
@@ -36,13 +30,10 @@ func set_resource(new_resource: TileResource) -> void:
 		side_ui[i].modulate = COLORS[sides[i]]
 
 func set_visible_is_moving( is_moving: bool, modulate_color: Color ) -> void:
-	
+	super(is_moving, modulate_color)
 	Game.moving_tile_resource = resource
-	
-	tile_is_moving = is_moving
-	set_self_modulate( modulate_color ) 
-	
-	up.visible    = !is_moving 
+
+	up.visible    = !is_moving
 	down.visible  = !is_moving
-	left.visible  = !is_moving 
+	left.visible  = !is_moving
 	right.visible = !is_moving

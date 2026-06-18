@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqx08ig43fc2c"]
 
-[ext_resource type="Script" uid="uid://bxej10c887qnh" path="res://source/floor/tile_ui.gd" id="1_dcunu"]
+[ext_resource type="Script" uid="uid://bxej10c887qnh" path="res://source/floor/items/tile_ui.gd" id="1_dcunu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_towlp"]
 content_margin_left = 0.0
@@ -15,17 +15,22 @@ border_width_bottom = 5
 border_color = Color(1, 1, 1, 1)
 corner_detail = 1
 
-[node name="TileUI" type="PanelContainer" unique_id=1894309720]
+[node name="TileUI" type="PanelContainer" unique_id=693043851]
 custom_minimum_size = Vector2(75, 75)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_towlp")
 script = ExtResource("1_dcunu")
+metadata/_custom_type_script = "uid://bxej10c887qnh"
 
 [node name="Left" type="ColorRect" parent="." unique_id=823136952]
 modulate = Color(0, 0, 1, 1)

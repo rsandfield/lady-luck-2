@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c5v013ojkhlvr"]
 
-[ext_resource type="PackedScene" uid="uid://dqx08ig43fc2c" path="res://source/floor/tile_ui.tscn" id="1_1heng"]
+[ext_resource type="PackedScene" uid="uid://dqx08ig43fc2c" path="res://source/floor/items/tile_ui.tscn" id="1_1heng"]
 [ext_resource type="Script" uid="uid://bnh4cwkli3qir" path="res://source/animations/spinner.gd" id="1_o7elm"]
 
 [sub_resource type="Animation" id="Animation_o7elm"]

@@ -1,5 +1,5 @@
 class_name TileResource
-extends Resource
+extends ItemResource
 
 enum Direction {
 	NORTH,
@@ -40,6 +40,7 @@ static func blank() -> TileResource:
 func _init(sides: Array[int]):
 	set_sides(sides)
 
+
 func set_sides(new_sides: Array[int]) -> void:	
 	_sides = new_sides
 
@@ -52,10 +53,26 @@ func get_side(direction: Direction) -> int:
 	return _sides[direction]
 
 
+func is_legal_play(cell: GridCell) -> bool:
+	for direction in Direction.values():
+		var neighbor = cell.get_neighbor(direction)
+		if !neighbor:
+			if get_side(direction) > 0:
+				return false
+			continue
+		if !neighbor.is_legal_neighbor(opposite(direction), self):
+			return false
+	return true
+
+
 func is_legal_neighbor(direction: Direction, neighbor: TileResource) -> bool:
 	if !neighbor:
 		return true
 	return _sides[direction] == neighbor.get_side(opposite(direction))
+
+
+func play(slot: GridCell) -> void:
+	slot.set_tile(self)
 
 
 func ui_scene() -> PackedScene:
