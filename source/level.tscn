@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://ifug0jpefy57"]
 
 [ext_resource type="Script" uid="uid://cbyseky6gkv2d" path="res://source/scripts/level.gd" id="1_8ytwg"]
-[ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_3h5dt"]
 [ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/background-green_velvet.png" id="2_caait"]
+[ext_resource type="PackedScene" uid="uid://b3r8jv44uqhta" path="res://source/floor/buttons/level_buttons.tscn" id="3_caait"]
+[ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="3_vp4vq"]
 
 [node name="Level" type="Node2D" unique_id=854162818]
 script = ExtResource("1_8ytwg")
@@ -13,21 +14,16 @@ offset_bottom = 648.0
 texture = ExtResource("2_caait")
 metadata/_edit_lock_ = true
 
-[node name="MainMenu" type="Button" parent="." unique_id=133252502]
-offset_left = 14.0
-offset_top = 15.0
-offset_right = 134.0
-offset_bottom = 55.0
-theme = ExtResource("2_3h5dt")
-text = "Main Menu"
+[node name="Tutorial" parent="." unique_id=993889986 instance=ExtResource("3_vp4vq")]
+unique_name_in_owner = true
+visible = false
 
-[node name="Restart" type="Button" parent="." unique_id=1099381198]
-offset_left = 14.0
-offset_top = 63.0
-offset_right = 134.0
-offset_bottom = 103.0
-theme = ExtResource("2_3h5dt")
-text = "Restart"
+[node name="LevelButtons" parent="." unique_id=1051872753 instance=ExtResource("3_caait")]
+offset_left = -29.0
+offset_right = -29.0
+button_2_text = " (X) Retry"
+button_3_text = " (?) Help"
 
-[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="button_help" from="LevelButtons" to="." method="_on_help_pressed"]
+[connection signal="button_menu" from="LevelButtons" to="." method="_on_main_menu_pressed"]
+[connection signal="button_retry" from="LevelButtons" to="." method="_on_restart_pressed"]

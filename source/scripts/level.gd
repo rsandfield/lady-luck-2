@@ -19,3 +19,14 @@ func _on_restart_pressed() -> void:
 	emit_signal("restart_game")
 
 	pass
+
+
+func _on_help_pressed() -> void:
+	print_debug("_on_help_pressed...")
+	
+	if %Tutorial.visible:
+		%Tutorial.hide()
+	elif !%Tutorial.visible:
+		%Tutorial._on_show_self()
+
+	pass

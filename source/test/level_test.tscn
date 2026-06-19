@@ -44,9 +44,13 @@ unique_name_in_owner = true
 visible = false
 
 [node name="LevelButtons" parent="." unique_id=1051872753 instance=ExtResource("6_tpn00")]
+show_tutorial = false
 
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="tile_released" from="MouseObject" to="Floor" method="_on_mouse_object_tile_released"]
+[connection signal="button_help" from="LevelButtons" to="." method="_on_help_pressed"]
+[connection signal="button_menu" from="LevelButtons" to="." method="_on_main_menu_pressed"]
+[connection signal="button_retry" from="LevelButtons" to="." method="_on_restart_pressed"]

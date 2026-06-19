@@ -64,14 +64,3 @@ func _on_slots_sound(sound_type: String = "slots2") -> void:
 	slots_sound.emit(sound_type)
 
 	pass
-
-
-func _on_help_pressed() -> void:
-	print_debug("_on_help_pressed...")
-	
-	if %Tutorial.visible:
-		%Tutorial.hide()
-	elif !%Tutorial.visible:
-		%Tutorial._on_show_self()
-
-	pass

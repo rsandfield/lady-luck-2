@@ -30,10 +30,13 @@ func hold_item(item: ItemResource) -> void:
 
 
 func play_item(cell: GridCell) -> void:
+	print_debug("play_item...")
 	if !_item_ui:
 		return
-
+	
+	# this function call might be a problem...
 	await get_tree().create_timer(0.5).timeout
+	
 	var tween = create_tween()
 	tween.tween_property(_item_ui, "global_position", cell.position(), 0.5)
 	tween.finished.connect(finished.emit)

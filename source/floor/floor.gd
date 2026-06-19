@@ -52,14 +52,19 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 	if _grid.all_paths_finished():
 		print_debug("Ya did it")
 
-
+#var for_testing = true
 func _on_lever_pulled():
+	print_debug("_on_lever_pulled...")
+	#if for_testing: return
+	#print_debug("here...")
+	
 	_grid.flag_spin(true)
 	_spinner.spin()
 	_turn_counter.add_value(1)
 
-
 func _on_spin_finished():
+	print_debug("_on_spin_finished...")
+	
 	_grid.flag_spin(false)
 	_grid.flash_all_flags()
 
@@ -83,5 +88,7 @@ func _on_mouse_object_tile_released() -> void:
 
 func _on_slot_machine_play_sound() -> void: 
 	#print_debug("_on_slot_machine_play_lever_sound...")
+	
+	#if Game.slot_machine_blocked_flag: return
 	
 	slot_machine_sound.emit()

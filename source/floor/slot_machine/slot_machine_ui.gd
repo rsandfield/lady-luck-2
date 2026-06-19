@@ -15,6 +15,17 @@ func _ready():
 	%LeverButton.pressed.connect(spin_requested.emit)
 	%LeverButton.pressed.connect(spin_sound_play.emit)
 
+func _process(delta: float) -> void:
+	
+	if %BlockingNode.visible && !Game.slot_machine_blocked_flag: 
+		%BlockingNode.visible = false
+		print_debug("1...")
+	
+	if !%BlockingNode.visible && Game.slot_machine_blocked_flag: 
+		%BlockingNode.visible = true
+		print_debug("2...")
+	
+	pass
 
 func populate_wheels(new_wheels: Array[SlotWheel]) -> void:
 	for child in get_children():
