@@ -46,3 +46,10 @@ func _on_lever_pulled() -> void:
 	
 	
 	pass
+
+
+func _on_lever_blocked() -> void:
+	
+	$AnimationPlayer.play("lever_shake")
+	
+	pass
