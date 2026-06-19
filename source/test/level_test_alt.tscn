@@ -294,97 +294,97 @@ libraries/ = SubResource("AnimationLibrary_fkpom")
 autoplay = &"spinR"
 
 [node name="LightbulbL1" type="Sprite2D" parent="Lights" unique_id=1643664903]
-position = Vector2(604, 49.000008)
+position = Vector2(661, 48.75)
 rotation = -1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbL2" type="Sprite2D" parent="Lights" unique_id=1732959926]
-position = Vector2(603.75, 127.74999)
+position = Vector2(660.75, 127.499985)
 rotation = -1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbL3" type="Sprite2D" parent="Lights" unique_id=1384367689]
 self_modulate = Color(1, 1, 1, 0.39215684)
-position = Vector2(603.75, 206.75)
+position = Vector2(660.75, 206.5)
 rotation = -1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbL4" type="Sprite2D" parent="Lights" unique_id=228743970]
 self_modulate = Color(1, 1, 1, 0.39215684)
-position = Vector2(603.75, 285.75)
+position = Vector2(660.75, 285.5)
 rotation = -1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbL5" type="Sprite2D" parent="Lights" unique_id=1662539843]
 self_modulate = Color(1, 1, 1, 0.39215684)
-position = Vector2(603.75, 364.75)
+position = Vector2(660.75, 364.5)
 rotation = -1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbL6" type="Sprite2D" parent="Lights" unique_id=1993575566]
 self_modulate = Color(1, 1, 1, 0.39215684)
-position = Vector2(603.75, 443.75)
+position = Vector2(660.75, 443.5)
 rotation = -1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbL7" type="Sprite2D" parent="Lights" unique_id=1294945434]
 self_modulate = Color(1, 1, 1, 0.39215684)
-position = Vector2(603.75, 522.75)
+position = Vector2(660.75, 522.5)
 rotation = -1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbR1" type="Sprite2D" parent="Lights" unique_id=1747727539]
 self_modulate = Color(1, 1, 1, 0.39215684)
-position = Vector2(1024, 49.000008)
+position = Vector2(1081, 48.75)
 rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbR2" type="Sprite2D" parent="Lights" unique_id=563999169]
 self_modulate = Color(1, 1, 1, 0.39215684)
-position = Vector2(1023.75, 127.74999)
+position = Vector2(1080.75, 127.499985)
 rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbR3" type="Sprite2D" parent="Lights" unique_id=578190687]
 self_modulate = Color(1, 1, 1, 0.39215684)
-position = Vector2(1023.75, 206.75)
+position = Vector2(1080.75, 206.5)
 rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbR4" type="Sprite2D" parent="Lights" unique_id=1484655241]
 self_modulate = Color(1, 1, 1, 0.39215684)
-position = Vector2(1023.75, 285.75)
+position = Vector2(1080.75, 285.5)
 rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbR5" type="Sprite2D" parent="Lights" unique_id=422221413]
 self_modulate = Color(1, 1, 1, 0.39215684)
-position = Vector2(1023.75, 364.75)
+position = Vector2(1080.75, 364.5)
 rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbR6" type="Sprite2D" parent="Lights" unique_id=370152368]
 self_modulate = Color(1, 1, 1, 0.39215684)
-position = Vector2(1023.75, 443.75)
+position = Vector2(1080.75, 443.5)
 rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
 [node name="LightbulbR7" type="Sprite2D" parent="Lights" unique_id=1697802095]
 self_modulate = Color(1, 1, 1, 0.39215684)
-position = Vector2(1023.75, 522.75)
+position = Vector2(1080.75, 522.5)
 rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
@@ -431,7 +431,7 @@ position = Vector2(-77, -13)
 [node name="shoulder" type="Bone2D" parent="TempCharacter/Skeleton2D" unique_id=890112940]
 position = Vector2(234, 257)
 rotation = -0.059357002
-scale = Vector2(0.99999976, 0.99999976)
+scale = Vector2(0.9999997, 0.9999997)
 rest = Transform2D(1, 0, 0, 1, 234, 257)
 
 [node name="elbow" type="Bone2D" parent="TempCharacter/Skeleton2D/shoulder" unique_id=1656392343]
