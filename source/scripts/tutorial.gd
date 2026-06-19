@@ -3,10 +3,20 @@ extends Control
 var tutorial_state = 0
 
 
+
+const HELP_DIALOG = [ 
+	"Welcome to Lady Luck's Door!" ,
+	"Pull the lever to get pieces to play" ,
+	"Pick up tiles or bombs from this area" ,
+	"Drop tiles here to make a path to my door" ,
+	"If you are lucky then I might help you" ,
+	"If you are unlucky then, well... boom!" ,
+	"Calculate your risk carefully!" 
+]
+
+
 func _ready() -> void:
 	_set_button_highlighted()
-
-	pass
 
 
 func _process(_delta: float) -> void:
@@ -14,8 +24,6 @@ func _process(_delta: float) -> void:
 		tutorial_state = 0
 		#_set_dialog_visible()
 		#print_debug("tutorial state reset: " + str(tutorial_state) )
-
-	pass
 
 
 func _input(_event: InputEvent) -> void:
@@ -26,18 +34,12 @@ func _input(_event: InputEvent) -> void:
 		if self.visible:
 			_on_change_tutorial_state(tutorial_state)
 
-		pass
-
 	if Input.is_action_just_pressed("ui_left"):
 		#print_debug("tutorial: ui_left...")
 
 		tutorial_state -= 1
 		if self.visible:
 			_on_change_tutorial_state(tutorial_state)
-
-		pass
-
-	pass
 
 
 func _on_show_self() -> void:
@@ -46,8 +48,6 @@ func _on_show_self() -> void:
 	self.show()
 
 	_on_change_tutorial_state(0)
-
-	pass
 
 
 func _on_change_tutorial_state(new_state: int) -> void:
@@ -60,16 +60,14 @@ func _on_change_tutorial_state(new_state: int) -> void:
 		tutorial_state = 0
 
 	#print_debug("_on_change_tutorial_state, after: " + str(tutorial_state) )
-
-	if tutorial_state > 5:
+	
+	if tutorial_state > 6 : 
 		self.hide()
 		return
 
 	_set_button_highlighted()
 	_set_panel_visibility()
 	_set_dialog_visible()
-
-	pass
 
 
 func _set_button_highlighted():
@@ -80,37 +78,37 @@ func _set_button_highlighted():
 	$Help3/Panel.visible = tutorial_state == 3
 	$Help4/Panel.visible = tutorial_state == 4
 	$Help5/Panel.visible = tutorial_state == 5
-
-	pass
-
+	$Help6/Panel.visible = tutorial_state == 6
+	
 
 func _set_dialog_visible():
 	#print_debug("_set_dialog_visible, state: " + str(tutorial_state) )
+	
+	$Dialog0/RichTextLabel.text = HELP_DIALOG[ tutorial_state ]
+	
+	#%Dialog0.visible = tutorial_state == 0 
+	#%Dialog1.visible = tutorial_state == 1 
+	#%Dialog2.visible = tutorial_state == 2 
+	#%Dialog3.visible = tutorial_state == 3 
+	#%Dialog4.visible = tutorial_state == 4 
+	#%Dialog5.visible = tutorial_state == 5
+	
 
-	%Dialog0.visible = tutorial_state == 0
-	%Dialog1.visible = tutorial_state == 1
-	%Dialog2.visible = tutorial_state == 2
-	%Dialog3.visible = tutorial_state == 3
-	%Dialog4.visible = tutorial_state == 4
-	%Dialog5.visible = tutorial_state == 5
-
-	pass
-
-
-func _set_panel_visibility():
-	$Panel1.visible = true
+func _set_panel_visibility(): 
+	
 	$Panel2.visible = true
-	$Panel3.visible = true
-
-	$PanelSlots.visible = tutorial_state != 1
-	$PanelGrid.visible = tutorial_state != 2
-	$PanelLuck.visible = tutorial_state != 3
-
-	$HighlightSlots.visible = tutorial_state == 1
-	$HighlightGrid.visible = tutorial_state == 2
-	$HighlightLuck.visible = tutorial_state == 3
-
-	pass
+	$Panel3.visible = true 
+	
+	$Panel1.visible = tutorial_state != 1
+	
+	$PanelSlots.visible = tutorial_state != 2
+	$PanelGrid.visible  = tutorial_state != 3
+	$PanelLuck.visible  = tutorial_state != 4
+	
+	$HighlightLever.visible = tutorial_state == 1
+	$HighlightSlots.visible = tutorial_state == 2
+	$HighlightGrid.visible  = tutorial_state == 3
+	$HighlightLuck.visible  = tutorial_state == 4
 
 
 func _on_button_pressed() -> void:
@@ -118,5 +116,3 @@ func _on_button_pressed() -> void:
 
 	tutorial_state += 1
 	_on_change_tutorial_state(tutorial_state)
-
-	pass

@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://3gtimcic0h85"]
 
 [ext_resource type="Script" uid="uid://dmrak3edmrnox" path="res://source/floor/lady_luck/lady_luck_ui.gd" id="1_5d5k2"]
+[ext_resource type="Texture2D" uid="uid://bioopwke2pmti" path="res://assets/art/placeholder-rigging.png" id="2_e361y"]
 [ext_resource type="Texture2D" uid="uid://d2cit3lp2k6dk" path="res://assets/art/placeholder-luckcards.png" id="2_fnptl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j7hh"]
+size = Vector2(1, 1)
 
 [node name="LadyLuck" type="Control" unique_id=799243148]
 layout_mode = 3
@@ -33,7 +37,56 @@ grow_vertical = 0
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="TempCharacter" type="CharacterBody2D" parent="HBoxContainer/Images" unique_id=1645717998]
+position = Vector2(-262, -364)
+
+[node name="EmptyShape" type="CollisionShape2D" parent="HBoxContainer/Images/TempCharacter" unique_id=1299031370]
+rotation = 0.017283665
+shape = SubResource("RectangleShape2D_3j7hh")
+disabled = true
+
+[node name="polygons" type="Node2D" parent="HBoxContainer/Images/TempCharacter" unique_id=1419271097]
+
+[node name="body" type="Polygon2D" parent="HBoxContainer/Images/TempCharacter/polygons" unique_id=605485783]
+position = Vector2(-76, -11)
+texture = ExtResource("2_e361y")
+polygon = PackedVector2Array(239, 214.5, 291, 180.5, 302, 81.5, 35, -20.5, -64, 258.5, -23, 459.5, 81, 682.5, 286, 671.5, 346, 287.5, 232, 277.5, 206, 226.5)
+uv = PackedVector2Array(239, 214.5, 291, 180.5, 302, 81.5, 35, -20.5, -64, 258.5, -23, 459.5, 81, 682.5, 286, 671.5, 346, 287.5, 232, 277.5, 206, 226.5)
+
+[node name="arm" type="Polygon2D" parent="HBoxContainer/Images/TempCharacter/polygons" unique_id=2057255506]
+position = Vector2(-77, -13)
+texture = ExtResource("2_e361y")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(369, 92, 307, 142, 297, 241, 218, 220, 203, 237, 240, 297, 332, 291, 350, 268, 344, 167, 376, 158, 368, 137, 399, 112)
+uv = PackedVector2Array(369, 92, 307, 142, 297, 241, 218, 220, 203, 237, 240, 297, 332, 291, 350, 268, 344, 167, 376, 158, 368, 137, 399, 112)
+bones = ["shoulder", PackedFloat32Array(0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0), "shoulder/elbow", PackedFloat32Array(0, 0, 0.5, 0, 0, 0, 0.5, 1, 0, 0, 0, 0), "shoulder/elbow/wrist", PackedFloat32Array(0, 0.5, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0), "shoulder/elbow/wrist/finger", PackedFloat32Array(0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5)]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="HBoxContainer/Images/TempCharacter" unique_id=182181048]
+position = Vector2(-77, -13)
+
+[node name="shoulder" type="Bone2D" parent="HBoxContainer/Images/TempCharacter/Skeleton2D" unique_id=1501634897]
+position = Vector2(234, 257)
+rotation = -0.059357002
+scale = Vector2(0.9999998, 0.9999998)
+rest = Transform2D(1, 0, 0, 1, 234, 257)
+
+[node name="elbow" type="Bone2D" parent="HBoxContainer/Images/TempCharacter/Skeleton2D/shoulder" unique_id=1857096898]
+position = Vector2(79, 13)
+rotation = 0.6403113
+rest = Transform2D(1, 0, 0, 1, 79, 13)
+
+[node name="wrist" type="Bone2D" parent="HBoxContainer/Images/TempCharacter/Skeleton2D/shoulder/elbow" unique_id=1808020936]
+position = Vector2(11, -115)
+rotation = 0.11720685
+rest = Transform2D(1, 0, 0, 1, 11, -115)
+
+[node name="finger" type="Bone2D" parent="HBoxContainer/Images/TempCharacter/Skeleton2D/shoulder/elbow/wrist" unique_id=1787569100]
+position = Vector2(39, -35)
+rotation = -0.35101336
+rest = Transform2D(1, 0, 0, 1, 39, -35)
+
 [node name="LadyLuckLight" type="TextureRect" parent="HBoxContainer/Images" unique_id=1129622664]
+visible = false
 layout_mode = 0
 offset_left = -400.0
 offset_top = -380.0

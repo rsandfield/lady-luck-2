@@ -7,4 +7,3 @@
 script = ExtResource("1_lmepa")
 
 [node name="TileUI" parent="." unique_id=1894309720 instance=ExtResource("1_wu6bs")]
-mouse_filter = 2
