@@ -33,7 +33,9 @@ func spin_wheels() -> void:
 	for i in range(_wheels.size() - 1, -1, -1):
 		var wheel = _wheels[i]
 		wheel.spin()
-		await _ui.get_tree().create_timer(0.25).timeout
+		await Game.get_tree().create_timer(0.25).timeout
+		if !is_instance_valid(_ui):
+			return
 
 
 func _wheel_finished():

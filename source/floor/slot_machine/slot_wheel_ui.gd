@@ -55,6 +55,8 @@ func spin(items: Array[ItemResource]):
 	)
 
 	while _spinning:
+		if !is_inside_tree():
+			return
 		await get_tree().process_frame
 
 	_anim.stop()

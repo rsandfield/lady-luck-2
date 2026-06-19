@@ -19,7 +19,11 @@ func spin() -> void:
 	items.append(BombResource.new())
 	items.shuffle()
 	_item = items[-2]
+	if !is_instance_valid(_ui):
+		return
 	await _ui.spin(items)
+	if !is_instance_valid(_ui):
+		return
 	finished.emit()
 
 

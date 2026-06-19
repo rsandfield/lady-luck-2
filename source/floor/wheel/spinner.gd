@@ -30,15 +30,21 @@ func set_item_count(item_count: int, color_count: int = 2) -> void:
 
 
 func spin():
+	if !is_instance_valid(_ui):
+		return
 	var row = randi() % _row_count
 	var item_index = randi() % len(_items)
 	_ui.spin_to(row + _row_count * 3, -item_index - len(_items) * 3)
 
 	await _ui.finished
+	if !is_instance_valid(_ui):
+		return
 	_ui.clear_ui(item_index)
 	result.emit(row, _items[item_index])
 
-	await _ui.get_tree().create_timer(1).timeout
+	await Game.get_tree().create_timer(1).timeout
+	if !is_instance_valid(_ui):
+		return
 	_ui.set_item(_new_item(), item_index)
 
 

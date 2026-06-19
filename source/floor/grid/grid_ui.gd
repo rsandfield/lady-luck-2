@@ -92,6 +92,8 @@ func flag_spin(spin: bool):
 
 func flag_ladder(pulse_time: float, pulse_delay: float):
 	for i in _size.y:
+		if !is_inside_tree():
+			return
 		flag_pulse(i, pulse_time)
 		await get_tree().create_timer(pulse_delay).timeout
 
