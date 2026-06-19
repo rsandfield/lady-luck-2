@@ -12,8 +12,6 @@ func _ready() -> void:
 	velocity.y = -150.0
 	velocity.x = randf_range(-80.0, 80.0)
 
-	pass
-
 
 func _physics_process(delta):
 	velocity.y += delta * GRAVITY
@@ -21,11 +19,9 @@ func _physics_process(delta):
 	var motion = velocity * delta
 	move_and_collide(motion)
 
-	pass
 
-
-func _set_points_info(points: int):
-	print_debug("_set_points_color: " + str(points))
+func set_points_info(points: int):
+	# print_debug("_set_points_color: " + str(points))
 
 	new_points = points
 	$Label.text = str(new_points)
@@ -36,5 +32,3 @@ func _set_points_info(points: int):
 		$Label.set("theme_override_colors/font_color", my_color_red)
 
 	$AnimationPlayer.play("float")
-
-	pass

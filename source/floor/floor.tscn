@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cu2o14flw07o6" path="res://source/floor/slot_machine/slot_machine_ui.tscn" id="2_p1kb0"]
 [ext_resource type="PackedScene" uid="uid://3gtimcic0h85" path="res://source/floor/lady_luck/lady_luck.tscn" id="3_bey53"]
 [ext_resource type="PackedScene" uid="uid://cksm1x0jrd8ge" path="res://source/floor/grid/grid_ui.tscn" id="3_vqkr4"]
+[ext_resource type="PackedScene" uid="uid://6vbn4bonis0x" path="res://source/floor/points/turn_container.tscn" id="5_a23us"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqkr4"]
 
@@ -48,14 +49,25 @@ size_flags_vertical = 3
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/Slots" unique_id=182174465]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Slots/PanelContainer" unique_id=1923615028]
+[node name="MachineContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Slots/PanelContainer" unique_id=1923615028]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 25
 
-[node name="SlotMachine" parent="MarginContainer/HBoxContainer/Slots/PanelContainer/MarginContainer" unique_id=188532546 instance=ExtResource("2_p1kb0")]
+[node name="SlotMachine" parent="MarginContainer/HBoxContainer/Slots/PanelContainer/MachineContainer" unique_id=188532546 instance=ExtResource("2_p1kb0")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Slots/PanelContainer" unique_id=28902857]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = -30
+theme_override_constants/margin_right = 50
+
+[node name="TurnContainer" parent="MarginContainer/HBoxContainer/Slots/PanelContainer/MarginContainer" unique_id=1749657070 instance=ExtResource("5_a23us")]
 unique_name_in_owner = true
 layout_mode = 2
 
@@ -71,5 +83,5 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 
-[connection signal="moving_tile" from="MarginContainer/HBoxContainer/Slots/PanelContainer/MarginContainer/SlotMachine" to="." method="_on_slot_machine_moving_tile"]
-[connection signal="spin_sound_play" from="MarginContainer/HBoxContainer/Slots/PanelContainer/MarginContainer/SlotMachine" to="." method="_on_slot_machine_play_sound"]
+[connection signal="moving_tile" from="MarginContainer/HBoxContainer/Slots/PanelContainer/MachineContainer/SlotMachine" to="." method="_on_slot_machine_moving_tile"]
+[connection signal="spin_sound_play" from="MarginContainer/HBoxContainer/Slots/PanelContainer/MachineContainer/SlotMachine" to="." method="_on_slot_machine_play_sound"]

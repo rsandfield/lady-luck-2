@@ -4,10 +4,13 @@ extends PanelContainer
 @export var _size: Vector2i = Vector2i(5, 7)
 @export var _wheels := 4
 
+@onready var _turn_counter: PointsContainer = %TurnContainer
+
 var _slot_machine: SlotMachine
 var _grid: Grid
 var _spinner: Spinner
 var _lady: LadyLuck
+
 
 signal moving_tile(is_clicked: bool)
 signal slot_machine_sound
@@ -53,6 +56,7 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 func _on_lever_pulled():
 	_grid.flag_spin(true)
 	_spinner.spin()
+	_turn_counter.add_value(1)
 
 
 func _on_spin_finished():
