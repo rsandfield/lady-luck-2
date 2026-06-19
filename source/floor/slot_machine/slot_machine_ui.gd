@@ -38,9 +38,9 @@ func _on_slot_cell_moving_tile(is_moving: bool) -> void:
 	moving_tile.emit(is_moving)
 
 
-func _on_lever_pulled() -> void:
+func pull_lever() -> void:
 	$AnimationPlayer.play("lever_pull")
 
 
-func _on_lever_blocked() -> void:
+func shake_lever() -> void:
 	$AnimationPlayer.play("lever_shake")
