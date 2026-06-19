@@ -1,12 +1,7 @@
 class_name TileUI
 extends ItemUI
 
-const COLORS: Array[Color] = [
-	Color(0, 0, 0, 0),
-	Color.RED,
-	Color.GREEN,
-	Color.BLUE
-]
+const COLORS: Array[Color] = [Color(0, 0, 0, 0), Color.RED, Color.GREEN, Color.BLUE]
 
 @onready var left := $Left
 @onready var right := $Right
@@ -30,11 +25,11 @@ func set_resource(new_resource: TileResource) -> void:
 		side_ui[i].modulate = COLORS[sides[i]]
 
 
-func set_visible_is_moving( is_moving: bool, modulate_color: Color ) -> void:
+func set_visible_is_moving(is_moving: bool, modulate_color: Color) -> void:
 	super(is_moving, modulate_color)
 	Game.moving_tile_resource = resource
 
-	up.visible    = !is_moving
-	down.visible  = !is_moving
-	left.visible  = !is_moving
+	up.visible = !is_moving
+	down.visible = !is_moving
+	left.visible = !is_moving
 	right.visible = !is_moving

@@ -2,11 +2,11 @@ class_name Grid
 
 signal grid_cell_pressed(cell: GridCell)
 
-
 var _ui: GridUI
 var _size: Vector2i
 var _cells: Array[GridCell]
 var _color_count: int
+
 
 func set_ui(new_ui: GridUI) -> void:
 	_ui = new_ui
@@ -14,7 +14,7 @@ func set_ui(new_ui: GridUI) -> void:
 
 func set_grid_size(new_size: Vector2i, color_count: int = 2) -> void:
 	_cells = []
-	
+
 	_size = new_size
 	_color_count = color_count
 	_rebuild_grid()
@@ -71,7 +71,7 @@ func all_paths_finished() -> bool:
 		if !_is_color_connected(color + 1):
 			return false
 	return true
-	
+
 
 func _is_color_connected(color: int) -> bool:
 	var bottom_start = _size.x * (_size.y - 1)
@@ -92,7 +92,10 @@ func _depth_search(color: int, visited: Array[GridCell], cell: GridCell) -> Arra
 		var neighbor = cell.get_neighbor(direction)
 		if !neighbor || visited.has(neighbor):
 			continue
-		if cell.get_side(direction) == color && neighbor.get_side(TileResource.opposite(direction)) == color:
+		if (
+			cell.get_side(direction) == color
+			&& neighbor.get_side(TileResource.opposite(direction)) == color
+		):
 			visited = _depth_search(color, visited, neighbor)
 	return visited
 

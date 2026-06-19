@@ -1,9 +1,7 @@
 class_name SlotMachine
 
-
 signal lever_pulled
 signal finished
-
 
 var _ui: SlotMachineUI
 var _wheels: Array[SlotWheel] = []

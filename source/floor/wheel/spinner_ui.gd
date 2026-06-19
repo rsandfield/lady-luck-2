@@ -1,13 +1,12 @@
 class_name SpinnerUI
 extends Control
 
-
 signal finished
-
 
 var _colors: Array[Color]
 var _item_uis: Array[ItemUI]
 var _awaiting: int = 0
+
 
 func _ready():
 	$InnerWheel.finished.connect(_spin_finished)
@@ -39,7 +38,7 @@ func set_item(item: ItemResource, index: int):
 
 	_colors[index] = item.wheel_color()
 	$InnerWheel.make_pie(_colors)
-	
+
 	var item_scene = item.ui_scene()
 	if !item_scene:
 		_item_uis[index] = null
@@ -74,4 +73,4 @@ func _spin_finished():
 	_awaiting -= 1
 	if _awaiting > 0:
 		return
-	finished.emit()	
+	finished.emit()

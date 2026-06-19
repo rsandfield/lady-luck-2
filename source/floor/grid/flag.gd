@@ -1,13 +1,11 @@
 class_name Flag
 extends Control
 
-
 var color: Color:
 	set(value):
 		color = value
 		$TextureRect.modulate = color
 		$Glow.modulate = Color(color, 0)
-
 
 var flip: bool:
 	set(value):

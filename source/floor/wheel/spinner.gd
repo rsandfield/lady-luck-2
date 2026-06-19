@@ -1,8 +1,6 @@
 class_name Spinner
 
-
 signal result(row: int, item: ItemResource)
-
 
 @export var p_none := 0.4
 @export var p_bomb := 0.3
@@ -35,7 +33,7 @@ func spin():
 	var row = randi() % _row_count
 	var item_index = randi() % len(_items)
 	_ui.spin_to(row + _row_count * 3, -item_index - len(_items) * 3)
-	
+
 	await _ui.finished
 	_ui.clear_ui(item_index)
 	result.emit(row, _items[item_index])

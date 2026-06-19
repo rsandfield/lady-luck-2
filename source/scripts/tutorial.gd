@@ -1,114 +1,122 @@
 extends Control
 
-var tutorial_state = 0 
+var tutorial_state = 0
+
 
 func _ready() -> void:
 	_set_button_highlighted()
-	
+
 	pass
 
+
 func _process(_delta: float) -> void:
-	
-	if tutorial_state != 0 && !self.visible: 
+	if tutorial_state != 0 && !self.visible:
 		tutorial_state = 0
 		#_set_dialog_visible()
 		#print_debug("tutorial state reset: " + str(tutorial_state) )
-	
+
 	pass
 
+
 func _input(_event: InputEvent) -> void:
-	
-	if Input.is_action_just_pressed("ui_right"): 
+	if Input.is_action_just_pressed("ui_right"):
 		#print_debug("tutorial: ui_right...")
-		
+
 		tutorial_state += 1
-		if self.visible: _on_change_tutorial_state( tutorial_state )
-		
+		if self.visible:
+			_on_change_tutorial_state(tutorial_state)
+
 		pass
-	
-	if Input.is_action_just_pressed("ui_left"): 
+
+	if Input.is_action_just_pressed("ui_left"):
 		#print_debug("tutorial: ui_left...")
-		
+
 		tutorial_state -= 1
-		if self.visible: _on_change_tutorial_state( tutorial_state )
-		
+		if self.visible:
+			_on_change_tutorial_state(tutorial_state)
+
 		pass
-	
+
 	pass
+
 
 func _on_show_self() -> void:
 	#print_debug("_on_show_self, state: " + str(tutorial_state) )
-	
+
 	self.show()
-	
+
 	_on_change_tutorial_state(0)
-	
+
 	pass
 
-func _on_change_tutorial_state( new_state : int ) -> void: 
+
+func _on_change_tutorial_state(new_state: int) -> void:
 	#print_debug("_on_change_tutorial_state, old: " + str(tutorial_state) )
 	#print_debug("_on_change_tutorial_state, new: " + str(new_state) )
-	
+
 	tutorial_state = new_state
-	
-	if tutorial_state < 0 : 
-		tutorial_state = 0 
-	
+
+	if tutorial_state < 0:
+		tutorial_state = 0
+
 	#print_debug("_on_change_tutorial_state, after: " + str(tutorial_state) )
-	
-	if tutorial_state > 5 : 
+
+	if tutorial_state > 5:
 		self.hide()
-		return 
-	
+		return
+
 	_set_button_highlighted()
 	_set_panel_visibility()
 	_set_dialog_visible()
-	
+
 	pass
 
-func _set_button_highlighted(): 
+
+func _set_button_highlighted():
 	#print_debug("_set_button_highlighted, state: " + str(tutorial_state) )
-	
+
 	$Help1/Panel.visible = tutorial_state == 1
 	$Help2/Panel.visible = tutorial_state == 2
 	$Help3/Panel.visible = tutorial_state == 3
 	$Help4/Panel.visible = tutorial_state == 4
 	$Help5/Panel.visible = tutorial_state == 5
-	
+
 	pass
 
-func _set_dialog_visible(): 
+
+func _set_dialog_visible():
 	#print_debug("_set_dialog_visible, state: " + str(tutorial_state) )
-	
-	%Dialog0.visible = tutorial_state == 0 
-	%Dialog1.visible = tutorial_state == 1 
-	%Dialog2.visible = tutorial_state == 2 
-	%Dialog3.visible = tutorial_state == 3 
-	%Dialog4.visible = tutorial_state == 4 
+
+	%Dialog0.visible = tutorial_state == 0
+	%Dialog1.visible = tutorial_state == 1
+	%Dialog2.visible = tutorial_state == 2
+	%Dialog3.visible = tutorial_state == 3
+	%Dialog4.visible = tutorial_state == 4
 	%Dialog5.visible = tutorial_state == 5
-	
+
 	pass
 
-func _set_panel_visibility(): 
-	
+
+func _set_panel_visibility():
 	$Panel1.visible = true
 	$Panel2.visible = true
-	$Panel3.visible = true 
-	
+	$Panel3.visible = true
+
 	$PanelSlots.visible = tutorial_state != 1
-	$PanelGrid.visible  = tutorial_state != 2
-	$PanelLuck.visible  = tutorial_state != 3
-	
+	$PanelGrid.visible = tutorial_state != 2
+	$PanelLuck.visible = tutorial_state != 3
+
 	$HighlightSlots.visible = tutorial_state == 1
-	$HighlightGrid.visible  = tutorial_state == 2
-	$HighlightLuck.visible  = tutorial_state == 3
-	
+	$HighlightGrid.visible = tutorial_state == 2
+	$HighlightLuck.visible = tutorial_state == 3
+
 	pass
+
 
 func _on_button_pressed() -> void:
 	#print_debug("_on_button_pressed...")
-	
+
 	tutorial_state += 1
-	_on_change_tutorial_state( tutorial_state )
-	
+	_on_change_tutorial_state(tutorial_state)
+
 	pass

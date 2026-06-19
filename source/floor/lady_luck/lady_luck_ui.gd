@@ -1,9 +1,7 @@
 class_name LadyLuckUI
 extends Control
 
-
 signal finished
-
 
 @onready var _images = %Images
 @onready var _hand = %Hand
@@ -17,14 +15,14 @@ func ready():
 func hold_item(item: ItemResource) -> void:
 	for child in _hand.get_children():
 		child.queue_free()
-	
+
 	if !item:
 		return
-	
+
 	var ui_scene = item.ui_scene()
 	if !ui_scene:
 		return
-	
+
 	var item_ui = ui_scene.instantiate()
 	item_ui.set_resource(item)
 	_hand.add_child(item_ui)

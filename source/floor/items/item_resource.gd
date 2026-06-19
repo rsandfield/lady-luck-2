@@ -16,4 +16,3 @@ func play(_slot: GridCell) -> void:
 
 func wheel_color() -> Color:
 	return Color.WHITE
-

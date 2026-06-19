@@ -16,4 +16,3 @@ func ui_scene() -> PackedScene:
 
 func wheel_color() -> Color:
 	return Color.PURPLE
-

@@ -2,14 +2,13 @@
 class_name SpinnerWheelUI
 extends Control
 
-
 signal finished
-
 
 @export var radius := 100.0
 @export var line_width := 2.0
 
 var _slices: Array[PieSlice] = []
+
 
 func _ready():
 	if Engine.is_editor_hint():

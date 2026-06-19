@@ -1,7 +1,6 @@
 class_name Floor
 extends PanelContainer
 
-
 @export var _size: Vector2i = Vector2i(5, 7)
 @export var _wheels := 4
 
@@ -10,7 +9,7 @@ var _grid: Grid
 var _spinner: Spinner
 var _lady: LadyLuck
 
-signal moving_tile ( is_clicked : bool )
+signal moving_tile(is_clicked: bool)
 signal slot_machine_sound
 
 
@@ -19,7 +18,7 @@ func _ready():
 	_slot_machine.set_ui(%SlotMachine)
 	_slot_machine.set_wheel_count(_wheels)
 	_slot_machine.finished.connect(_on_spin_finished)
-	
+
 	_grid = Grid.new()
 	_grid.set_ui(%Grid)
 	_grid.grid_cell_pressed.connect(_on_grid_cell_pressed)
@@ -43,7 +42,7 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 		return
 	if !slot.is_legal_play(item):
 		return
-	
+
 	item.play(slot)
 	_slot_machine.consume_selected()
 
@@ -66,10 +65,10 @@ func _on_lady_play(row: int, item: ItemResource):
 	_grid.pulse_row(row)
 
 
-func _on_slot_machine_moving_tile( is_moving : bool ) -> void:
+func _on_slot_machine_moving_tile(is_moving: bool) -> void:
 	#print_debug( "_on_slot_machine_moving_tile: ")
-	
-	moving_tile.emit( is_moving )
+
+	moving_tile.emit(is_moving)
 
 
 func _on_mouse_object_tile_released() -> void:
@@ -78,7 +77,7 @@ func _on_mouse_object_tile_released() -> void:
 	Game.grid_tile_hovered.pressed.emit()
 
 
-func _on_slot_machine_play_sound() -> void: 
+func _on_slot_machine_play_sound() -> void:
 	print_debug("_on_slot_machine_play_lever_sound...")
-	
+
 	slot_machine_sound.emit()
