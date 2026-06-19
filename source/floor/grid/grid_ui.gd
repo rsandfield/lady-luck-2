@@ -80,6 +80,8 @@ func _add_flag(flip: bool, color: Color):
 	flag.color = color
 	add_child(flag)
 	_flags.append(flag)
+	if color.a == 0:
+		flag.disable()
 
 
 func flag_spin(spin: bool):

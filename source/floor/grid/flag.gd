@@ -4,17 +4,22 @@ extends Control
 var color: Color:
 	set(value):
 		color = value
-		$TextureRect.modulate = color
+		$Bulb.modulate = color
 		$Glow.modulate = Color(color, 0)
 
 var flip: bool:
 	set(value):
 		flip = value
-		$TextureRect.flip_h = value
-		if flip:
-			$Glow.position.x = 0
-		else:
-			$Glow.position.x = -7.5
+		$Lightbulb.flip_h = value
+		# if flip:
+		# 	$Glow.position.x = 0
+		# else:
+		# 	$Glow.position.x = -7.5
+
+
+func disable():
+	for child in get_children():
+		child.visible = false
 
 
 func pulse(time: float):
