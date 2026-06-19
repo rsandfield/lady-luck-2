@@ -28,7 +28,6 @@ layout_mode = 2
 
 [node name="Flag2" parent="." unique_id=1297518426 instance=ExtResource("2_fok3d")]
 layout_mode = 2
-flip_h = true
 
 [node name="Flag3" parent="." unique_id=1224434551 instance=ExtResource("2_fok3d")]
 layout_mode = 2
@@ -50,7 +49,6 @@ layout_mode = 2
 
 [node name="Flag4" parent="." unique_id=508310869 instance=ExtResource("2_fok3d")]
 layout_mode = 2
-flip_h = true
 
 [node name="Flag5" parent="." unique_id=1245263867 instance=ExtResource("2_fok3d")]
 layout_mode = 2
@@ -72,7 +70,6 @@ layout_mode = 2
 
 [node name="Flag6" parent="." unique_id=1840628092 instance=ExtResource("2_fok3d")]
 layout_mode = 2
-flip_h = true
 
 [node name="Flag7" parent="." unique_id=809711873 instance=ExtResource("2_fok3d")]
 layout_mode = 2
@@ -94,7 +91,6 @@ layout_mode = 2
 
 [node name="Flag8" parent="." unique_id=1973958891 instance=ExtResource("2_fok3d")]
 layout_mode = 2
-flip_h = true
 
 [node name="Flag9" parent="." unique_id=450798759 instance=ExtResource("2_fok3d")]
 layout_mode = 2
@@ -116,7 +112,6 @@ layout_mode = 2
 
 [node name="Flag10" parent="." unique_id=1986049553 instance=ExtResource("2_fok3d")]
 layout_mode = 2
-flip_h = true
 
 [node name="Flag11" parent="." unique_id=2077738756 instance=ExtResource("2_fok3d")]
 layout_mode = 2
@@ -138,9 +133,9 @@ layout_mode = 2
 
 [node name="Flag12" parent="." unique_id=2133628180 instance=ExtResource("2_fok3d")]
 layout_mode = 2
-flip_h = true
 
 [node name="Flag13" parent="." unique_id=632966630 instance=ExtResource("2_fok3d")]
+custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
 
 [node name="GridCell30" parent="." unique_id=1930160150 instance=ExtResource("2_7fr7u")]
@@ -160,4 +155,3 @@ layout_mode = 2
 
 [node name="Flag14" parent="." unique_id=133423596 instance=ExtResource("2_fok3d")]
 layout_mode = 2
-flip_h = true

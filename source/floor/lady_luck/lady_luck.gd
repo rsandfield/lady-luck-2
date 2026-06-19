@@ -1,6 +1,5 @@
 class_name LadyLuck
 
-
 var _ui: LadyLuckUI
 var _grid: Grid
 
@@ -25,4 +24,3 @@ func cause_chaos(row: int, item: ItemResource) -> void:
 			item.play(cell)
 			return
 	print("Highly illegal %d %s" % [row, item.get_script().get_global_name()])
-	

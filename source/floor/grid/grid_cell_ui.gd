@@ -8,12 +8,12 @@ signal pressed
 
 var is_active_tile = false
 
+
 func _ready():
 	$Button.pressed.connect(pressed.emit)
 
 
 func _process(_delta: float) -> void:
-	
 	var hovered = get_global_rect().has_point(get_global_mouse_position())
 
 	# switch the active time and save the data in the game file
@@ -25,6 +25,7 @@ func _process(_delta: float) -> void:
 	if !hovered && is_active_tile:
 		is_active_tile = false
 		Game.grid_tile_hovered = null
+
 
 func set_tile(tile: TileResource) -> void:
 	_tile_ui.set_resource(tile)

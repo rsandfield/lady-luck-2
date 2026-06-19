@@ -8,32 +8,32 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_a4yqd")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1578165555]
+[node name="PointsDisplay" type="HBoxContainer" parent="." unique_id=1578165555]
 layout_mode = 0
 offset_right = 252.0
 offset_bottom = 29.0
 
-[node name="Points1" parent="HBoxContainer" unique_id=2031130878 instance=ExtResource("1_yvr8f")]
+[node name="Points1" parent="PointsDisplay" unique_id=2031130878 instance=ExtResource("1_yvr8f")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Points2" parent="HBoxContainer" unique_id=1681802759 instance=ExtResource("1_yvr8f")]
+[node name="Points2" parent="PointsDisplay" unique_id=1681802759 instance=ExtResource("1_yvr8f")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Points3" parent="HBoxContainer" unique_id=1569434577 instance=ExtResource("1_yvr8f")]
+[node name="Points3" parent="PointsDisplay" unique_id=1569434577 instance=ExtResource("1_yvr8f")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Points4" parent="HBoxContainer" unique_id=510595738 instance=ExtResource("1_yvr8f")]
+[node name="Points4" parent="PointsDisplay" unique_id=510595738 instance=ExtResource("1_yvr8f")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Points5" parent="HBoxContainer" unique_id=670740185 instance=ExtResource("1_yvr8f")]
+[node name="Points5" parent="PointsDisplay" unique_id=670740185 instance=ExtResource("1_yvr8f")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Points6" parent="HBoxContainer" unique_id=405832371 instance=ExtResource("1_yvr8f")]
+[node name="Points6" parent="PointsDisplay" unique_id=405832371 instance=ExtResource("1_yvr8f")]
 unique_name_in_owner = true
 layout_mode = 2
 

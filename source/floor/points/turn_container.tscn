@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://6vbn4bonis0x"]
+
+[ext_resource type="Script" uid="uid://dcgk54eb6inry" path="res://source/floor/points/points_container.gd" id="1_ojdql"]
+[ext_resource type="PackedScene" uid="uid://rg5a0nup2d7h" path="res://source/floor/points/points_box.tscn" id="2_acedg"]
+
+[node name="TurnContainer" type="Control" unique_id=1749657070]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ojdql")
+
+[node name="PointsDisplay" type="HBoxContainer" parent="." unique_id=1578165555]
+layout_mode = 0
+offset_right = 252.0
+offset_bottom = 29.0
+
+[node name="Points1" parent="PointsDisplay" unique_id=2031130878 instance=ExtResource("2_acedg")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Points2" parent="PointsDisplay" unique_id=1681802759 instance=ExtResource("2_acedg")]
+unique_name_in_owner = true
+layout_mode = 2

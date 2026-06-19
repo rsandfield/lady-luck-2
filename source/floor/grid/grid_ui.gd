@@ -15,7 +15,6 @@ const ROW_COLORS: Array[Color] = [
 	Color.VIOLET,
 ]
 
-
 var _size: Vector2i
 var _flags: Array[Flag]
 var _spinning: bool
@@ -47,7 +46,6 @@ func _flag_pulse(time: float):
 	_flags[len(_flags) - flag_index - 1].pulse(time)
 
 
-
 func set_grid(width: int, cells: Array[GridCell]) -> void:
 	_flags = []
 	for child in get_children():
@@ -64,15 +62,15 @@ func set_grid(width: int, cells: Array[GridCell]) -> void:
 	for cell in cells:
 		if x % width == 0:
 			_add_flag(false, ROW_COLORS[rows - y])
-		
+
 		var cell_ui = GRID_CELL_UI_SCENE.instantiate()
 		add_child(cell_ui)
 		cell.set_ui(cell_ui)
-		
+
 		if x % width == width - 1:
 			_add_flag(true, ROW_COLORS[rows - y])
 			y += 1
-			
+
 		x += 1
 
 
@@ -82,7 +80,8 @@ func _add_flag(flip: bool, color: Color):
 	flag.color = color
 	add_child(flag)
 	_flags.append(flag)
-
+	if color.a == 0:
+		flag.disable()
 
 
 func flag_spin(spin: bool):

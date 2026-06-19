@@ -1,9 +1,7 @@
 class_name SlotWheel
 
-
 signal slot_wheel_pressed(wheel: SlotWheel)
 signal finished
-
 
 var _ui: SlotWheelUI
 var _item: ItemResource

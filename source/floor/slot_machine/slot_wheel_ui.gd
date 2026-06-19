@@ -15,9 +15,8 @@ const CENTER_Y := 37.5
 @export var decel_time := 0.25
 
 @onready var _anim: AnimationPlayer = $AnimationPlayer
-@onready var _slots: Array[Control] = [
-	$Spinner/Slot1, $Spinner/Slot2, $Spinner/Slot3, $Spinner/Slot4
-]
+@onready
+var _slots: Array[Control] = [$Spinner/Slot1, $Spinner/Slot2, $Spinner/Slot3, $Spinner/Slot4]
 
 var _items: Array[ItemResource]
 var _item_index: int = 0
@@ -51,7 +50,9 @@ func spin(items: Array[ItemResource]):
 	_anim.speed_scale = windup_speed
 	_anim.play("cycle")
 	var speed_tween = create_tween()
-	speed_tween.tween_property(_anim, "speed_scale", cruise_speed, windup_time).set_ease(Tween.EASE_IN)
+	speed_tween.tween_property(_anim, "speed_scale", cruise_speed, windup_time).set_ease(
+		Tween.EASE_IN
+	)
 
 	while _spinning:
 		await get_tree().process_frame
@@ -121,7 +122,6 @@ func _on_button_button_up() -> void:
 	item_ui.tile_is_moving = false
 	item_ui.set_visible_is_moving(item_ui.tile_is_moving, item_ui.TILE_COLOR_SHOW)
 	moving_tile.emit(false)
-
 
 
 func _set_slot_item(slot_idx: int, item: ItemResource):

@@ -1,8 +1,7 @@
 extends Node
 
 var changelog = [
-
-"""
+	"""
 
 
 TEST: 
@@ -63,5 +62,4 @@ HAVE YOU UPDATED THE BUILD VERSION AND DISABLED DEBUG?
 - Template
 
 """
-
 ]

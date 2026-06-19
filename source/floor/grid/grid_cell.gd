@@ -1,8 +1,6 @@
 class_name GridCell
 
-
 signal grid_cell_pressed(cell: GridCell)
-
 
 var _ui: GridCellUI
 var _tile: ItemResource
@@ -48,7 +46,7 @@ func is_door() -> bool:
 
 func is_legal_play(item: ItemResource) -> bool:
 	return item.is_legal_play(self)
-		
+
 
 func is_legal_neighbor(direction: TileResource.Direction, tile: TileResource) -> bool:
 	if !_tile:

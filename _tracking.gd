@@ -1,8 +1,7 @@
 extends Node
 
 var changelog = [
-
-"""
+	"""
 
 Errors:
 
@@ -49,5 +48,4 @@ Cause: Even though the object in the slot machine is hidden it still exists and 
 
 
 """
-
 ]
