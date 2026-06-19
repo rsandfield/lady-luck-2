@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://q26m7tt0syiv"]
 
 [ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_1k1e1"]
-[ext_resource type="Texture2D" uid="uid://deo7ermpq3am" path="res://assets/art/background-green.png" id="2_ihnwo"]
+[ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/green_velvet_background.png" id="2_ihnwo"]
 [ext_resource type="Texture2D" uid="uid://d2cit3lp2k6dk" path="res://assets/art/placeholder-luckcards.png" id="3_b58l3"]
 [ext_resource type="Texture2D" uid="uid://by85tavmk3ort" path="res://assets/art/placeholder-ladyluck.png" id="4_3f7hu"]
 [ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="5_fkpom"]
@@ -237,40 +237,39 @@ texture = ExtResource("2_ihnwo")
 metadata/_edit_lock_ = true
 
 [node name="LadyLuckColor" type="TextureRect" parent="." unique_id=1723959359]
-offset_left = 81.0
-offset_top = 46.0
-offset_right = 505.0
-offset_bottom = 466.0
+offset_left = 441.0
+offset_top = -654.0
+offset_right = 865.0
+offset_bottom = -234.0
 mouse_filter = 2
 texture = ExtResource("3_b58l3")
+flip_h = true
 
 [node name="LadyLuckLight" type="TextureRect" parent="." unique_id=1059972106]
-visible = false
-offset_left = 161.0
-offset_top = 11.0
-offset_right = 1171.0
-offset_bottom = 1561.0
+offset_left = 76.0
+offset_top = -691.0
+offset_right = 1086.0
+offset_bottom = 859.0
 scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 texture = ExtResource("4_3f7hu")
 flip_h = true
 
 [node name="LadyLuckDark" type="TextureRect" parent="." unique_id=512748620]
-visible = false
-offset_left = 149.0
-offset_top = 75.0
-offset_right = 1159.0
-offset_bottom = 1429.0
+offset_left = -372.0
+offset_top = -462.00003
+offset_right = 638.0
+offset_bottom = 892.0
 scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 texture = ExtResource("5_fkpom")
 flip_h = true
 
 [node name="LadyLuckSly" type="TextureRect" parent="." unique_id=265231321]
-offset_left = 1214.0
-offset_top = 42.0
-offset_right = 1508.0001
-offset_bottom = 671.0
+offset_left = 938.0
+offset_top = -490.0
+offset_right = 1232.0001
+offset_bottom = 139.0
 scale = Vector2(0.7, 0.7)
 mouse_filter = 2
 texture = ExtResource("6_dr7xf")
@@ -401,88 +400,8 @@ metadata/_edit_lock_ = true
 [node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("8_248bq")]
 visible = false
 
-[node name="TextEditS1" type="TextEdit" parent="." unique_id=2065293396]
-offset_left = 81.0
-offset_top = 677.0
-offset_right = 116.0
-offset_bottom = 720.0
-theme_override_fonts/font = ExtResource("10_nwggm")
-theme_override_font_sizes/font_size = 24
-text = "%"
-editable = false
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-middle_mouse_paste_enabled = false
-empty_selection_clipboard_enabled = false
-tab_input_mode = false
-virtual_keyboard_enabled = false
-
-[node name="TextEditS2" type="TextEdit" parent="." unique_id=1607134135]
-offset_left = 192.0
-offset_top = 677.0
-offset_right = 227.0
-offset_bottom = 720.0
-theme_override_fonts/font = ExtResource("10_nwggm")
-theme_override_font_sizes/font_size = 24
-text = "%"
-editable = false
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-middle_mouse_paste_enabled = false
-empty_selection_clipboard_enabled = false
-tab_input_mode = false
-virtual_keyboard_enabled = false
-
-[node name="TextEditS3" type="TextEdit" parent="." unique_id=856068135]
-offset_left = 308.0
-offset_top = 677.0
-offset_right = 343.0
-offset_bottom = 720.0
-theme_override_fonts/font = ExtResource("10_nwggm")
-theme_override_font_sizes/font_size = 24
-text = "%"
-editable = false
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-middle_mouse_paste_enabled = false
-empty_selection_clipboard_enabled = false
-tab_input_mode = false
-virtual_keyboard_enabled = false
-
-[node name="TextEditS4" type="TextEdit" parent="." unique_id=1827536343]
-offset_left = 425.0
-offset_top = 677.0
-offset_right = 460.0
-offset_bottom = 720.0
-theme_override_fonts/font = ExtResource("10_nwggm")
-theme_override_font_sizes/font_size = 24
-text = "%"
-editable = false
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-middle_mouse_paste_enabled = false
-empty_selection_clipboard_enabled = false
-tab_input_mode = false
-virtual_keyboard_enabled = false
-
 [node name="Bomb" parent="." unique_id=1605726017 instance=ExtResource("11_5o2ll")]
-position = Vector2(443, -80)
+position = Vector2(494, 312)
 scale = Vector2(0.5, 0.5)
 
 [node name="PointContainer" parent="." unique_id=1749657070 instance=ExtResource("12_ihnwo")]

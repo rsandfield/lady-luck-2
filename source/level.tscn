@@ -2,9 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cbyseky6gkv2d" path="res://source/scripts/level.gd" id="1_8ytwg"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_3h5dt"]
+[ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/green_velvet_background.png" id="2_caait"]
 
 [node name="Level" type="Node2D" unique_id=854162818]
 script = ExtResource("1_8ytwg")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1660577910]
+offset_right = 1154.0
+offset_bottom = 648.0
+texture = ExtResource("2_caait")
+metadata/_edit_lock_ = true
 
 [node name="MainMenu" type="Button" parent="." unique_id=133252502]
 offset_left = 14.0
