@@ -3,7 +3,7 @@ extends Control
 
 signal finished
 
-@onready var _images = %Images
+#@onready var _images = %Images
 @onready var _hand = %Hand
 var _item_ui: ItemUI
 
@@ -30,9 +30,11 @@ func hold_item(item: ItemResource) -> void:
 
 
 func play_item(cell: GridCell) -> void:
+	print_debug("play_item...")
 	if !_item_ui:
 		return
-
+	
+	# this function call might be a problem...
 	await get_tree().create_timer(0.5).timeout
 	if !is_inside_tree() or !is_instance_valid(_item_ui):
 		return

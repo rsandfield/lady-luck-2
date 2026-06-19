@@ -1,7 +1,8 @@
 class_name Floor
 extends PanelContainer
 
-@export var _config: FloorConfig = FloorConfig.new()
+@export var _size: Vector2i = Vector2i(5, 7)
+@export var _wheels := 4
 
 @onready var _turn_counter: PointsContainer = %TurnContainer
 
@@ -16,26 +17,19 @@ signal slot_machine_sound
 
 
 func _ready():
-	reset()
-
-
-func reset(config: FloorConfig = null):
-	if config:
-		_config = config
-
 	_slot_machine = SlotMachine.new()
 	_slot_machine.set_ui(%SlotMachine)
-	_slot_machine.set_wheel_count(_config.wheel_count)
+	_slot_machine.set_wheel_count(_wheels)
 	_slot_machine.finished.connect(_on_spin_finished)
 
 	_grid = Grid.new()
 	_grid.set_ui(%Grid)
 	_grid.grid_cell_pressed.connect(_on_grid_cell_pressed)
-	_grid.set_grid_size(_config.grid_size)
+	_grid.set_grid_size(_size)
 
 	_spinner = Spinner.new()
 	_spinner.set_ui(%Spinner)
-	_spinner.set_row_count(_config.grid_size.y)
+	_spinner.set_row_count(_size.y)
 	_spinner.set_item_count(6)
 	_slot_machine.lever_pulled.connect(_on_lever_pulled)
 
@@ -56,16 +50,21 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 	_slot_machine.consume_selected()
 
 	if _grid.all_paths_finished():
-		print("Ya did it")
+		print_debug("Ya did it")
 
-
+#var for_testing = true
 func _on_lever_pulled():
+	print_debug("_on_lever_pulled...")
+	#if for_testing: return
+	#print_debug("here...")
+	
 	_grid.flag_spin(true)
 	_spinner.spin()
 	_turn_counter.add_value(1)
 
-
 func _on_spin_finished():
+	print_debug("_on_spin_finished...")
+	
 	_grid.flag_spin(false)
 	_grid.flash_all_flags()
 
@@ -89,5 +88,7 @@ func _on_mouse_object_tile_released() -> void:
 
 func _on_slot_machine_play_sound() -> void: 
 	#print_debug("_on_slot_machine_play_lever_sound...")
+	
+	#if Game.slot_machine_blocked_flag: return
 	
 	slot_machine_sound.emit()

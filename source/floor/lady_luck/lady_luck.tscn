@@ -3,8 +3,18 @@
 [ext_resource type="Script" uid="uid://dmrak3edmrnox" path="res://source/floor/lady_luck/lady_luck_ui.gd" id="1_5d5k2"]
 [ext_resource type="Texture2D" uid="uid://bioopwke2pmti" path="res://assets/art/placeholder-rigging.png" id="2_e361y"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j7hh"]
-size = Vector2(1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnptl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
 
 [node name="LadyLuck" type="Control" unique_id=799243148]
 layout_mode = 3
@@ -13,9 +23,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 371.0
+offset_left = 373.0
 offset_top = 104.0
-offset_right = 371.0
+offset_right = 373.0
 offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -23,53 +33,41 @@ script = ExtResource("1_5d5k2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2137960674]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="Images" type="Control" parent="HBoxContainer" unique_id=2102794510]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="TempCharacter" type="CharacterBody2D" parent="HBoxContainer/Images" unique_id=1645717998]
-position = Vector2(-262, -364)
-
-[node name="EmptyShape" type="CollisionShape2D" parent="HBoxContainer/Images/TempCharacter" unique_id=1299031370]
-rotation = 0.017283665
-shape = SubResource("RectangleShape2D_3j7hh")
-disabled = true
-
-[node name="Polygons" type="Node2D" parent="HBoxContainer/Images/TempCharacter" unique_id=1419271097]
-
-[node name="body" type="Polygon2D" parent="HBoxContainer/Images/TempCharacter/Polygons" unique_id=605485783]
-position = Vector2(-76, -11)
-texture = ExtResource("2_e361y")
-polygon = PackedVector2Array(239, 214.5, 291, 180.5, 302, 81.5, 35, -20.5, -64, 258.5, -23, 459.5, 81, 682.5, 286, 671.5, 346, 287.5, 232, 277.5, 206, 226.5)
-uv = PackedVector2Array(239, 214.5, 291, 180.5, 302, 81.5, 35, -20.5, -64, 258.5, -23, 459.5, 81, 682.5, 286, 671.5, 346, 287.5, 232, 277.5, 206, 226.5)
-
-[node name="arm" type="Polygon2D" parent="HBoxContainer/Images/TempCharacter/Polygons" unique_id=2057255506]
-position = Vector2(-77, -13)
-texture = ExtResource("2_e361y")
-polygon = PackedVector2Array(369, 92, 307, 142, 297, 241, 218, 220, 203, 237, 240, 297, 332, 291, 350, 268, 344, 167, 376, 158, 368, 137, 399, 112)
-uv = PackedVector2Array(369, 92, 307, 142, 297, 241, 218, 220, 203, 237, 240, 297, 332, 291, 350, 268, 344, 167, 376, 158, 368, 137, 399, 112)
-bones = ["shoulder", PackedFloat32Array(0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0), "shoulder/elbow", PackedFloat32Array(0, 0, 0.5, 0, 0, 0, 0.5, 1, 0, 0, 0, 0), "shoulder/elbow/wrist", PackedFloat32Array(0, 0.5, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0), "shoulder/elbow/wrist/finger", PackedFloat32Array(0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5)]
+offset_left = -219.0
+offset_top = 52.0
+offset_right = -15.0
+offset_bottom = 92.0
 
 [node name="Control" type="Control" parent="HBoxContainer" unique_id=1239375716]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
+[node name="Images" type="Control" parent="." unique_id=2102794510]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -219.0
+offset_top = 52.0
+offset_right = -219.0
+offset_bottom = 92.0
+
+[node name="HandCardBackground" type="Panel" parent="Images" unique_id=1157202527]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -249.0
+offset_right = 139.0
+offset_bottom = -154.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fnptl")
+
+[node name="PlaceholderRigging" type="Sprite2D" parent="Images" unique_id=235092072]
+position = Vector2(-152, -172)
+texture = ExtResource("2_e361y")
+
 [node name="Hand" type="Control" parent="." unique_id=757526930]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -75.0
-offset_bottom = 75.0
-grow_horizontal = 0
+anchors_preset = 0
+offset_left = -173.0
+offset_top = -187.0
+offset_right = -86.0
+offset_bottom = -112.0
+pivot_offset = Vector2(42, 37)

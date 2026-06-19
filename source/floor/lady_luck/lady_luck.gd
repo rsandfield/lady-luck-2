@@ -6,7 +6,6 @@ var _grid: Grid
 
 func set_ui(ui: LadyLuckUI) -> void:
 	_ui = ui
-	_ui.hold_item(null)
 
 
 func set_grid(grid: Grid) -> void:

@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://vakxrvgs6bgh" path="res://source/floor/slot_machine/slot_machine_ui.gd" id="1_gru50"]
 [ext_resource type="PackedScene" uid="uid://bdyhkm8xfwp6t" path="res://source/floor/slot_machine/slot_wheel_ui.tscn" id="2_8nnqb"]
+[ext_resource type="Texture2D" uid="uid://coq6uiajtkg8q" path="res://assets/art/full_slot_machine.png" id="2_x2wtt"]
 [ext_resource type="Texture2D" uid="uid://cym4ab1giibqq" path="res://assets/icons/red_circle.tres" id="3_vr6dc"]
 [ext_resource type="Texture2D" uid="uid://d4dokgb8ho2qa" path="res://assets/art/metal-tileset-CC0.png" id="3_wmcta"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2wtt"]
 
 [sub_resource type="Gradient" id="Gradient_vr6dc"]
 offsets = PackedFloat32Array(0.64)
@@ -22,7 +25,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Lever:position")
+tracks/0/path = NodePath("../LeverHandle:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,7 +40,7 @@ resource_name = "lever_pull"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Lever:position")
+tracks/0/path = NodePath("../LeverHandle:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -54,7 +57,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Lever:position")
+tracks/0/path = NodePath("../LeverHandle:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -72,9 +75,28 @@ _data = {
 }
 
 [node name="SlotMachine" type="HBoxContainer" unique_id=188532546]
+offset_left = 1.0
+offset_right = 533.0
+offset_bottom = 150.0
 theme_override_constants/separation = 20
 alignment = 1
 script = ExtResource("1_gru50")
+
+[node name="BlockingNode" type="Node2D" parent="." unique_id=1125747549]
+unique_name_in_owner = true
+
+[node name="BlockingPanel" type="Panel" parent="BlockingNode" unique_id=748421645]
+offset_left = -18.0
+offset_top = 74.0
+offset_right = 445.0
+offset_bottom = 243.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x2wtt")
+
+[node name="FullSlotMachine" type="Sprite2D" parent="." unique_id=524642769]
+show_behind_parent = true
+position = Vector2(268.50006, 103.00001)
+scale = Vector2(1.0454546, 1.26)
+texture = ExtResource("2_x2wtt")
 
 [node name="SlotWheel1" parent="." unique_id=1975195812 instance=ExtResource("2_8nnqb")]
 layout_mode = 2
@@ -88,7 +110,13 @@ layout_mode = 2
 [node name="SlotWheel4" parent="." unique_id=877449426 instance=ExtResource("2_8nnqb")]
 layout_mode = 2
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1707087731]
+[node name="Control" type="Control" parent="." unique_id=1187722517]
+show_behind_parent = true
+layout_mode = 2
+
+[node name="LeverNode" type="Node2D" parent="." unique_id=1068669953]
+
+[node name="LeverBackground" type="Sprite2D" parent="LeverNode" unique_id=1707087731]
 position = Vector2(494.5, 77.5)
 scale = Vector2(0.90624976, 1.6979165)
 texture = ExtResource("3_wmcta")
@@ -96,25 +124,30 @@ hframes = 8
 vframes = 14
 frame = 35
 
-[node name="Button" type="Button" parent="." unique_id=1964202832]
+[node name="LeverButton" type="Button" parent="LeverNode" unique_id=1964202832]
+unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
-layout_mode = 2
+offset_left = 462.0
+offset_right = 534.0
+offset_bottom = 150.0
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 10
 action_mode = 0
 icon = SubResource("GradientTexture2D_wmcta")
 
-[node name="Panel" type="Panel" parent="Button" unique_id=183177856]
+[node name="LeverSlotPanel" type="Panel" parent="LeverNode/LeverButton" unique_id=183177856]
 show_behind_parent = true
 layout_mode = 0
-offset_left = 30.0
-offset_top = 31.0
-offset_right = 40.0
-offset_bottom = 131.0
+offset_left = 28.0
+offset_top = 34.0
+offset_right = 38.0
+offset_bottom = 134.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_vr6dc")
 
-[node name="Lever" type="Sprite2D" parent="." unique_id=1897849990]
+[node name="LeverHandle" type="Sprite2D" parent="LeverNode" unique_id=1897849990]
 position = Vector2(496, 36)
 texture = ExtResource("3_vr6dc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=105258332]
-root_node = NodePath("../Button")
+root_node = NodePath("../LeverNode/LeverButton")
 libraries/ = SubResource("AnimationLibrary_11yfp")
