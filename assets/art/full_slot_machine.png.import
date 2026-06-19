@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s6646trusroa"
-path="res://.godot/imported/background-purplish.png-4d3f1f91819d853b7bc3ac4a4754bd4c.ctex"
+uid="uid://coq6uiajtkg8q"
+path="res://.godot/imported/full_slot_machine.png-8fa66d50d4af2c7abc4e38e06c6630e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/background-purplish.png"
-dest_files=["res://.godot/imported/background-purplish.png-4d3f1f91819d853b7bc3ac4a4754bd4c.ctex"]
+source_file="res://assets/art/full_slot_machine.png"
+dest_files=["res://.godot/imported/full_slot_machine.png-8fa66d50d4af2c7abc4e38e06c6630e9.ctex"]
 
 [params]
 

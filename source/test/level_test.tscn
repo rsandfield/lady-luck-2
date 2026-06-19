@@ -47,11 +47,11 @@ flip_h = true
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_right = 989.0
-offset_bottom = 549.0
+offset_left = -34.0
+offset_right = 1118.0
+offset_bottom = 648.0
 grow_horizontal = 1
 grow_vertical = 1
-metadata/_edit_lock_ = true
 
 [node name="MainMenu" type="Button" parent="." unique_id=133252502]
 offset_left = 14.0
@@ -76,7 +76,6 @@ visible = false
 unique_name_in_owner = true
 visible = false
 
-[connection signal="restart_game" from="." to="Floor" method="reset"]
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

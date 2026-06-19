@@ -12,8 +12,8 @@ var wheels: Array[SlotWheelUI] = []
 
 func _ready():
 	populate_wheels([])
-	$Button.pressed.connect(spin_requested.emit)
-	$Button.pressed.connect(spin_sound_play.emit)
+	%LeverButton.pressed.connect(spin_requested.emit)
+	%LeverButton.pressed.connect(spin_sound_play.emit)
 
 
 func populate_wheels(new_wheels: Array[SlotWheel]) -> void:

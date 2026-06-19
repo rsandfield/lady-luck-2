@@ -22,7 +22,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Lever:position")
+tracks/0/path = NodePath("../LeverHandle:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,7 +37,7 @@ resource_name = "lever_pull"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Lever:position")
+tracks/0/path = NodePath("../LeverHandle:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -54,7 +54,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Lever:position")
+tracks/0/path = NodePath("../LeverHandle:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -72,6 +72,9 @@ _data = {
 }
 
 [node name="SlotMachine" type="HBoxContainer" unique_id=188532546]
+offset_left = 1.0
+offset_right = 533.0
+offset_bottom = 150.0
 theme_override_constants/separation = 20
 alignment = 1
 script = ExtResource("1_gru50")
@@ -88,7 +91,11 @@ layout_mode = 2
 [node name="SlotWheel4" parent="." unique_id=877449426 instance=ExtResource("2_8nnqb")]
 layout_mode = 2
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1707087731]
+[node name="Control" type="Control" parent="." unique_id=1187722517]
+show_behind_parent = true
+layout_mode = 2
+
+[node name="LeverBackground" type="Sprite2D" parent="." unique_id=1707087731]
 position = Vector2(494.5, 77.5)
 scale = Vector2(0.90624976, 1.6979165)
 texture = ExtResource("3_wmcta")
@@ -96,25 +103,27 @@ hframes = 8
 vframes = 14
 frame = 35
 
-[node name="Button" type="Button" parent="." unique_id=1964202832]
+[node name="LeverButton" type="Button" parent="." unique_id=1964202832]
+unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+theme_override_constants/outline_size = 10
 action_mode = 0
 icon = SubResource("GradientTexture2D_wmcta")
 
-[node name="Panel" type="Panel" parent="Button" unique_id=183177856]
+[node name="LeverSlotPanel" type="Panel" parent="LeverButton" unique_id=183177856]
 show_behind_parent = true
 layout_mode = 0
-offset_left = 30.0
-offset_top = 31.0
-offset_right = 40.0
-offset_bottom = 131.0
+offset_left = 9.0
+offset_top = 33.0
+offset_right = 19.0
+offset_bottom = 133.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_vr6dc")
 
-[node name="Lever" type="Sprite2D" parent="." unique_id=1897849990]
+[node name="LeverHandle" type="Sprite2D" parent="." unique_id=1897849990]
 position = Vector2(496, 36)
 texture = ExtResource("3_vr6dc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=105258332]
-root_node = NodePath("../Button")
+root_node = NodePath("../LeverButton")
 libraries/ = SubResource("AnimationLibrary_11yfp")

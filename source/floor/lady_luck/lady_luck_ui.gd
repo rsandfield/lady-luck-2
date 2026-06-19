@@ -3,7 +3,7 @@ extends Control
 
 signal finished
 
-@onready var _images = %Images
+#@onready var _images = %Images
 @onready var _hand = %Hand
 var _item_ui: ItemUI
 

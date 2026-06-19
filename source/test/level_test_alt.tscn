@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://q26m7tt0syiv"]
 
 [ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_1k1e1"]
-[ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/green_velvet_background.png" id="2_ihnwo"]
+[ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/background-green_velvet.png" id="2_ihnwo"]
 [ext_resource type="Texture2D" uid="uid://d2cit3lp2k6dk" path="res://assets/art/placeholder-luckcards.png" id="3_b58l3"]
 [ext_resource type="Texture2D" uid="uid://by85tavmk3ort" path="res://assets/art/placeholder-ladyluck.png" id="4_3f7hu"]
 [ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="5_fkpom"]
@@ -9,12 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="7_l4jha"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="8_248bq"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="10_nwggm"]
+[ext_resource type="Texture2D" uid="uid://u8hwlg38u7gi" path="res://assets/art/menu_buttons.png" id="12_dr7xf"]
 [ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="12_jcaet"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="13_b6kwo"]
 [ext_resource type="Texture2D" uid="uid://br538pffgrles" path="res://assets/art/button-placeholder-main.png" id="14_lukrn"]
 [ext_resource type="Texture2D" uid="uid://b861e46gnkt8p" path="res://assets/art/button-placeholder-retry.png" id="15_nj6ht"]
+[ext_resource type="Texture2D" uid="uid://cx8vthjravtv7" path="res://assets/art/menu_buttons(1).png" id="16_fkpom"]
 [ext_resource type="Texture2D" uid="uid://bhh6s8dqe2s4n" path="res://assets/art/placeholder-goddess.png" id="17_3f7hu"]
 [ext_resource type="Texture2D" uid="uid://bioopwke2pmti" path="res://assets/art/placeholder-rigging.png" id="17_b58l3"]
+[ext_resource type="Texture2D" uid="uid://blj6f1rmtplsx" path="res://assets/art/menu_buttons(2).png" id="17_dr7xf"]
+[ext_resource type="Texture2D" uid="uid://c1rx5ny64frft" path="res://assets/art/menu_buttons(3).png" id="18_l4jha"]
+[ext_resource type="Texture2D" uid="uid://coq6uiajtkg8q" path="res://assets/art/full_slot_machine.png" id="19_248bq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3f7hu"]
 size = Vector2(1, 1)
@@ -100,8 +105,8 @@ position = Vector2(-77, -13)
 
 [node name="shoulder" type="Bone2D" parent="TempCharacter/Skeleton2D" unique_id=890112940]
 position = Vector2(234, 257)
-rotation = -0.059357002
-scale = Vector2(0.9999995, 0.9999995)
+rotation = -0.059357014
+scale = Vector2(0.9999991, 0.9999991)
 rest = Transform2D(1, 0, 0, 1, 234, 257)
 
 [node name="elbow" type="Bone2D" parent="TempCharacter/Skeleton2D/shoulder" unique_id=1656392343]
@@ -135,7 +140,7 @@ offset_top = 11.0
 offset_right = 163.0
 offset_bottom = 58.0
 theme = ExtResource("13_b6kwo")
-texture_normal = ExtResource("14_lukrn")
+texture_normal = ExtResource("12_dr7xf")
 texture_pressed = ExtResource("14_lukrn")
 texture_hover = ExtResource("14_lukrn")
 texture_disabled = ExtResource("14_lukrn")
@@ -147,8 +152,8 @@ offset_left = 5.0
 offset_top = 6.0
 offset_right = 143.0
 offset_bottom = 44.0
-theme_override_colors/font_color = Color(0.6361663, 0.25448444, 0.09677493, 1)
-theme_override_constants/outline_size = 10
+theme_override_colors/font_color = Color(0, 0.5084172, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("10_nwggm")
 theme_override_font_sizes/font_size = 30
 text = "(Esc) Menu"
@@ -159,19 +164,18 @@ offset_top = 63.0
 offset_right = 163.0
 offset_bottom = 110.0
 theme = ExtResource("13_b6kwo")
-texture_normal = ExtResource("15_nj6ht")
+texture_normal = ExtResource("16_fkpom")
 texture_pressed = ExtResource("15_nj6ht")
 texture_hover = ExtResource("15_nj6ht")
 texture_disabled = ExtResource("15_nj6ht")
 texture_focused = ExtResource("15_nj6ht")
 
-[node name="Label2" type="Label" parent="Restart" unique_id=76890835]
+[node name="Label" type="Label" parent="Restart" unique_id=76890835]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 4.0
 offset_right = 126.0
 offset_bottom = 42.0
-theme_override_colors/font_color = Color(0.6361663, 0.25448444, 0.09677493, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("10_nwggm")
 theme_override_font_sizes/font_size = 30
@@ -183,7 +187,7 @@ offset_top = 115.0
 offset_right = 163.0
 offset_bottom = 162.0
 theme = ExtResource("13_b6kwo")
-texture_normal = ExtResource("14_lukrn")
+texture_normal = ExtResource("16_fkpom")
 texture_pressed = ExtResource("14_lukrn")
 texture_hover = ExtResource("14_lukrn")
 texture_disabled = ExtResource("14_lukrn")
@@ -209,6 +213,39 @@ offset_bottom = 1445.0
 scale = Vector2(0.4, 0.4)
 mouse_filter = 2
 texture = ExtResource("17_3f7hu")
+
+[node name="Button1" type="TextureButton" parent="." unique_id=1681745527]
+offset_left = -229.0
+offset_top = 21.0
+offset_right = -79.0
+offset_bottom = 71.0
+texture_normal = ExtResource("16_fkpom")
+
+[node name="Button2" type="TextureButton" parent="." unique_id=959477153]
+offset_left = -634.0
+offset_top = 253.0
+offset_right = -484.0
+offset_bottom = 303.0
+texture_normal = ExtResource("17_dr7xf")
+
+[node name="Button3" type="TextureButton" parent="." unique_id=1796744306]
+offset_left = -636.0
+offset_top = 310.0
+offset_right = -486.0
+offset_bottom = 360.0
+texture_normal = ExtResource("18_l4jha")
+
+[node name="FullSlotMachine" type="Sprite2D" parent="." unique_id=258921035]
+position = Vector2(-591, 637)
+texture = ExtResource("19_248bq")
+
+[node name="MenuButtons(1)" type="Sprite2D" parent="." unique_id=1589044874]
+position = Vector2(-318, 125)
+texture = ExtResource("16_fkpom")
+
+[node name="MenuButtons(1)2" type="Sprite2D" parent="." unique_id=797463221]
+position = Vector2(-538, 78)
+texture = ExtResource("16_fkpom")
 
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]
