@@ -72,8 +72,10 @@ func _on_slot_swap(slot_idx: int) -> void:
 
 
 func _process(_delta):
+	
 	if !_spinning or !_done_loading:
 		return
+	
 	var center_y = _slots[_center_slot_idx].position.y
 	if abs(center_y - CENTER_Y) < 3.0:
 		_spinning = false

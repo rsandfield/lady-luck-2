@@ -35,9 +35,9 @@ func _on_change_points(new_points: int) -> void:
 
 	# print_debug( "_value: " + str( _value ) )
 
-	if $Marker2d:
+	if %ConfettiMarker:
 		var new_points_confetti = POINTS_CONFETTI_SCENE.instantiate()
-		new_points_confetti.position = $Marker2D.position
+		new_points_confetti.position = %ConfettiMarker.position
 		add_child(new_points_confetti)
 		new_points_confetti.set_points_info(new_points - rand)
 

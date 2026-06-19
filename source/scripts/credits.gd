@@ -19,3 +19,8 @@ func _on_godot_pressed() -> void:
 	OS.shell_open("https://godotengine.org")
 
 	pass
+
+func _on_murkyhg_pressed()  -> void:
+	OS.shell_open("https://mercury-hg.itch.io/")
+
+	pass

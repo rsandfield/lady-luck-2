@@ -102,7 +102,7 @@ text = "[center]
 Mikey [mymonkey] : Lead Artistic Director
 Robert Sandfield : Programming & Game Design
 Stephen Frister : Implementation & Animation
-[ placeholder ] // MurkyHg [?] : Something Something Art 
+Mercury Nightstone : UI Artist [https://mercury-hg.itch.io/] 
 
 Music by Ethan Grafton"
 
@@ -165,7 +165,17 @@ texture = ExtResource("6_7n2ak")
 position = Vector2(555, 246)
 texture = ExtResource("8_nkten")
 
+[node name="MurkyHgLink" type="LinkButton" parent="." unique_id=1899197202]
+offset_left = 591.0
+offset_top = 546.0
+offset_right = 875.0
+offset_bottom = 577.0
+theme_override_fonts/font = ExtResource("2_mm0m6")
+theme_override_font_sizes/font_size = 24
+text = "https://mercury-hg.itch.io/"
+
 [connection signal="pressed" from="CenterContainer/Control/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="BackControl" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Panel_Squad/Label" to="." method="_on_pigsquad_pressed"]
 [connection signal="pressed" from="Panel_Godot/Label" to="." method="_on_godot_pressed"]
+[connection signal="pressed" from="MurkyHgLink" to="." method="_on_murkyhg_pressed"]

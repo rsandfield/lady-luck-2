@@ -7,7 +7,7 @@ var _ui: SlotMachineUI
 var _wheels: Array[SlotWheel] = []
 var _selected: SlotWheel
 var _awaiting: int
-var _blocked: bool
+#var _blocked: bool
 
 func set_ui(new_ui: SlotMachineUI) -> void:
 	_ui = new_ui
@@ -40,7 +40,7 @@ func _wheel_finished():
 	_awaiting -= 1
 	if _awaiting <= 0:
 		finished.emit()
-		_blocked = false
+		#_blocked = false
 
 
 func select_wheel(wheel: SlotWheel) -> void:
@@ -58,10 +58,11 @@ func consume_selected() -> void:
 
 
 func _on_lever_pulled():
-	if _blocked:
-		_ui.shake_lever()
-		return
+	
+	#if _blocked:
+		#_ui.shake_lever()
+		#return
 	
 	_ui.pull_lever()
 	lever_pulled.emit()
-	_blocked = true
+	#_blocked = true

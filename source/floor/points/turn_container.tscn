@@ -10,7 +10,7 @@ script = ExtResource("1_ojdql")
 
 [node name="PointsDisplay" type="HBoxContainer" parent="." unique_id=1578165555]
 layout_mode = 0
-offset_right = 252.0
+offset_right = 57.0
 offset_bottom = 29.0
 
 [node name="Points1" parent="PointsDisplay" unique_id=2031130878 instance=ExtResource("2_acedg")]

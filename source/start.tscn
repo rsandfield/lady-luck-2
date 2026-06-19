@@ -13,7 +13,6 @@
 [ext_resource type="StyleBox" uid="uid://b22y23a1u23dl" path="res://assets/themes/style_box_flat_purple_light_hover.tres" id="8_dbyvq"]
 [ext_resource type="Theme" uid="uid://dpjv5lllxju8b" path="res://assets/themes/check_button_theme.tres" id="8_o7yua"]
 [ext_resource type="StyleBox" uid="uid://6w58cphnta5n" path="res://assets/themes/style_box_flat_blue_light_hover.tres" id="10_c1v46"]
-[ext_resource type="Texture2D" uid="uid://bhh6s8dqe2s4n" path="res://assets/art/placeholder-goddess.png" id="11_dbyvq"]
 [ext_resource type="Texture2D" uid="uid://do8ks0314xoks" path="res://assets/art/placeholder-luckdoor.png" id="14_kfqdp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ah3m"]
@@ -467,15 +466,6 @@ theme_override_styles/pressed = ExtResource("3_d4h25")
 theme_override_styles/hover = ExtResource("10_c1v46")
 theme_override_styles/disabled = ExtResource("3_d4h25")
 theme_override_styles/focus = ExtResource("3_d4h25")
-
-[node name="PlaceholderGoddess" type="TextureRect" parent="." unique_id=1594215197]
-offset_left = 1242.0
-offset_top = 17.0
-offset_right = 2156.0
-offset_bottom = 1432.0
-scale = Vector2(0.4, 0.4)
-mouse_filter = 2
-texture = ExtResource("11_dbyvq")
 
 [node name="GameCreditsTitle" type="RichTextLabel" parent="." unique_id=1904981292]
 offset_left = 28.0
