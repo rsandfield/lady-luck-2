@@ -84,11 +84,10 @@ script = ExtResource("1_gru50")
 
 [node name="BlockingNode" type="Node2D" parent="." unique_id=1125747549]
 unique_name_in_owner = true
-visible = false
 
 [node name="BlockingPanel" type="Panel" parent="BlockingNode" unique_id=748421645]
 offset_left = -18.0
-offset_top = -34.0
+offset_top = 74.0
 offset_right = 445.0
 offset_bottom = 243.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_x2wtt")

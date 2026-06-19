@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_20axw"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="5_ff1e8"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="5_tpn00"]
+[ext_resource type="PackedScene" uid="uid://b3r8jv44uqhta" path="res://source/floor/buttons/level_buttons.tscn" id="6_tpn00"]
 [ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="10_m3ls3"]
 
 [node name="TestLevel" type="Node2D" unique_id=442386131]
@@ -20,18 +21,18 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="MainMenu" type="Button" parent="." unique_id=133252502]
-offset_left = 14.0
-offset_top = 15.0
-offset_right = 134.0
-offset_bottom = 55.0
+offset_left = 154.0
+offset_top = -337.0
+offset_right = 274.0
+offset_bottom = -297.0
 theme = ExtResource("2_20axw")
 text = "Main Menu"
 
 [node name="Restart" type="Button" parent="." unique_id=1099381198]
-offset_left = 14.0
-offset_top = 63.0
-offset_right = 134.0
-offset_bottom = 103.0
+offset_left = 154.0
+offset_top = -289.0
+offset_right = 274.0
+offset_bottom = -249.0
 theme = ExtResource("2_20axw")
 text = "Restart"
 
@@ -41,6 +42,8 @@ visible = false
 [node name="Tutorial" parent="." unique_id=993889986 instance=ExtResource("10_m3ls3")]
 unique_name_in_owner = true
 visible = false
+
+[node name="LevelButtons" parent="." unique_id=1051872753 instance=ExtResource("6_tpn00")]
 
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]

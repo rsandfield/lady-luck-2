@@ -50,7 +50,7 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 	_slot_machine.consume_selected()
 
 	if _grid.all_paths_finished():
-		print("Ya did it")
+		print_debug("Ya did it")
 
 
 func _on_lever_pulled():

@@ -39,8 +39,9 @@ func _on_slot_cell_moving_tile(is_moving: bool) -> void:
 
 
 func pull_lever() -> void:
+	$AnimationPlayer.stop()
 	$AnimationPlayer.play("lever_pull")
-	%BlockingNode.show()
+	#%BlockingNode.show()
 
 
 func shake_lever() -> void:

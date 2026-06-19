@@ -41,6 +41,7 @@ alignment = 2
 
 [node name="Slots" type="VBoxContainer" parent="MarginContainer/Node/HBoxContainer" unique_id=437422763]
 layout_mode = 2
+mouse_filter = 2
 alignment = 2
 
 [node name="NodeSpinner" type="Node2D" parent="MarginContainer/Node/HBoxContainer/Slots" unique_id=2127738955]

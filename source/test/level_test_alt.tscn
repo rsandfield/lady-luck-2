@@ -2,10 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_1k1e1"]
 [ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/background-green_velvet.png" id="2_ihnwo"]
-[ext_resource type="Texture2D" uid="uid://d2cit3lp2k6dk" path="res://assets/art/placeholder-luckcards.png" id="3_b58l3"]
-[ext_resource type="Texture2D" uid="uid://by85tavmk3ort" path="res://assets/art/placeholder-ladyluck.png" id="4_3f7hu"]
-[ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="5_fkpom"]
-[ext_resource type="Texture2D" uid="uid://di5rsokaqyg66" path="res://assets/art/placeholder-slygoddess.png" id="6_dr7xf"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="7_l4jha"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="8_248bq"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="10_nwggm"]
@@ -14,63 +10,14 @@
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="13_b6kwo"]
 [ext_resource type="Texture2D" uid="uid://br538pffgrles" path="res://assets/art/button-placeholder-main.png" id="14_lukrn"]
 [ext_resource type="Texture2D" uid="uid://b861e46gnkt8p" path="res://assets/art/button-placeholder-retry.png" id="15_nj6ht"]
-[ext_resource type="Texture2D" uid="uid://bhh6s8dqe2s4n" path="res://assets/art/placeholder-goddess.png" id="17_3f7hu"]
 [ext_resource type="Texture2D" uid="uid://bioopwke2pmti" path="res://assets/art/placeholder-rigging.png" id="17_b58l3"]
+[ext_resource type="PackedScene" uid="uid://b3r8jv44uqhta" path="res://source/floor/buttons/level_buttons.tscn" id="17_fkpom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3f7hu"]
 size = Vector2(1, 1)
 
 [node name="TestAltLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_1k1e1")
-
-[node name="Background" type="TextureRect" parent="." unique_id=1061456643]
-offset_right = 1154.0
-offset_bottom = 648.0
-texture = ExtResource("2_ihnwo")
-metadata/_edit_lock_ = true
-
-[node name="LadyLuckColor" type="TextureRect" parent="." unique_id=1723959359]
-offset_left = 61.0
-offset_top = -475.0
-offset_right = 485.0
-offset_bottom = -55.0
-mouse_filter = 2
-texture = ExtResource("3_b58l3")
-flip_h = true
-
-[node name="LadyLuckLight" type="TextureRect" parent="." unique_id=1059972106]
-offset_left = 545.0
-offset_top = -532.0
-offset_right = 1555.0
-offset_bottom = 1018.0
-scale = Vector2(0.3, 0.3)
-mouse_filter = 2
-texture = ExtResource("4_3f7hu")
-flip_h = true
-
-[node name="LadyLuckDark" type="TextureRect" parent="." unique_id=512748620]
-offset_left = 1696.0001
-offset_top = -484.0
-offset_right = 2706.0
-offset_bottom = 870.0
-scale = Vector2(0.3, 0.3)
-mouse_filter = 2
-texture = ExtResource("5_fkpom")
-
-[node name="LadyLuckSly" type="TextureRect" parent="." unique_id=265231321]
-offset_left = 968.99994
-offset_top = -515.99994
-offset_right = 1263.0
-offset_bottom = 113.00006
-scale = Vector2(0.7, 0.7)
-mouse_filter = 2
-texture = ExtResource("6_dr7xf")
-flip_h = true
-
-[node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("7_l4jha")]
-offset_right = 1087.0
-offset_bottom = 649.0
-metadata/_edit_lock_ = true
 
 [node name="TempCharacter" type="CharacterBody2D" parent="." unique_id=416640605]
 position = Vector2(-449, -721)
@@ -102,7 +49,7 @@ position = Vector2(-77, -13)
 [node name="shoulder" type="Bone2D" parent="TempCharacter/Skeleton2D" unique_id=890112940]
 position = Vector2(234, 257)
 rotation = -0.059357014
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(0.99999857, 0.99999857)
 rest = Transform2D(1, 0, 0, 1, 234, 257)
 
 [node name="elbow" type="Bone2D" parent="TempCharacter/Skeleton2D/shoulder" unique_id=1656392343]
@@ -123,6 +70,17 @@ auto_calculate_length_and_angle = false
 length = 11.0
 bone_angle = -24.089998
 
+[node name="Background" type="TextureRect" parent="." unique_id=1061456643]
+offset_right = 1154.0
+offset_bottom = 648.0
+texture = ExtResource("2_ihnwo")
+metadata/_edit_lock_ = true
+
+[node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("7_l4jha")]
+offset_right = 1087.0
+offset_bottom = 649.0
+metadata/_edit_lock_ = true
+
 [node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("8_248bq")]
 visible = false
 
@@ -130,11 +88,17 @@ visible = false
 unique_name_in_owner = true
 visible = false
 
+[node name="LevelButtons" parent="." unique_id=1051872753 instance=ExtResource("17_fkpom")]
+offset_left = -33.0
+offset_top = -4.0
+offset_right = -33.0
+offset_bottom = -4.0
+
 [node name="MainMenu" type="TextureButton" parent="." unique_id=1674836647]
-offset_left = 14.0
-offset_top = 11.0
-offset_right = 163.0
-offset_bottom = 58.0
+offset_left = -339.0
+offset_top = 81.0
+offset_right = -189.0
+offset_bottom = 131.0
 theme = ExtResource("13_b6kwo")
 texture_normal = ExtResource("12_ihnwo")
 texture_pressed = ExtResource("14_lukrn")
@@ -155,10 +119,10 @@ theme_override_font_sizes/font_size = 30
 text = "(Esc) Menu"
 
 [node name="Restart" type="TextureButton" parent="." unique_id=108580267]
-offset_left = 14.0
-offset_top = 63.0
-offset_right = 163.0
-offset_bottom = 110.0
+offset_left = -339.0
+offset_top = 133.0
+offset_right = -189.0
+offset_bottom = 183.0
 theme = ExtResource("13_b6kwo")
 texture_normal = ExtResource("12_ihnwo")
 texture_pressed = ExtResource("15_nj6ht")
@@ -168,20 +132,20 @@ texture_focused = ExtResource("15_nj6ht")
 
 [node name="Label" type="Label" parent="Restart" unique_id=76890835]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 4.0
-offset_right = 126.0
-offset_bottom = 42.0
+offset_left = 17.0
+offset_top = 6.0
+offset_right = 131.0
+offset_bottom = 44.0
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("10_nwggm")
 theme_override_font_sizes/font_size = 30
 text = "(X) Retry"
 
 [node name="Help" type="TextureButton" parent="." unique_id=534559555]
-offset_left = 14.0
-offset_top = 115.0
-offset_right = 163.0
-offset_bottom = 162.0
+offset_left = -339.0
+offset_top = 185.0
+offset_right = -189.0
+offset_bottom = 235.0
 theme = ExtResource("13_b6kwo")
 texture_normal = ExtResource("12_ihnwo")
 texture_pressed = ExtResource("14_lukrn")
@@ -191,9 +155,9 @@ texture_focused = ExtResource("14_lukrn")
 
 [node name="Label" type="Label" parent="Help" unique_id=1126827559]
 layout_mode = 0
-offset_left = 13.0
+offset_left = 21.0
 offset_top = 6.0
-offset_right = 121.0
+offset_right = 129.0
 offset_bottom = 44.0
 theme_override_colors/font_color = Color(0.6361663, 0.25448444, 0.09677493, 1)
 theme_override_constants/outline_size = 10
@@ -201,18 +165,12 @@ theme_override_fonts/font = ExtResource("10_nwggm")
 theme_override_font_sizes/font_size = 30
 text = "(?) Help"
 
-[node name="PlaceholderGoddess" type="TextureRect" parent="." unique_id=583953158]
-offset_left = 1257.0
-offset_top = -628.99994
-offset_right = 2171.0
-offset_bottom = 786.00006
-scale = Vector2(0.4, 0.4)
-mouse_filter = 2
-texture = ExtResource("17_3f7hu")
-
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]
 [connection signal="tile_released" from="MouseObject" to="Floor" method="_on_mouse_object_tile_released"]
+[connection signal="button_help" from="LevelButtons" to="." method="_on_help_pressed"]
+[connection signal="button_menu" from="LevelButtons" to="." method="_on_main_menu_pressed"]
+[connection signal="button_retry" from="LevelButtons" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Help" to="." method="_on_help_pressed"]
