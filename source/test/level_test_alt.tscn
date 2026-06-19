@@ -17,9 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://cx8vthjravtv7" path="res://assets/art/menu_buttons(1).png" id="16_fkpom"]
 [ext_resource type="Texture2D" uid="uid://bhh6s8dqe2s4n" path="res://assets/art/placeholder-goddess.png" id="17_3f7hu"]
 [ext_resource type="Texture2D" uid="uid://bioopwke2pmti" path="res://assets/art/placeholder-rigging.png" id="17_b58l3"]
-[ext_resource type="Texture2D" uid="uid://blj6f1rmtplsx" path="res://assets/art/menu_buttons(2).png" id="17_dr7xf"]
-[ext_resource type="Texture2D" uid="uid://c1rx5ny64frft" path="res://assets/art/menu_buttons(3).png" id="18_l4jha"]
-[ext_resource type="Texture2D" uid="uid://coq6uiajtkg8q" path="res://assets/art/full_slot_machine.png" id="19_248bq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3f7hu"]
 size = Vector2(1, 1)
@@ -34,38 +31,38 @@ texture = ExtResource("2_ihnwo")
 metadata/_edit_lock_ = true
 
 [node name="LadyLuckColor" type="TextureRect" parent="." unique_id=1723959359]
-offset_left = 100.0
-offset_top = -537.0
-offset_right = 524.0
-offset_bottom = -117.0
+offset_left = 61.0
+offset_top = -475.0
+offset_right = 485.0
+offset_bottom = -55.0
 mouse_filter = 2
 texture = ExtResource("3_b58l3")
 flip_h = true
 
 [node name="LadyLuckLight" type="TextureRect" parent="." unique_id=1059972106]
-offset_left = 542.0
-offset_top = -568.0
-offset_right = 1552.0
-offset_bottom = 982.0
+offset_left = 545.0
+offset_top = -532.0
+offset_right = 1555.0
+offset_bottom = 1018.0
 scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 texture = ExtResource("4_3f7hu")
 flip_h = true
 
 [node name="LadyLuckDark" type="TextureRect" parent="." unique_id=512748620]
-offset_left = 1662.0
-offset_top = 32.0
-offset_right = 2672.0
-offset_bottom = 1386.0
+offset_left = 1696.0001
+offset_top = -484.0
+offset_right = 2706.0
+offset_bottom = 870.0
 scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 texture = ExtResource("5_fkpom")
 
 [node name="LadyLuckSly" type="TextureRect" parent="." unique_id=265231321]
-offset_left = 938.0
-offset_top = -490.0
-offset_right = 1232.0001
-offset_bottom = 139.0
+offset_left = 968.99994
+offset_top = -515.99994
+offset_right = 1263.0
+offset_bottom = 113.00006
 scale = Vector2(0.7, 0.7)
 mouse_filter = 2
 texture = ExtResource("6_dr7xf")
@@ -106,7 +103,7 @@ position = Vector2(-77, -13)
 [node name="shoulder" type="Bone2D" parent="TempCharacter/Skeleton2D" unique_id=890112940]
 position = Vector2(234, 257)
 rotation = -0.059357014
-scale = Vector2(0.9999991, 0.9999991)
+scale = Vector2(0.99999905, 0.99999905)
 rest = Transform2D(1, 0, 0, 1, 234, 257)
 
 [node name="elbow" type="Bone2D" parent="TempCharacter/Skeleton2D/shoulder" unique_id=1656392343]
@@ -206,46 +203,13 @@ theme_override_font_sizes/font_size = 30
 text = "(?) Help"
 
 [node name="PlaceholderGoddess" type="TextureRect" parent="." unique_id=583953158]
-offset_left = 1244.0
-offset_top = 30.0
-offset_right = 2158.0
-offset_bottom = 1445.0
+offset_left = 1257.0
+offset_top = -628.99994
+offset_right = 2171.0
+offset_bottom = 786.00006
 scale = Vector2(0.4, 0.4)
 mouse_filter = 2
 texture = ExtResource("17_3f7hu")
-
-[node name="Button1" type="TextureButton" parent="." unique_id=1681745527]
-offset_left = -229.0
-offset_top = 21.0
-offset_right = -79.0
-offset_bottom = 71.0
-texture_normal = ExtResource("16_fkpom")
-
-[node name="Button2" type="TextureButton" parent="." unique_id=959477153]
-offset_left = -634.0
-offset_top = 253.0
-offset_right = -484.0
-offset_bottom = 303.0
-texture_normal = ExtResource("17_dr7xf")
-
-[node name="Button3" type="TextureButton" parent="." unique_id=1796744306]
-offset_left = -636.0
-offset_top = 310.0
-offset_right = -486.0
-offset_bottom = 360.0
-texture_normal = ExtResource("18_l4jha")
-
-[node name="FullSlotMachine" type="Sprite2D" parent="." unique_id=258921035]
-position = Vector2(-591, 637)
-texture = ExtResource("19_248bq")
-
-[node name="MenuButtons(1)" type="Sprite2D" parent="." unique_id=1589044874]
-position = Vector2(-318, 125)
-texture = ExtResource("16_fkpom")
-
-[node name="MenuButtons(1)2" type="Sprite2D" parent="." unique_id=797463221]
-position = Vector2(-538, 78)
-texture = ExtResource("16_fkpom")
 
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]

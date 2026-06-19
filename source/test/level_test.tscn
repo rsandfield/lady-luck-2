@@ -2,46 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_tpn00"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_20axw"]
-[ext_resource type="Texture2D" uid="uid://by85tavmk3ort" path="res://assets/art/placeholder-ladyluck.png" id="3_l8klr"]
-[ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="4_ff1e8"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="5_ff1e8"]
-[ext_resource type="Texture2D" uid="uid://di5rsokaqyg66" path="res://assets/art/placeholder-slygoddess.png" id="5_k07vv"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="5_tpn00"]
 [ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="10_m3ls3"]
 
 [node name="TestLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_tpn00")
-
-[node name="LadyLuckLight" type="TextureRect" parent="." unique_id=1059972106]
-visible = false
-offset_left = 161.0
-offset_top = 11.0
-offset_right = 1171.0
-offset_bottom = 1561.0
-scale = Vector2(0.3, 0.3)
-mouse_filter = 2
-texture = ExtResource("3_l8klr")
-flip_h = true
-
-[node name="LadyLuckDark" type="TextureRect" parent="." unique_id=512748620]
-offset_left = -485.0
-offset_top = 72.0
-offset_right = 525.0
-offset_bottom = 1426.0
-scale = Vector2(0.3, 0.3)
-mouse_filter = 2
-texture = ExtResource("4_ff1e8")
-flip_h = true
-
-[node name="LadyLuckSly" type="TextureRect" parent="." unique_id=265231321]
-offset_left = 1282.0
-offset_top = 68.00001
-offset_right = 1576.0001
-offset_bottom = 697.0
-scale = Vector2(0.7, 0.7)
-mouse_filter = 2
-texture = ExtResource("5_k07vv")
-flip_h = true
 
 [node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("5_tpn00")]
 anchors_preset = 0
