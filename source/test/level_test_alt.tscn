@@ -266,10 +266,10 @@ texture = ExtResource("5_fkpom")
 flip_h = true
 
 [node name="LadyLuckSly" type="TextureRect" parent="." unique_id=265231321]
-offset_left = 1192.0
-offset_top = 64.99999
-offset_right = 1486.0001
-offset_bottom = 694.0
+offset_left = 1214.0
+offset_top = 42.0
+offset_right = 1508.0001
+offset_bottom = 671.0
 scale = Vector2(0.7, 0.7)
 mouse_filter = 2
 texture = ExtResource("6_dr7xf")
@@ -385,17 +385,17 @@ rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_1k1e1")
 
+[node name="Control" type="Control" parent="Lights" unique_id=1954129207]
+anchors_preset = 0
+offset_left = 42.0
+offset_top = 434.0
+offset_right = 592.0
+offset_bottom = 612.0
+
 [node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("7_l4jha")]
 offset_right = 1087.0
 offset_bottom = 649.0
 metadata/_edit_lock_ = true
-
-[node name="Switch" type="Button" parent="." unique_id=1717973040]
-offset_left = -280.0
-offset_top = 172.0
-offset_right = -160.0
-offset_bottom = 212.0
-text = "Test Art Type"
 
 [node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("8_248bq")]
 visible = false
@@ -480,22 +480,8 @@ empty_selection_clipboard_enabled = false
 tab_input_mode = false
 virtual_keyboard_enabled = false
 
-[node name="SoundSlots1" type="Button" parent="." unique_id=1364189756]
-offset_left = -279.0
-offset_top = 226.0
-offset_right = -161.0
-offset_bottom = 257.0
-text = "Slots1 Sound"
-
-[node name="SoundSlots2" type="Button" parent="." unique_id=1567797999]
-offset_left = -279.0
-offset_top = 270.0
-offset_right = -162.0
-offset_bottom = 301.0
-text = "Slots2 Sound"
-
 [node name="Bomb" parent="." unique_id=1605726017 instance=ExtResource("11_5o2ll")]
-position = Vector2(415, -204)
+position = Vector2(374, 46)
 scale = Vector2(0.5, 0.5)
 
 [node name="Tutorial" parent="." unique_id=993889986 instance=ExtResource("12_jcaet")]
@@ -576,10 +562,7 @@ text = "(?) Help"
 
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]
-[connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]
 [connection signal="tile_released" from="MouseObject" to="Floor" method="_on_mouse_object_tile_released"]
-[connection signal="pressed" from="SoundSlots1" to="." method="_on_slots_sound" binds= ["slots1"]]
-[connection signal="pressed" from="SoundSlots2" to="." method="_on_slots_sound" binds= ["slots2"]]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Help" to="." method="_on_help_pressed"]

@@ -3,21 +3,10 @@
 [ext_resource type="Script" uid="uid://cqs0i362r71jr" path="res://source/floor/grid/grid_ui.gd" id="1_ojt5u"]
 [ext_resource type="PackedScene" uid="uid://byn7ec3f5hba3" path="res://source/floor/grid/grid_cell_ui.tscn" id="2_7fr7u"]
 [ext_resource type="PackedScene" uid="uid://n5256gebrqyr" path="res://source/floor/grid/flag.tscn" id="2_fok3d"]
-[ext_resource type="Texture2D" uid="uid://61cy1a5clccs" path="res://assets/icons/flag.svg" id="2_v02dy"]
 
 [node name="Grid" type="GridContainer" unique_id=599105573]
 columns = 7
 script = ExtResource("1_ojt5u")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1339768641]
-
-[node name="TextureRect" type="TextureRect" parent="AnimationPlayer" unique_id=1940512925]
-show_behind_parent = true
-offset_left = -21.0
-offset_top = -54.0
-offset_right = 54.0
-offset_bottom = 21.0
-texture = ExtResource("2_v02dy")
 
 [node name="Flag" parent="." unique_id=1882001034 instance=ExtResource("2_fok3d")]
 layout_mode = 2

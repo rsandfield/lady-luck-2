@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://by85tavmk3ort" path="res://assets/art/placeholder-ladyluck.png" id="3_l8klr"]
 [ext_resource type="Texture2D" uid="uid://chlqo430xqloa" path="res://assets/art/placeholder-glass.png" id="4_ff1e8"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="5_ff1e8"]
+[ext_resource type="Texture2D" uid="uid://di5rsokaqyg66" path="res://assets/art/placeholder-slygoddess.png" id="5_k07vv"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="5_tpn00"]
-[ext_resource type="PackedScene" uid="uid://314toow75o83" path="res://source/animations/explosion.tscn" id="10_jttlp"]
-[ext_resource type="PackedScene" path="res://source/tutorial.tscn" id="10_m3ls3"]
+[ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="10_m3ls3"]
 
 [node name="TestLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_tpn00")
@@ -24,14 +24,23 @@ texture = ExtResource("3_l8klr")
 flip_h = true
 
 [node name="LadyLuckDark" type="TextureRect" parent="." unique_id=512748620]
-visible = false
-offset_left = 149.0
-offset_top = 75.0
-offset_right = 1159.0
-offset_bottom = 1429.0
+offset_left = -485.0
+offset_top = 72.0
+offset_right = 525.0
+offset_bottom = 1426.0
 scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 texture = ExtResource("4_ff1e8")
+flip_h = true
+
+[node name="LadyLuckSly" type="TextureRect" parent="." unique_id=265231321]
+offset_left = 1282.0
+offset_top = 68.00001
+offset_right = 1576.0001
+offset_bottom = 697.0
+scale = Vector2(0.7, 0.7)
+mouse_filter = 2
+texture = ExtResource("5_k07vv")
 flip_h = true
 
 [node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("5_tpn00")]
@@ -43,13 +52,6 @@ offset_bottom = 549.0
 grow_horizontal = 1
 grow_vertical = 1
 metadata/_edit_lock_ = true
-
-[node name="Switch" type="Button" parent="." unique_id=1717973040]
-offset_left = 16.0
-offset_top = 133.0
-offset_right = 136.0
-offset_bottom = 173.0
-text = "Test Art Type"
 
 [node name="MainMenu" type="Button" parent="." unique_id=133252502]
 offset_left = 14.0
@@ -70,33 +72,12 @@ text = "Restart"
 [node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("5_ff1e8")]
 visible = false
 
-[node name="SoundSlots1" type="Button" parent="." unique_id=1364189756]
-offset_left = 21.0
-offset_top = 255.0
-offset_right = 139.0
-offset_bottom = 286.0
-text = "Slots1 Sound"
-
-[node name="SoundSlots2" type="Button" parent="." unique_id=1567797999]
-offset_left = 21.0
-offset_top = 294.0
-offset_right = 138.0
-offset_bottom = 325.0
-text = "Slots2 Sound"
-
-[node name="Bomb" parent="." unique_id=1605726017 instance=ExtResource("10_jttlp")]
-position = Vector2(551, 388)
-scale = Vector2(0.5, 0.5)
-
 [node name="Tutorial" parent="." unique_id=993889986 instance=ExtResource("10_m3ls3")]
 unique_name_in_owner = true
 visible = false
 
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]
-[connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="tile_released" from="MouseObject" to="Floor" method="_on_mouse_object_tile_released"]
-[connection signal="pressed" from="SoundSlots1" to="." method="_on_slots_sound" binds= ["slots1"]]
-[connection signal="pressed" from="SoundSlots2" to="." method="_on_slots_sound" binds= ["slots2"]]
