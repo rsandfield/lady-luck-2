@@ -1,21 +1,48 @@
 [gd_scene format=3 uid="uid://n5256gebrqyr"]
 
 [ext_resource type="Texture2D" uid="uid://61cy1a5clccs" path="res://assets/icons/flag.svg" id="1_lgtwm"]
+[ext_resource type="Script" uid="uid://c264v2rowk13m" path="res://source/floor/grid/flag.gd" id="1_nyvf5"]
 
-[node name="Flag" type="TextureRect" unique_id=1882001034]
-custom_minimum_size = Vector2(25, 25)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -37.5
-offset_top = -37.5
-offset_right = 37.5
-offset_bottom = 37.5
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="Gradient" id="Gradient_nyvf5"]
+offsets = PackedFloat32Array(0, 0.7568306)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_728op"]
+gradient = SubResource("Gradient_nyvf5")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Flag" type="Control" unique_id=1716563468]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 30.0
+offset_bottom = 30.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_nyvf5")
+metadata/_custom_type_script = "uid://c264v2rowk13m"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1882001034]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 0
+offset_left = 2.5
+offset_top = 2.5
+offset_right = 27.5
+offset_bottom = 27.5
 texture = ExtResource("1_lgtwm")
+expand_mode = 2
+
+[node name="Glow" type="TextureRect" parent="." unique_id=1564093219]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = -7.5
+offset_top = -5.0
+offset_right = 32.5
+offset_bottom = 35.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("GradientTexture2D_728op")
 expand_mode = 2

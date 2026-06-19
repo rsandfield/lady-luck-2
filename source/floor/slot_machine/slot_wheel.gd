@@ -2,6 +2,7 @@ class_name SlotWheel
 
 
 signal slot_wheel_pressed(wheel: SlotWheel)
+signal finished
 
 
 var _ui: SlotWheelUI
@@ -21,6 +22,7 @@ func spin() -> void:
 	items.shuffle()
 	_item = items[-2]
 	await _ui.spin(items)
+	finished.emit()
 
 
 func set_resource(resource: ItemResource) -> void:

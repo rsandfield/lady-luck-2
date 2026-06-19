@@ -34,7 +34,7 @@ func set_item_count(item_count: int, color_count: int = 2) -> void:
 func spin():
 	var row = randi() % _row_count
 	var item_index = randi() % len(_items)
-	_ui.spin_to(row + _row_count * 2, -item_index - len(_items) * 3)
+	_ui.spin_to(row + _row_count * 3, -item_index - len(_items) * 3)
 	
 	await _ui.finished
 	_ui.clear_ui(item_index)

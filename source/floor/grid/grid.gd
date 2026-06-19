@@ -106,3 +106,19 @@ func _door_visited(visited: Array[GridCell]) -> bool:
 
 func get_row(row: int) -> Array[GridCell]:
 	return _cells.slice(row * _size.x, row * (_size.x + 1))
+
+
+func flag_spin(spin: bool):
+	_ui.flag_spin(spin)
+
+
+func flash_all_flags():
+	for i in 3:
+		_ui.flag_ladder(0.2, 0.1)
+		await _ui.get_tree().create_timer(0.05 * _size.y).timeout
+
+
+func pulse_row(row: int):
+	for i in 3:
+		_ui.flag_pulse(row)
+		await _ui.get_tree().create_timer(0.5).timeout

@@ -13,6 +13,7 @@
 script = ExtResource("1_tpn00")
 
 [node name="LadyLuckLight" type="TextureRect" parent="." unique_id=1059972106]
+visible = false
 offset_left = 161.0
 offset_top = 11.0
 offset_right = 1171.0
@@ -34,7 +35,6 @@ texture = ExtResource("4_ff1e8")
 flip_h = true
 
 [node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("5_tpn00")]
-custom_minimum_size = Vector2(1152, 648)
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

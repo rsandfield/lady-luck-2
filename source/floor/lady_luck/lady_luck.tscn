@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3gtimcic0h85"]
 
 [ext_resource type="Script" uid="uid://dmrak3edmrnox" path="res://source/floor/lady_luck/lady_luck_ui.gd" id="1_5d5k2"]
-[ext_resource type="Texture2D" uid="uid://by85tavmk3ort" path="res://assets/art/placeholder-ladyluck.png" id="2_e361y"]
+[ext_resource type="Texture2D" uid="uid://d2cit3lp2k6dk" path="res://assets/art/placeholder-luckcards.png" id="2_fnptl"]
 
 [node name="LadyLuck" type="Control" unique_id=799243148]
 layout_mode = 3
@@ -34,22 +34,13 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="LadyLuckLight" type="TextureRect" parent="HBoxContainer/Images" unique_id=1129622664]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -467.0
-offset_top = -768.0
-offset_right = 40.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.5, 0.5)
-pivot_offset_ratio = Vector2(1, 1)
+layout_mode = 0
+offset_left = -400.0
+offset_top = -380.0
+offset_right = 24.0
+offset_bottom = 40.0
 mouse_filter = 2
-texture = ExtResource("2_e361y")
-flip_h = true
+texture = ExtResource("2_fnptl")
 
 [node name="Control" type="Control" parent="HBoxContainer" unique_id=1239375716]
 custom_minimum_size = Vector2(200, 0)

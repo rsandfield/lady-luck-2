@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctsa72q5go3t7" path="res://source/floor/wheel/spinner_ui.gd" id="1_7vooo"]
 [ext_resource type="PackedScene" uid="uid://c0u2a7n3ilx1e" path="res://source/floor/wheel/spinner_wheel_ui.tscn" id="1_a1al3"]
-[ext_resource type="PackedScene" uid="uid://n5256gebrqyr" path="res://source/floor/grid/flag.tscn" id="3_r4kml"]
+[ext_resource type="Texture2D" uid="uid://61cy1a5clccs" path="res://assets/icons/flag.svg" id="3_r4kml"]
 
 [node name="Spinner" type="Control" unique_id=1656173699]
 custom_minimum_size = Vector2(200, 200)
@@ -36,16 +36,24 @@ offset_right = 100.0
 offset_bottom = 100.0
 radius = 60.0
 
-[node name="OuterFlag" parent="." unique_id=1882001034 instance=ExtResource("3_r4kml")]
-layout_mode = 1
-offset_left = 12.5
-offset_top = -107.5
-offset_bottom = -82.5
+[node name="OuterFlag" type="TextureRect" parent="." unique_id=842494349]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 0
+offset_left = 112.5
+offset_top = -7.5
+offset_right = 137.5
+offset_bottom = 17.5
 rotation = 1.5707964
+texture = ExtResource("3_r4kml")
+expand_mode = 2
 
-[node name="InnerFlag" parent="." unique_id=327539090 instance=ExtResource("3_r4kml")]
-layout_mode = 1
-offset_left = 12.5
-offset_top = -67.5
-offset_bottom = -42.5
+[node name="InnerFlag" type="TextureRect" parent="." unique_id=1438642417]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 0
+offset_left = 112.5
+offset_top = 32.5
+offset_right = 137.5
+offset_bottom = 57.5
 rotation = 1.5707964
+texture = ExtResource("3_r4kml")
+expand_mode = 2
