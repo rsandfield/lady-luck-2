@@ -24,5 +24,6 @@ func disable():
 
 func pulse(time: float):
 	var tween = get_tree().create_tween()
+	tween.bind_node(self)
 	tween.tween_property($Glow, "modulate", color, time / 2)
 	tween.tween_property($Glow, "modulate", Color(color, 0), time / 2)

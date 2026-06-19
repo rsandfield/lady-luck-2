@@ -39,5 +39,6 @@ func play_item(cell: GridCell) -> void:
 	if !is_inside_tree() or !is_instance_valid(_item_ui):
 		return
 	var tween = create_tween()
+	tween.bind_node(self)
 	tween.tween_property(_item_ui, "global_position", cell.position(), 0.5)
 	tween.finished.connect(finished.emit)

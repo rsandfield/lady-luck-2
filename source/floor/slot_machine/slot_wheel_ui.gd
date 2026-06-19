@@ -49,8 +49,9 @@ func spin(items: Array[ItemResource]):
 
 	_anim.speed_scale = windup_speed
 	_anim.play("cycle")
-	var speed_tween = create_tween()
-	speed_tween.tween_property(_anim, "speed_scale", cruise_speed, windup_time).set_ease(
+	var tween = create_tween()
+	tween.bind_node(self)
+	tween.tween_property(_anim, "speed_scale", cruise_speed, windup_time).set_ease(
 		Tween.EASE_IN
 	)
 
@@ -95,6 +96,7 @@ func _update_speed():
 	else:
 		target_speed = final_speed
 	var tween = create_tween()
+	tween.bind_node(self)
 	tween.tween_property(_anim, "speed_scale", target_speed, decel_time).set_ease(Tween.EASE_OUT)
 
 
