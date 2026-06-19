@@ -28,28 +28,18 @@ func populate_wheels(new_wheels: Array[SlotWheel]) -> void:
 		wheel.set_ui(wheel_ui)
 		add_child(wheel_ui)
 		move_child(wheel_ui, 0)
-		
 
 
 func _on_slot_cell_moving_tile( is_moving : bool ) -> void:
 	#print_debug( "_on_slot_cell_moving_tile: ")
 	#print_debug( "here? : ")
 	
-	moving_tile.emit( is_moving )
-	
-	pass
+	moving_tile.emit(is_moving)
 
 
 func _on_lever_pulled() -> void:
-	
 	$AnimationPlayer.play("lever_pull")
-	
-	
-	pass
 
 
 func _on_lever_blocked() -> void:
-	
 	$AnimationPlayer.play("lever_shake")
-	
-	pass

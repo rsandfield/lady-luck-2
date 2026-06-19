@@ -44,6 +44,7 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2wshm")
 
 [node name="Door" type="MarginContainer" parent="." unique_id=328438486]
+mouse_filter = 2
 unique_name_in_owner = true
 visible = false
 layout_mode = 2

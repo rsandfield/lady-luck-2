@@ -64,13 +64,13 @@ func spin(to: int) -> void:
 
 	var rot := rotation - windup
 	tween.tween_property(self, "rotation", rot, 0.5)
-	var derp = extra_spins - windup + delta
+	var high_speed = extra_spins - windup + delta
 	if clockwise:
-		derp = -absf(derp)
+		high_speed = -absf(high_speed)
 	else:
-		derp = absf(derp)
-	rot += derp
-	tween.tween_property(self, "rotation", rot, abs(derp) * 0.1)
+		high_speed = absf(high_speed)
+	rot += high_speed
+	tween.tween_property(self, "rotation", rot, abs(high_speed) * 0.1)
 	if clockwise:
 		rot -= TAU
 	else:

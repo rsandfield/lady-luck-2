@@ -18,6 +18,7 @@ func _ready():
 	_slot_machine = SlotMachine.new()
 	_slot_machine.set_ui(%SlotMachine)
 	_slot_machine.set_wheel_count(_wheels)
+	_slot_machine.finished.connect(_on_spin_finished)
 	
 	_grid = Grid.new()
 	_grid.set_ui(%Grid)
@@ -28,11 +29,12 @@ func _ready():
 	_spinner.set_ui(%Spinner)
 	_spinner.set_row_count(_size.y)
 	_spinner.set_item_count(6)
-	_slot_machine.lever_pulled.connect(_spinner.spin)
+	_slot_machine.lever_pulled.connect(_on_lever_pulled)
 
 	_lady = LadyLuck.new()
+	_lady.set_ui(%LadyLuck)
 	_lady.set_grid(_grid)
-	_spinner.result.connect(_lady.cause_chaos)
+	_spinner.result.connect(_on_lady_play)
 
 
 func _on_grid_cell_pressed(slot: GridCell) -> void:
@@ -49,6 +51,21 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 		print("Ya did it")
 
 
+func _on_lever_pulled():
+	_grid.flag_spin(true)
+	_spinner.spin()
+
+
+func _on_spin_finished():
+	_grid.flag_spin(false)
+	_grid.flash_all_flags()
+
+
+func _on_lady_play(row: int, item: ItemResource):
+	_lady.cause_chaos(row, item)
+	_grid.pulse_row(row)
+
+
 func _on_slot_machine_moving_tile( is_moving : bool ) -> void:
 	#print_debug( "_on_slot_machine_moving_tile: ")
 	
@@ -56,13 +73,12 @@ func _on_slot_machine_moving_tile( is_moving : bool ) -> void:
 
 
 func _on_mouse_object_tile_released() -> void:
-	#print_debug("_on_mouse_object_tile_released...")
-	
-	Game.grid_tile_hovered.emit_signal("pressed")
+	if !Game.grid_tile_hovered:
+		return
+	Game.grid_tile_hovered.pressed.emit()
+
 
 func _on_slot_machine_play_sound() -> void: 
 	print_debug("_on_slot_machine_play_lever_sound...")
 	
 	slot_machine_sound.emit()
-	
-	pass

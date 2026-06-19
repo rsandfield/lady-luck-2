@@ -34,11 +34,14 @@ func set_item_count(item_count: int, color_count: int = 2) -> void:
 func spin():
 	var row = randi() % _row_count
 	var item_index = randi() % len(_items)
-	_ui.spin_to(row + _row_count * 2, -item_index - len(_items) * 3)
+	_ui.spin_to(row + _row_count * 3, -item_index - len(_items) * 3)
 	
 	await _ui.finished
-	_ui.set_item(_new_item(), item_index)
+	_ui.clear_ui(item_index)
 	result.emit(row, _items[item_index])
+
+	await _ui.get_tree().create_timer(1).timeout
+	_ui.set_item(_new_item(), item_index)
 
 
 func _new_item() -> ItemResource:

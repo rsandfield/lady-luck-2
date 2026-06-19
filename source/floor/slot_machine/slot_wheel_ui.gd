@@ -7,12 +7,12 @@ signal moving_tile(is_clicked: bool)
 const CENTER_Y := 37.5
 
 @export var windup_speed := 0.3
-@export var windup_time := 0.6
-@export var cruise_speed := 3.0
-@export var slow_speed := 2.0
-@export var slower_speed := 1.0
-@export var final_speed := 0.5
-@export var decel_time := 0.5
+@export var windup_time := 0.25
+@export var cruise_speed := 7.0
+@export var slow_speed := 5.0
+@export var slower_speed := 3.0
+@export var final_speed := 1.0
+@export var decel_time := 0.25
 
 @onready var _anim: AnimationPlayer = $AnimationPlayer
 @onready var _slots: Array[Control] = [

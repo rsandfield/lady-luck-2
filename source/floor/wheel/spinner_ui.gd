@@ -59,6 +59,11 @@ func set_item(item: ItemResource, index: int):
 	item_ui.rotation = rot
 
 
+func clear_ui(index: int):
+	if _item_uis[index]:
+		_item_uis[index].queue_free()
+
+
 func spin_to(outer: int, inner: int):
 	_awaiting = 2
 	$OuterWheel.spin(outer)

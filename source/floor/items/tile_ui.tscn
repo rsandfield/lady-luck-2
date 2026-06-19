@@ -16,6 +16,7 @@ border_color = Color(1, 1, 1, 1)
 corner_detail = 1
 
 [node name="TileUI" type="PanelContainer" unique_id=693043851]
+mouse_filter = 2
 custom_minimum_size = Vector2(75, 75)
 anchors_preset = 8
 anchor_left = 0.5

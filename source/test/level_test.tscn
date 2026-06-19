@@ -13,6 +13,7 @@
 script = ExtResource("1_tpn00")
 
 [node name="LadyLuckLight" type="TextureRect" parent="." unique_id=1059972106]
+visible = false
 offset_left = 161.0
 offset_top = 11.0
 offset_right = 1171.0
@@ -43,8 +44,13 @@ texture = ExtResource("5_k07vv")
 flip_h = true
 
 [node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("5_tpn00")]
-offset_right = 1087.0
-offset_bottom = 649.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 989.0
+offset_bottom = 549.0
+grow_horizontal = 1
+grow_vertical = 1
 metadata/_edit_lock_ = true
 
 [node name="MainMenu" type="Button" parent="." unique_id=133252502]
