@@ -14,8 +14,4 @@ func _on_main_menu_pressed() -> void:
 
 
 func _on_restart_pressed() -> void:
-	print_debug("currently does nothing...")
-
 	emit_signal("restart_game")
-
-	pass

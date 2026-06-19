@@ -76,6 +76,7 @@ visible = false
 unique_name_in_owner = true
 visible = false
 
+[connection signal="restart_game" from="." to="Floor" method="reset"]
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
