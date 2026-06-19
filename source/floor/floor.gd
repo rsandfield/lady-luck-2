@@ -79,6 +79,6 @@ func _on_mouse_object_tile_released() -> void:
 
 
 func _on_slot_machine_play_sound() -> void: 
-	print_debug("_on_slot_machine_play_lever_sound...")
+	#print_debug("_on_slot_machine_play_lever_sound...")
 	
 	slot_machine_sound.emit()

@@ -16,6 +16,7 @@
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="13_b6kwo"]
 [ext_resource type="Texture2D" uid="uid://br538pffgrles" path="res://assets/art/button-placeholder-main.png" id="14_lukrn"]
 [ext_resource type="Texture2D" uid="uid://b861e46gnkt8p" path="res://assets/art/button-placeholder-retry.png" id="15_nj6ht"]
+[ext_resource type="Texture2D" uid="uid://bioopwke2pmti" path="res://assets/art/placeholder-rigging.png" id="17_b58l3"]
 
 [sub_resource type="Animation" id="Animation_ihnwo"]
 length = 0.001
@@ -227,6 +228,9 @@ _data = {
 &"spinR": SubResource("Animation_3f7hu")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3f7hu"]
+size = Vector2(1, 1)
+
 [node name="TestAltLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_1k1e1")
 
@@ -397,11 +401,59 @@ offset_right = 1087.0
 offset_bottom = 649.0
 metadata/_edit_lock_ = true
 
+[node name="TempCharacter" type="CharacterBody2D" parent="." unique_id=416640605]
+position = Vector2(-1484, -745)
+
+[node name="EmptyShape" type="CollisionShape2D" parent="TempCharacter" unique_id=1320280028]
+rotation = 0.017283665
+shape = SubResource("RectangleShape2D_3f7hu")
+disabled = true
+
+[node name="polygons" type="Node2D" parent="TempCharacter" unique_id=2122590836]
+
+[node name="body" type="Polygon2D" parent="TempCharacter/polygons" unique_id=1672478237]
+position = Vector2(-76, -11)
+texture = ExtResource("17_b58l3")
+polygon = PackedVector2Array(239, 214.5, 291, 180.5, 302, 81.5, 35, -20.5, -64, 258.5, -23, 459.5, 81, 682.5, 286, 671.5, 346, 287.5, 232, 277.5, 206, 226.5)
+uv = PackedVector2Array(239, 214.5, 291, 180.5, 302, 81.5, 35, -20.5, -64, 258.5, -23, 459.5, 81, 682.5, 286, 671.5, 346, 287.5, 232, 277.5, 206, 226.5)
+
+[node name="arm" type="Polygon2D" parent="TempCharacter/polygons" unique_id=1839496986]
+position = Vector2(-77, -13)
+texture = ExtResource("17_b58l3")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(369, 92, 307, 142, 297, 241, 218, 220, 203, 237, 240, 297, 332, 291, 350, 268, 344, 167, 376, 158, 368, 137, 399, 112)
+uv = PackedVector2Array(369, 92, 307, 142, 297, 241, 218, 220, 203, 237, 240, 297, 332, 291, 350, 268, 344, 167, 376, 158, 368, 137, 399, 112)
+bones = ["shoulder", PackedFloat32Array(0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0), "shoulder/elbow", PackedFloat32Array(0, 0, 0.5, 0, 0, 0, 0.5, 1, 0, 0, 0, 0), "shoulder/elbow/wrist", PackedFloat32Array(0, 0.5, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0), "shoulder/elbow/wrist/finger", PackedFloat32Array(0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5)]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="TempCharacter" unique_id=1392326745]
+position = Vector2(-77, -13)
+
+[node name="shoulder" type="Bone2D" parent="TempCharacter/Skeleton2D" unique_id=890112940]
+position = Vector2(234, 257)
+rotation = -0.059357002
+scale = Vector2(0.99999976, 0.99999976)
+rest = Transform2D(1, 0, 0, 1, 234, 257)
+
+[node name="elbow" type="Bone2D" parent="TempCharacter/Skeleton2D/shoulder" unique_id=1656392343]
+position = Vector2(79, 13)
+rotation = 0.6403113
+rest = Transform2D(1, 0, 0, 1, 79, 13)
+
+[node name="wrist" type="Bone2D" parent="TempCharacter/Skeleton2D/shoulder/elbow" unique_id=732689378]
+position = Vector2(11, -115)
+rotation = 0.11720685
+rest = Transform2D(1, 0, 0, 1, 11, -115)
+
+[node name="finger" type="Bone2D" parent="TempCharacter/Skeleton2D/shoulder/elbow/wrist" unique_id=134857997]
+position = Vector2(39, -35)
+rotation = -0.35101336
+rest = Transform2D(1, 0, 0, 1, 39, -35)
+
 [node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("8_248bq")]
 visible = false
 
 [node name="Bomb" parent="." unique_id=1605726017 instance=ExtResource("11_5o2ll")]
-position = Vector2(494, 312)
+position = Vector2(-244, 236)
 scale = Vector2(0.5, 0.5)
 
 [node name="PointContainer" parent="." unique_id=1749657070 instance=ExtResource("12_ihnwo")]

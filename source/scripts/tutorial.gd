@@ -2,6 +2,18 @@ extends Control
 
 var tutorial_state = 0 
 
+
+const help_dialog = [ 
+	"Welcome to Lady Luck's Door!" ,
+	"Pull the lever to get pieces to play" ,
+	"Pick up tiles or bombs from this area" ,
+	"Drop tiles here to make a path to my door" ,
+	"If you are lucky then I might help you" ,
+	"If you are unlucky then, well... boom!" ,
+	"Calculate your risk carefully!" 
+]
+
+
 func _ready() -> void:
 	_set_button_highlighted()
 	
@@ -56,7 +68,7 @@ func _on_change_tutorial_state( new_state : int ) -> void:
 	
 	#print_debug("_on_change_tutorial_state, after: " + str(tutorial_state) )
 	
-	if tutorial_state > 5 : 
+	if tutorial_state > 6 : 
 		self.hide()
 		return 
 	
@@ -74,34 +86,39 @@ func _set_button_highlighted():
 	$Help3/Panel.visible = tutorial_state == 3
 	$Help4/Panel.visible = tutorial_state == 4
 	$Help5/Panel.visible = tutorial_state == 5
+	$Help6/Panel.visible = tutorial_state == 6
 	
 	pass
 
 func _set_dialog_visible(): 
 	#print_debug("_set_dialog_visible, state: " + str(tutorial_state) )
 	
-	%Dialog0.visible = tutorial_state == 0 
-	%Dialog1.visible = tutorial_state == 1 
-	%Dialog2.visible = tutorial_state == 2 
-	%Dialog3.visible = tutorial_state == 3 
-	%Dialog4.visible = tutorial_state == 4 
-	%Dialog5.visible = tutorial_state == 5
+	$Dialog0/RichTextLabel.text = help_dialog[ tutorial_state ]
+	
+	#%Dialog0.visible = tutorial_state == 0 
+	#%Dialog1.visible = tutorial_state == 1 
+	#%Dialog2.visible = tutorial_state == 2 
+	#%Dialog3.visible = tutorial_state == 3 
+	#%Dialog4.visible = tutorial_state == 4 
+	#%Dialog5.visible = tutorial_state == 5
 	
 	pass
 
 func _set_panel_visibility(): 
 	
-	$Panel1.visible = true
 	$Panel2.visible = true
 	$Panel3.visible = true 
 	
-	$PanelSlots.visible = tutorial_state != 1
-	$PanelGrid.visible  = tutorial_state != 2
-	$PanelLuck.visible  = tutorial_state != 3
+	$Panel1.visible = tutorial_state != 1
 	
-	$HighlightSlots.visible = tutorial_state == 1
-	$HighlightGrid.visible  = tutorial_state == 2
-	$HighlightLuck.visible  = tutorial_state == 3
+	$PanelSlots.visible = tutorial_state != 2
+	$PanelGrid.visible  = tutorial_state != 3
+	$PanelLuck.visible  = tutorial_state != 4
+	
+	$HighlightLever.visible = tutorial_state == 1
+	$HighlightSlots.visible = tutorial_state == 2
+	$HighlightGrid.visible  = tutorial_state == 3
+	$HighlightLuck.visible  = tutorial_state == 4
 	
 	pass
 
