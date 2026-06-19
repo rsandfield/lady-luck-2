@@ -9,12 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="7_l4jha"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="8_248bq"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="10_nwggm"]
-[ext_resource type="Texture2D" uid="uid://u8hwlg38u7gi" path="res://assets/art/menu_buttons.png" id="12_dr7xf"]
+[ext_resource type="Texture2D" uid="uid://dfqg8euh2g38g" path="res://assets/art/wood-button.png" id="12_ihnwo"]
 [ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="12_jcaet"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="13_b6kwo"]
 [ext_resource type="Texture2D" uid="uid://br538pffgrles" path="res://assets/art/button-placeholder-main.png" id="14_lukrn"]
 [ext_resource type="Texture2D" uid="uid://b861e46gnkt8p" path="res://assets/art/button-placeholder-retry.png" id="15_nj6ht"]
-[ext_resource type="Texture2D" uid="uid://cx8vthjravtv7" path="res://assets/art/menu_buttons(1).png" id="16_fkpom"]
 [ext_resource type="Texture2D" uid="uid://bhh6s8dqe2s4n" path="res://assets/art/placeholder-goddess.png" id="17_3f7hu"]
 [ext_resource type="Texture2D" uid="uid://bioopwke2pmti" path="res://assets/art/placeholder-rigging.png" id="17_b58l3"]
 
@@ -103,7 +102,7 @@ position = Vector2(-77, -13)
 [node name="shoulder" type="Bone2D" parent="TempCharacter/Skeleton2D" unique_id=890112940]
 position = Vector2(234, 257)
 rotation = -0.059357014
-scale = Vector2(0.99999905, 0.99999905)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, 0, 0, 1, 234, 257)
 
 [node name="elbow" type="Bone2D" parent="TempCharacter/Skeleton2D/shoulder" unique_id=1656392343]
@@ -137,7 +136,7 @@ offset_top = 11.0
 offset_right = 163.0
 offset_bottom = 58.0
 theme = ExtResource("13_b6kwo")
-texture_normal = ExtResource("12_dr7xf")
+texture_normal = ExtResource("12_ihnwo")
 texture_pressed = ExtResource("14_lukrn")
 texture_hover = ExtResource("14_lukrn")
 texture_disabled = ExtResource("14_lukrn")
@@ -161,7 +160,7 @@ offset_top = 63.0
 offset_right = 163.0
 offset_bottom = 110.0
 theme = ExtResource("13_b6kwo")
-texture_normal = ExtResource("16_fkpom")
+texture_normal = ExtResource("12_ihnwo")
 texture_pressed = ExtResource("15_nj6ht")
 texture_hover = ExtResource("15_nj6ht")
 texture_disabled = ExtResource("15_nj6ht")
@@ -184,7 +183,7 @@ offset_top = 115.0
 offset_right = 163.0
 offset_bottom = 162.0
 theme = ExtResource("13_b6kwo")
-texture_normal = ExtResource("16_fkpom")
+texture_normal = ExtResource("12_ihnwo")
 texture_pressed = ExtResource("14_lukrn")
 texture_hover = ExtResource("14_lukrn")
 texture_disabled = ExtResource("14_lukrn")

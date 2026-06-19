@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cu2o14flw07o6" path="res://source/floor/slot_machine/slot_machine_ui.tscn" id="2_p1kb0"]
 [ext_resource type="PackedScene" uid="uid://3gtimcic0h85" path="res://source/floor/lady_luck/lady_luck.tscn" id="3_bey53"]
 [ext_resource type="PackedScene" uid="uid://cksm1x0jrd8ge" path="res://source/floor/grid/grid_ui.tscn" id="3_vqkr4"]
-[ext_resource type="Texture2D" uid="uid://coq6uiajtkg8q" path="res://assets/art/full_slot_machine.png" id="4_pdrj0"]
 [ext_resource type="PackedScene" uid="uid://6vbn4bonis0x" path="res://source/floor/points/turn_container.tscn" id="5_a23us"]
 [ext_resource type="PackedScene" uid="uid://detgnnqtmgueh" path="res://source/floor/points/points_container.tscn" id="6_mx0ua"]
 
@@ -82,11 +81,6 @@ grow_vertical = 1
 pivot_offset = Vector2(-627, -391)
 size_flags_vertical = 3
 
-[node name="FullSlotMachine" type="Sprite2D" parent="MarginContainer/Node/HBoxContainer/Slots" unique_id=1172329873]
-position = Vector2(289.49997, 523)
-scale = Vector2(1.0418181, 1.15)
-texture = ExtResource("4_pdrj0")
-
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Node/HBoxContainer/Slots" unique_id=182174465]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
@@ -112,7 +106,7 @@ theme_override_constants/margin_top = -30
 theme_override_constants/margin_right = 50
 
 [node name="NodeTurns" type="Node2D" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MarginContainer" unique_id=1478860619]
-position = Vector2(-38, -415)
+position = Vector2(-35, -416)
 
 [node name="TurnContainer" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MarginContainer/NodeTurns" unique_id=1749657070 instance=ExtResource("5_a23us")]
 unique_name_in_owner = true
@@ -133,6 +127,7 @@ offset_bottom = 179.0
 [node name="Control" type="Control" parent="MarginContainer/Node/HBoxContainer" unique_id=424488339]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Node/HBoxContainer" unique_id=822311295]
 layout_mode = 2
