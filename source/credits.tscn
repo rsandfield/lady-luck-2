@@ -89,10 +89,9 @@ theme_override_styles/focus = ExtResource("4_kh4jm")
 text = "Go Back"
 
 [node name="CreditsText" type="RichTextLabel" parent="." unique_id=968115274]
-offset_left = 264.0
-offset_top = 434.0
-offset_right = 879.0
-offset_bottom = 658.0
+offset_top = 422.0
+offset_right = 1152.0
+offset_bottom = 646.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.93138474, 0.8036014, 0.8981877, 1)
 theme_override_constants/outline_size = 6
@@ -103,6 +102,7 @@ text = "[center]
 Mikey [mymonkey] : Lead Artistic Director
 Robert Sandfield : Programming & Game Design
 Stephen Frister : Implementation & Animation
+[ placeholder ] // MurkyHg [?] : Something Something Art 
 
 Music by Ethan Grafton"
 

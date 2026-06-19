@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="8_248bq"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="10_nwggm"]
 [ext_resource type="PackedScene" uid="uid://314toow75o83" path="res://source/animations/explosion.tscn" id="11_5o2ll"]
+[ext_resource type="PackedScene" uid="uid://detgnnqtmgueh" path="res://source/floor/points/points_container.tscn" id="12_ihnwo"]
 [ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="12_jcaet"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="13_b6kwo"]
 [ext_resource type="Texture2D" uid="uid://br538pffgrles" path="res://assets/art/button-placeholder-main.png" id="14_lukrn"]
@@ -481,8 +482,14 @@ tab_input_mode = false
 virtual_keyboard_enabled = false
 
 [node name="Bomb" parent="." unique_id=1605726017 instance=ExtResource("11_5o2ll")]
-position = Vector2(374, 46)
+position = Vector2(443, -80)
 scale = Vector2(0.5, 0.5)
+
+[node name="PointContainer" parent="." unique_id=1749657070 instance=ExtResource("12_ihnwo")]
+offset_left = 182.0
+offset_top = 442.0
+offset_right = 182.0
+offset_bottom = 442.0
 
 [node name="Tutorial" parent="." unique_id=993889986 instance=ExtResource("12_jcaet")]
 unique_name_in_owner = true

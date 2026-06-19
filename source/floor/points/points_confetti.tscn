@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://brsv3kspn3iyq"]
+
+[ext_resource type="Script" uid="uid://361m5kfsj7il" path="res://source/floor/points/points_confetti.gd" id="1_1gls4"]
+[ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="1_vevgl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vevgl"]
+size = Vector2(1, 1)
+
+[sub_resource type="Animation" id="Animation_1gls4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_23c3j"]
+resource_name = "float"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.9666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cq3sa"]
+_data = {
+&"RESET": SubResource("Animation_1gls4"),
+&"float": SubResource("Animation_23c3j")
+}
+
+[node name="PointsConfetti" type="CharacterBody2D" unique_id=99136437]
+collision_layer = 0
+collision_mask = 0
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+platform_floor_layers = 4278190080
+script = ExtResource("1_1gls4")
+
+[node name="EmptyShape2D" type="CollisionShape2D" parent="." unique_id=1761974511]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("RectangleShape2D_vevgl")
+
+[node name="Label" type="Label" parent="." unique_id=392298599]
+offset_right = 34.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_vevgl")
+theme_override_font_sizes/font_size = 30
+text = "1234"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1027329659]
+libraries/ = SubResource("AnimationLibrary_cq3sa")

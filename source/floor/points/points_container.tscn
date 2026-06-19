@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://detgnnqtmgueh"]
+
+[ext_resource type="Script" uid="uid://dcgk54eb6inry" path="res://source/floor/points/points_container.gd" id="1_a4yqd"]
+[ext_resource type="PackedScene" uid="uid://rg5a0nup2d7h" path="res://source/floor/points/points_box.tscn" id="1_yvr8f"]
+
+[node name="PointContainer" type="Control" unique_id=1749657070]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_a4yqd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1578165555]
+layout_mode = 0
+offset_right = 252.0
+offset_bottom = 29.0
+
+[node name="Points1" parent="HBoxContainer" unique_id=2031130878 instance=ExtResource("1_yvr8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Points2" parent="HBoxContainer" unique_id=1681802759 instance=ExtResource("1_yvr8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Points3" parent="HBoxContainer" unique_id=1569434577 instance=ExtResource("1_yvr8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Points4" parent="HBoxContainer" unique_id=510595738 instance=ExtResource("1_yvr8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Points5" parent="HBoxContainer" unique_id=670740185 instance=ExtResource("1_yvr8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Points6" parent="HBoxContainer" unique_id=405832371 instance=ExtResource("1_yvr8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Button+" type="Button" parent="." unique_id=1688763289]
+layout_mode = 0
+offset_left = 182.0
+offset_top = -1.0
+offset_right = 211.0
+offset_bottom = 30.0
+text = "+"
+
+[node name="Button-" type="Button" parent="." unique_id=226811571]
+layout_mode = 0
+offset_left = 213.0
+offset_top = -1.0
+offset_right = 242.0
+offset_bottom = 30.0
+text = "-"
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1389828855]
+position = Vector2(74, -33)
+
+[connection signal="pressed" from="Button+" to="." method="_on_change_points" binds= [1000]]
+[connection signal="pressed" from="Button-" to="." method="_on_change_points" binds= [-50]]

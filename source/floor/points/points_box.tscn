@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://rg5a0nup2d7h"]
+
+[ext_resource type="Texture2D" uid="uid://d4dokgb8ho2qa" path="res://assets/art/metal-tileset-CC0.png" id="1_b186h"]
+[ext_resource type="Script" uid="uid://bq217wfa2damu" path="res://source/floor/points/points_box.gd" id="1_voguy"]
+[ext_resource type="FontFile" uid="uid://cr1saxylaqak3" path="res://assets/fonts/RobotoMono-Regular.ttf" id="2_54h1b"]
+
+[node name="PointsBox" type="Control" unique_id=2031130878]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 30.0
+offset_bottom = 30.0
+size_flags_horizontal = 0
+script = ExtResource("1_voguy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=80845768]
+position = Vector2(15, 15)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_b186h")
+hframes = 8
+vframes = 14
+frame = 35
+
+[node name="Number" type="Label" parent="." unique_id=945568006]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 28.0
+offset_bottom = 28.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_54h1b")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
