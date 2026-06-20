@@ -24,3 +24,9 @@ func _on_murkyhg_pressed()  -> void:
 	OS.shell_open("https://mercury-hg.itch.io/")
 
 	pass
+
+
+func _on_credits_my_monkey_pressed() -> void:
+	OS.shell_open("https://mymonkeygames.itch.io/")
+
+	pass

@@ -521,6 +521,13 @@ text = "Mikey [mymonkey]
    Robert Sandfield
       Stephen Frister"
 
+[node name="ButtonLuck" type="Button" parent="." unique_id=1737524517]
+offset_left = 1072.0
+offset_top = 21.0
+offset_right = 1131.0
+offset_bottom = 52.0
+text = "Luck"
+
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/TestGame" to="." method="_on_test_game_pressed"]
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/TestAlt" to="." method="_on_test_alt_game_pressed"]
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/NewGame" to="." method="_on_new_game_pressed"]
@@ -541,3 +548,4 @@ text = "Mikey [mymonkey]
 [connection signal="pressed" from="InterfaceContainer/ThemeControl/CenterContainer/Control/Button2" to="." method="_on_button_theme_change" binds= ["green"]]
 [connection signal="pressed" from="InterfaceContainer/ThemeControl/CenterContainer/Control/Button3" to="." method="_on_button_theme_change" binds= ["purple"]]
 [connection signal="pressed" from="InterfaceContainer/ThemeControl/CenterContainer/Control/Button4" to="." method="_on_button_theme_change" binds= ["blue"]]
+[connection signal="pressed" from="ButtonLuck" to="." method="_on_button_luck_pressed"]

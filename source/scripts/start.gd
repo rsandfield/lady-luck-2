@@ -227,3 +227,13 @@ func _update_music() -> void:
 	emit_signal("update_music")
 
 	pass
+
+
+func _on_button_luck_pressed() -> void:
+	
+	var scene = load("res://source/test/level_lady_luck_test.tscn")
+	var instance = scene.instantiate()
+	add_child(instance)
+	
+	
+	pass

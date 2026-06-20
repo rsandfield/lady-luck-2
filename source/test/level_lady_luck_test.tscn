@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cg53tng7bpkkc"]
+
+[ext_resource type="PackedScene" uid="uid://3gtimcic0h85" path="res://source/floor/lady_luck/lady_luck.tscn" id="1_cx7nt"]
+[ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/background-green_velvet.png" id="1_kjol4"]
+[ext_resource type="PackedScene" uid="uid://cpmgg2k6x6skc" path="res://source/floor/lady_luck/lady_luck_test.tscn" id="2_2usb8"]
+[ext_resource type="PackedScene" uid="uid://dmeiteun5t7gl" path="res://source/floor/lady_luck/lady_luck_test_alt.tscn" id="3_2usb8"]
+
+[node name="LevelLadyLuckTest" type="Node2D" unique_id=447770447]
+
+[node name="BackgroundGreenVelvet" type="Sprite2D" parent="." unique_id=1535912294]
+position = Vector2(577, 326)
+texture = ExtResource("1_kjol4")
+
+[node name="LadyLuck1" parent="." unique_id=799243148 instance=ExtResource("1_cx7nt")]
+offset_left = 618.0
+offset_top = -274.0
+offset_right = 618.0
+offset_bottom = -274.0
+
+[node name="LadyLuck2" parent="." unique_id=92407670 instance=ExtResource("2_2usb8")]
+offset_left = 1696.9999
+offset_top = 40.0
+offset_right = 1696.9999
+offset_bottom = 40.0
+
+[node name="LadyLuck3" parent="." unique_id=1338972278 instance=ExtResource("3_2usb8")]
+offset_left = 1421.0
+offset_top = 734.0
+offset_right = 1421.0
+offset_bottom = 734.0
