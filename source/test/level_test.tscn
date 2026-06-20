@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dmdfdbpc5pwgk"]
 
 [ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_tpn00"]
+[ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/background-green_velvet.png" id="2_k07vv"]
 [ext_resource type="Script" uid="uid://c60c4tdcv8c1w" path="res://source/floor/floor_config.gd" id="3_l8klr"]
 [ext_resource type="Script" uid="uid://cmlwo0ordubbu" path="res://source/floor/items/reward_config.gd" id="4_k07vv"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="5_ff1e8"]
@@ -29,6 +30,12 @@ metadata/_custom_type_script = "uid://c60c4tdcv8c1w"
 
 [node name="TestLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_tpn00")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1380941157]
+offset_right = 1154.0
+offset_bottom = 648.0
+texture = ExtResource("2_k07vv")
+metadata/_edit_lock_ = true
 
 [node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("5_tpn00")]
 anchors_preset = 0
