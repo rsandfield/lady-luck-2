@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b3r8jv44uqhta"]
+
+[ext_resource type="Script" uid="uid://cb3wlhlqp3b8c" path="res://source/floor/buttons/level_buttons.gd" id="1_gstlq"]
+[ext_resource type="Texture2D" uid="uid://dfqg8euh2g38g" path="res://assets/art/wood-button.png" id="1_s5sde"]
+[ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="2_gstlq"]
+
+[node name="LevelButtons" type="Control" unique_id=1051872753]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gstlq")
+button_1_text = "(Esc) Menu"
+button_2_text = "(X) Retry"
+button_3_text = "(?) Help"
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="." unique_id=1384696436]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 160.0
+offset_bottom = 168.0
+scale = Vector2(1.2, 1)
+
+[node name="ButtonMenu" type="TextureButton" parent="VBoxContainer1" unique_id=586450738]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("1_s5sde")
+texture_pressed = ExtResource("1_s5sde")
+texture_hover = ExtResource("1_s5sde")
+texture_disabled = ExtResource("1_s5sde")
+texture_focused = ExtResource("1_s5sde")
+
+[node name="ButtonRetry" type="TextureButton" parent="VBoxContainer1" unique_id=616037586]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("1_s5sde")
+texture_pressed = ExtResource("1_s5sde")
+texture_hover = ExtResource("1_s5sde")
+texture_disabled = ExtResource("1_s5sde")
+texture_focused = ExtResource("1_s5sde")
+
+[node name="ButtonTutorial" type="TextureButton" parent="VBoxContainer1" unique_id=933178369]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("1_s5sde")
+texture_pressed = ExtResource("1_s5sde")
+texture_hover = ExtResource("1_s5sde")
+texture_disabled = ExtResource("1_s5sde")
+texture_focused = ExtResource("1_s5sde")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=214936853]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 16.0
+offset_right = 232.0
+offset_bottom = 195.0
+mouse_filter = 2
+theme_override_constants/separation = 15
+
+[node name="LabelButton1" type="Label" parent="VBoxContainer2" unique_id=1768105214]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.908146, 0.41910982, 0.230724, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_gstlq")
+theme_override_font_sizes/font_size = 30
+text = "(Esc) Menu"
+
+[node name="LabelButton2" type="Label" parent="VBoxContainer2" unique_id=248862945]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.908146, 0.41910982, 0.230724, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_gstlq")
+theme_override_font_sizes/font_size = 30
+text = " (X) Retry"
+
+[node name="LabelButton3" type="Label" parent="VBoxContainer2" unique_id=1114497372]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.908146, 0.41910982, 0.230724, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_gstlq")
+theme_override_font_sizes/font_size = 30
+text = " (?) Help"
+
+[connection signal="pressed" from="VBoxContainer1/ButtonMenu" to="." method="_on_button_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer1/ButtonRetry" to="." method="_on_button_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer1/ButtonTutorial" to="." method="_on_button_tutorial_pressed"]

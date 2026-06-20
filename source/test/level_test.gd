@@ -60,32 +60,7 @@ func _on_floor_moving_tile(is_moving: bool) -> void:
 	pass
 
 
-# function is temporary and can be removed after we've settled on art
-var switch_luck = 0
-
-
-func _on_switch_pressed() -> void:
-	switch_luck += 1
-	if switch_luck >= 3:
-		switch_luck = 0
-
-	$LadyLuckColor.visible = switch_luck == 0
-	$LadyLuckLight.visible = switch_luck == 1
-	$LadyLuckDark.visible = switch_luck == 2
-
-	pass
-
-
 func _on_slots_sound(sound_type: String = "slots2") -> void:
 	slots_sound.emit(sound_type)
-
-	pass
-
-
-func _on_help_pressed() -> void:
-	if %Tutorial.visible:
-		%Tutorial.hide()
-	elif !%Tutorial.visible:
-		%Tutorial._on_show_self()
 
 	pass

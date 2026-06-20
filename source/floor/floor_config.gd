@@ -1,6 +1,0 @@
-class_name FloorConfig
-extends Resource
-
-@export var grid_size: Vector2i = Vector2i(5, 7)
-@export var wheel_count: int = 4
-@export var spinner_count: int = 6

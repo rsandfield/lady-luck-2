@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bttmqqhmjtuug"
-path="res://.godot/imported/green_velvet_background.png-885b1d6ce32c6f3f11b3fa2e0da14899.ctex"
+uid="uid://s6646trusroa"
+path="res://.godot/imported/background-credits-purplish.png-970861883f0892ca0466fe12374cccb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/green_velvet_background.png"
-dest_files=["res://.godot/imported/green_velvet_background.png-885b1d6ce32c6f3f11b3fa2e0da14899.ctex"]
+source_file="res://assets/art/background-credits-purplish.png"
+dest_files=["res://.godot/imported/background-credits-purplish.png-970861883f0892ca0466fe12374cccb2.ctex"]
 
 [params]
 

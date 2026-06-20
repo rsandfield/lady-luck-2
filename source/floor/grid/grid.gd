@@ -117,11 +117,15 @@ func flag_spin(spin: bool):
 
 func flash_all_flags():
 	for i in 3:
+		if !is_instance_valid(_ui):
+			return
 		_ui.flag_ladder(0.2, 0.1)
-		await _ui.get_tree().create_timer(0.05 * _size.y).timeout
+		await Game.get_tree().create_timer(0.05 * _size.y).timeout
 
 
 func pulse_row(row: int):
 	for i in 3:
+		if !is_instance_valid(_ui):
+			return
 		_ui.flag_pulse(row)
-		await _ui.get_tree().create_timer(0.5).timeout
+		await Game.get_tree().create_timer(0.5).timeout

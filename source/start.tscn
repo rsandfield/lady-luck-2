@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://5el0paxnlnxc" path="res://source/scripts/start.gd" id="1_d1xti"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_5ah3m"]
 [ext_resource type="FontFile" uid="uid://cr1saxylaqak3" path="res://assets/fonts/RobotoMono-Regular.ttf" id="2_iugiy"]
+[ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/background-green_velvet.png" id="2_o7yua"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="2_y1c4o"]
 [ext_resource type="StyleBox" uid="uid://bjjs87buslrdx" path="res://assets/themes/style_box_flat_blue_light.tres" id="3_d4h25"]
 [ext_resource type="FontFile" uid="uid://jmess3785fje" path="res://assets/fonts/ViaodaLibre-Regular.ttf" id="3_o7yua"]
@@ -10,6 +11,7 @@
 [ext_resource type="StyleBox" uid="uid://c3do76iwbhxsa" path="res://assets/themes/style_box_flat_purple_light.tres" id="5_7aew8"]
 [ext_resource type="StyleBox" uid="uid://xkwkgc8dt653" path="res://assets/themes/style_box_flat_green_light_hover.tres" id="6_5ah3m"]
 [ext_resource type="Texture2D" uid="uid://ba7au0uuwrled" path="res://assets/icons/load.png" id="6_y8fap"]
+[ext_resource type="Texture2D" uid="uid://dfqg8euh2g38g" path="res://assets/art/wood-button.png" id="7_kfqdp"]
 [ext_resource type="StyleBox" uid="uid://b22y23a1u23dl" path="res://assets/themes/style_box_flat_purple_light_hover.tres" id="8_dbyvq"]
 [ext_resource type="Theme" uid="uid://dpjv5lllxju8b" path="res://assets/themes/check_button_theme.tres" id="8_o7yua"]
 [ext_resource type="StyleBox" uid="uid://6w58cphnta5n" path="res://assets/themes/style_box_flat_blue_light_hover.tres" id="10_c1v46"]
@@ -29,6 +31,10 @@ corner_radius_bottom_left = 2
 
 [node name="Start" type="Node2D" unique_id=162000955]
 script = ExtResource("1_d1xti")
+
+[node name="BackgroundGreenVelvet" type="Sprite2D" parent="." unique_id=336085483]
+position = Vector2(576, 325)
+texture = ExtResource("2_o7yua")
 
 [node name="TextureButton" type="TextureRect" parent="." unique_id=616699241]
 offset_left = 290.00003
@@ -106,16 +112,23 @@ size_flags_vertical = 4
 theme = ExtResource("2_5ah3m")
 text = "[Test Alt] Game"
 
-[node name="NewGame" type="Button" parent="InterfaceContainer/ButtonControl/ButtonContainer" unique_id=1335015180]
+[node name="NewGame" type="TextureButton" parent="InterfaceContainer/ButtonControl/ButtonContainer" unique_id=1437650190]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("2_5ah3m")
-theme_override_styles/normal = ExtResource("5_7aew8")
-theme_override_styles/pressed = ExtResource("5_7aew8")
-theme_override_styles/hover = ExtResource("8_dbyvq")
-theme_override_styles/disabled = ExtResource("5_7aew8")
-theme_override_styles/focus = ExtResource("8_dbyvq")
+texture_normal = ExtResource("7_kfqdp")
+texture_pressed = ExtResource("7_kfqdp")
+texture_hover = ExtResource("7_kfqdp")
+
+[node name="Label" type="Label" parent="InterfaceContainer/ButtonControl/ButtonContainer/NewGame" unique_id=771341899]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 10.0
+offset_right = 130.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("2_y1c4o")
+theme_override_font_sizes/font_size = 24
 text = "New Game"
 
 [node name="Options" type="Button" parent="InterfaceContainer/ButtonControl/ButtonContainer" unique_id=529480410]
@@ -160,12 +173,12 @@ custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-metadata/_edit_lock_ = true
 
 [node name="Version" type="Label" parent="InterfaceContainer/VersionControl" unique_id=159951637]
 unique_name_in_owner = true
 layout_mode = 1
-offset_right = 200.0
+offset_left = -39.0
+offset_right = 161.0
 offset_bottom = 23.0
 text = "version: 0.0.0"
 horizontal_alignment = 1

@@ -49,12 +49,14 @@ func spin(items: Array[ItemResource]):
 
 	_anim.speed_scale = windup_speed
 	_anim.play("cycle")
-	var speed_tween = create_tween()
-	speed_tween.tween_property(_anim, "speed_scale", cruise_speed, windup_time).set_ease(
+	var tween = create_tween()
+	tween.tween_property(_anim, "speed_scale", cruise_speed, windup_time).set_ease(
 		Tween.EASE_IN
 	)
 
 	while _spinning:
+		if !is_inside_tree():
+			return
 		await get_tree().process_frame
 
 	_anim.stop()
@@ -93,6 +95,7 @@ func _update_speed():
 	else:
 		target_speed = final_speed
 	var tween = create_tween()
+	tween.bind_node(self)
 	tween.tween_property(_anim, "speed_scale", target_speed, decel_time).set_ease(Tween.EASE_OUT)
 
 
@@ -104,6 +107,8 @@ func _get_active_item_ui():
 
 
 func _on_button_button_down() -> void:
+	print_debug("_on_button_button_down...")
+	
 	pressed.emit()
 	if _spinning:
 		return

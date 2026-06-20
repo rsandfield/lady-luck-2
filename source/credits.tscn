@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bee001npe2hx5"]
 
 [ext_resource type="Script" uid="uid://b7mjqsrihvtwn" path="res://source/scripts/credits.gd" id="1_fqt5c"]
-[ext_resource type="Texture2D" uid="uid://s6646trusroa" path="res://assets/art/background-purplish.png" id="2_7n2ak"]
+[ext_resource type="Texture2D" uid="uid://s6646trusroa" path="res://assets/art/background-credits-purplish.png" id="2_7n2ak"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="2_mm0m6"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_muyvs"]
 [ext_resource type="StyleBox" uid="uid://c3do76iwbhxsa" path="res://assets/themes/style_box_flat_purple_light.tres" id="4_kh4jm"]
@@ -89,9 +89,9 @@ theme_override_styles/focus = ExtResource("4_kh4jm")
 text = "Go Back"
 
 [node name="CreditsText" type="RichTextLabel" parent="." unique_id=968115274]
-offset_top = 422.0
+offset_top = 414.0
 offset_right = 1152.0
-offset_bottom = 646.0
+offset_bottom = 638.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.93138474, 0.8036014, 0.8981877, 1)
 theme_override_constants/outline_size = 6
@@ -113,6 +113,15 @@ custom_minimum_size = Vector2(1154, 648)
 offset_right = 1154.0
 offset_bottom = 648.0
 metadata/_edit_lock_ = true
+
+[node name="CreditsMurkyHgLink" type="LinkButton" parent="." unique_id=1899197202]
+offset_left = 591.0
+offset_top = 538.0
+offset_right = 875.0
+offset_bottom = 569.0
+theme_override_fonts/font = ExtResource("2_mm0m6")
+theme_override_font_sizes/font_size = 24
+text = "https://mercury-hg.itch.io/"
 
 [node name="Panel_Squad" type="Panel" parent="." unique_id=292052250]
 offset_left = 30.0
@@ -165,17 +174,8 @@ texture = ExtResource("6_7n2ak")
 position = Vector2(555, 246)
 texture = ExtResource("8_nkten")
 
-[node name="MurkyHgLink" type="LinkButton" parent="." unique_id=1899197202]
-offset_left = 591.0
-offset_top = 546.0
-offset_right = 875.0
-offset_bottom = 577.0
-theme_override_fonts/font = ExtResource("2_mm0m6")
-theme_override_font_sizes/font_size = 24
-text = "https://mercury-hg.itch.io/"
-
 [connection signal="pressed" from="CenterContainer/Control/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="BackControl" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CreditsMurkyHgLink" to="." method="_on_murkyhg_pressed"]
 [connection signal="pressed" from="Panel_Squad/Label" to="." method="_on_pigsquad_pressed"]
 [connection signal="pressed" from="Panel_Godot/Label" to="." method="_on_godot_pressed"]
-[connection signal="pressed" from="MurkyHgLink" to="." method="_on_murkyhg_pressed"]

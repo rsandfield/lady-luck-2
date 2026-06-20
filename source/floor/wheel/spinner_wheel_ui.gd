@@ -55,6 +55,7 @@ func spin(to: int) -> void:
 			delta += TAU
 
 	var tween = create_tween()
+	tween.bind_node(self)
 	var windup := TAU / float(slice_count) * 0.25
 	var extra_spins: float = TAU * rotations
 	if clockwise:

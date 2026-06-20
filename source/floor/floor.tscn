@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://3gtimcic0h85" path="res://source/floor/lady_luck/lady_luck.tscn" id="3_bey53"]
 [ext_resource type="PackedScene" uid="uid://cksm1x0jrd8ge" path="res://source/floor/grid/grid_ui.tscn" id="3_vqkr4"]
 [ext_resource type="PackedScene" uid="uid://6vbn4bonis0x" path="res://source/floor/points/turn_container.tscn" id="5_a23us"]
+[ext_resource type="PackedScene" uid="uid://detgnnqtmgueh" path="res://source/floor/points/points_container.tscn" id="6_mx0ua"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqkr4"]
 
@@ -28,92 +29,120 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1328285526]
-layout_mode = 2
+[node name="Node" type="Node2D" parent="MarginContainer" unique_id=1274708527]
+position = Vector2(32, 21)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Node" unique_id=1328285526]
+offset_left = 22.0
+offset_top = -1.0
+offset_right = 1134.0
+offset_bottom = 607.0
 alignment = 2
 
-[node name="Slots" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=437422763]
+[node name="Slots" type="VBoxContainer" parent="MarginContainer/Node/HBoxContainer" unique_id=437422763]
 layout_mode = 2
+mouse_filter = 2
 alignment = 2
 
-[node name="NodeLadyLuck" type="Node2D" parent="MarginContainer/HBoxContainer/Slots" unique_id=1875616674]
-position = Vector2(-194, 44)
+[node name="NodeSpinner" type="Node2D" parent="MarginContainer/Node/HBoxContainer/Slots" unique_id=2127738955]
+position = Vector2(111, 6)
+scale = Vector2(0.8, 0.8)
 
-[node name="LadyLuck" parent="MarginContainer/HBoxContainer/Slots/NodeLadyLuck" unique_id=799243148 instance=ExtResource("3_bey53")]
+[node name="Spinner" parent="MarginContainer/Node/HBoxContainer/Slots/NodeSpinner" unique_id=1656173699 instance=ExtResource("2_bey53")]
 unique_name_in_owner = true
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 732.0
-offset_top = 341.0
-offset_right = 732.0
-offset_bottom = 341.0
-grow_horizontal = 1
-grow_vertical = 1
-pivot_offset = Vector2(-627, -391)
-size_flags_vertical = 3
-
-[node name="NodeSpinner" type="Node2D" parent="MarginContainer/HBoxContainer/Slots" unique_id=2127738955]
-
-[node name="Spinner" parent="MarginContainer/HBoxContainer/Slots/NodeSpinner" unique_id=1656173699 instance=ExtResource("2_bey53")]
-unique_name_in_owner = true
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 389.0
+offset_left = 432.0
 offset_top = -9.0
-offset_right = 589.0
+offset_right = 632.0
 offset_bottom = 191.0
 grow_horizontal = 1
 grow_vertical = 1
 size_flags_horizontal = 8
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/Slots" unique_id=182174465]
+[node name="NodeLadyLuck" type="Node2D" parent="MarginContainer/Node/HBoxContainer/Slots" unique_id=1875616674]
+position = Vector2(-228, 44)
+
+[node name="LadyLuck" parent="MarginContainer/Node/HBoxContainer/Slots/NodeLadyLuck" unique_id=799243148 instance=ExtResource("3_bey53")]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 907.0
+offset_top = 358.0
+offset_right = 907.0
+offset_bottom = 358.0
+grow_horizontal = 1
+grow_vertical = 1
+pivot_offset = Vector2(-627, -391)
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Node/HBoxContainer/Slots" unique_id=182174465]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="MachineContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Slots/PanelContainer" unique_id=1923615028]
+[node name="MachineContainer" type="MarginContainer" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer" unique_id=1923615028]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 25
 
-[node name="SlotMachine" parent="MarginContainer/HBoxContainer/Slots/PanelContainer/MachineContainer" unique_id=188532546 instance=ExtResource("2_p1kb0")]
+[node name="SlotMachine" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MachineContainer" unique_id=188532546 instance=ExtResource("2_p1kb0")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Slots/PanelContainer" unique_id=28902857]
+[node name="NodeSlots" type="Node2D" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MachineContainer" unique_id=120872530]
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer" unique_id=28902857]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = -30
 theme_override_constants/margin_right = 50
 
-[node name="NodeTurns" type="Node2D" parent="MarginContainer/HBoxContainer/Slots/PanelContainer/MarginContainer" unique_id=1478860619]
-position = Vector2(-34, -424)
+[node name="NodeTurns" type="Node2D" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MarginContainer" unique_id=1478860619]
+position = Vector2(-35, -416)
 
-[node name="TurnContainer" parent="MarginContainer/HBoxContainer/Slots/PanelContainer/MarginContainer/NodeTurns" unique_id=1749657070 instance=ExtResource("5_a23us")]
+[node name="TurnContainer" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MarginContainer/NodeTurns" unique_id=1749657070 instance=ExtResource("5_a23us")]
 unique_name_in_owner = true
 offset_left = 519.0
 offset_top = 603.0
 offset_right = 577.0
 offset_bottom = 635.0
 
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=424488339]
+[node name="NodePoints" type="Node2D" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MarginContainer" unique_id=1121532425]
+position = Vector2(1, 10)
+
+[node name="PointContainer" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MarginContainer/NodePoints" unique_id=233066825 instance=ExtResource("6_mx0ua")]
+offset_left = 149.0
+offset_top = 179.0
+offset_right = 149.0
+offset_bottom = 179.0
+
+[node name="Control" type="Control" parent="MarginContainer/Node/HBoxContainer" unique_id=424488339]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=822311295]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Node/HBoxContainer" unique_id=822311295]
 layout_mode = 2
 alignment = 1
 
-[node name="Grid" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=599105573 instance=ExtResource("3_vqkr4")]
-unique_name_in_owner = true
-layout_mode = 2
+[node name="NodeGrid" type="Node2D" parent="MarginContainer/Node/HBoxContainer/VBoxContainer" unique_id=1191899555]
+position = Vector2(-25, 0)
 
-[connection signal="moving_tile" from="MarginContainer/HBoxContainer/Slots/PanelContainer/MachineContainer/SlotMachine" to="." method="_on_slot_machine_moving_tile"]
-[connection signal="spin_sound_play" from="MarginContainer/HBoxContainer/Slots/PanelContainer/MachineContainer/SlotMachine" to="." method="_on_slot_machine_play_sound"]
+[node name="Grid" parent="MarginContainer/Node/HBoxContainer/VBoxContainer/NodeGrid" unique_id=599105573 instance=ExtResource("3_vqkr4")]
+unique_name_in_owner = true
+offset_left = -478.0
+offset_top = -9.0
+offset_right = 51.0
+offset_bottom = 540.0
+
+[connection signal="moving_tile" from="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MachineContainer/SlotMachine" to="." method="_on_slot_machine_moving_tile"]
+[connection signal="spin_sound_play" from="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MachineContainer/SlotMachine" to="." method="_on_slot_machine_play_sound"]
