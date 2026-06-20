@@ -36,6 +36,10 @@ func position() -> Vector2:
 	return _ui.global_position
 
 
+func size() -> Vector2:
+	return _ui.size
+
+
 func is_occupied() -> bool:
 	return _tile != null
 

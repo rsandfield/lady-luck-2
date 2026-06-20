@@ -1,10 +1,11 @@
 class_name Floor
 extends PanelContainer
 
-@export var _size: Vector2i = Vector2i(5, 7)
-@export var _wheels := 4
+
+@export var _config: FloorConfig = FloorConfig.new()
 
 @onready var _turn_counter: PointsContainer = %TurnContainer
+@onready var _points_counter: PointsContainer = %PointContainer
 
 var _slot_machine: SlotMachine
 var _grid: Grid
@@ -17,26 +18,38 @@ signal slot_machine_sound
 
 
 func _ready():
+	reset()
+
+
+func reset(config: FloorConfig = null, reset_score: bool = true):
+	if config:
+		_config = config
+
 	_slot_machine = SlotMachine.new()
 	_slot_machine.set_ui(%SlotMachine)
-	_slot_machine.set_wheel_count(_wheels)
+	_slot_machine.set_wheel_count(_config.wheel_count, _config.color_count)
 	_slot_machine.finished.connect(_on_spin_finished)
 
+	var size = _config.grid_size + Vector2i.DOWN
 	_grid = Grid.new()
 	_grid.set_ui(%Grid)
 	_grid.grid_cell_pressed.connect(_on_grid_cell_pressed)
-	_grid.set_grid_size(_size)
+	_grid.set_grid_size(size, _config.color_count)
 
 	_spinner = Spinner.new()
 	_spinner.set_ui(%Spinner)
-	_spinner.set_row_count(_size.y)
-	_spinner.set_item_count(6)
+	_spinner.set_row_count(size.y)
+	_spinner.set_item_count(6, _config.color_count)
 	_slot_machine.lever_pulled.connect(_on_lever_pulled)
 
 	_lady = LadyLuck.new()
 	_lady.set_ui(%LadyLuck)
 	_lady.set_grid(_grid)
 	_spinner.result.connect(_on_lady_play)
+
+	_turn_counter.set_value(0)
+	if reset_score:
+		_points_counter.set_value(0)
 
 
 func _on_grid_cell_pressed(slot: GridCell) -> void:
@@ -50,7 +63,13 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 	_slot_machine.consume_selected()
 
 	if _grid.all_paths_finished():
-		print_debug("Ya did it")
+		_grid.activate_door().connect(_on_door_pressed)
+
+
+func _on_door_pressed(_slot: GridCell) -> void:
+	print("Boop")
+	reset(null, false)
+
 
 #var for_testing = true
 func _on_lever_pulled():

@@ -20,7 +20,6 @@ grow_vertical = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vqkr4")
 script = ExtResource("1_vqkr4")
-_size = Vector2i(5, 8)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1450049681]
 layout_mode = 2
@@ -120,6 +119,7 @@ offset_bottom = 635.0
 position = Vector2(1, 10)
 
 [node name="PointContainer" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MarginContainer/NodePoints" unique_id=233066825 instance=ExtResource("6_mx0ua")]
+unique_name_in_owner = true
 offset_left = 149.0
 offset_top = 179.0
 offset_right = 149.0

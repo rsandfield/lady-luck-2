@@ -10,15 +10,11 @@ func _on_main_menu_pressed() -> void:
 
 	emit_signal("return_to_menu")
 
-	pass
-
 
 func _on_restart_pressed() -> void:
-	print_debug("currently does nothing...")
+	print_debug("_on_restart_pressed...")
 
 	emit_signal("restart_game")
-
-	pass
 
 
 func _on_help_pressed() -> void:
@@ -28,5 +24,3 @@ func _on_help_pressed() -> void:
 		%Tutorial.hide()
 	elif !%Tutorial.visible:
 		%Tutorial._on_show_self()
-
-	pass

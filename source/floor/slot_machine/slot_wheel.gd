@@ -12,16 +12,16 @@ func set_ui(new_ui: SlotWheelUI):
 	_ui.pressed.connect(_pressed)
 
 
-func spin() -> void:
+func spin(color_count: int = 1) -> void:
 	var items: Array[ItemResource] = []
 	for i in 8:
-		items.append(TileResource.random_two_side())
+		items.append(TileResource.random_two_side(color_count))
 	items.append(BombResource.new())
 	items.shuffle()
 	_item = items[-2]
 	if !is_instance_valid(_ui):
 		return
-	await _ui.spin(items)
+	await _ui.spin(items, color_count)
 	if !is_instance_valid(_ui):
 		return
 	finished.emit()

@@ -3,6 +3,7 @@ extends GridContainer
 
 const GRID_CELL_UI_SCENE = preload("./grid_cell_ui.tscn")
 const FLAG_SCENE = preload("./flag.tscn")
+const INDICATOR_SCENE = preload("./door_indicator.tscn")
 
 const ROW_COLORS: Array[Color] = [
 	Color(0, 0, 0, 0),
@@ -15,6 +16,7 @@ const ROW_COLORS: Array[Color] = [
 	Color.VIOLET,
 ]
 
+var _indicator: Node2D
 var _size: Vector2i
 var _flags: Array[Flag]
 var _spinning: bool
@@ -47,6 +49,9 @@ func _flag_pulse(time: float):
 
 
 func set_grid(width: int, cells: Array[GridCell]) -> void:
+	if _indicator:
+		_indicator.queue_free()
+
 	_flags = []
 	for child in get_children():
 		child.queue_free()
@@ -102,3 +107,11 @@ func flag_pulse(row: int, time: float = 0.5):
 	var flag_index = row * 2
 	_flags[flag_index].pulse(time)
 	_flags[flag_index + 1].pulse(time)
+
+
+func show_indicator(cell: GridCell) -> void:
+	_indicator = INDICATOR_SCENE.instantiate()
+	add_child(_indicator)
+	_indicator.position = cell.position() - global_position + cell.size() / 2
+	_indicator.get_node("AnimationPlayer").play("spin")
+	

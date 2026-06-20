@@ -6,7 +6,7 @@ var _ui: GridUI
 var _size: Vector2i
 var _cells: Array[GridCell]
 var _color_count: int
-
+var _door: GridCell
 
 func set_ui(new_ui: GridUI) -> void:
 	_ui = new_ui
@@ -64,6 +64,12 @@ func _set_door():
 	var tile = TileResource.new(sides)
 	tile.is_door = true
 	cell.set_tile(tile)
+	_door = cell
+
+
+func activate_door() -> Signal:
+	_ui.show_indicator(_door)
+	return _door.grid_cell_pressed
 
 
 func all_paths_finished() -> bool:
