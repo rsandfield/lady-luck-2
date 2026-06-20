@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dfqg8euh2g38g" path="res://assets/art/wood-button.png" id="12_ihnwo"]
 [ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="12_jcaet"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="13_b6kwo"]
+[ext_resource type="PackedScene" uid="uid://cpmgg2k6x6skc" path="res://source/floor/lady_luck/lady_luck_test.tscn" id="13_ifycd"]
 [ext_resource type="Texture2D" uid="uid://br538pffgrles" path="res://assets/art/button-placeholder-main.png" id="14_lukrn"]
 [ext_resource type="Texture2D" uid="uid://b861e46gnkt8p" path="res://assets/art/button-placeholder-retry.png" id="15_nj6ht"]
 [ext_resource type="Texture2D" uid="uid://bioopwke2pmti" path="res://assets/art/placeholder-rigging.png" id="17_b58l3"]
@@ -20,6 +21,7 @@ size = Vector2(1, 1)
 script = ExtResource("1_1k1e1")
 
 [node name="TempCharacter" type="CharacterBody2D" parent="." unique_id=416640605]
+visible = false
 position = Vector2(-449, -721)
 
 [node name="EmptyShape" type="CollisionShape2D" parent="TempCharacter" unique_id=1320280028]
@@ -49,7 +51,7 @@ position = Vector2(-77, -13)
 [node name="shoulder" type="Bone2D" parent="TempCharacter/Skeleton2D" unique_id=890112940]
 position = Vector2(234, 257)
 rotation = -0.059357014
-scale = Vector2(0.99999857, 0.99999857)
+scale = Vector2(0.9999982, 0.9999982)
 rest = Transform2D(1, 0, 0, 1, 234, 257)
 
 [node name="elbow" type="Bone2D" parent="TempCharacter/Skeleton2D/shoulder" unique_id=1656392343]
@@ -164,6 +166,12 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("10_nwggm")
 theme_override_font_sizes/font_size = 30
 text = "(?) Help"
+
+[node name="LadyLuck" parent="." unique_id=799243148 instance=ExtResource("13_ifycd")]
+offset_left = 637.0
+offset_top = 977.99994
+offset_right = 637.0
+offset_bottom = 977.99994
 
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]
