@@ -66,7 +66,7 @@ texture = ExtResource("2_atam5")
 polygon = PackedVector2Array(-3.4379883, 519.8988, 89.29602, 446.2571, 108.388306, 380.79785, 173.84753, 364.43304, 261.1266, 228.05957, 490.234, 255.33426, 441.13953, 454.4395, 547.51086, 506.26144, 498.41638, 628.99756, 258.39917, 849.92255, 228.39697, 920.8368, 138.3905, 877.19727, 62.021362, 907.1994, -22.530273, 768.0985, -3.4379883, 710.8216)
 uv = PackedVector2Array(-3.4379883, 519.8988, 89.29602, 446.2571, 108.388306, 380.79785, 173.84753, 364.43304, 261.1266, 228.05957, 490.234, 255.33426, 441.13953, 454.4395, 547.51086, 506.26144, 498.41638, 628.99756, 258.39917, 849.92255, 228.39697, 920.8368, 138.3905, 877.19727, 62.021362, 907.1994, -22.530273, 768.0985, -3.4379883, 710.8216)
 
-[node name="Down" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=1367849755]
+[node name="Arm_Down" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=1367849755]
 position = Vector2(62.778076, -129.10422)
 rotation = -0.017283665
 scale = Vector2(1.0000002, 1.0000002)
@@ -75,7 +75,7 @@ texture = ExtResource("3_8urco")
 polygon = PackedVector2Array(344.40063, 483.80908, 395.4043, 627.81946, 422.40625, 684.8236, 449.4082, 708.8253, 452.40845, 750.82837, 587.4182, 894.8388, 611.4199, 927.8412, 644.42236, 1089.8528, 740.4293, 1089.8528, 716.4275, 882.8379, 683.4252, 834.8344, 605.41956, 699.8247, 578.4176, 666.82227, 554.4159, 600.8175, 440.4076, 438.80585)
 uv = PackedVector2Array(344.40063, 483.80908, 395.4043, 627.81946, 422.40625, 684.8236, 449.4082, 708.8253, 452.40845, 750.82837, 587.4182, 894.8388, 611.4199, 927.8412, 644.42236, 1089.8528, 740.4293, 1089.8528, 716.4275, 882.8379, 683.4252, 834.8344, 605.41956, 699.8247, 578.4176, 666.82227, 554.4159, 600.8175, 440.4076, 438.80585)
 
-[node name="Lift" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=1126809648]
+[node name="Arm_Lift" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=1126809648]
 position = Vector2(63.486664, -88.11035)
 rotation = -0.017283665
 scale = Vector2(1.0000002, 1.0000002)
@@ -84,7 +84,7 @@ texture = ExtResource("4_4gswb")
 polygon = PackedVector2Array(361.82352, 488.0236, 441.42007, 477.86234, 559.96814, 503.26547, 590.4519, 521.8945, 580.29065, 471.08813, 595.5326, 371.16907, 612.468, 328.83047, 741.17725, 249.23392, 815.69324, 298.34668, 703.9193, 391.49158, 670.04846, 391.49158, 688.67737, 418.5883, 690.371, 559.1524, 673.43555, 608.2652, 453.27487, 628.5877, 344.8881, 564.23303)
 uv = PackedVector2Array(361.82352, 488.0236, 441.42007, 477.86234, 559.96814, 503.26547, 590.4519, 521.8945, 580.29065, 471.08813, 595.5326, 371.16907, 612.468, 328.83047, 741.17725, 249.23392, 815.69324, 298.34668, 703.9193, 391.49158, 670.04846, 391.49158, 688.67737, 418.5883, 690.371, 559.1524, 673.43555, 608.2652, 453.27487, 628.5877, 344.8881, 564.23303)
 
-[node name="Middle" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=1383312009]
+[node name="Arm_Middle" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=1383312009]
 position = Vector2(48.056885, -112.84735)
 rotation = -0.017283665
 scale = Vector2(1.0000002, 1.0000002)
@@ -93,7 +93,7 @@ texture = ExtResource("5_vv6lp")
 polygon = PackedVector2Array(345.06647, 571.502, 336.05, 458.79666, 460.02594, 443.0179, 520.8868, 420.47684, 550.19025, 420.47684, 520.8868, 384.41113, 484.8211, 301.0092, 471.29645, 276.214, 482.56696, 240.14828, 550.19025, 100.39366, 651.62506, 109.41009, 590.7641, 249.16472, 568.2231, 273.9599, 590.7641, 291.99277, 671.9119, 402.444, 687.69073, 447.52612, 653.8791, 476.82953, 491.58344, 582.7726)
 uv = PackedVector2Array(345.06647, 571.502, 336.05, 458.79666, 460.02594, 443.0179, 520.8868, 420.47684, 550.19025, 420.47684, 520.8868, 384.41113, 484.8211, 301.0092, 471.29645, 276.214, 482.56696, 240.14828, 550.19025, 100.39366, 651.62506, 109.41009, 590.7641, 249.16472, 568.2231, 273.9599, 590.7641, 291.99277, 671.9119, 402.444, 687.69073, 447.52612, 653.8791, 476.82953, 491.58344, 582.7726)
 
-[node name="Up" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=1045447806]
+[node name="Arm_Up" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=1045447806]
 position = Vector2(73.00128, -116.27899)
 rotation = -0.017283665
 scale = Vector2(1.0000002, 1.0000002)
@@ -111,7 +111,7 @@ texture = ExtResource("7_uvixu")
 polygon = PackedVector2Array(18.656006, 653.3866, 328.87854, 372.86624, 546.69434, 600.58276, 556.5951, 1349.737, 134.16443, 1353.0374, 163.86658, 864.6019)
 uv = PackedVector2Array(18.656006, 653.3866, 328.87854, 372.86624, 546.69434, 600.58276, 556.5951, 1349.737, 134.16443, 1353.0374, 163.86658, 864.6019)
 
-[node name="LargeFeather" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=1413938566]
+[node name="FeatherL" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=1413938566]
 position = Vector2(-0.4128189, -371.04828)
 rotation = -0.017283665
 scale = Vector2(1.0000001, 1.0000001)
@@ -120,7 +120,7 @@ texture = ExtResource("9_ylw2p")
 polygon = PackedVector2Array(-4.4020996, 2.6147919, 118.33411, -51.934597, 453.81274, 250.8145, 328.34924, 362.64075)
 uv = PackedVector2Array(-4.4020996, 2.6147919, 118.33411, -51.934597, 453.81274, 250.8145, 328.34924, 362.64075)
 
-[node name="MidFeather" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=667355725]
+[node name="FeatherM" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=667355725]
 position = Vector2(-37.3356, -308.40076)
 rotation = -0.017283665
 scale = Vector2(1.0000001, 1.0000001)
@@ -129,7 +129,7 @@ texture = ExtResource("10_w7d4w")
 polygon = PackedVector2Array(10.538086, 127.386345, -68.52905, 259.1649, 361.9475, 434.86957, 405.87378, 272.34274)
 uv = PackedVector2Array(10.538086, 127.386345, -68.52905, 259.1649, 361.9475, 434.86957, 405.87378, 272.34274)
 
-[node name="SmallFeather" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=1663515565]
+[node name="FeatherS" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=1663515565]
 position = Vector2(-81.91409, -283.62662)
 rotation = -0.017283665
 scale = Vector2(1.0000001, 1.0000001)
@@ -156,7 +156,7 @@ texture = ExtResource("13_ej4q0")
 polygon = PackedVector2Array(157.13269, 322.5916, 252.5615, 211.89417, 355.62466, 297.14392, 271.6473, 411.6585)
 uv = PackedVector2Array(157.13269, 322.5916, 252.5615, 211.89417, 355.62466, 297.14392, 271.6473, 411.6585)
 
-[node name="FaceSmile" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=593751062]
+[node name="Face_Smile" type="Polygon2D" parent="HBoxContainer/TempCharacter/EmptyShape" unique_id=593751062]
 position = Vector2(-8.127411, -180.88654)
 rotation = -0.017283665
 scale = Vector2(1.0000001, 1.0000001)
