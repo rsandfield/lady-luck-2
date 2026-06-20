@@ -12,13 +12,12 @@ func set_ui(new_ui: SlotWheelUI):
 	_ui.pressed.connect(_pressed)
 
 
-func spin(reward_config: RewardConfig = RewardConfig.new()) -> void:
+func spin(result: ItemResource, reward_config: RewardConfig) -> void:
+	_item = result
 	var items: Array[ItemResource] = []
-	for i in 8:
+	for i in 9:
 		items.append(reward_config.get_item())
-	items.append(BombResource.new())
-	items.shuffle()
-	_item = items[-2]
+	items[-2] = result
 	if !is_instance_valid(_ui):
 		return
 	await _ui.spin(items, reward_config)

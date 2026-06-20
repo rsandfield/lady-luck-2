@@ -43,6 +43,7 @@ func reset(config: FloorConfig = null, reset_score: bool = true):
 	_grid.set_ui(%Grid)
 	_grid.grid_cell_pressed.connect(_on_grid_cell_pressed)
 	_grid.set_grid_size(grid_size, _config.color_count)
+	_slot_machine.set_bomb_budget_source(_grid.count_bombable_tiles)
 
 	_spinner = Spinner.new()
 	_spinner.set_ui(%Spinner)

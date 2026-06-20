@@ -24,7 +24,8 @@ func hold_item(item: ItemResource) -> void:
 		return
 
 	var item_ui = ui_scene.instantiate()
-	item_ui.set_resource(item)
+	if item_ui.has_method("set_resource"):
+		item_ui.set_resource(item)
 	_hand.add_child(item_ui)
 	_item_ui = item_ui
 

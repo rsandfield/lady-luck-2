@@ -46,7 +46,8 @@ func set_item(item: ItemResource, index: int):
 
 	var item_ui = item_scene.instantiate()
 	_item_uis[index] = item_ui
-	item_ui.set_resource(item)
+	if item_ui.has_method("set_resource"):
+		item_ui.set_resource(item)
 	$InnerWheel.add_child(item_ui)
 
 	item_ui.scale = Vector2.ONE * 0.25

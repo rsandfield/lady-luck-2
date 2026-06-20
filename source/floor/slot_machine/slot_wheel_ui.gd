@@ -139,5 +139,6 @@ func _set_slot_item(slot_idx: int, item: ItemResource):
 	if !item:
 		return
 	var ui = item.ui_scene().instantiate()
-	ui.set_resource(item)
+	if ui.has_method("set_resource"):
+		ui.set_resource(item)
 	slot.add_child(ui)

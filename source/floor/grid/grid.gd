@@ -129,6 +129,15 @@ func flash_all_flags():
 		await Game.get_tree().create_timer(0.05 * _size.y).timeout
 
 
+func count_bombable_tiles() -> int:
+	var bomb = BombResource.new()
+	var count = 0
+	for cell in _cells:
+		if bomb.is_legal_play(cell):
+			count += 1
+	return count
+
+
 func pulse_row(row: int):
 	for i in 3:
 		if !is_instance_valid(_ui):

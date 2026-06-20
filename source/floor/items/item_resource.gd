@@ -3,7 +3,7 @@ extends Resource
 
 
 func ui_scene() -> PackedScene:
-	return null
+	return preload("./item_ui.tscn")
 
 
 func is_legal_play(_cell: GridCell) -> bool:
