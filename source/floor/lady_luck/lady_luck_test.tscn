@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cpmgg2k6x6skc"]
+
+[ext_resource type="Script" uid="uid://dmrak3edmrnox" path="res://source/floor/lady_luck/lady_luck_ui.gd" id="1_a8po4"]
+[ext_resource type="Texture2D" uid="uid://bioopwke2pmti" path="res://assets/art/placeholder-rigging.png" id="2_v23ud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j7hh"]
+size = Vector2(1, 1)
+
+[node name="LadyLuck" type="Control" unique_id=799243148]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 371.0
+offset_top = 104.0
+offset_right = 371.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a8po4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2137960674]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Images" type="Control" parent="HBoxContainer" unique_id=2102794510]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TempCharacter" type="CharacterBody2D" parent="HBoxContainer/Images" unique_id=1645717998]
+position = Vector2(-262, -364)
+
+[node name="EmptyShape" type="CollisionShape2D" parent="HBoxContainer/Images/TempCharacter" unique_id=1299031370]
+rotation = 0.017283665
+shape = SubResource("RectangleShape2D_3j7hh")
+disabled = true
+
+[node name="Polygons" type="Node2D" parent="HBoxContainer/Images/TempCharacter" unique_id=1419271097]
+
+[node name="body" type="Polygon2D" parent="HBoxContainer/Images/TempCharacter/Polygons" unique_id=605485783]
+position = Vector2(-76, -11)
+texture = ExtResource("2_v23ud")
+polygon = PackedVector2Array(239, 214.5, 291, 180.5, 302, 81.5, 35, -20.5, -64, 258.5, -23, 459.5, 81, 682.5, 286, 671.5, 346, 287.5, 232, 277.5, 206, 226.5)
+uv = PackedVector2Array(239, 214.5, 291, 180.5, 302, 81.5, 35, -20.5, -64, 258.5, -23, 459.5, 81, 682.5, 286, 671.5, 346, 287.5, 232, 277.5, 206, 226.5)
+
+[node name="arm" type="Polygon2D" parent="HBoxContainer/Images/TempCharacter/Polygons" unique_id=2057255506]
+position = Vector2(-77, -13)
+texture = ExtResource("2_v23ud")
+polygon = PackedVector2Array(369, 92, 307, 142, 297, 241, 218, 220, 203, 237, 240, 297, 332, 291, 350, 268, 344, 167, 376, 158, 368, 137, 399, 112)
+uv = PackedVector2Array(369, 92, 307, 142, 297, 241, 218, 220, 203, 237, 240, 297, 332, 291, 350, 268, 344, 167, 376, 158, 368, 137, 399, 112)
+bones = ["shoulder", PackedFloat32Array(0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0), "shoulder/elbow", PackedFloat32Array(0, 0, 0.5, 0, 0, 0, 0.5, 1, 0, 0, 0, 0), "shoulder/elbow/wrist", PackedFloat32Array(0, 0.5, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0), "shoulder/elbow/wrist/finger", PackedFloat32Array(0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5)]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="HBoxContainer/Images/TempCharacter" unique_id=176148274]
+position = Vector2(-77, -13)
+
+[node name="shoulder" type="Bone2D" parent="HBoxContainer/Images/TempCharacter/Skeleton2D" unique_id=1425797026]
+position = Vector2(234, 257)
+rotation = -0.059357002
+scale = Vector2(0.9999994, 0.9999994)
+rest = Transform2D(1, 0, 0, 1, 234, 257)
+
+[node name="elbow" type="Bone2D" parent="HBoxContainer/Images/TempCharacter/Skeleton2D/shoulder" unique_id=1816746504]
+position = Vector2(79, 13)
+rotation = 0.6403113
+rest = Transform2D(1, 0, 0, 1, 79, 13)
+
+[node name="wrist" type="Bone2D" parent="HBoxContainer/Images/TempCharacter/Skeleton2D/shoulder/elbow" unique_id=1919589900]
+position = Vector2(11, -115)
+rotation = 0.11720685
+rest = Transform2D(1, 0, 0, 1, 11, -115)
+
+[node name="finger" type="Bone2D" parent="HBoxContainer/Images/TempCharacter/Skeleton2D/shoulder/elbow/wrist" unique_id=885009295]
+position = Vector2(39, -35)
+rotation = -0.35101336
+rest = Transform2D(1, 0, 0, 1, 39, -35)
+auto_calculate_length_and_angle = false
+length = 11.0
+bone_angle = -24.089998
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=1239375716]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Hand" type="Control" parent="." unique_id=757526930]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -75.0
+offset_bottom = 75.0
+grow_horizontal = 0
