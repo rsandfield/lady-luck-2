@@ -269,4 +269,4 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_mim7t")
 [connection signal="pressed" from="Help3" to="." method="_on_change_tutorial_state" binds= [3]]
 [connection signal="pressed" from="Help4" to="." method="_on_change_tutorial_state" binds= [4]]
 [connection signal="pressed" from="Help5" to="." method="_on_change_tutorial_state" binds= [5]]
-[connection signal="pressed" from="Help6" to="." method="_on_change_tutorial_state" binds= [5]]
+[connection signal="pressed" from="Help6" to="." method="_on_change_tutorial_state" binds= [6]]

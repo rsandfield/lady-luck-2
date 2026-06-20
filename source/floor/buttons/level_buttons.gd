@@ -24,7 +24,7 @@ func _ready() -> void:
 
 
 func _on_button_menu_pressed() -> void:
-	print_debug("_on_button_menu_pressed...")
+	#print_debug("_on_button_menu_pressed...")
 	
 	button_menu.emit()
 	
@@ -32,7 +32,7 @@ func _on_button_menu_pressed() -> void:
 
 
 func _on_button_retry_pressed() -> void:
-	print_debug("_on_button_retry_pressed...")
+	#print_debug("_on_button_retry_pressed...")
 	
 	button_retry.emit()
 	
@@ -40,7 +40,7 @@ func _on_button_retry_pressed() -> void:
 
 
 func _on_button_tutorial_pressed() -> void:
-	print_debug("_on_button_tutorial_pressed...")
+	#print_debug("_on_button_tutorial_pressed...")
 	
 	button_help.emit()
 	
