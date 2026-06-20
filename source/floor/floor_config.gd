@@ -5,5 +5,6 @@ extends Resource
 @export var wheel_count: int = 4
 @export var slot_wheel_count: int = 6
 @export var color_count: int = 1
+@export var neighbor_validation: bool = false
 @export var spinner_rewards: RewardConfig = RewardConfig.new()
 @export var slot_rewards: RewardConfig = RewardConfig.new()

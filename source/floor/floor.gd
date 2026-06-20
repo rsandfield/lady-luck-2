@@ -25,6 +25,7 @@ func reset(config: FloorConfig = null, reset_score: bool = true):
 	if config:
 		_config = config
 
+	Game.neighbor_validation = _config.neighbor_validation
 	_config.spinner_rewards.set_color_count(_config.color_count)
 	_config.slot_rewards.set_color_count(_config.color_count)
 

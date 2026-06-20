@@ -66,6 +66,8 @@ func get_side(direction: Direction) -> int:
 
 
 func is_legal_play(cell: GridCell) -> bool:
+	if !Game.neighbor_validation:
+		return !cell.is_occupied()
 	for direction in Direction.values():
 		var neighbor = cell.get_neighbor(direction)
 		if !neighbor:
@@ -79,6 +81,8 @@ func is_legal_play(cell: GridCell) -> bool:
 
 func is_legal_neighbor(direction: Direction, neighbor: TileResource) -> bool:
 	if !neighbor:
+		return true
+	if !Game.neighbor_validation:
 		return true
 	return _sides[direction] == neighbor.get_side(opposite(direction))
 
