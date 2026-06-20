@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://s6646trusroa" path="res://assets/art/background-credits-purplish.png" id="2_7n2ak"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="2_mm0m6"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_muyvs"]
-[ext_resource type="Texture2D" uid="uid://nn01ti6mxaq4" path="res://assets/art/placeholder-creditsluck-cute.png" id="3_3lhws"]
+[ext_resource type="Texture2D" uid="uid://vh5vut8gngvs" path="res://assets/art/credits_lady.png" id="3_3lhws"]
 [ext_resource type="StyleBox" uid="uid://c3do76iwbhxsa" path="res://assets/themes/style_box_flat_purple_light.tres" id="4_kh4jm"]
 [ext_resource type="Texture2D" uid="uid://c13vq6pn3pmar" path="res://assets/art/pigsquad-banner.png" id="4_nkten"]
 [ext_resource type="StyleBox" uid="uid://b22y23a1u23dl" path="res://assets/themes/style_box_flat_purple_light_hover.tres" id="5_7n2ak"]
@@ -30,8 +30,8 @@ offset_bottom = 648.0
 texture = ExtResource("2_7n2ak")
 
 [node name="PlaceholderCreditsluckCute" type="Sprite2D" parent="." unique_id=1246422377]
-position = Vector2(578, 245.99998)
-scale = Vector2(0.7, 0.7)
+position = Vector2(577, 228)
+scale = Vector2(0.425, 0.425)
 texture = ExtResource("3_3lhws")
 
 [node name="CreditsTitle" type="RichTextLabel" parent="." unique_id=1455156169]
