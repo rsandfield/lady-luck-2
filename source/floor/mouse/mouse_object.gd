@@ -41,8 +41,8 @@ func _process(_delta: float) -> void:
 			#print_debug( type_string( typeof( Game.moving_tile_resource ) ) )
 			#print_debug( Game.moving_tile_resource.get_class() )
 			
-			print_debug( Game.moving_tile_resource.get_script() )
-			print_debug( Game.moving_tile_resource.get_script() == load( "res://source/floor/items/bomb_resource.gd" ) )
+			#print_debug( Game.moving_tile_resource.get_script() )
+			#print_debug( Game.moving_tile_resource.get_script() == load( "res://source/floor/items/bomb_resource.gd" ) )
 			
 			#(res://source/floor/items/bomb_resource.gd):<GDScript#-9223371984207870383>
 			#(res://source/floor/items/tile_resource.gd):<GDScript#-9223371987865303497>

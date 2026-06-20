@@ -16,7 +16,6 @@ border_color = Color(1, 1, 1, 1)
 corner_detail = 1
 
 [node name="TileUI" type="PanelContainer" unique_id=693043851]
-mouse_filter = 2
 custom_minimum_size = Vector2(75, 75)
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,6 +28,7 @@ offset_right = 37.5
 offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_towlp")
 script = ExtResource("1_dcunu")
 metadata/_custom_type_script = "uid://bxej10c887qnh"
