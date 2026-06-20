@@ -2,29 +2,32 @@ class_name GridCellUI
 extends PanelContainer
 
 signal pressed
+signal hovered(is_hovered: bool)
 
 @onready var _tile_ui: TileUI = $TileUI
 @onready var _door_icon: Control = $Door
+@onready var _hover_indicator: TextureRect = $HoverIndicator
 
 var is_active_tile = false
 
 
 func _ready():
-	$Button.pressed.connect(pressed.emit)
+	%Button.pressed.connect(pressed.emit)
+	_hover_indicator.visible = false
 
 
 func _process(_delta: float) -> void:
-	var hovered = get_global_rect().has_point(get_global_mouse_position())
+	var is_hovered = %Button.get_global_rect().has_point(get_global_mouse_position())
 
-	# switch the active time and save the data in the game file
-	if hovered && !is_active_tile:
+	if is_hovered && !is_active_tile:
 		is_active_tile = true
-		Game.grid_tile_hovered = self
+		_hover_indicator.visible = true
+		hovered.emit(true)
 
-	# clear the game information of the hovered object
-	if !hovered && is_active_tile:
+	if !is_hovered && is_active_tile:
 		is_active_tile = false
-		Game.grid_tile_hovered = null
+		_hover_indicator.visible = false
+		hovered.emit(false)
 
 
 func set_tile(tile: TileResource) -> void:

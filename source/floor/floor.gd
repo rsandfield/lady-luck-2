@@ -123,7 +123,7 @@ func _on_slot_machine_moving_tile(is_moving: bool) -> void:
 func _on_mouse_object_tile_released() -> void:
 	if !Game.grid_tile_hovered:
 		return
-	Game.grid_tile_hovered.pressed.emit()
+	Game.grid_tile_hovered.press()
 
 
 func _on_slot_machine_play_sound() -> void: 
