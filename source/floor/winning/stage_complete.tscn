@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://dptdjuwx70deq"]
+
+[ext_resource type="StyleBox" uid="uid://c3do76iwbhxsa" path="res://assets/themes/style_box_flat_purple_light.tres" id="1_fugea"]
+[ext_resource type="Script" uid="uid://cq8ru48bjprw8" path="res://source/floor/winning/stage_complete.gd" id="1_jfsep"]
+[ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/background-green_velvet.png" id="2_qkxi4"]
+[ext_resource type="Texture2D" uid="uid://dfqg8euh2g38g" path="res://assets/art/wood-button.png" id="3_qkxi4"]
+[ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="4_jfsep"]
+
+[node name="StageComplete" type="Node2D" unique_id=1596253517]
+script = ExtResource("1_jfsep")
+
+[node name="BackgroundGreyFull" type="Panel" parent="." unique_id=556827902]
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_lock_ = true
+
+[node name="BackgroundOutline" type="Panel" parent="." unique_id=60681310]
+offset_left = 319.0
+offset_top = 179.0
+offset_right = 857.0
+offset_bottom = 474.0
+theme_override_styles/panel = ExtResource("1_fugea")
+metadata/_edit_lock_ = true
+
+[node name="BackgroundGreen" type="TextureRect" parent="." unique_id=1876030148]
+offset_left = 324.00003
+offset_top = 184.0
+offset_right = 2084.0
+offset_bottom = 1134.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_qkxi4")
+metadata/_edit_lock_ = true
+
+[node name="PlayAgain" type="TextureButton" parent="." unique_id=270223689]
+offset_left = 517.0
+offset_top = 324.0
+offset_right = 667.0
+offset_bottom = 374.0
+texture_normal = ExtResource("3_qkxi4")
+texture_pressed = ExtResource("3_qkxi4")
+texture_hover = ExtResource("3_qkxi4")
+texture_disabled = ExtResource("3_qkxi4")
+texture_focused = ExtResource("3_qkxi4")
+
+[node name="Label" type="Label" parent="PlayAgain" unique_id=1228930624]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 149.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("4_jfsep")
+theme_override_font_sizes/font_size = 24
+text = "Play Again?"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Menu" type="TextureButton" parent="." unique_id=1115617088]
+offset_left = 436.0
+offset_top = 403.0
+offset_right = 586.0
+offset_bottom = 453.0
+texture_normal = ExtResource("3_qkxi4")
+texture_pressed = ExtResource("3_qkxi4")
+texture_hover = ExtResource("3_qkxi4")
+texture_disabled = ExtResource("3_qkxi4")
+texture_focused = ExtResource("3_qkxi4")
+
+[node name="Label" type="Label" parent="Menu" unique_id=835051055]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 147.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("4_jfsep")
+theme_override_font_sizes/font_size = 24
+text = "Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Credits" type="TextureButton" parent="." unique_id=822477674]
+offset_left = 590.0
+offset_top = 403.0
+offset_right = 740.0
+offset_bottom = 453.0
+texture_normal = ExtResource("3_qkxi4")
+texture_pressed = ExtResource("3_qkxi4")
+texture_hover = ExtResource("3_qkxi4")
+texture_disabled = ExtResource("3_qkxi4")
+texture_focused = ExtResource("3_qkxi4")
+
+[node name="Label" type="Label" parent="Credits" unique_id=1347057636]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 146.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("4_jfsep")
+theme_override_font_sizes/font_size = 24
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Exit" type="TextureButton" parent="." unique_id=1629952074]
+offset_left = -227.0
+offset_top = -138.0
+offset_right = -77.0
+offset_bottom = -88.0
+texture_normal = ExtResource("3_qkxi4")
+texture_pressed = ExtResource("3_qkxi4")
+texture_hover = ExtResource("3_qkxi4")
+texture_disabled = ExtResource("3_qkxi4")
+texture_focused = ExtResource("3_qkxi4")
+
+[node name="Label" type="Label" parent="Exit" unique_id=696245093]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 148.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("4_jfsep")
+theme_override_font_sizes/font_size = 24
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="TextComplete" type="RichTextLabel" parent="." unique_id=1583711001]
+offset_left = 399.0
+offset_top = 198.0
+offset_right = 795.0
+offset_bottom = 247.0
+theme_override_fonts/normal_font = ExtResource("4_jfsep")
+theme_override_font_sizes/normal_font_size = 30
+text = "Stage Complete!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextThanks" type="RichTextLabel" parent="." unique_id=142867747]
+offset_left = 400.0
+offset_top = 269.0
+offset_right = 796.0
+offset_bottom = 318.0
+theme_override_fonts/normal_font = ExtResource("4_jfsep")
+theme_override_font_sizes/normal_font_size = 30
+text = "Thanks for playing:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

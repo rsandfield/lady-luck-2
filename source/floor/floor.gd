@@ -76,7 +76,23 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 
 
 func cheat_win() -> void:
-	_victory.visible = true
+	
+	var stage_complete_scene = load( "res://source/floor/winning/stage_complete.tscn" )
+	var stage_complete_instance = stage_complete_scene.instantiate()
+	add_child( stage_complete_instance )
+	
+	#stage_complete_load.position = Vector2(0.0,0.0)
+	
+	#var new_explosion = EXPLOSION_REFERENCE.instantiate()
+	#get_parent().add_child( new_explosion )
+	#new_explosion.position = position
+	#new_explosion._on_call_explode()
+	
+	#_victory.visible = true
+	
+	#var scene = load("res://source/test/level_lady_luck_test.tscn")
+	#var instance = scene.instantiate()
+	#add_child(instance)
 
 
 func _on_door_pressed(_slot: GridCell) -> void:

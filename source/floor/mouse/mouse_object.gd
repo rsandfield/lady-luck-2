@@ -9,7 +9,8 @@ signal tile_released
 var _item_ui
 
 
-const explosion_reference = preload("res://source/animations/explosion.tscn")
+const EXPLOSION_REFERENCE = preload("res://source/animations/explosion.tscn")
+#const explosion_reference = preload("res://source/animations/explosion.tscn")
 #Game.moving_tile_resource
 
 
@@ -69,7 +70,7 @@ func _process(_delta: float) -> void:
 			if Game.moving_tile_resource.get_script() == load( "res://source/floor/items/bomb_resource.gd" ):
 
 				#testing...
-				var new_explosion = explosion_reference.instantiate()
+				var new_explosion = EXPLOSION_REFERENCE.instantiate()
 				get_parent().add_child( new_explosion )
 				new_explosion.position = position
 				new_explosion._on_call_explode()

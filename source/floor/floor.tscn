@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://6vbn4bonis0x" path="res://source/floor/points/turn_container.tscn" id="5_a23us"]
 [ext_resource type="Resource" uid="uid://bsy6xyic51fpg" path="res://assets/levels/level_4.tres" id="6_hxrar"]
 [ext_resource type="PackedScene" uid="uid://detgnnqtmgueh" path="res://source/floor/points/points_container.tscn" id="6_mx0ua"]
+[ext_resource type="PackedScene" uid="uid://dptdjuwx70deq" path="res://source/floor/winning/stage_complete.tscn" id="13_kc6ny"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqkr4"]
 
@@ -177,6 +178,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "You Win!"
 horizontal_alignment = 1
+
+[node name="StageComplete" parent="." unique_id=1596253517 instance=ExtResource("13_kc6ny")]
+visible = false
 
 [connection signal="moving_tile" from="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MachineContainer/SlotMachine" to="." method="_on_slot_machine_moving_tile"]
 [connection signal="spin_sound_play" from="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MachineContainer/SlotMachine" to="." method="_on_slot_machine_play_sound"]
