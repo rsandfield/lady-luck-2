@@ -1,12 +1,10 @@
-class_name PointsContainer
+class_name TurnContainer
 extends Control
 
 
 var _points_boxes: Array[PointsBox]
 
 var _value = 0
-
-signal generate_confetti
 
 
 func _ready():
@@ -16,17 +14,7 @@ func _ready():
 			_points_boxes.append(child)
 
 
-func emit_generate_confetti(): 
-	#print_debug("emit_generate_confetti...")
-	
-	generate_confetti.emit()
-	
-	pass
-
-
 func add_value(delta: int) -> void:
-	print_debug("delta: " + str (delta) )
-	
 	set_value(_value + delta)
 
 

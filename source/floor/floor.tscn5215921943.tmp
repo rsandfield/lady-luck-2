@@ -120,7 +120,6 @@ offset_bottom = 635.0
 position = Vector2(1, 10)
 
 [node name="PointContainer" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/MarginContainer/NodePoints" unique_id=233066825 instance=ExtResource("6_mx0ua")]
-unique_name_in_owner = true
 offset_left = 149.0
 offset_top = 179.0
 offset_right = 149.0

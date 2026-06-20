@@ -49,7 +49,7 @@ position = Vector2(-77, -13)
 [node name="shoulder" type="Bone2D" parent="TempCharacter/Skeleton2D" unique_id=890112940]
 position = Vector2(234, 257)
 rotation = -0.059357014
-scale = Vector2(0.99999857, 0.99999857)
+scale = Vector2(0.99999845, 0.99999845)
 rest = Transform2D(1, 0, 0, 1, 234, 257)
 
 [node name="elbow" type="Bone2D" parent="TempCharacter/Skeleton2D/shoulder" unique_id=1656392343]
@@ -86,7 +86,6 @@ visible = false
 
 [node name="Tutorial" parent="." unique_id=993889986 instance=ExtResource("12_jcaet")]
 unique_name_in_owner = true
-visible = false
 
 [node name="LevelButtons" parent="." unique_id=1051872753 instance=ExtResource("17_fkpom")]
 offset_left = -33.0

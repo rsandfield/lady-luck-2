@@ -4,7 +4,9 @@ extends PanelContainer
 @export var _size: Vector2i = Vector2i(5, 7)
 @export var _wheels := 4
 
-@onready var _turn_counter: PointsContainer = %TurnContainer
+#@onready var _turn_counter: PointsContainer = %TurnContainer
+@onready var _turn_counter: TurnContainer = %TurnContainer
+@onready var _points_counter: PointsContainer = %PointContainer
 
 var _slot_machine: SlotMachine
 var _grid: Grid
@@ -54,19 +56,24 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 
 #var for_testing = true
 func _on_lever_pulled():
-	print_debug("_on_lever_pulled...")
+	#print_debug("_on_lever_pulled...")
 	#if for_testing: return
 	#print_debug("here...")
 	
 	_grid.flag_spin(true)
 	_spinner.spin()
 	_turn_counter.add_value(1)
+	
+	#_points_counter.emit_generate_confetti()
+	
 
 func _on_spin_finished():
-	print_debug("_on_spin_finished...")
+	#print_debug("_on_spin_finished...")
 	
 	_grid.flag_spin(false)
 	_grid.flash_all_flags()
+	
+	_points_counter.emit_generate_confetti()
 
 
 func _on_lady_play(row: int, item: ItemResource):
