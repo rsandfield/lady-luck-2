@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://belulk2juo1pi" path="res://source/floor/grid/grid_cell_ui.gd" id="1_2wshm"]
 [ext_resource type="PackedScene" uid="uid://dqx08ig43fc2c" path="res://source/floor/items/tile_ui.tscn" id="1_t4iqd"]
-[ext_resource type="Texture2D" uid="uid://duqko1r4o2uj3" path="res://assets/icons/slot-machine.svg" id="3_51i1i"]
+[ext_resource type="Texture2D" uid="uid://rhdrbhat5p8k" path="res://assets/icons/door.svg" id="3_51i1i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddob5"]
 content_margin_left = 0.0
@@ -48,15 +48,12 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
 
 [node name="TextureRect" type="TextureRect" parent="Door" unique_id=317255718]
+modulate = Color(0.166, 0.83, 0.77466655, 1)
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("3_51i1i")
-expand_mode = 2
+expand_mode = 3
 
 [connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
