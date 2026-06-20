@@ -64,3 +64,7 @@ func _on_slots_sound(sound_type: String = "slots2") -> void:
 	slots_sound.emit(sound_type)
 
 	pass
+
+
+func _on_cheat_win_pressed() -> void:
+	$Floor.cheat_win()

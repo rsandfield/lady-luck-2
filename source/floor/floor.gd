@@ -6,6 +6,7 @@ extends PanelContainer
 
 @onready var _turn_counter: TurnContainer = %TurnContainer
 @onready var _points_counter: PointsContainer = %PointContainer
+@onready var _victory: Node2D = $Victory
 
 var _level: int = 0
 var _config: FloorConfig = FloorConfig.new()
@@ -24,6 +25,7 @@ func _ready():
 
 
 func reset(config: FloorConfig = null, reset_score: bool = true):
+	_victory.visible = false
 	if config:
 		_config = config
 
@@ -72,10 +74,15 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 		_grid.activate_door().connect(_on_door_pressed)
 
 
+func cheat_win() -> void:
+	_victory.visible = true
+
+
 func _on_door_pressed(_slot: GridCell) -> void:
 	_level += 1
-	if _level > len(_levels):
-		print("You win!")
+	if _level >= len(_levels):
+		_victory.visible = true
+		return
 	reset(_levels[_level], false)
 
 
