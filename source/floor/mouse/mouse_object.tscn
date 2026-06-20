@@ -3,7 +3,61 @@
 [ext_resource type="Script" uid="uid://veikifvhcg0w" path="res://source/floor/mouse/mouse_object.gd" id="1_lmepa"]
 [ext_resource type="PackedScene" uid="uid://dqx08ig43fc2c" path="res://source/floor/items/tile_ui.tscn" id="1_wu6bs"]
 
+[sub_resource type="Gradient" id="Gradient_lmepa"]
+offsets = PackedFloat32Array(0.25, 0.7247475)
+colors = PackedColorArray(0.083333254, 1, 0, 1, 0.4316666, 1, 0.38, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_othvy"]
+gradient = SubResource("Gradient_lmepa")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_othvy"]
+offsets = PackedFloat32Array(0.25, 0.7247475)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.38, 0.38, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_flqla"]
+gradient = SubResource("Gradient_othvy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="MouseObject" type="Node2D" unique_id=1286144574]
 script = ExtResource("1_lmepa")
+
+[node name="Valid" type="Node2D" parent="." unique_id=230166373]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="Valid" unique_id=1306896278]
+custom_minimum_size = Vector2(128, 128)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_othvy")
+
+[node name="Invalid" type="Node2D" parent="." unique_id=784334056]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="Invalid" unique_id=672607447]
+custom_minimum_size = Vector2(128, 128)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_flqla")
 
 [node name="TileUI" parent="." unique_id=1894309720 instance=ExtResource("1_wu6bs")]

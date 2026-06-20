@@ -12,6 +12,7 @@ var _neighbors: Dictionary[TileResource.Direction, GridCell]
 func set_ui(new_ui: GridCellUI) -> void:
 	_ui = new_ui
 	_ui.pressed.connect(_pressed)
+	_ui.hovered.connect(_on_hovered)
 
 
 func set_neighbor(direction: TileResource.Direction, neighbor: GridCell) -> void:
@@ -68,5 +69,16 @@ func clear() -> void:
 	_tile = null
 
 
+func press() -> void:
+	grid_cell_pressed.emit(self)
+
+
 func _pressed() -> void:
 	grid_cell_pressed.emit(self)
+
+
+func _on_hovered(is_hovered: bool) -> void:
+	if is_hovered:
+		Game.grid_tile_hovered = self
+	elif Game.grid_tile_hovered == self:
+		Game.grid_tile_hovered = null
