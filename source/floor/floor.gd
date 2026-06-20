@@ -4,7 +4,7 @@ extends PanelContainer
 
 @export var _config: FloorConfig = FloorConfig.new()
 
-@onready var _turn_counter: PointsContainer = %TurnContainer
+@onready var _turn_counter: TurnContainer = %TurnContainer
 @onready var _points_counter: PointsContainer = %PointContainer
 
 var _slot_machine: SlotMachine
