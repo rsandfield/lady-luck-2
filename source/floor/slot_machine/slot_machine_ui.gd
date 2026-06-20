@@ -41,12 +41,17 @@ func _on_slot_cell_moving_tile(is_moving: bool) -> void:
 
 
 func pull_lever() -> void:
-	$AnimationPlayer.stop()
+	#$AnimationPlayer.stop()
+	
 	$AnimationPlayer.play("lever_pull")
 	#%BlockingNode.show()
 	spin_sound_play.emit()
 
 
 func shake_lever() -> void:
+	
+	# let the lever pull animation finish completely
+	if $AnimationPlayer.current_animation == "lever_pull": return
+	
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("lever_shake")

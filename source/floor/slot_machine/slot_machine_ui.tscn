@@ -37,6 +37,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_mpnq0"]
 resource_name = "lever_pull"
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -141,6 +142,7 @@ offset_left = 28.0
 offset_top = 34.0
 offset_right = 38.0
 offset_bottom = 134.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vr6dc")
 
 [node name="LeverHandle" type="Sprite2D" parent="LeverNode" unique_id=1897849990]
