@@ -8,6 +8,7 @@ var _wheels: Array[SlotWheel] = []
 var _selected: SlotWheel
 var _awaiting: int
 var _reward_config: RewardConfig
+var _get_bomb_budget: Callable = func(): return 0
 
 #var _blocked: bool = false
 
@@ -30,11 +31,40 @@ func set_wheel_count(count: int, reward_config: RewardConfig = RewardConfig.new(
 		wheel.finished.connect(_wheel_finished)
 
 
+func set_bomb_budget_source(source: Callable) -> void:
+	_get_bomb_budget = source
+
+
+func _generate_results() -> Array[ItemResource]:
+	var bomb_budget: int = _get_bomb_budget.call()
+	var results: Array[ItemResource] = []
+	for wheel in _wheels:
+		results.append(_reward_config.get_item())
+
+	var bomb_count = 0
+	for i in results.size():
+		if results[i] is BombResource:
+			bomb_count += 1
+			if bomb_count > bomb_budget:
+				results[i] = _non_bomb_result()
+
+	return results
+
+
+func _non_bomb_result() -> ItemResource:
+	for i in 10:
+		var item = _reward_config.get_item()
+		if !(item is BombResource):
+			return item
+	return ItemResource.new()
+
+
 func spin_wheels() -> void:
+	var results = _generate_results()
+
 	_awaiting = _wheels.size()
 	for i in range(_wheels.size() - 1, -1, -1):
-		var wheel = _wheels[i]
-		wheel.spin(_reward_config)
+		_wheels[i].spin(results[i], _reward_config)
 		await Game.get_tree().create_timer(0.25).timeout
 		if !is_instance_valid(_ui):
 			return
