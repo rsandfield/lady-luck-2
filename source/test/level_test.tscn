@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://b3r8jv44uqhta" path="res://source/floor/buttons/level_buttons.tscn" id="6_tpn00"]
 [ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="10_m3ls3"]
 
-[sub_resource type="Resource" id="Resource_xy7ao"]
+[sub_resource type="Resource" id="Resource_k07vv"]
 script = ExtResource("4_k07vv")
 p_none = 0.0
 p_bomb = 0.2
 p_tile_single = 0.6
 p_tile_two_color = 0.2
 
-[sub_resource type="Resource" id="Resource_jttlp"]
+[sub_resource type="Resource" id="Resource_xy7ao"]
 script = ExtResource("4_k07vv")
 p_tile_single = 0.2
 p_tile_two_color = 0.1
@@ -24,8 +24,8 @@ p_tile_two_color = 0.1
 [sub_resource type="Resource" id="Resource_m3ls3"]
 script = ExtResource("3_l8klr")
 color_count = 2
-spinner_rewards = SubResource("Resource_jttlp")
-slot_rewards = SubResource("Resource_xy7ao")
+spinner_rewards = SubResource("Resource_xy7ao")
+slot_rewards = SubResource("Resource_k07vv")
 metadata/_custom_type_script = "uid://c60c4tdcv8c1w"
 
 [node name="TestLevel" type="Node2D" unique_id=442386131]

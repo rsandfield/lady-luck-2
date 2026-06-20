@@ -2,10 +2,31 @@
 
 [ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_1k1e1"]
 [ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/background-green_velvet.png" id="2_ihnwo"]
+[ext_resource type="Script" uid="uid://c60c4tdcv8c1w" path="res://source/floor/floor_config.gd" id="4_8y5vg"]
+[ext_resource type="Script" uid="uid://cmlwo0ordubbu" path="res://source/floor/items/reward_config.gd" id="5_7uomh"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="7_l4jha"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="8_248bq"]
 [ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="12_jcaet"]
 [ext_resource type="PackedScene" uid="uid://b3r8jv44uqhta" path="res://source/floor/buttons/level_buttons.tscn" id="17_fkpom"]
+
+[sub_resource type="Resource" id="Resource_8y5vg"]
+script = ExtResource("5_7uomh")
+p_none = 0.0
+p_bomb = 0.2
+p_tile_single = 0.6
+p_tile_two_color = 0.2
+
+[sub_resource type="Resource" id="Resource_7uomh"]
+script = ExtResource("5_7uomh")
+p_tile_single = 0.2
+p_tile_two_color = 0.1
+
+[sub_resource type="Resource" id="Resource_sb7kc"]
+script = ExtResource("4_8y5vg")
+color_count = 2
+spinner_rewards = SubResource("Resource_7uomh")
+slot_rewards = SubResource("Resource_8y5vg")
+metadata/_custom_type_script = "uid://c60c4tdcv8c1w"
 
 [node name="TestAltLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_1k1e1")
@@ -17,10 +38,15 @@ texture = ExtResource("2_ihnwo")
 metadata/_edit_lock_ = true
 
 [node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("7_l4jha")]
-offset_left = -30.0
-offset_top = -1.0
-offset_right = 1122.0
-offset_bottom = 647.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -34.0
+offset_right = 1118.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+_config = SubResource("Resource_sb7kc")
 
 [node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("8_248bq")]
 visible = false
@@ -35,7 +61,6 @@ offset_top = -4.0
 offset_right = -33.0
 offset_bottom = -4.0
 
-[connection signal="restart_game" from="." to="Floor" method="reset"]
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]
 [connection signal="button_help" from="LevelButtons" to="." method="_on_help_pressed"]
