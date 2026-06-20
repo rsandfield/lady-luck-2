@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cpmgg2k6x6skc"]
 
-[ext_resource type="Script" uid="uid://dmrak3edmrnox" path="res://source/floor/lady_luck/lady_luck_ui.gd" id="1_a8po4"]
 [ext_resource type="Texture2D" uid="uid://bn86frsbwty0s" path="res://assets/art/lady luck art/hair back.PNG" id="2_atam5"]
 [ext_resource type="Texture2D" uid="uid://c4f7pvpc08p7g" path="res://assets/art/lady luck art/left arms/down.PNG" id="3_8urco"]
 [ext_resource type="Texture2D" uid="uid://b2pelngla8c64" path="res://assets/art/lady luck art/left arms/lift.PNG" id="4_4gswb"]
@@ -20,7 +19,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3j7hh"]
 size = Vector2(1, 1)
 
-[node name="LadyLuck" type="Control" unique_id=799243148]
+[node name="LadyLuckTest" type="Control" unique_id=799243148]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -35,7 +34,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.47330323, 0.47330323)
 pivot_offset = Vector2(-946, -432)
-script = ExtResource("1_a8po4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2137960674]
 layout_mode = 1
