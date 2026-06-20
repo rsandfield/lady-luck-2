@@ -46,32 +46,6 @@ theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
 text = "[center]Credits"
 
-[node name="Label" type="RichTextLabel" parent="." unique_id=975058325]
-offset_left = 5.0
-offset_top = -669.0
-offset_right = 1159.0
-offset_bottom = -21.0
-bbcode_enabled = true
-text = "Give credit to those who worked on the project
-
-Thank people and organizations who helped along the way
-
-
-
-
-
-
-
-
-
-Sample Music by Ethan Grafton
-Track 1: Hyperfishation 
-Track 2: Melody's Melodies 
-Track 3: Just A Feeling
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1937274954]
 offset_left = 506.0
 offset_top = 568.0
@@ -94,23 +68,64 @@ theme_override_styles/disabled = ExtResource("4_kh4jm")
 theme_override_styles/focus = ExtResource("4_kh4jm")
 text = "Go Back"
 
-[node name="CreditsText" type="RichTextLabel" parent="." unique_id=968115274]
-offset_top = 414.0
-offset_right = 1152.0
-offset_bottom = 638.0
+[node name="CreditsTitles" type="RichTextLabel" parent="." unique_id=2002631069]
+offset_left = 12.0
+offset_top = 404.0
+offset_right = 469.0
+offset_bottom = 628.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.93138474, 0.8036014, 0.8981877, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/normal_font = ExtResource("2_mm0m6")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[center]
-Mikey [mymonkey] : Lead Artistic Director [https://mymonkeygames.itch.io/]
-Robert Sandfield : Programming & Game Design
-Stephen Frister : Implementation & Animation
-Mercury Nightstone : UI Artist [https://mercury-hg.itch.io/] 
+text = "
+Lead Artistic Director     ::  
+Programming & Game Design ::  
+Implementation & Animation ::  
+UI Artist             ::  
 
-Music by Ethan Grafton"
+"
+horizontal_alignment = 2
+
+[node name="CreditsNames" type="RichTextLabel" parent="." unique_id=1262019682]
+offset_left = 307.0
+offset_top = 437.0
+offset_right = 846.0
+offset_bottom = 661.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.93138474, 0.8036014, 0.8981877, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("2_mm0m6")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Mikey [mymonkey]
+Robert Sandfield
+Stephen Frister
+Mercury Nightstone
+
+Music by Ethan Grafton
+
+"
+horizontal_alignment = 1
+
+[node name="CreditsLinks" type="RichTextLabel" parent="." unique_id=968115274]
+offset_left = 699.0
+offset_top = 436.0
+offset_right = 1246.0
+offset_bottom = 660.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.93138474, 0.8036014, 0.8981877, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("2_mm0m6")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "::  [https://mymonkeygames.itch.io/]
+::  [https://github.com/rsandfield/]
+::  [https://infinite8bit-studios.itch.io/]
+::  [https://mercury-hg.itch.io/] 
+
+"
 
 [node name="BackControl" type="Button" parent="." unique_id=1763663459]
 modulate = Color(1, 1, 1, 0)
@@ -121,19 +136,37 @@ offset_bottom = 648.0
 metadata/_edit_lock_ = true
 
 [node name="CreditsMyMonkey" type="LinkButton" parent="." unique_id=757407669]
-offset_left = 633.0
-offset_top = 445.0
-offset_right = 972.0
-offset_bottom = 476.0
+offset_left = 741.0
+offset_top = 436.0
+offset_right = 1080.0
+offset_bottom = 467.0
 theme_override_fonts/font = ExtResource("2_mm0m6")
 theme_override_font_sizes/font_size = 24
 text = "https://mymonkeygames.itch.io/"
 
+[node name="CreditsRSandfield" type="LinkButton" parent="." unique_id=929193413]
+offset_left = 742.0
+offset_top = 467.0
+offset_right = 1026.0
+offset_bottom = 498.0
+theme_override_fonts/font = ExtResource("2_mm0m6")
+theme_override_font_sizes/font_size = 24
+text = "https://github.com/rsandfield/"
+
+[node name="CreditsInfinite8bit" type="LinkButton" parent="." unique_id=623054338]
+offset_left = 742.0
+offset_top = 498.0
+offset_right = 1153.0
+offset_bottom = 529.0
+theme_override_fonts/font = ExtResource("2_mm0m6")
+theme_override_font_sizes/font_size = 24
+text = "https://infinite8bit-studios.itch.io/"
+
 [node name="CreditsMurkyHgLink" type="LinkButton" parent="." unique_id=1899197202]
-offset_left = 591.0
-offset_top = 538.0
-offset_right = 875.0
-offset_bottom = 569.0
+offset_left = 742.0
+offset_top = 529.0
+offset_right = 1026.0
+offset_bottom = 560.0
 theme_override_fonts/font = ExtResource("2_mm0m6")
 theme_override_font_sizes/font_size = 24
 text = "https://mercury-hg.itch.io/"
@@ -185,7 +218,54 @@ position = Vector2(203.00006, 177.00002)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("6_7n2ak")
 
-[node name="PlaceholderCreditsluck" type="Sprite2D" parent="." unique_id=710333687]
+[node name="Archive" type="Node2D" parent="." unique_id=1434869866]
+
+[node name="Label" type="RichTextLabel" parent="Archive" unique_id=975058325]
+offset_left = -1187.0
+offset_top = -682.0
+offset_right = -33.0
+offset_bottom = -34.0
+bbcode_enabled = true
+text = "Give credit to those who worked on the project
+
+Thank people and organizations who helped along the way
+
+
+
+
+
+
+
+
+
+Sample Music by Ethan Grafton
+Track 1: Hyperfishation 
+Track 2: Melody's Melodies 
+Track 3: Just A Feeling
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsNames" type="RichTextLabel" parent="Archive" unique_id=475053237]
+offset_left = 61.0
+offset_top = -277.0
+offset_right = 1213.0
+offset_bottom = -53.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.93138474, 0.8036014, 0.8981877, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("2_mm0m6")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]
+Mikey [mymonkey] ::     Lead Artistic Director            ::   [https://mymonkeygames.itch.io/]
+Robert Sandfield       ::   Programming & Game Design    ::    [https://rsandfield.itch.io/]
+Stephen Frister          ::  Implementation & Animation       ::   [https://infinite8bit-studios.itch.io]
+Mercury Nightstone  ::  UI Artist                                        ::  [https://mercury-hg.itch.io/] 
+
+Music by Ethan Grafton"
+
+[node name="PlaceholderCreditsluck" type="Sprite2D" parent="Archive" unique_id=710333687]
 visible = false
 position = Vector2(555, 246)
 texture = ExtResource("8_nkten")
@@ -193,6 +273,8 @@ texture = ExtResource("8_nkten")
 [connection signal="pressed" from="CenterContainer/Control/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="BackControl" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="CreditsMyMonkey" to="." method="_on_credits_my_monkey_pressed"]
+[connection signal="pressed" from="CreditsRSandfield" to="." method="_on_credits_r_sandfield_pressed"]
+[connection signal="pressed" from="CreditsInfinite8bit" to="." method="_on_credits_infinite_8_bit_pressed"]
 [connection signal="pressed" from="CreditsMurkyHgLink" to="." method="_on_murkyhg_pressed"]
 [connection signal="pressed" from="Panel_Squad/Label" to="." method="_on_pigsquad_pressed"]
 [connection signal="pressed" from="Panel_Godot/Label" to="." method="_on_godot_pressed"]

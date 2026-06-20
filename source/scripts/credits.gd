@@ -28,5 +28,17 @@ func _on_murkyhg_pressed()  -> void:
 
 func _on_credits_my_monkey_pressed() -> void:
 	OS.shell_open("https://mymonkeygames.itch.io/")
-
+	
 	pass
+
+
+func _on_credits_r_sandfield_pressed() -> void:
+	OS.shell_open("https://github.com/rsandfield")
+	
+	pass
+
+
+func _on_credits_infinite_8_bit_pressed() -> void:
+	OS.shell_open("https://infinite8bit-studios.itch.io")
+	
+	pass # Replace with function body.
