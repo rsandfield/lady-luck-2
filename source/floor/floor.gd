@@ -34,15 +34,15 @@ func reset(config: FloorConfig = null, reset_score: bool = true):
 	_slot_machine.set_wheel_count(_config.wheel_count, _config.slot_rewards)
 	_slot_machine.finished.connect(_on_spin_finished)
 
-	var size = _config.grid_size + Vector2i.DOWN
+	var grid_size = _config.grid_size + Vector2i.DOWN
 	_grid = Grid.new()
 	_grid.set_ui(%Grid)
 	_grid.grid_cell_pressed.connect(_on_grid_cell_pressed)
-	_grid.set_grid_size(size, _config.color_count)
+	_grid.set_grid_size(grid_size, _config.color_count)
 
 	_spinner = Spinner.new()
 	_spinner.set_ui(%Spinner)
-	_spinner.set_row_count(size.y)
+	_spinner.set_row_count(grid_size.y)
 	_spinner.set_item_count(6, _config.spinner_rewards)
 	_slot_machine.lever_pulled.connect(_on_lever_pulled)
 
@@ -77,19 +77,24 @@ func _on_door_pressed(_slot: GridCell) -> void:
 
 #var for_testing = true
 func _on_lever_pulled():
-	print_debug("_on_lever_pulled...")
+	#print_debug("_on_lever_pulled...")
 	#if for_testing: return
 	#print_debug("here...")
 	
 	_grid.flag_spin(true)
 	_spinner.spin()
 	_turn_counter.add_value(1)
+	
+	#_points_counter.emit_generate_confetti()
+	
 
 func _on_spin_finished():
-	print_debug("_on_spin_finished...")
+	#print_debug("_on_spin_finished...")
 	
 	_grid.flag_spin(false)
 	_grid.flash_all_flags()
+	
+	_points_counter.emit_generate_confetti()
 
 
 func _on_lady_play(row: int, item: ItemResource):

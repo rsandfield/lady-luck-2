@@ -85,22 +85,15 @@ func _set_dialog_visible():
 	#print_debug("_set_dialog_visible, state: " + str(tutorial_state) )
 	
 	$Dialog0/RichTextLabel.text = HELP_DIALOG[ tutorial_state ]
-	
-	#%Dialog0.visible = tutorial_state == 0 
-	#%Dialog1.visible = tutorial_state == 1 
-	#%Dialog2.visible = tutorial_state == 2 
-	#%Dialog3.visible = tutorial_state == 3 
-	#%Dialog4.visible = tutorial_state == 4 
-	#%Dialog5.visible = tutorial_state == 5
-	
+
 
 func _set_panel_visibility(): 
 	
+	$Panel1.visible = true
 	$Panel2.visible = true
 	$Panel3.visible = true 
 	
-	$Panel1.visible = tutorial_state != 1
-	
+	$PanelLever.visible = tutorial_state != 1
 	$PanelSlots.visible = tutorial_state != 2
 	$PanelGrid.visible  = tutorial_state != 3
 	$PanelLuck.visible  = tutorial_state != 4

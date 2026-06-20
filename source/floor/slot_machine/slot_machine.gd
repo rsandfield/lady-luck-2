@@ -69,6 +69,7 @@ func _on_lever_pulled():
 		return
 
 	Game.slot_machine_blocked_flag = true
+	#Game.slot_machine_give_points = true
 	_ui.set_blocked(true)
 	_ui.pull_lever()
 	spin_wheels()

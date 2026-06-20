@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cm04h5d5jeyvg"]
+
+[ext_resource type="Script" uid="uid://df7m8f10pp6f4" path="res://source/floor/points/confetti_generator.gd" id="1_tmh81"]
+
+[node name="ConfettiGenerator" type="Node2D" unique_id=1743301092]
+z_index = 99
+script = ExtResource("1_tmh81")
+
+[node name="ConfettiMarkers" type="Control" parent="." unique_id=197184523]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Confetti1" type="Marker2D" parent="ConfettiMarkers" unique_id=1821284840]
+unique_name_in_owner = true
+position = Vector2(19, -21)
+
+[node name="Confetti2" type="Marker2D" parent="ConfettiMarkers" unique_id=968110829]
+unique_name_in_owner = true
+position = Vector2(138, -21)
+
+[node name="Confetti3" type="Marker2D" parent="ConfettiMarkers" unique_id=1094890249]
+unique_name_in_owner = true
+position = Vector2(249, -20)
+
+[node name="Confetti4" type="Marker2D" parent="ConfettiMarkers" unique_id=1340230206]
+unique_name_in_owner = true
+position = Vector2(367, -21)
+
+[node name="DebugPanels" type="Control" parent="." unique_id=199830268]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="DebugPanel1" type="Panel" parent="DebugPanels" unique_id=256158219]
+layout_mode = 0
+offset_top = -40.0
+offset_right = 40.0
+
+[node name="DebugPanel2" type="Panel" parent="DebugPanels" unique_id=256485075]
+layout_mode = 0
+offset_left = 118.0
+offset_top = -40.0
+offset_right = 158.0
+
+[node name="DebugPanel3" type="Panel" parent="DebugPanels" unique_id=1048578562]
+layout_mode = 0
+offset_left = 230.0
+offset_top = -40.0
+offset_right = 270.0
+
+[node name="DebugPanel4" type="Panel" parent="DebugPanels" unique_id=544946730]
+layout_mode = 0
+offset_left = 347.0
+offset_top = -40.0
+offset_right = 387.0
+
+[node name="Button+" type="Button" parent="DebugPanels" unique_id=346074665]
+layout_mode = 0
+offset_left = 439.0
+offset_top = -37.0
+offset_right = 468.0
+offset_bottom = -6.0
+text = "+"
+
+[node name="Button-" type="Button" parent="DebugPanels" unique_id=126719060]
+layout_mode = 0
+offset_left = 470.0
+offset_top = -37.0
+offset_right = 499.0
+offset_bottom = -6.0
+text = "-"
+
+[connection signal="pressed" from="DebugPanels/Button+" to="." method="_on_new_confetti" binds= [1000]]
+[connection signal="pressed" from="DebugPanels/Button-" to="." method="_on_new_confetti" binds= [-50]]

@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://detgnnqtmgueh"]
+
+[ext_resource type="Script" uid="uid://dcgk54eb6inry" path="res://source/floor/points/points_container.gd" id="1_a4yqd"]
+[ext_resource type="PackedScene" uid="uid://rg5a0nup2d7h" path="res://source/floor/points/points_box.tscn" id="1_yvr8f"]
+[ext_resource type="Script" uid="uid://br6g515nr514s" path="res://source/floor/points/confetti_markers.gd" id="3_w87ya"]
+
+[node name="PointContainer" type="Control" unique_id=1749657070]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_a4yqd")
+
+[node name="PointsDisplay" type="HBoxContainer" parent="." unique_id=1578165555]
+layout_mode = 0
+offset_right = 252.0
+offset_bottom = 29.0
+
+[node name="Points1" parent="PointsDisplay" unique_id=2031130878 instance=ExtResource("1_yvr8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Points2" parent="PointsDisplay" unique_id=1681802759 instance=ExtResource("1_yvr8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Points3" parent="PointsDisplay" unique_id=1569434577 instance=ExtResource("1_yvr8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Points4" parent="PointsDisplay" unique_id=510595738 instance=ExtResource("1_yvr8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Points5" parent="PointsDisplay" unique_id=670740185 instance=ExtResource("1_yvr8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Points6" parent="PointsDisplay" unique_id=405832371 instance=ExtResource("1_yvr8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Button+" type="Button" parent="." unique_id=1688763289]
+layout_mode = 0
+offset_left = 182.0
+offset_top = -1.0
+offset_right = 211.0
+offset_bottom = 30.0
+text = "+"
+
+[node name="Button-" type="Button" parent="." unique_id=226811571]
+layout_mode = 0
+offset_left = 213.0
+offset_top = -1.0
+offset_right = 242.0
+offset_bottom = 30.0
+text = "-"
+
+[node name="Marks" type="Control" parent="." unique_id=551997311]
+unique_name_in_owner = true
+anchors_preset = 0
+script = ExtResource("3_w87ya")
+
+[node name="Confetti1" type="Marker2D" parent="Marks" unique_id=1389828855]
+unique_name_in_owner = true
+position = Vector2(-98, -162)
+
+[node name="Confetti2" type="Marker2D" parent="Marks" unique_id=505272419]
+unique_name_in_owner = true
+position = Vector2(16, -162)
+
+[node name="Confetti3" type="Marker2D" parent="Marks" unique_id=1608088343]
+unique_name_in_owner = true
+position = Vector2(132, -163)
+
+[node name="Confetti4" type="Marker2D" parent="Marks" unique_id=1444788062]
+unique_name_in_owner = true
+position = Vector2(261, -159)
+
+[node name="DebugPanel1" type="Panel" parent="Marks" unique_id=716511882]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -182.0
+offset_right = -77.0
+offset_bottom = -142.0
+
+[node name="DebugPanel2" type="Panel" parent="Marks" unique_id=9532079]
+layout_mode = 0
+offset_top = -179.0
+offset_right = 40.0
+offset_bottom = -139.0
+
+[node name="DebugPanel3" type="Panel" parent="Marks" unique_id=225402876]
+layout_mode = 0
+offset_left = 119.0
+offset_top = -183.0
+offset_right = 159.0
+offset_bottom = -143.0
+
+[node name="DebugPanel4" type="Panel" parent="Marks" unique_id=888700405]
+layout_mode = 0
+offset_left = 244.0
+offset_top = -180.0
+offset_right = 284.0
+offset_bottom = -140.0
+
+[connection signal="pressed" from="Button+" to="." method="_on_change_points" binds= [1000]]
+[connection signal="pressed" from="Button-" to="." method="_on_change_points" binds= [-50]]
