@@ -26,7 +26,7 @@ func set_wheel_count(count: int, reward_config: RewardConfig = RewardConfig.new(
 	_wheels = wheels
 	_ui.populate_wheels(wheels)
 	for wheel in _wheels:
-		wheel.set_resource(BombResource.new())
+		wheel.set_resource(ItemResource.new())
 		wheel.finished.connect(_wheel_finished)
 
 

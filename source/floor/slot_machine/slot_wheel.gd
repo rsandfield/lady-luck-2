@@ -16,7 +16,6 @@ func spin(reward_config: RewardConfig = RewardConfig.new()) -> void:
 	var items: Array[ItemResource] = []
 	for i in 8:
 		items.append(reward_config.get_item())
-	items.append(BombResource.new())
 	items.shuffle()
 	_item = items[-2]
 	if !is_instance_valid(_ui):

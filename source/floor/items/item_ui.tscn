@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://ciom3mfekw3lc"]
+[gd_scene format=3 uid="uid://chlh712ecnfuj"]
 
-[ext_resource type="Script" uid="uid://6h26jw7ebkbs" path="res://source/floor/items/bomb_ui.gd" id="1_wl3p2"]
-[ext_resource type="Texture2D" uid="uid://bwg3gd1y1epdj" path="res://assets/icons/bomb.png" id="2_mf6ay"]
+[ext_resource type="Script" uid="uid://5hl8av12dkxi" path="res://source/floor/items/item_ui.gd" id="1_waw0d"]
+[ext_resource type="Texture2D" uid="uid://duq53xmx0t53x" path="res://assets/icons/bust.svg" id="2_dyh2x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf6ay"]
 
-[node name="BombUI" type="PanelContainer" unique_id=670917988]
+[node name="ItemUI" type="PanelContainer" unique_id=1894294098]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -18,11 +18,11 @@ offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mf6ay")
-script = ExtResource("1_wl3p2")
-metadata/_custom_type_script = "uid://6h26jw7ebkbs"
+script = ExtResource("1_waw0d")
+metadata/_custom_type_script = "uid://5hl8av12dkxi"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=422417009]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("2_mf6ay")
+texture = ExtResource("2_dyh2x")
 expand_mode = 2
