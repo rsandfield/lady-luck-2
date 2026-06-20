@@ -236,6 +236,7 @@ process_material = SubResource("ShaderMaterial_fm22i")
 libraries/ = SubResource("AnimationLibrary_jha36")
 
 [node name="TestExplode" type="Button" parent="." unique_id=1142391942]
+visible = false
 offset_left = -199.0
 offset_top = -34.0
 offset_right = -107.0
@@ -243,6 +244,7 @@ offset_bottom = -1.0
 text = "Explode"
 
 [node name="TestReset" type="Button" parent="." unique_id=480084441]
+visible = false
 offset_left = -197.0
 offset_top = -73.0
 offset_right = -105.0

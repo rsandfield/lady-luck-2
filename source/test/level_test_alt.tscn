@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_1k1e1"]
 [ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/background-green_velvet.png" id="2_ihnwo"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="7_l4jha"]
-[ext_resource type="PackedScene" uid="uid://314toow75o83" path="res://source/animations/explosion.tscn" id="7_lyga3"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="8_248bq"]
 [ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="12_jcaet"]
 [ext_resource type="PackedScene" uid="uid://b3r8jv44uqhta" path="res://source/floor/buttons/level_buttons.tscn" id="17_fkpom"]
@@ -40,9 +39,6 @@ offset_left = -33.0
 offset_top = -4.0
 offset_right = -33.0
 offset_bottom = -4.0
-
-[node name="Bomb" parent="." unique_id=1605726017 instance=ExtResource("7_lyga3")]
-position = Vector2(539, 371)
 
 [connection signal="restart_game" from="." to="Floor" method="reset"]
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
