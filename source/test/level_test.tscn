@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dmdfdbpc5pwgk"]
 
 [ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_tpn00"]
-[ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_20axw"]
 [ext_resource type="Script" uid="uid://c60c4tdcv8c1w" path="res://source/floor/floor_config.gd" id="3_l8klr"]
 [ext_resource type="Script" uid="uid://cmlwo0ordubbu" path="res://source/floor/items/reward_config.gd" id="4_k07vv"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="5_ff1e8"]
@@ -42,22 +41,6 @@ grow_horizontal = 1
 grow_vertical = 1
 _config = SubResource("Resource_m3ls3")
 
-[node name="MainMenu" type="Button" parent="." unique_id=133252502]
-offset_left = 154.0
-offset_top = -337.0
-offset_right = 274.0
-offset_bottom = -297.0
-theme = ExtResource("2_20axw")
-text = "Main Menu"
-
-[node name="Restart" type="Button" parent="." unique_id=1099381198]
-offset_left = 154.0
-offset_top = -289.0
-offset_right = 274.0
-offset_bottom = -249.0
-theme = ExtResource("2_20axw")
-text = "Restart"
-
 [node name="MouseObject" parent="." unique_id=931340702 instance=ExtResource("5_ff1e8")]
 visible = false
 
@@ -71,8 +54,6 @@ show_tutorial = false
 [connection signal="restart_game" from="." to="Floor" method="reset"]
 [connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
 [connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]
-[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="tile_released" from="MouseObject" to="Floor" method="_on_mouse_object_tile_released"]
 [connection signal="button_help" from="LevelButtons" to="." method="_on_help_pressed"]
 [connection signal="button_menu" from="LevelButtons" to="." method="_on_main_menu_pressed"]
