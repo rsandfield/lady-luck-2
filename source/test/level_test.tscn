@@ -2,10 +2,31 @@
 
 [ext_resource type="Script" uid="uid://dqycwla3capht" path="res://source/test/level_test.gd" id="1_tpn00"]
 [ext_resource type="Theme" uid="uid://buaj3vpul0yeq" path="res://assets/themes/current_theme.tres" id="2_20axw"]
+[ext_resource type="Script" uid="uid://c60c4tdcv8c1w" path="res://source/floor/floor_config.gd" id="3_l8klr"]
+[ext_resource type="Script" uid="uid://cmlwo0ordubbu" path="res://source/floor/items/reward_config.gd" id="4_k07vv"]
 [ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="5_ff1e8"]
 [ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="5_tpn00"]
 [ext_resource type="PackedScene" uid="uid://b3r8jv44uqhta" path="res://source/floor/buttons/level_buttons.tscn" id="6_tpn00"]
 [ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="10_m3ls3"]
+
+[sub_resource type="Resource" id="Resource_xy7ao"]
+script = ExtResource("4_k07vv")
+p_none = 0.0
+p_bomb = 0.2
+p_tile_single = 0.6
+p_tile_two_color = 0.2
+
+[sub_resource type="Resource" id="Resource_jttlp"]
+script = ExtResource("4_k07vv")
+p_tile_single = 0.2
+p_tile_two_color = 0.1
+
+[sub_resource type="Resource" id="Resource_m3ls3"]
+script = ExtResource("3_l8klr")
+color_count = 2
+spinner_rewards = SubResource("Resource_jttlp")
+slot_rewards = SubResource("Resource_xy7ao")
+metadata/_custom_type_script = "uid://c60c4tdcv8c1w"
 
 [node name="TestLevel" type="Node2D" unique_id=442386131]
 script = ExtResource("1_tpn00")
@@ -19,6 +40,7 @@ offset_right = 1118.0
 offset_bottom = 648.0
 grow_horizontal = 1
 grow_vertical = 1
+_config = SubResource("Resource_m3ls3")
 
 [node name="MainMenu" type="Button" parent="." unique_id=133252502]
 offset_left = 154.0

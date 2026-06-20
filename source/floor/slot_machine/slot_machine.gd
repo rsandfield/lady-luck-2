@@ -7,7 +7,7 @@ var _ui: SlotMachineUI
 var _wheels: Array[SlotWheel] = []
 var _selected: SlotWheel
 var _awaiting: int
-var _color_count: int = 1
+var _reward_config: RewardConfig
 
 #var _blocked: bool = false
 
@@ -16,8 +16,8 @@ func set_ui(new_ui: SlotMachineUI) -> void:
 	_ui.spin_requested.connect(_on_lever_pulled)
 
 
-func set_wheel_count(count: int, color_count: int = 1) -> void:
-	_color_count = color_count
+func set_wheel_count(count: int, reward_config: RewardConfig = RewardConfig.new()) -> void:
+	_reward_config = reward_config
 	var wheels: Array[SlotWheel] = []
 	for i in count:
 		var wheel = SlotWheel.new()
@@ -34,7 +34,7 @@ func spin_wheels() -> void:
 	_awaiting = _wheels.size()
 	for i in range(_wheels.size() - 1, -1, -1):
 		var wheel = _wheels[i]
-		wheel.spin(_color_count)
+		wheel.spin(_reward_config)
 		await Game.get_tree().create_timer(0.25).timeout
 		if !is_instance_valid(_ui):
 			return

@@ -29,6 +29,21 @@ static func random_two_side(possible_colors: int = 2) -> TileResource:
 	return TileResource.new(sides)
 
 
+static func random_two_color(possible_colors: int = 2) -> TileResource:
+	if possible_colors < 2:
+		return random_two_side(1)
+	
+	var color1 := randi() % possible_colors + 1
+	var color2 := randi() % possible_colors + 1
+	if color1 == color2:
+		color2 += 1
+		if color2 > possible_colors:
+			color2 -= possible_colors
+	var sides: Array[int] = [color1, color1, color2, color2]
+	sides.shuffle()
+	return TileResource.new(sides)
+
+
 static func blank() -> TileResource:
 	var sides: Array[int] = [0, 0, 0, 0]
 	return TileResource.new(sides)

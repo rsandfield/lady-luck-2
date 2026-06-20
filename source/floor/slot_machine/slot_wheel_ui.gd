@@ -38,9 +38,9 @@ func clear_center():
 	_set_slot_item(_center_slot_idx, null)
 
 
-func spin(items: Array[ItemResource], color_count: int = 1):
+func spin(items: Array[ItemResource], reward_config: RewardConfig = RewardConfig.new()):
 	while len(items) % 4 != 0:
-		items.insert(0, TileResource.random_two_side(color_count))
+		items.insert(0, reward_config.get_item())
 
 	_items = items
 	_item_index = 0

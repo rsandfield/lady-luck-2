@@ -25,9 +25,12 @@ func reset(config: FloorConfig = null, reset_score: bool = true):
 	if config:
 		_config = config
 
+	_config.spinner_rewards.set_color_count(_config.color_count)
+	_config.slot_rewards.set_color_count(_config.color_count)
+
 	_slot_machine = SlotMachine.new()
 	_slot_machine.set_ui(%SlotMachine)
-	_slot_machine.set_wheel_count(_config.wheel_count, _config.color_count)
+	_slot_machine.set_wheel_count(_config.wheel_count, _config.slot_rewards)
 	_slot_machine.finished.connect(_on_spin_finished)
 
 	var size = _config.grid_size + Vector2i.DOWN
@@ -39,7 +42,7 @@ func reset(config: FloorConfig = null, reset_score: bool = true):
 	_spinner = Spinner.new()
 	_spinner.set_ui(%Spinner)
 	_spinner.set_row_count(size.y)
-	_spinner.set_item_count(6, _config.color_count)
+	_spinner.set_item_count(6, _config.spinner_rewards)
 	_slot_machine.lever_pulled.connect(_on_lever_pulled)
 
 	_lady = LadyLuck.new()
