@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="FloorConfig" format=3 uid="uid://ciojjx0kqyj6d"]
+
+[ext_resource type="Script" uid="uid://c60c4tdcv8c1w" path="res://source/floor/floor_config.gd" id="1_3lgqm"]
+[ext_resource type="Script" uid="uid://cmlwo0ordubbu" path="res://source/floor/items/reward_config.gd" id="2_kjyf6"]
+
+[sub_resource type="Resource" id="Resource_5wi8b"]
+script = ExtResource("2_kjyf6")
+p_none = 0.0
+p_bomb = 0.2
+p_tile_single = 0.8
+metadata/_custom_type_script = "uid://cmlwo0ordubbu"
+
+[sub_resource type="Resource" id="Resource_048u2"]
+script = ExtResource("2_kjyf6")
+p_none = 0.5
+p_bomb = 0.25
+p_tile_single = 0.25
+metadata/_custom_type_script = "uid://cmlwo0ordubbu"
+
+[resource]
+script = ExtResource("1_3lgqm")
+grid_size = Vector2i(3, 5)
+spinner_rewards = SubResource("Resource_048u2")
+slot_rewards = SubResource("Resource_5wi8b")
+metadata/_custom_type_script = "uid://c60c4tdcv8c1w"

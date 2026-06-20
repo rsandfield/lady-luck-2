@@ -2,11 +2,13 @@ class_name Floor
 extends PanelContainer
 
 
-@export var _config: FloorConfig = FloorConfig.new()
+@export var _levels: Array[FloorConfig]
 
 @onready var _turn_counter: TurnContainer = %TurnContainer
 @onready var _points_counter: PointsContainer = %PointContainer
 
+var _level: int = 0
+var _config: FloorConfig = FloorConfig.new()
 var _slot_machine: SlotMachine
 var _grid: Grid
 var _spinner: Spinner
@@ -18,7 +20,7 @@ signal slot_machine_sound
 
 
 func _ready():
-	reset()
+	reset(_levels[0])
 
 
 func reset(config: FloorConfig = null, reset_score: bool = true):
@@ -43,7 +45,7 @@ func reset(config: FloorConfig = null, reset_score: bool = true):
 	_spinner = Spinner.new()
 	_spinner.set_ui(%Spinner)
 	_spinner.set_row_count(grid_size.y)
-	_spinner.set_item_count(6, _config.spinner_rewards)
+	_spinner.set_item_count(_config.spinner_item_count, _config.spinner_rewards)
 	_slot_machine.lever_pulled.connect(_on_lever_pulled)
 
 	_lady = LadyLuck.new()
@@ -71,8 +73,10 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 
 
 func _on_door_pressed(_slot: GridCell) -> void:
-	print("Boop")
-	reset(null, false)
+	_level += 1
+	if _level > len(_levels):
+		print("You win!")
+	reset(_levels[_level], false)
 
 
 #var for_testing = true

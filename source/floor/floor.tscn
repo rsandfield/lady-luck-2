@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://b8y7rdl6wrgh4" path="res://source/floor/floor.gd" id="1_vqkr4"]
 [ext_resource type="PackedScene" uid="uid://clwj4o2t31n4g" path="res://source/floor/wheel/spinner_ui.tscn" id="2_bey53"]
+[ext_resource type="Script" uid="uid://c60c4tdcv8c1w" path="res://source/floor/floor_config.gd" id="2_f7iod"]
 [ext_resource type="PackedScene" uid="uid://cu2o14flw07o6" path="res://source/floor/slot_machine/slot_machine_ui.tscn" id="2_p1kb0"]
 [ext_resource type="PackedScene" uid="uid://3gtimcic0h85" path="res://source/floor/lady_luck/lady_luck.tscn" id="3_bey53"]
+[ext_resource type="Resource" uid="uid://ciojjx0kqyj6d" path="res://assets/levels/level_1.tres" id="3_kc6ny"]
 [ext_resource type="PackedScene" uid="uid://cksm1x0jrd8ge" path="res://source/floor/grid/grid_ui.tscn" id="3_vqkr4"]
+[ext_resource type="Resource" uid="uid://dx4ja6v1c728o" path="res://assets/levels/level_2.tres" id="4_kpsr5"]
+[ext_resource type="Resource" uid="uid://nolljgpv2x4i" path="res://assets/levels/level_3.tres" id="5_145bc"]
 [ext_resource type="PackedScene" uid="uid://6vbn4bonis0x" path="res://source/floor/points/turn_container.tscn" id="5_a23us"]
+[ext_resource type="Resource" uid="uid://bsy6xyic51fpg" path="res://assets/levels/level_4.tres" id="6_hxrar"]
 [ext_resource type="PackedScene" uid="uid://detgnnqtmgueh" path="res://source/floor/points/points_container.tscn" id="6_mx0ua"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqkr4"]
@@ -20,6 +25,7 @@ grow_vertical = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vqkr4")
 script = ExtResource("1_vqkr4")
+_levels = Array[ExtResource("2_f7iod")]([ExtResource("3_kc6ny"), ExtResource("4_kpsr5"), ExtResource("5_145bc"), ExtResource("6_hxrar")])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1450049681]
 layout_mode = 2
