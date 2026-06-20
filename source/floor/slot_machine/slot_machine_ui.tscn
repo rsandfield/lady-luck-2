@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cym4ab1giibqq" path="res://assets/icons/red_circle.tres" id="3_vr6dc"]
 [ext_resource type="Texture2D" uid="uid://d4dokgb8ho2qa" path="res://assets/art/metal-tileset-CC0.png" id="3_wmcta"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2wtt"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2wtt"]
 
 [sub_resource type="Gradient" id="Gradient_vr6dc"]
 offsets = PackedFloat32Array(0.64)
@@ -86,11 +86,10 @@ script = ExtResource("1_gru50")
 unique_name_in_owner = true
 
 [node name="BlockingPanel" type="Panel" parent="BlockingNode" unique_id=748421645]
-offset_left = -18.0
-offset_top = 74.0
-offset_right = 445.0
-offset_bottom = 243.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_x2wtt")
+custom_minimum_size = Vector2(460, 200)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_x2wtt")
 
 [node name="FullSlotMachine" type="Sprite2D" parent="." unique_id=524642769]
 show_behind_parent = true

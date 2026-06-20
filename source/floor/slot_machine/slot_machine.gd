@@ -12,7 +12,6 @@ var _awaiting: int
 
 func set_ui(new_ui: SlotMachineUI) -> void:
 	_ui = new_ui
-	_ui.spin_requested.connect(spin_wheels)
 	_ui.spin_requested.connect(_on_lever_pulled)
 
 
@@ -43,8 +42,9 @@ func _wheel_finished():
 	_awaiting -= 1
 	if _awaiting <= 0:
 		finished.emit()
-		#_blocked = false
 		Game.slot_machine_blocked_flag = false
+		if is_instance_valid(_ui):
+			_ui.set_blocked(false)
 
 
 func select_wheel(wheel: SlotWheel) -> void:
@@ -62,16 +62,12 @@ func consume_selected() -> void:
 
 
 func _on_lever_pulled():
-	#print_debug("_on_lever_pulled..")
-	
-	#if _blocked:
-	if Game.slot_machine_blocked_flag: 
-		print_debug("_on_lever_pulled _blocked..")
+	if Game.slot_machine_blocked_flag:
 		_ui.shake_lever()
 		return
-	
-	_ui.pull_lever()
-	lever_pulled.emit()
-	#_blocked = true
-	
+
 	Game.slot_machine_blocked_flag = true
+	_ui.set_blocked(true)
+	_ui.pull_lever()
+	spin_wheels()
+	lever_pulled.emit()
