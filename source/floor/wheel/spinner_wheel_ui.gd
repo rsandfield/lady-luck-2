@@ -37,43 +37,38 @@ func make_pie(slices: Array[Color]) -> void:
 		i += 1
 
 
-func spin(to: int) -> void:
-	var clockwise = to >= 0
+func spin(to: int, extra_rotations: int = 3, clockwise: bool = true) -> void:
 	var slice_count = len(_slices)
-	@warning_ignore("INTEGER_DIVISION")
-	var rotations = to / slice_count
 	to = posmod(to, slice_count)
 
-	var target_rotation = -_slices[to].rotation
-	var delta := fmod(target_rotation - rotation, TAU)
-
+	# Where the wheel must end so slice 'to' is centered at UP
+	var destination = -_slices[to].rotation
+	# Shortest angular step from current rotation to destination
+	var delta := fposmod(destination - rotation, TAU)
+	# Go the right direction, adding extra full rotations for visual flair
+	var total_spin: float
 	if clockwise:
 		if delta > 0:
 			delta -= TAU
+		total_spin = delta - TAU * extra_rotations
 	else:
-		if delta < 0:
-			delta += TAU
+		total_spin = delta + TAU * extra_rotations
 
+	# 3-phase tween: windup (pull back), main spin, slowdown (one last rotation)
 	var tween = create_tween()
 	tween.bind_node(self)
-	var windup := TAU / float(slice_count) * 0.25
-	var extra_spins: float = TAU * rotations
-	if clockwise:
-		windup *= -1
-		extra_spins *= -1
 
-	var rot := rotation - windup
+	var windup_amount := TAU / float(slice_count) * 0.25
+	var windup_dir := 1.0 if clockwise else -1.0
+
+	var rot := rotation + windup_dir * windup_amount
 	tween.tween_property(self, "rotation", rot, 0.5)
-	var high_speed = extra_spins - windup + delta
-	if clockwise:
-		high_speed = -absf(high_speed)
-	else:
-		high_speed = absf(high_speed)
-	rot += high_speed
-	tween.tween_property(self, "rotation", rot, abs(high_speed) * 0.1)
-	if clockwise:
-		rot -= TAU
-	else:
-		rot += TAU
+
+	rot += total_spin - windup_dir * windup_amount
+	tween.tween_property(self, "rotation", rot, absf(total_spin) * 0.1)
+
+	var slowdown := -TAU if clockwise else TAU
+	rot += slowdown
 	tween.tween_property(self, "rotation", rot, 0.5)
+
 	tween.finished.connect(finished.emit)

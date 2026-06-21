@@ -13,7 +13,7 @@ func set_ui(new_ui: SpinnerUI) -> void:
 
 
 func set_row_count(count: int) -> void:
-	_row_count = count
+	_row_count = count - 1
 	_ui.set_row_count(count)
 
 
@@ -30,13 +30,13 @@ func spin():
 		return
 	var row = randi() % _row_count
 	var item_index = randi() % len(_items)
-	_ui.spin_to(row + _row_count * 3, -item_index - len(_items) * 3)
+	_ui.spin_to(row, item_index)
 
 	await _ui.finished
 	if !is_instance_valid(_ui):
 		return
 	_ui.clear_ui(item_index)
-	result.emit(row, _items[item_index])
+	result.emit(_row_count - row, _items[item_index])
 
 	await Game.get_tree().create_timer(1).timeout
 	if !is_instance_valid(_ui):

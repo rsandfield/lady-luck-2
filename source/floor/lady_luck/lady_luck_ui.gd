@@ -13,8 +13,8 @@ func ready():
 
 
 func hold_item(item: ItemResource) -> void:
-	for child in _hand.get_children():
-		child.queue_free()
+	if _item_ui:
+		_item_ui.queue_free()
 
 	if !item:
 		return
@@ -26,7 +26,8 @@ func hold_item(item: ItemResource) -> void:
 	var item_ui = ui_scene.instantiate()
 	if item_ui.has_method("set_resource"):
 		item_ui.set_resource(item)
-	_hand.add_child(item_ui)
+	get_parent().add_child(item_ui)
+	item_ui.global_position = _hand.global_position
 	_item_ui = item_ui
 
 
