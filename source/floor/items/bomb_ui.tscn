@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ciom3mfekw3lc"]
 
 [ext_resource type="Script" uid="uid://6h26jw7ebkbs" path="res://source/floor/items/bomb_ui.gd" id="1_wl3p2"]
+[ext_resource type="StyleBox" uid="uid://dyceeu5udi0k2" path="res://assets/themes/tile_style_box_black_border.tres" id="2_gmn4u"]
 [ext_resource type="Texture2D" uid="uid://bwg3gd1y1epdj" path="res://assets/icons/bomb.png" id="2_mf6ay"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf6ay"]
@@ -20,6 +21,10 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mf6ay")
 script = ExtResource("1_wl3p2")
 metadata/_custom_type_script = "uid://6h26jw7ebkbs"
+
+[node name="Panel" type="Panel" parent="." unique_id=756330807]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_gmn4u")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=422417009]
 custom_minimum_size = Vector2(75, 75)

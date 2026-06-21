@@ -1,63 +1,7 @@
 extends Level
 
-@onready var _mouse_object: MouseObject = $MouseObject
-
-#signal slots_sound(sound_type: String)
 
 
-func _process(_delta: float) -> void:
-	if !self.visible && %Tutorial.visible:
-		%Tutorial.hide()
-
-	pass
-
-
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_help"):
-		#print_debug("test_level: ui_help...")
-
-		_on_help_pressed()
-
-		pass
-
-	if Input.is_action_just_pressed("ui_retry"):
-		#print_debug("test_level: ui_retry...")
-
-		emit_signal("restart_game")
-
-		pass
-
-	if Input.is_action_just_pressed("ui_cancel"):
-		#print_debug("test_level: ui_cancel...")
-
-		if %Tutorial.visible:
-			%Tutorial.hide()
-
-		elif self.visible:
-			return_to_menu.emit()
-
-	pass
-
-
-func _on_move_mouse_object(_mouse_new_position: Vector2):
-	$MouseObject.position = _mouse_new_position
-
-	pass
-
-
-func _on_floor_mouse_clicked(_is_clicked: bool, _mouse_position: Vector2) -> void:
-	_mouse_object.position = _mouse_position
-
-	pass
-
-
-func _on_floor_moving_tile(is_moving: bool) -> void:
-	if is_moving:
-		_mouse_object.show()
-	if !is_moving:
-		_mouse_object.hide()
-
-	pass
 
 
 func _on_test_win_pressed() -> void:

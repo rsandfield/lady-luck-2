@@ -70,9 +70,11 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 
 	item.play(slot)
 	_slot_machine.consume_selected()
-
-	if true:
-	#if _grid.all_paths_finished():
+	
+	# for testing
+	#if true:
+	
+	if _grid.all_paths_finished():
 		_grid.activate_door().connect(_on_door_pressed)
 
 
