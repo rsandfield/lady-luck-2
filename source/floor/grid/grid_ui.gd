@@ -113,5 +113,8 @@ func show_indicator(cell: GridCell) -> void:
 	_indicator = INDICATOR_SCENE.instantiate()
 	add_child(_indicator)
 	_indicator.position = cell.position() - global_position + cell.size() / 2
-	_indicator.get_node("AnimationPlayer").play("spin")
+	
+	# this is unnecessary, autoplay on load is set on the animation player object itself
+	#_indicator.get_node("AnimationPlayer").play("spin")
+	#_indicator.get_node("AnimationPlayer").play("pulse")
 	

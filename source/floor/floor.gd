@@ -71,7 +71,8 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 	item.play(slot)
 	_slot_machine.consume_selected()
 
-	if _grid.all_paths_finished():
+	if true:
+	#if _grid.all_paths_finished():
 		_grid.activate_door().connect(_on_door_pressed)
 
 
@@ -116,6 +117,7 @@ func _on_lever_pulled():
 	_spinner.spin()
 	_turn_counter.add_value(1)
 	
+	# fake the timing here, instead of _on_spin_finished
 	await get_tree().create_timer(2.0).timeout
 	_points_counter.emit_generate_confetti()
 
@@ -125,6 +127,8 @@ func _on_spin_finished():
 	_grid.flag_spin(false)
 	_grid.flash_all_flags()
 	
+	# should really do this here...
+	# but the first spinner stops before this is called
 	#_points_counter.emit_generate_confetti()
 
 
