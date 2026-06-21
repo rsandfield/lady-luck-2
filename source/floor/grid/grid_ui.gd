@@ -4,7 +4,8 @@ extends GridContainer
 const GRID_CELL_UI_SCENE = preload("./grid_cell_ui.tscn")
 const FLAG_SCENE = preload("./flag.tscn")
 const INDICATOR_SCENE = preload("./door_indicator.tscn")
-
+const EXPLOSION_REFERENCE = preload("res://source/animations/explosion.tscn")
+#const explosion_reference = preload("res://source
 const ROW_COLORS: Array[Color] = [
 	Color(0, 0, 0, 0),
 	Color.RED,
@@ -112,9 +113,11 @@ func flag_pulse(row: int, time: float = 0.5):
 func show_indicator(cell: GridCell) -> void:
 	_indicator = INDICATOR_SCENE.instantiate()
 	add_child(_indicator)
-	_indicator.position = cell.position() - global_position + cell.size() / 2
+	_indicator.position = cell.center_position() - global_position
 	
-	# this is unnecessary, autoplay on load is set on the animation player object itself
-	#_indicator.get_node("AnimationPlayer").play("spin")
-	#_indicator.get_node("AnimationPlayer").play("pulse")
-	
+
+func show_explosion(cell: GridCell) -> void:
+	var explosion: Explosion = EXPLOSION_REFERENCE.instantiate()
+	add_child(explosion)
+	explosion.global_position = cell.center_position()
+	explosion.play_explosion()

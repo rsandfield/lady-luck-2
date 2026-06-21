@@ -28,6 +28,7 @@ func _rebuild_grid() -> void:
 	for i in _size.x * _size.y:
 		var cell = GridCell.new()
 		cell.grid_cell_pressed.connect(grid_cell_pressed.emit)
+		cell.grid_cell_exploding.connect(_ui.show_explosion)
 		_cells.append(cell)
 		if i % _size.x > 0:
 			var west_neighbor = _cells[i - 1]

@@ -251,5 +251,5 @@ offset_right = -105.0
 offset_bottom = -40.0
 text = "Reset"
 
-[connection signal="pressed" from="TestExplode" to="." method="_on_call_explode_test"]
+[connection signal="pressed" from="TestExplode" to="." method="play_explosion_test"]
 [connection signal="pressed" from="TestReset" to="." method="_on_call_reset"]

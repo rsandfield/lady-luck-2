@@ -1,5 +1,6 @@
 class_name GridCell
 
+signal grid_cell_exploding(cell: GridCell)
 signal grid_cell_pressed(cell: GridCell)
 
 var _ui: GridCellUI
@@ -34,7 +35,11 @@ func get_side(direction: TileResource.Direction) -> int:
 
 
 func position() -> Vector2:
-	return _ui.global_position
+	return _ui.global_position + _ui.size / 2
+
+
+func center_position() -> Vector2:
+	return _ui.global_position + _ui.size / 2
 
 
 func size() -> Vector2:
@@ -62,6 +67,11 @@ func is_legal_neighbor(direction: TileResource.Direction, tile: TileResource) ->
 func set_tile(tile: TileResource) -> void:
 	_tile = tile
 	_ui.set_tile(tile)
+
+
+func explode() -> void:
+	grid_cell_exploding.emit(self)
+	clear()
 
 
 func clear() -> void:
