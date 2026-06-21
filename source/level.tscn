@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cbyseky6gkv2d" path="res://source/scripts/level.gd" id="1_8ytwg"]
 [ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/background-green_velvet.png" id="2_caait"]
+[ext_resource type="PackedScene" uid="uid://bo1dgiub0w3xr" path="res://source/floor/floor.tscn" id="3_587n5"]
 [ext_resource type="PackedScene" uid="uid://b3r8jv44uqhta" path="res://source/floor/buttons/level_buttons.tscn" id="3_caait"]
 [ext_resource type="PackedScene" uid="uid://dfc8q1bm3gkum" path="res://source/tutorial.tscn" id="3_vp4vq"]
+[ext_resource type="PackedScene" uid="uid://chqwxskxnl6vm" path="res://source/floor/mouse/mouse_object.tscn" id="4_5sqq8"]
 
 [node name="Level" type="Node2D" unique_id=854162818]
 script = ExtResource("1_8ytwg")
@@ -14,9 +16,25 @@ offset_bottom = 648.0
 texture = ExtResource("2_caait")
 metadata/_edit_lock_ = true
 
+[node name="Floor" parent="." unique_id=2015660795 instance=ExtResource("3_587n5")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -36.0
+offset_top = -2.0
+offset_right = 1116.0
+offset_bottom = 646.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="MouseObject" parent="." unique_id=1286144574 instance=ExtResource("4_5sqq8")]
+visible = false
+
 [node name="Tutorial" parent="." unique_id=993889986 instance=ExtResource("3_vp4vq")]
 unique_name_in_owner = true
 visible = false
+offset_left = -4.0
+offset_right = 1150.0
 
 [node name="LevelButtons" parent="." unique_id=1051872753 instance=ExtResource("3_caait")]
 offset_left = -29.0
@@ -24,6 +42,10 @@ offset_right = -29.0
 button_2_text = " (X) Retry"
 button_3_text = " (?) Help"
 
+[connection signal="restart_game" from="." to="Floor" method="_on_level_restart_game"]
+[connection signal="moving_tile" from="Floor" to="." method="_on_floor_moving_tile"]
+[connection signal="slot_machine_sound" from="Floor" to="." method="_on_slots_sound"]
+[connection signal="tile_released" from="MouseObject" to="Floor" method="_on_mouse_object_tile_released"]
 [connection signal="button_help" from="LevelButtons" to="." method="_on_help_pressed"]
 [connection signal="button_menu" from="LevelButtons" to="." method="_on_main_menu_pressed"]
 [connection signal="button_retry" from="LevelButtons" to="." method="_on_restart_pressed"]

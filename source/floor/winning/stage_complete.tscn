@@ -171,12 +171,6 @@ text = "Thanks for playing:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Screen" type="Panel" parent="." unique_id=1762451287]
-offset_left = 35.0
-offset_top = -681.0
-offset_right = 1187.0
-offset_bottom = -35.0
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1859274747]
 libraries/ = SubResource("AnimationLibrary_jfsep")
 

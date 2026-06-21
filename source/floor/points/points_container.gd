@@ -25,7 +25,7 @@ func emit_generate_confetti():
 
 
 func add_value(delta: int) -> void:
-	print_debug("delta: " + str (delta) )
+	#print_debug("delta: " + str (delta) )
 	
 	set_value(_value + delta)
 

@@ -19,7 +19,6 @@ metadata/_custom_type_script = "uid://cmlwo0ordubbu"
 
 [resource]
 script = ExtResource("1_3lgqm")
-grid_size = Vector2i(3, 5)
 spinner_rewards = SubResource("Resource_048u2")
 slot_rewards = SubResource("Resource_5wi8b")
 metadata/_custom_type_script = "uid://c60c4tdcv8c1w"

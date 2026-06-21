@@ -12,7 +12,7 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(1, 1, 1, 1)
+border_color = Color(0, 0, 0, 1)
 corner_detail = 1
 
 [node name="TileUI" type="PanelContainer" unique_id=693043851]
@@ -58,5 +58,56 @@ size_flags_vertical = 0
 modulate = Color(0, 1, 0, 1)
 custom_minimum_size = Vector2(10, 32.5)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Control" type="Control" parent="." unique_id=1334650853]
+layout_mode = 2
+
+[node name="DoorLeft" type="ColorRect" parent="Control" unique_id=1978155496]
+unique_name_in_owner = true
+modulate = Color(0, 0, 1, 1)
+z_index = 999
+layout_mode = 0
+offset_left = -0.5
+offset_top = 4.5
+offset_right = 5.5
+offset_bottom = 69.5
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="DoorRight" type="ColorRect" parent="Control" unique_id=1063835791]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+z_index = 99
+layout_mode = 0
+offset_left = 69.5
+offset_top = 4.5
+offset_right = 75.0
+offset_bottom = 69.5
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="DoorUp" type="ColorRect" parent="Control" unique_id=902800667]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 0)
+z_index = 99
+layout_mode = 0
+offset_left = 0.5
+offset_top = 0.5
+offset_right = 74.5
+offset_bottom = 5.5
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="DoorDown" type="ColorRect" parent="Control" unique_id=1490994526]
+unique_name_in_owner = true
+modulate = Color(0, 1, 0, 1)
+z_index = 99
+layout_mode = 0
+offset_left = 0.5
+offset_top = 69.5
+offset_right = 73.5
+offset_bottom = 75.0
 size_flags_horizontal = 4
 size_flags_vertical = 8

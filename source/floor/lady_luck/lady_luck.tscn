@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://3gtimcic0h85"]
 
 [ext_resource type="Script" uid="uid://dmrak3edmrnox" path="res://source/floor/lady_luck/lady_luck_ui.gd" id="1_5d5k2"]
+[ext_resource type="Texture2D" uid="uid://b0v6gpju7ruf2" path="res://assets/art/wood-frame.png" id="2_3j7hh"]
 [ext_resource type="Texture2D" uid="uid://bioopwke2pmti" path="res://assets/art/placeholder-rigging.png" id="2_e361y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnptl"]
@@ -9,7 +10,7 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(1, 1, 1, 1)
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -52,11 +53,16 @@ offset_bottom = 92.0
 
 [node name="HandCardBackground" type="Panel" parent="Images" unique_id=1157202527]
 layout_mode = 0
-offset_left = 40.0
-offset_top = -249.0
-offset_right = 139.0
-offset_bottom = -154.0
+offset_left = 36.0
+offset_top = -254.0
+offset_right = 143.0
+offset_bottom = -147.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_fnptl")
+
+[node name="WoodFrame" type="Sprite2D" parent="Images" unique_id=102964618]
+position = Vector2(89.5, -201)
+scale = Vector2(1.01, 1)
+texture = ExtResource("2_3j7hh")
 
 [node name="PlaceholderRigging" type="Sprite2D" parent="Images" unique_id=235092072]
 position = Vector2(-152, -172)

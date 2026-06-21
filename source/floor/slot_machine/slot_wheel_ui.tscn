@@ -194,6 +194,7 @@ offset_right = 85.0
 offset_bottom = 187.5
 
 [node name="Slot4" type="Control" parent="Spinner" unique_id=1080912901]
+visible = false
 anchors_preset = 0
 offset_left = 10.0
 offset_top = 187.5

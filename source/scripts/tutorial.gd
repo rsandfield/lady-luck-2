@@ -8,7 +8,7 @@ const HELP_DIALOG = [
 	"Welcome to Lady Luck's Door!" ,
 	"Pull the lever to get pieces to play" ,
 	"Pick up tiles or bombs from this area" ,
-	"Drop tiles here to make a path to my door" ,
+	"Drop tiles here to draw colored paths to my door" ,
 	"If you are lucky then I might help you" ,
 	"If you are unlucky then, well... boom!" ,
 	"Calculate your risk carefully!" 

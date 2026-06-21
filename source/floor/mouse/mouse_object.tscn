@@ -4,21 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://dqx08ig43fc2c" path="res://source/floor/items/tile_ui.tscn" id="1_wu6bs"]
 
 [sub_resource type="Gradient" id="Gradient_lmepa"]
-offsets = PackedFloat32Array(0.25, 0.7247475)
+offsets = PackedFloat32Array(0.48962656, 0.7247475)
 colors = PackedColorArray(0.083333254, 1, 0, 1, 0.4316666, 1, 0.38, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_othvy"]
 gradient = SubResource("Gradient_lmepa")
-fill = 1
+fill = 2
 fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="Gradient" id="Gradient_othvy"]
-offsets = PackedFloat32Array(0.25, 0.7247475)
+offsets = PackedFloat32Array(0.5643154, 0.7247475)
 colors = PackedColorArray(1, 0, 0, 1, 1, 0.38, 0.38, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_flqla"]
 gradient = SubResource("Gradient_othvy")
-fill = 1
+fill = 2
 fill_from = Vector2(0.5, 0.5)
 
 [node name="MouseObject" type="Node2D" unique_id=1286144574]

@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://belulk2juo1pi" path="res://source/floor/grid/grid_cell_ui.gd" id="1_2wshm"]
 [ext_resource type="PackedScene" uid="uid://dqx08ig43fc2c" path="res://source/floor/items/tile_ui.tscn" id="1_t4iqd"]
-[ext_resource type="Texture2D" uid="uid://rhdrbhat5p8k" path="res://assets/icons/door.svg" id="3_51i1i"]
+[ext_resource type="Texture2D" uid="uid://wjiagr7bbnul" path="res://assets/art/door_closed.png" id="3_n5wvj"]
+[ext_resource type="Texture2D" uid="uid://bbu180gym3l5d" path="res://assets/art/door_open.png" id="4_dvtl3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddob5"]
 content_margin_left = 0.0
@@ -14,6 +15,7 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
 corner_detail = 5
 
 [sub_resource type="Gradient" id="Gradient_51i1i"]
@@ -70,9 +72,15 @@ visible = false
 layout_mode = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="Door" unique_id=317255718]
-modulate = Color(0.166, 0.83, 0.77466655, 1)
+[node name="Closed" type="TextureRect" parent="Door" unique_id=317255718]
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("3_51i1i")
+texture = ExtResource("3_n5wvj")
+expand_mode = 3
+
+[node name="Opened" type="TextureRect" parent="Door" unique_id=1319822713]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_dvtl3")
 expand_mode = 3

@@ -20,10 +20,9 @@ metadata/_edit_lock_ = true
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -34.0
-offset_top = -2.0
-offset_right = 1118.0
-offset_bottom = 646.0
+offset_top = 7.0
+offset_right = 1152.0
+offset_bottom = 655.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -32,12 +31,9 @@ visible = false
 
 [node name="Tutorial" parent="." unique_id=993889986 instance=ExtResource("10_m3ls3")]
 unique_name_in_owner = true
-offset_left = -4.0
-offset_right = 1150.0
+visible = false
 
 [node name="LevelButtons" parent="." unique_id=1051872753 instance=ExtResource("6_tpn00")]
-offset_left = -33.0
-offset_right = -33.0
 show_tutorial = false
 
 [node name="TestWin" type="Button" parent="." unique_id=2086419312]

@@ -6,7 +6,7 @@ extends PanelContainer
 
 @onready var _turn_counter: TurnContainer = %TurnContainer
 @onready var _points_counter: PointsContainer = %PointContainer
-@onready var _victory: Node2D = $Victory
+#@onready var _victory: Node2D = $Victory
 
 var _level: int = 0
 var _config: FloorConfig = FloorConfig.new()
@@ -25,7 +25,7 @@ func _ready():
 
 
 func reset(config: FloorConfig = null, reset_score: bool = true):
-	_victory.visible = false
+	#_victory.visible = false
 	if config:
 		_config = config
 
@@ -75,7 +75,7 @@ func _on_grid_cell_pressed(slot: GridCell) -> void:
 		_grid.activate_door().connect(_on_door_pressed)
 
 
-func cheat_win() -> void:
+func create_victory_screen() -> void:
 	
 	var stage_complete_scene = load( "res://source/floor/winning/stage_complete.tscn" )
 	var stage_complete_instance = stage_complete_scene.instantiate()
@@ -99,24 +99,25 @@ func _on_game_over_menu() -> void:
 
 func _on_door_pressed(_slot: GridCell) -> void:
 	_level += 1
+	
 	if _level >= len(_levels):
-		_victory.visible = true
+		#_victory.visible = true
+		# do win condition creation stuff
+		create_victory_screen()
+		
 		return
+	
 	reset(_levels[_level], false)
 
 
-#var for_testing = true
 func _on_lever_pulled():
-	#print_debug("_on_lever_pulled...")
-	#if for_testing: return
-	#print_debug("here...")
 	
 	_grid.flag_spin(true)
 	_spinner.spin()
 	_turn_counter.add_value(1)
 	
-	#_points_counter.emit_generate_confetti()
-	
+	await get_tree().create_timer(2.0).timeout
+	_points_counter.emit_generate_confetti()
 
 func _on_spin_finished():
 	#print_debug("_on_spin_finished...")
@@ -124,7 +125,7 @@ func _on_spin_finished():
 	_grid.flag_spin(false)
 	_grid.flash_all_flags()
 	
-	_points_counter.emit_generate_confetti()
+	#_points_counter.emit_generate_confetti()
 
 
 func _on_lady_play(row: int, item: ItemResource):
@@ -147,6 +148,11 @@ func _on_mouse_object_tile_released() -> void:
 func _on_slot_machine_play_sound() -> void: 
 	#print_debug("_on_slot_machine_play_lever_sound...")
 	
-	#if Game.slot_machine_blocked_flag: return
-	
 	slot_machine_sound.emit()
+
+
+func _on_level_restart_game() -> void:
+	
+	reset()
+	
+	pass

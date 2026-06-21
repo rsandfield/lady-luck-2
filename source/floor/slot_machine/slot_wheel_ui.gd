@@ -107,7 +107,7 @@ func _get_active_item_ui():
 
 
 func _on_button_button_down() -> void:
-	print_debug("_on_button_button_down...")
+	#print_debug("_on_button_button_down...")
 	
 	pressed.emit()
 	if _spinning:

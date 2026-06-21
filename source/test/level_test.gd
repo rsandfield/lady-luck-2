@@ -2,7 +2,7 @@ extends Level
 
 @onready var _mouse_object: MouseObject = $MouseObject
 
-signal slots_sound(sound_type: String)
+#signal slots_sound(sound_type: String)
 
 
 func _process(_delta: float) -> void:
@@ -60,11 +60,6 @@ func _on_floor_moving_tile(is_moving: bool) -> void:
 	pass
 
 
-func _on_slots_sound(sound_type: String = "slots2") -> void:
-	slots_sound.emit(sound_type)
-
-	pass
-
-
-func _on_cheat_win_pressed() -> void:
-	$Floor.cheat_win()
+func _on_test_win_pressed() -> void:
+	#$Floor.cheat_win()
+	$Floor.create_victory_screen()
