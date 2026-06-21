@@ -18,8 +18,23 @@ func _ready():
 	pass
 
 
+func _process(_delta: float) -> void:
+	
+	if Game.change_state_machine == "credits": 
+		Game.change_state_machine = ""
+		manager_state = "Credits"
+		_on_play_transition()
+	
+	if Game.change_state_machine == "menu": 
+		Game.change_state_machine = ""
+		manager_state = "Start"
+		_on_play_transition()
+	
+	pass
+
 func _check_manager_state() -> void:
 	if manager_state == "Start" || manager_state == "Test" || manager_state == "Alt":
+		
 		if manager_state == "Start":
 			$Start.show()
 			$TestLevel.hide()
@@ -45,6 +60,11 @@ func _check_manager_state() -> void:
 		$Debug.hide()
 
 	if manager_state == "Credits":
+		$Level.hide()
+		
+		$TestLevel.hide()
+		$TestAltLevel.hide()
+		
 		$Credits.show()
 
 	if manager_state == "Options":

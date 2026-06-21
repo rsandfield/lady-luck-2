@@ -6,6 +6,28 @@
 [ext_resource type="Texture2D" uid="uid://dfqg8euh2g38g" path="res://assets/art/wood-button.png" id="3_qkxi4"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="4_jfsep"]
 
+[sub_resource type="Animation" id="Animation_qkxi4"]
+resource_name = "wait_queue_free"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jfsep"]
+_data = {
+&"wait_queue_free": SubResource("Animation_qkxi4")
+}
+
 [node name="StageComplete" type="Node2D" unique_id=1596253517]
 script = ExtResource("1_jfsep")
 
@@ -148,6 +170,15 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Thanks for playing:"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Screen" type="Panel" parent="." unique_id=1762451287]
+offset_left = 35.0
+offset_top = -681.0
+offset_right = 1187.0
+offset_bottom = -35.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1859274747]
+libraries/ = SubResource("AnimationLibrary_jfsep")
 
 [connection signal="pressed" from="PlayAgain" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

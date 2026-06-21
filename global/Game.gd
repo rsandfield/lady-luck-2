@@ -11,3 +11,5 @@ var neighbor_validation : bool = true
 #var slot_machine_give_points : bool = false
 
 #var global_confetti_points = 0
+
+var change_state_machine = ""

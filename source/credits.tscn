@@ -81,9 +81,9 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "
 Lead Artistic Director      ::  
+User Interface Artist       ::  
 Programming & Game Design  ::  
 Implementation & Animation  ::  
-UI Artist              ::  
 
 "
 horizontal_alignment = 2
@@ -100,9 +100,9 @@ theme_override_fonts/normal_font = ExtResource("2_mm0m6")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "Mikey [mymonkey]
+Mercury Nightstone
 Robert Sandfield
 Stephen Frister
-Mercury Nightstone
 
 Music by Ethan Grafton
 
@@ -121,9 +121,9 @@ theme_override_fonts/normal_font = ExtResource("2_mm0m6")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "::   [https://mymonkeygames.itch.io/]
+::   [https://mercury-hg.itch.io/] 
 ::   [https://github.com/rsandfield/]
 ::   [https://infinite8bit-studios.itch.io/]
-::   [https://mercury-hg.itch.io/] 
 
 "
 
@@ -149,12 +149,22 @@ theme_override_fonts/font = ExtResource("2_mm0m6")
 theme_override_font_sizes/font_size = 24
 text = "https://mymonkeygames.itch.io/"
 
-[node name="CreditsRSandfield" type="LinkButton" parent="Control" unique_id=929193413]
+[node name="CreditsMurkyHgLink" type="LinkButton" parent="Control" unique_id=1899197202]
 layout_mode = 0
 offset_left = 750.0
 offset_top = 467.0
-offset_right = 1065.0
+offset_right = 1034.0
 offset_bottom = 498.0
+theme_override_fonts/font = ExtResource("2_mm0m6")
+theme_override_font_sizes/font_size = 24
+text = "https://mercury-hg.itch.io/"
+
+[node name="CreditsRSandfield" type="LinkButton" parent="Control" unique_id=929193413]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 498.0
+offset_right = 1065.0
+offset_bottom = 529.0
 theme_override_fonts/font = ExtResource("2_mm0m6")
 theme_override_font_sizes/font_size = 24
 text = "https://github.com/rsandfield/"
@@ -162,22 +172,12 @@ text = "https://github.com/rsandfield/"
 [node name="CreditsInfinite8bit" type="LinkButton" parent="Control" unique_id=623054338]
 layout_mode = 0
 offset_left = 750.0
-offset_top = 498.0
-offset_right = 1161.0
-offset_bottom = 529.0
-theme_override_fonts/font = ExtResource("2_mm0m6")
-theme_override_font_sizes/font_size = 24
-text = "https://infinite8bit-studios.itch.io/"
-
-[node name="CreditsMurkyHgLink" type="LinkButton" parent="Control" unique_id=1899197202]
-layout_mode = 0
-offset_left = 750.0
 offset_top = 529.0
-offset_right = 1034.0
+offset_right = 1161.0
 offset_bottom = 560.0
 theme_override_fonts/font = ExtResource("2_mm0m6")
 theme_override_font_sizes/font_size = 24
-text = "https://mercury-hg.itch.io/"
+text = "https://infinite8bit-studios.itch.io/"
 
 [node name="Panel_Squad" type="Panel" parent="." unique_id=292052250]
 offset_left = 30.0
@@ -281,8 +281,8 @@ texture = ExtResource("8_nkten")
 [connection signal="pressed" from="CenterContainer/Control/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="BackControl" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Control/CreditsMyMonkey" to="." method="_on_credits_my_monkey_pressed"]
+[connection signal="pressed" from="Control/CreditsMurkyHgLink" to="." method="_on_murkyhg_pressed"]
 [connection signal="pressed" from="Control/CreditsRSandfield" to="." method="_on_credits_r_sandfield_pressed"]
 [connection signal="pressed" from="Control/CreditsInfinite8bit" to="." method="_on_credits_infinite_8_bit_pressed"]
-[connection signal="pressed" from="Control/CreditsMurkyHgLink" to="." method="_on_murkyhg_pressed"]
 [connection signal="pressed" from="Panel_Squad/Label" to="." method="_on_pigsquad_pressed"]
 [connection signal="pressed" from="Panel_Godot/Label" to="." method="_on_godot_pressed"]

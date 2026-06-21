@@ -81,18 +81,20 @@ func cheat_win() -> void:
 	var stage_complete_instance = stage_complete_scene.instantiate()
 	add_child( stage_complete_instance )
 	
-	#stage_complete_load.position = Vector2(0.0,0.0)
+	stage_complete_instance.complete_retry.connect(reset)
+	stage_complete_instance.complete_menu.connect(_on_game_over_menu)
+	stage_complete_instance.complete_credits.connect(_on_game_over_credits)
+
+
+func _on_game_over_credits() -> void:
+	Game.change_state_machine = "menu"
 	
-	#var new_explosion = EXPLOSION_REFERENCE.instantiate()
-	#get_parent().add_child( new_explosion )
-	#new_explosion.position = position
-	#new_explosion._on_call_explode()
+	pass
+
+func _on_game_over_menu() -> void:
+	Game.change_state_machine = "credits"
 	
-	#_victory.visible = true
-	
-	#var scene = load("res://source/test/level_lady_luck_test.tscn")
-	#var instance = scene.instantiate()
-	#add_child(instance)
+	pass
 
 
 func _on_door_pressed(_slot: GridCell) -> void:

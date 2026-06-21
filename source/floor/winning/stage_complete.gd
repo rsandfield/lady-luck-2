@@ -13,14 +13,22 @@ func _on_play_again_pressed() -> void:
 
 
 func _on_menu_pressed() -> void:
-	complete_menu.emit()
-	queue_free()
+	#print_debug("_on_menu_pressed...")
+	
+	complete_credits.emit()
+	
+	## wait to queue free until after it is no longer visible
+	$AnimationPlayer.play("wait_queue_free")
 	
 	pass
 
 
 func _on_credits_pressed() -> void:
-	complete_credits.emit()
-	queue_free()
+	#print_debug("_on_credits_pressed...")
+	
+	complete_menu.emit()
+	
+	## wait to queue free until after it is no longer visible
+	$AnimationPlayer.play("wait_queue_free")
 	
 	pass
