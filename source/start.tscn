@@ -639,6 +639,7 @@ text = "Mikey [mymonkey]
       Stephen Frister"
 
 [node name="ButtonLuck" type="Button" parent="." unique_id=1737524517]
+visible = false
 offset_left = 933.0
 offset_top = 16.0
 offset_right = 1140.0

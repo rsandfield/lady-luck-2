@@ -493,48 +493,50 @@ autoplay = &"RESET"
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1074576029]
 tree_root = SubResource("AnimationRootNode_dn11n")
 
-[node name="TestSmile" type="Button" parent="." unique_id=968173134]
-layout_mode = 0
+[node name="Debug" type="Node2D" parent="." unique_id=634175972]
+
+[node name="TestSmile" type="Button" parent="Debug" unique_id=968173134]
+visible = false
 offset_left = -1433.8047
-offset_top = -533.41504
+offset_top = -533.415
 offset_right = -1333.8047
-offset_bottom = -493.41504
+offset_bottom = -493.41498
 text = "Smile"
 
-[node name="TestOhh" type="Button" parent="." unique_id=1678057112]
-layout_mode = 0
+[node name="TestOhh" type="Button" parent="Debug" unique_id=1678057112]
+visible = false
 offset_left = -1433.8047
-offset_top = -491.1588
+offset_top = -491.1587
 offset_right = -1333.8047
-offset_bottom = -451.1588
+offset_bottom = -451.1587
 text = "Ohh"
 
-[node name="TestKiss" type="Button" parent="." unique_id=1954093781]
-layout_mode = 0
+[node name="TestKiss" type="Button" parent="Debug" unique_id=1954093781]
+visible = false
 offset_left = -1433.8047
-offset_top = -448.9026
+offset_top = -448.90253
 offset_right = -1333.8047
-offset_bottom = -408.9026
+offset_bottom = -408.90253
 text = "Kiss"
 
-[node name="TestWait" type="Button" parent="." unique_id=1521903686]
-layout_mode = 0
+[node name="TestWait" type="Button" parent="Debug" unique_id=1521903686]
+visible = false
 offset_left = -1433.8047
-offset_top = -406.64655
+offset_top = -406.64642
 offset_right = -1333.8047
-offset_bottom = -366.64655
+offset_bottom = -366.64642
 text = "Wait"
 
-[node name="TestSpin" type="Button" parent="." unique_id=740183412]
-layout_mode = 0
+[node name="TestSpin" type="Button" parent="Debug" unique_id=740183412]
+visible = false
 offset_left = -1433.8047
-offset_top = -353.82617
+offset_top = -353.8261
 offset_right = -1333.8047
-offset_bottom = -313.82617
+offset_bottom = -313.8261
 text = "Spin"
 
-[connection signal="pressed" from="TestSmile" to="." method="_show_face_smile"]
-[connection signal="pressed" from="TestOhh" to="." method="_show_face_ohh"]
-[connection signal="pressed" from="TestKiss" to="." method="_show_face_kiss"]
-[connection signal="pressed" from="TestWait" to="." method="_show_face_wait"]
-[connection signal="pressed" from="TestSpin" to="." method="_show_face_wait"]
+[connection signal="pressed" from="Debug/TestSmile" to="." method="_show_face_smile"]
+[connection signal="pressed" from="Debug/TestOhh" to="." method="_show_face_ohh"]
+[connection signal="pressed" from="Debug/TestKiss" to="." method="_show_face_kiss"]
+[connection signal="pressed" from="Debug/TestWait" to="." method="_show_face_wait"]
+[connection signal="pressed" from="Debug/TestSpin" to="." method="_show_face_wait"]

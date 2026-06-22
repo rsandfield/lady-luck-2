@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxej10c887qnh" path="res://source/floor/items/tile_ui.gd" id="1_dcunu"]
 [ext_resource type="StyleBox" uid="uid://dyceeu5udi0k2" path="res://assets/themes/tile_style_box_black_border.tres" id="1_u5lu7"]
+[ext_resource type="Texture2D" uid="uid://dv71w41fhe1r5" path="res://assets/art/brick-path.png" id="3_eam7l"]
 
 [node name="TileUI" type="PanelContainer" unique_id=693043851]
 custom_minimum_size = Vector2(75, 75)
@@ -28,12 +29,22 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
+[node name="Sprite2D" type="Sprite2D" parent="Left" unique_id=1046336180]
+position = Vector2(16.499996, 7.1249986)
+scale = Vector2(0.19512194, 0.13709684)
+texture = ExtResource("3_eam7l")
+
 [node name="Right" type="ColorRect" parent="." unique_id=505711520]
 modulate = Color(1, 0, 0, 1)
 custom_minimum_size = Vector2(32.5, 10)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Right" unique_id=1789965124]
+position = Vector2(16.499996, 7.1249986)
+scale = Vector2(0.19512194, 0.13709684)
+texture = ExtResource("3_eam7l")
 
 [node name="Up" type="ColorRect" parent="." unique_id=580538343]
 modulate = Color(0, 0, 0, 0)
@@ -42,12 +53,24 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
+[node name="Sprite2D" type="Sprite2D" parent="Up" unique_id=1101420394]
+position = Vector2(4.499996, 15.999998)
+rotation = 1.5707964
+scale = Vector2(0.19512194, 0.13709684)
+texture = ExtResource("3_eam7l")
+
 [node name="Down" type="ColorRect" parent="." unique_id=192951460]
 modulate = Color(0, 1, 0, 1)
 custom_minimum_size = Vector2(10, 32.5)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Down" unique_id=928598397]
+position = Vector2(4.499996, 15.999998)
+rotation = 1.5707964
+scale = Vector2(0.19512194, 0.13709684)
+texture = ExtResource("3_eam7l")
 
 [node name="Control" type="Control" parent="." unique_id=1334650853]
 layout_mode = 2

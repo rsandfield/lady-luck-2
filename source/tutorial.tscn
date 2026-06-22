@@ -55,10 +55,10 @@ offset_bottom = 427.0
 
 [node name="PanelGrid" type="Panel" parent="." unique_id=510186832]
 layout_mode = 0
-offset_left = 693.0
+offset_left = 694.0
 offset_top = -153.0
 offset_right = 1098.0
-offset_bottom = 754.0
+offset_bottom = 753.0
 
 [node name="PanelSlots" type="Panel" parent="." unique_id=8236084]
 layout_mode = 0
@@ -69,9 +69,9 @@ offset_bottom = 727.0
 
 [node name="PanelLever" type="Panel" parent="." unique_id=1151540031]
 layout_mode = 0
-offset_left = 488.0
+offset_left = 486.0
 offset_top = 425.0
-offset_right = 597.0
+offset_right = 596.0
 offset_bottom = 819.0
 
 [node name="HighlightLever" type="Panel" parent="." unique_id=2007679559]

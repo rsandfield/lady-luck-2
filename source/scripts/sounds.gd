@@ -72,8 +72,11 @@ func _set_music_track() -> void:
 
 	if Data.setting_music_type == 1:
 		%Music.stream = load(track_1)
+	
 	if Data.setting_music_type == 2:
-		%Music.stream = load(track_2)
+		#%Music.stream = load(track_2)
+		%Music.stream = load(track_3)
+	
 	if Data.setting_music_type == 3:
 		%Music.stream = load(track_3)
 
