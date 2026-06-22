@@ -92,14 +92,14 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("2_5ah3m")
-text = "[Test] Game"
+text = "Deprecated (test)"
 
 [node name="TestAlt" type="Button" parent="InterfaceContainer/ButtonControl/ButtonContainer" unique_id=1434168110]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("2_5ah3m")
-text = "[Test Alt] Game"
+text = "Deprecated (alt)"
 
 [node name="NewGame" type="TextureButton" parent="InterfaceContainer/ButtonControl/ButtonContainer" unique_id=1437650190]
 custom_minimum_size = Vector2(0, 40)
@@ -527,11 +527,11 @@ text = "Mikey [mymonkey]
       Stephen Frister"
 
 [node name="ButtonLuck" type="Button" parent="." unique_id=1737524517]
-offset_left = 1072.0
-offset_top = 21.0
-offset_right = 1131.0
-offset_bottom = 52.0
-text = "Luck"
+offset_left = 933.0
+offset_top = 16.0
+offset_right = 1140.0
+offset_bottom = 47.0
+text = "Remove this button (luck)"
 
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/TestGame" to="." method="_on_test_game_pressed"]
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/TestAlt" to="." method="_on_test_alt_game_pressed"]
