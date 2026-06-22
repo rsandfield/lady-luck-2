@@ -27,6 +27,8 @@ func hold_item(item: ItemResource) -> void:
 	if item_ui.has_method("set_resource"):
 		item_ui.set_resource(item)
 	get_parent().add_child(item_ui)
+	item_ui.top_level = true
+	item_ui.z_index = 100
 	item_ui.global_position = _hand.global_position
 	_item_ui = item_ui
 

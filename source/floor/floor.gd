@@ -116,6 +116,7 @@ func _on_door_pressed(_slot: GridCell) -> void:
 func _on_lever_pulled():
 	
 	_grid.flag_spin(true)
+	_lady.clear_held()
 	_spinner.spin()
 	_turn_counter.add_value(1)
 	
@@ -137,7 +138,6 @@ func _on_spin_finished():
 func _on_lady_play(row: int, item: ItemResource):
 	_grid.pulse_row(row)
 	await _lady.cause_chaos(row, item)
-	print("She's done")
 	Game.slot_machine_blocked_flag = false
 	%SlotMachine.set_blocked(false)
 

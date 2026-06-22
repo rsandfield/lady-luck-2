@@ -36,9 +36,11 @@ func spin():
 	if !is_instance_valid(_ui):
 		return
 	_ui.clear_ui(item_index)
-	result.emit(row + 1, _items[item_index])
+	result.emit(row, _items[item_index])
 
 	await Game.get_tree().create_timer(1).timeout
 	if !is_instance_valid(_ui):
 		return
-	_ui.set_item(_reward_config.get_item(), item_index)
+	var new_item = _reward_config.get_item()
+	_items[item_index] = new_item
+	_ui.set_item(new_item, item_index)
