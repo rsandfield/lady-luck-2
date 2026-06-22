@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/background-green_velvet.png" id="2_o7yua"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="2_y1c4o"]
 [ext_resource type="StyleBox" uid="uid://bjjs87buslrdx" path="res://assets/themes/style_box_flat_blue_light.tres" id="3_d4h25"]
-[ext_resource type="Texture2D" uid="uid://chaoi0yqa4stp" path="res://assets/art/title_lady.png" id="3_o7yua"]
+[ext_resource type="Texture2D" uid="uid://conu51ol0dwy0" path="res://assets/art/title_lady-final.png" id="3_mv7qn"]
 [ext_resource type="StyleBox" uid="uid://cxmouk6dkrx6e" path="res://assets/themes/style_box_flat_green_light.tres" id="4_e5c4t"]
 [ext_resource type="StyleBox" uid="uid://c3do76iwbhxsa" path="res://assets/themes/style_box_flat_purple_light.tres" id="5_7aew8"]
 [ext_resource type="StyleBox" uid="uid://xkwkgc8dt653" path="res://assets/themes/style_box_flat_green_light_hover.tres" id="6_5ah3m"]
@@ -16,6 +16,7 @@
 [ext_resource type="Theme" uid="uid://dpjv5lllxju8b" path="res://assets/themes/check_button_theme.tres" id="8_o7yua"]
 [ext_resource type="StyleBox" uid="uid://6w58cphnta5n" path="res://assets/themes/style_box_flat_blue_light_hover.tres" id="10_c1v46"]
 [ext_resource type="Shader" uid="uid://j7o8ku5pcuhq" path="res://assets/shaders/golden.gdshader" id="16_kfqdp"]
+[ext_resource type="Texture2D" uid="uid://ckxj5e1ku01p6" path="res://assets/art/title_logo.png" id="17_hvpw6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hvpw6"]
 shader = ExtResource("16_kfqdp")
@@ -119,12 +120,11 @@ texture = ExtResource("2_o7yua")
 metadata/_edit_lock_ = true
 
 [node name="TextureButton" type="TextureRect" parent="." unique_id=616699241]
-offset_left = 292.0
-offset_top = 28.0
-offset_right = 1121.6853
-offset_bottom = 770.49994
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("3_o7yua")
+offset_left = 218.0
+offset_top = -32.0
+offset_right = 986.0969
+offset_bottom = 680.0
+texture = ExtResource("3_mv7qn")
 expand_mode = 1
 
 [node name="Title_Amarante" type="Label" parent="." unique_id=1968054480]
@@ -645,6 +645,11 @@ offset_top = 16.0
 offset_right = 1140.0
 offset_bottom = 47.0
 text = "Remove this button (luck)"
+
+[node name="TitleLogo" type="Sprite2D" parent="." unique_id=1926522516]
+position = Vector2(474, 361)
+scale = Vector2(0.5417957, 0.5417957)
+texture = ExtResource("17_hvpw6")
 
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/Options" to="." method="_on_options_pressed"]
