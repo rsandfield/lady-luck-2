@@ -87,20 +87,6 @@ theme_override_constants/separation = 15
 alignment = 1
 vertical = true
 
-[node name="TestGame" type="Button" parent="InterfaceContainer/ButtonControl/ButtonContainer" unique_id=200926344]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-size_flags_vertical = 4
-theme = ExtResource("2_5ah3m")
-text = "Deprecated (test)"
-
-[node name="TestAlt" type="Button" parent="InterfaceContainer/ButtonControl/ButtonContainer" unique_id=1434168110]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-size_flags_vertical = 4
-theme = ExtResource("2_5ah3m")
-text = "Deprecated (alt)"
-
 [node name="NewGame" type="TextureButton" parent="InterfaceContainer/ButtonControl/ButtonContainer" unique_id=1437650190]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
@@ -533,8 +519,6 @@ offset_right = 1140.0
 offset_bottom = 47.0
 text = "Remove this button (luck)"
 
-[connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/TestGame" to="." method="_on_test_game_pressed"]
-[connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/TestAlt" to="." method="_on_test_alt_game_pressed"]
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="InterfaceContainer/ButtonControl/ButtonContainer/Credits" to="." method="_on_credits_pressed"]

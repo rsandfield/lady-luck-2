@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bee001npe2hx5" path="res://source/credits.tscn" id="5_j44hh"]
 [ext_resource type="PackedScene" uid="uid://cxa7ah36qfrlp" path="res://source/options.tscn" id="6_vt3ln"]
 [ext_resource type="PackedScene" uid="uid://uttewusolp5u" path="res://source/sounds.tscn" id="7_earfo"]
-[ext_resource type="PackedScene" uid="uid://dmdfdbpc5pwgk" path="res://source/test/level_test.tscn" id="8_rtlyh"]
-[ext_resource type="PackedScene" uid="uid://q26m7tt0syiv" path="res://source/test/level_test_alt.tscn" id="9_odshp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjoni"]
 bg_color = Color(0, 0, 0, 1)
@@ -86,12 +84,6 @@ visible = false
 
 [node name="Sounds" parent="." unique_id=1616631272 instance=ExtResource("7_earfo")]
 
-[node name="TestLevel" parent="." unique_id=1479691771 instance=ExtResource("8_rtlyh")]
-visible = false
-
-[node name="TestAltLevel" parent="." unique_id=442386131 instance=ExtResource("9_odshp")]
-visible = false
-
 [node name="Screen" type="Panel" parent="." unique_id=1871046253]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -121,8 +113,4 @@ libraries/ = SubResource("AnimationLibrary_34fp1")
 [connection signal="slots_sound" from="Level" to="Sounds" method="_on_slot_machine_sound"]
 [connection signal="return_to_menu" from="Credits" to="." method="_on_return_to_menu"]
 [connection signal="return_to_menu" from="Options" to="." method="_on_return_to_menu"]
-[connection signal="return_to_menu" from="TestLevel" to="." method="_on_return_to_menu"]
-[connection signal="slots_sound" from="TestLevel" to="Sounds" method="_on_slot_machine_sound"]
-[connection signal="return_to_menu" from="TestAltLevel" to="." method="_on_return_to_menu"]
-[connection signal="slots_sound" from="TestAltLevel" to="Sounds" method="_on_slot_machine_sound"]
 [connection signal="animation_finished" from="Transitions" to="." method="_on_transitions_animation_finished"]
