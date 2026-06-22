@@ -59,21 +59,26 @@ offset_right = 143.0
 offset_bottom = -147.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_fnptl")
 
-[node name="WoodFrame" type="Sprite2D" parent="Images" unique_id=102964618]
-position = Vector2(89.5, -201)
-scale = Vector2(1.01, 1)
+[node name="WoodFrame" type="Sprite2D" parent="Images/HandCardBackground" unique_id=102964618]
+position = Vector2(53.5, 53)
 texture = ExtResource("2_3j7hh")
+
+[node name="Hand" type="Control" parent="Images/HandCardBackground" unique_id=757526930]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(42, 37)
 
 [node name="PlaceholderRigging" type="Sprite2D" parent="Images" unique_id=235092072]
 position = Vector2(-152, -172)
 texture = ExtResource("2_e361y")
-
-[node name="Hand" type="Control" parent="." unique_id=757526930]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 0
-offset_left = -173.0
-offset_top = -187.0
-offset_right = -86.0
-offset_bottom = -112.0
-pivot_offset = Vector2(42, 37)

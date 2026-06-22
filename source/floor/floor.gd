@@ -29,6 +29,7 @@ func reset(config: FloorConfig = null, reset_score: bool = true):
 	if config:
 		_config = config
 
+	Game.slot_machine_blocked_flag = false
 	Game.neighbor_validation = _config.neighbor_validation
 	_config.spinner_rewards.set_color_count(_config.color_count)
 	_config.slot_rewards.set_color_count(_config.color_count)
@@ -116,6 +117,7 @@ func _on_door_pressed(_slot: GridCell) -> void:
 func _on_lever_pulled():
 	
 	_grid.flag_spin(true)
+	_lady.clear_held()
 	_spinner.spin()
 	_turn_counter.add_value(1)
 	
@@ -135,8 +137,10 @@ func _on_spin_finished():
 
 
 func _on_lady_play(row: int, item: ItemResource):
-	_lady.cause_chaos(row, item)
 	_grid.pulse_row(row)
+	await _lady.cause_chaos(row, item)
+	Game.slot_machine_blocked_flag = false
+	%SlotMachine.set_blocked(false)
 
 
 func _on_slot_machine_moving_tile(is_moving: bool) -> void:

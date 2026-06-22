@@ -17,9 +17,7 @@ func _draw():
 	var edge = Vector2.UP * radius
 	var points: PackedVector2Array = [Vector2.ZERO]
 	var point_count: float = 16
-	var offset = 0
-	if denominator % 2 == 0:
-		offset = point_count * 0.5
+	var offset = point_count * 0.5
 	for i in point_count + 1:
 		points.append(edge.rotated((i - offset) * arc / point_count))
 	points.append(Vector2.ZERO)

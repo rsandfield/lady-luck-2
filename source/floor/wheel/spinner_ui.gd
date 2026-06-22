@@ -15,6 +15,7 @@ func _ready():
 
 func set_row_count(count: int) -> void:
 	var colors = GridUI.ROW_COLORS.slice(1, count)
+	colors.reverse()
 	$OuterWheel.make_pie(colors)
 
 
@@ -64,10 +65,10 @@ func clear_ui(index: int):
 		_item_uis[index].queue_free()
 
 
-func spin_to(outer: int, inner: int):
+func spin_to(outer: int, inner: int, extra_rotations: int = 3):
 	_awaiting = 2
-	$OuterWheel.spin(outer)
-	$InnerWheel.spin(inner)
+	$OuterWheel.spin(outer, extra_rotations)
+	$InnerWheel.spin(inner, extra_rotations, false)
 
 
 func _spin_finished():

@@ -13,6 +13,10 @@ func set_grid(grid: Grid) -> void:
 	_grid = grid
 
 
+func clear_held() -> void:
+	_ui.hold_item(null)
+
+
 func cause_chaos(row: int, item: ItemResource) -> void:
 	if !is_instance_valid(_ui):
 		return
@@ -21,11 +25,11 @@ func cause_chaos(row: int, item: ItemResource) -> void:
 	row_cells.shuffle()
 	for cell in row_cells:
 		if item.is_legal_play(cell):
-			print("Playing %s" % item.get_script().get_global_name())
+			print("Playing %s to row %d" % [item.get_script().get_global_name(), row])
 			_ui.play_item(cell)
 			await _ui.finished
 			if !is_instance_valid(_ui):
 				return
 			item.play(cell)
-			return
-	print("Highly illegal %d %s" % [row, item.get_script().get_global_name()])
+			break
+	print("Cannot play %s in row %d" % [item.get_script().get_global_name(), row])

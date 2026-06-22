@@ -13,8 +13,8 @@ func ready():
 
 
 func hold_item(item: ItemResource) -> void:
-	for child in _hand.get_children():
-		child.queue_free()
+	if _item_ui:
+		_item_ui.queue_free()
 
 	if !item:
 		return
@@ -26,19 +26,23 @@ func hold_item(item: ItemResource) -> void:
 	var item_ui = ui_scene.instantiate()
 	if item_ui.has_method("set_resource"):
 		item_ui.set_resource(item)
-	_hand.add_child(item_ui)
+	get_parent().add_child(item_ui)
+	item_ui.top_level = true
+	item_ui.z_index = 100
+	item_ui.global_position = _hand.global_position
 	_item_ui = item_ui
 
 
 func play_item(cell: GridCell) -> void:
-	#print_debug("play_item...")
 	if !_item_ui:
 		return
-	
+
 	await get_tree().create_timer(0.5).timeout
 	if !is_inside_tree() or !is_instance_valid(_item_ui):
 		return
+
 	var tween = create_tween()
 	tween.bind_node(self)
-	tween.tween_property(_item_ui, "global_position", cell.position(), 0.5)
+	tween.tween_property(_item_ui, "global_position", cell.position() - cell.size() / 2, 0.5)
+	tween.finished.connect(_item_ui.queue_free)
 	tween.finished.connect(finished.emit)
