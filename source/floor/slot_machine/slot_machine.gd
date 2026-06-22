@@ -74,9 +74,7 @@ func _wheel_finished():
 	_awaiting -= 1
 	if _awaiting <= 0:
 		finished.emit()
-		Game.slot_machine_blocked_flag = false
-		if is_instance_valid(_ui):
-			_ui.set_blocked(false)
+
 
 
 func select_wheel(wheel: SlotWheel) -> void:

@@ -29,4 +29,5 @@ func cause_chaos(row: int, item: ItemResource) -> void:
 			if !is_instance_valid(_ui):
 				continue
 			item.play(cell)
+			break
 	print("Cannot play %s in row %d %s" % [item.get_script().get_global_name(), row, str(contents)])

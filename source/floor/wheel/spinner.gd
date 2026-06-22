@@ -36,7 +36,7 @@ func spin():
 	if !is_instance_valid(_ui):
 		return
 	_ui.clear_ui(item_index)
-	result.emit(_row_count - row, _items[item_index])
+	result.emit(row + 1, _items[item_index])
 
 	await Game.get_tree().create_timer(1).timeout
 	if !is_instance_valid(_ui):

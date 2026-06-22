@@ -135,8 +135,11 @@ func _on_spin_finished():
 
 
 func _on_lady_play(row: int, item: ItemResource):
-	_lady.cause_chaos(row, item)
 	_grid.pulse_row(row)
+	await _lady.cause_chaos(row, item)
+	print("She's done")
+	Game.slot_machine_blocked_flag = false
+	%SlotMachine.set_blocked(false)
 
 
 func _on_slot_machine_moving_tile(is_moving: bool) -> void:

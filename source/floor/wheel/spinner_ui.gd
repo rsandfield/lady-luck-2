@@ -15,6 +15,7 @@ func _ready():
 
 func set_row_count(count: int) -> void:
 	var colors = GridUI.ROW_COLORS.slice(1, count)
+	colors.reverse()
 	$OuterWheel.make_pie(colors)
 
 

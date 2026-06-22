@@ -115,7 +115,7 @@ func _door_visited(visited: Array[GridCell]) -> bool:
 
 
 func get_row(row: int) -> Array[GridCell]:
-	return _cells.slice(row * _size.x, row * (_size.x + 1))
+	return _cells.slice(row * _size.x, (row + 1) * _size.x)
 
 
 func flag_spin(spin: bool):
