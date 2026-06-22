@@ -50,6 +50,7 @@ func _set_bottom_row():
 		var sides: Array[int] = [0, 0, 0, 0]
 		if i < _color_count:
 			sides[0] = i + 1
+			sides[2] = i + 1
 		var tile = TileResource.new(sides)
 		cell.set_tile(tile)
 		cell.is_fixed = true
