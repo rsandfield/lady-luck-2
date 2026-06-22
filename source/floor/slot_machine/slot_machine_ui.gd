@@ -12,11 +12,12 @@ var wheels: Array[SlotWheelUI] = []
 
 func _ready():
 	populate_wheels([])
-	%LeverButton.pressed.connect(spin_requested.emit)
+	%LeverButton.pressed.connect( spin_requested.emit )
 
 
 func set_blocked(blocked: bool) -> void:
 	%BlockingNode.visible = blocked
+
 
 func populate_wheels(new_wheels: Array[SlotWheel]) -> void:
 	for child in get_children():
@@ -34,17 +35,12 @@ func populate_wheels(new_wheels: Array[SlotWheel]) -> void:
 
 
 func _on_slot_cell_moving_tile(is_moving: bool) -> void:
-	#print_debug( "_on_slot_cell_moving_tile: ")
-	#print_debug( "here? : ")
-
 	moving_tile.emit(is_moving)
 
 
 func pull_lever() -> void:
-	#$AnimationPlayer.stop()
-	
 	$AnimationPlayer.play("lever_pull")
-	#%BlockingNode.show()
+	Game.make_lady_luck_spin = true
 	spin_sound_play.emit()
 
 

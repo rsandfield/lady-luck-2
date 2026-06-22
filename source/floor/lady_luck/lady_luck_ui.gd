@@ -13,6 +13,8 @@ func ready():
 
 
 func hold_item(item: ItemResource) -> void:
+	#print_debug("hold_item: " + str(item) )
+	
 	if _item_ui:
 		_item_ui.queue_free()
 

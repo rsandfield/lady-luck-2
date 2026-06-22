@@ -10,7 +10,6 @@ var _awaiting: int
 var _reward_config: RewardConfig
 var _get_bomb_budget: Callable = func(): return 0
 
-#var _blocked: bool = false
 
 func set_ui(new_ui: SlotMachineUI) -> void:
 	_ui = new_ui
@@ -76,7 +75,6 @@ func _wheel_finished():
 		finished.emit()
 
 
-
 func select_wheel(wheel: SlotWheel) -> void:
 	_selected = wheel
 
@@ -98,7 +96,6 @@ func _on_lever_pulled():
 
 	_selected = null
 	Game.slot_machine_blocked_flag = true
-	#Game.slot_machine_give_points = true
 	_ui.set_blocked(true)
 	_ui.pull_lever()
 	spin_wheels()

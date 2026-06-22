@@ -59,7 +59,7 @@ theme_override_constants/separation = 15
 [node name="LabelButton1" type="Label" parent="VBoxContainer2" unique_id=1768105214]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.908146, 0.41910982, 0.230724, 1)
+theme_override_colors/font_color = Color(1, 0.654902, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_gstlq")
 theme_override_font_sizes/font_size = 30
@@ -68,7 +68,7 @@ text = "(Esc) Menu"
 [node name="LabelButton2" type="Label" parent="VBoxContainer2" unique_id=248862945]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.908146, 0.41910982, 0.230724, 1)
+theme_override_colors/font_color = Color(1, 0.654902, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_gstlq")
 theme_override_font_sizes/font_size = 30
@@ -77,7 +77,7 @@ text = " (X) Retry"
 [node name="LabelButton3" type="Label" parent="VBoxContainer2" unique_id=1114497372]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.908146, 0.41910982, 0.230724, 1)
+theme_override_colors/font_color = Color(1, 0.654902, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_gstlq")
 theme_override_font_sizes/font_size = 30

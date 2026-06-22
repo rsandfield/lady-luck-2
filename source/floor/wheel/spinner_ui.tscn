@@ -2,7 +2,21 @@
 
 [ext_resource type="Script" uid="uid://ctsa72q5go3t7" path="res://source/floor/wheel/spinner_ui.gd" id="1_7vooo"]
 [ext_resource type="PackedScene" uid="uid://c0u2a7n3ilx1e" path="res://source/floor/wheel/spinner_wheel_ui.tscn" id="1_a1al3"]
+[ext_resource type="Texture2D" uid="uid://cmn2l45b41tb4" path="res://assets/art/wood-circle.png" id="3_6bmyb"]
 [ext_resource type="Texture2D" uid="uid://61cy1a5clccs" path="res://assets/icons/flag.svg" id="3_r4kml"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bmyb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 0.67058825)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+corner_detail = 20
 
 [node name="Spinner" type="Control" unique_id=1656173699]
 custom_minimum_size = Vector2(200, 200)
@@ -27,6 +41,21 @@ offset_left = -100.0
 offset_top = -100.0
 offset_right = 100.0
 offset_bottom = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="OuterWheel" unique_id=572544209]
+show_behind_parent = true
+position = Vector2(100.000015, 99.49999)
+scale = Vector2(1.5243903, 1.6193547)
+texture = ExtResource("3_6bmyb")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="OuterWheel/Sprite2D" unique_id=167929173]
+show_behind_parent = true
+offset_left = -83.968
+offset_top = -77.50001
+offset_right = 83.968
+offset_bottom = 79.35259
+theme_override_styles/panel = SubResource("StyleBoxFlat_6bmyb")
 
 [node name="InnerWheel" parent="." unique_id=1783539739 instance=ExtResource("1_a1al3")]
 layout_mode = 1

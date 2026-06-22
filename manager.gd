@@ -37,16 +37,16 @@ func _check_manager_state() -> void:
 		
 		if manager_state == "Start":
 			$Start.show()
-			$TestLevel.hide()
-			$TestAltLevel.hide()
+			#$TestLevel.hide()
+			#$TestAltLevel.hide()
 		if manager_state == "Test":
 			$Start.hide()
-			$TestLevel.show()
-			$TestAltLevel.hide()
+			#$TestLevel.show()
+			#$TestAltLevel.hide()
 		if manager_state == "Alt":
 			$Start.hide()
-			$TestLevel.hide()
-			$TestAltLevel.show()
+			#$TestLevel.hide()
+			#$TestAltLevel.show()
 
 		$Level.hide()
 		$Credits.hide()
@@ -62,8 +62,8 @@ func _check_manager_state() -> void:
 	if manager_state == "Credits":
 		$Level.hide()
 		
-		$TestLevel.hide()
-		$TestAltLevel.hide()
+		#$TestLevel.hide()
+		#$TestAltLevel.hide()
 		
 		$Credits.show()
 

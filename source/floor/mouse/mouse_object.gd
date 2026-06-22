@@ -1,14 +1,14 @@
 class_name MouseObject
 extends Node2D
 
-signal tile_released
 
 @onready var _default_tile_ui = $TileUI
 @onready var _valid = $Valid
 @onready var _invalid = $Invalid
+
 var _item_ui
 
-
+signal tile_released
 
 
 func _ready():
@@ -54,8 +54,3 @@ func _process(_delta: float) -> void:
 		# drop the tile onto the grid when the mouse is released
 		if Game.grid_tile_hovered != null:
 			tile_released.emit()
-			
-			#print_debug( type_string( typeof( Game.moving_tile_resource ) ) )
-			#print_debug( Game.moving_tile_resource.get_class() )
-			
-			#print_debug( Game.moving_tile_resource.get_script() )
