@@ -96,6 +96,7 @@ func _on_lever_pulled():
 		_ui.shake_lever()
 		return
 
+	_selected = null
 	Game.slot_machine_blocked_flag = true
 	#Game.slot_machine_give_points = true
 	_ui.set_blocked(true)
