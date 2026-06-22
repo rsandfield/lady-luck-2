@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://cmlwo0ordubbu"
 
 [resource]
 script = ExtResource("1_218w5")
-color_count = 2
+color_count = 3
 spinner_rewards = SubResource("Resource_6fjgv")
 slot_rewards = SubResource("Resource_ol2i6")
 metadata/_custom_type_script = "uid://c60c4tdcv8c1w"

@@ -1,7 +1,16 @@
 class_name TileUI
 extends ItemUI
 
-const COLORS: Array[Color] = [Color(0, 0, 0, 0), Color.RED, Color.GREEN, Color.BLUE]
+const COLORS: Array[Color] = [
+	Color(0, 0, 0, 0), 
+	Color(1.0, 0.461, 0.393, 1.0),
+	Color(0.0, 0.999, 0.0, 1.0),
+	Color(0.353, 0.553, 1.0, 1.0)
+	]
+
+	#Color.RED, 
+	#Color.GREEN, 
+	#Color.BLUE,
 
 #var tile_type = "tile"    # tile or door
 
