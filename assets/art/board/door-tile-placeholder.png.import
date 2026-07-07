@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1rx5ny64frft"
-path="res://.godot/imported/menu_buttons(3).png-ddb4dd7dab7074040ea3dca6a50c8218.ctex"
+uid="uid://4l3y6okaef7p"
+path="res://.godot/imported/door-tile-placeholder.png-cb9abc86161a80c80e61542d225f1c9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/menu_buttons(3).png"
-dest_files=["res://.godot/imported/menu_buttons(3).png-ddb4dd7dab7074040ea3dca6a50c8218.ctex"]
+source_file="res://assets/art/board/door-tile-placeholder.png"
+dest_files=["res://.godot/imported/door-tile-placeholder.png-cb9abc86161a80c80e61542d225f1c9d.ctex"]
 
 [params]
 

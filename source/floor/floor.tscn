@@ -12,8 +12,22 @@
 [ext_resource type="PackedScene" uid="uid://6vbn4bonis0x" path="res://source/floor/points/turn_container.tscn" id="5_a23us"]
 [ext_resource type="Resource" uid="uid://bsy6xyic51fpg" path="res://assets/levels/level_4.tres" id="6_hxrar"]
 [ext_resource type="PackedScene" uid="uid://detgnnqtmgueh" path="res://source/floor/points/points_container.tscn" id="6_mx0ua"]
+[ext_resource type="Texture2D" uid="uid://b0v6gpju7ruf2" path="res://assets/art/board/wood-frame.png" id="9_kc6ny"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqkr4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpsr5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7iod"]
 
@@ -92,6 +106,47 @@ size_flags_vertical = 3
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Node/HBoxContainer/Slots" unique_id=182174465]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer" unique_id=1453446045]
+layout_mode = 2
+
+[node name="HandCardBackground" type="Panel" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/Control" unique_id=474969875]
+custom_minimum_size = Vector2(107, 107)
+layout_mode = 0
+offset_top = -120.0
+offset_right = 107.0
+offset_bottom = -13.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpsr5")
+
+[node name="WoodFrame" type="Sprite2D" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/Control/HandCardBackground" unique_id=1272140900]
+position = Vector2(53.5, 53)
+texture = ExtResource("9_kc6ny")
+
+[node name="Hand" type="Control" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/Control/HandCardBackground" unique_id=652903313]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(42, 37)
+
+[node name="Label" type="Label" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer/Control/HandCardBackground" unique_id=297237863]
+layout_mode = 0
+offset_top = -50.0
+offset_right = 107.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Hodl"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="MachineContainer" type="MarginContainer" parent="MarginContainer/Node/HBoxContainer/Slots/PanelContainer" unique_id=1923615028]
 layout_mode = 2

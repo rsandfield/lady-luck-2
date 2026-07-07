@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coq6uiajtkg8q"
-path="res://.godot/imported/full_slot_machine.png-8fa66d50d4af2c7abc4e38e06c6630e9.ctex"
+uid="uid://u8hwlg38u7gi"
+path="res://.godot/imported/menu_buttons.png-e82530caef9841b13a612739961a326f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/full_slot_machine.png"
-dest_files=["res://.godot/imported/full_slot_machine.png-8fa66d50d4af2c7abc4e38e06c6630e9.ctex"]
+source_file="res://assets/art/ui/menu_buttons.png"
+dest_files=["res://.godot/imported/menu_buttons.png-e82530caef9841b13a612739961a326f.ctex"]
 
 [params]
 

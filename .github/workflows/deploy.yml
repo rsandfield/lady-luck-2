@@ -3,7 +3,7 @@ name: Build and Deploy
 env:
   GODOT_VERSION: 4.6
   ITCH_USERNAME: rsandfield
-  ITCH_GAME_ID: lady-lucks-door
+  ITCH_GAME_ID: lady-lucks-door-plus
 
 on:
   push:

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ba7au0uuwrled" path="res://assets/icons/load.png" id="1_ydmgh"]
 [ext_resource type="StyleBox" uid="uid://cxmouk6dkrx6e" path="res://assets/themes/style_box_flat_green_light.tres" id="2_r7c7s"]
-[ext_resource type="Texture2D" uid="uid://bbu180gym3l5d" path="res://assets/art/door_open.png" id="2_v3s3c"]
+[ext_resource type="Texture2D" uid="uid://bbu180gym3l5d" path="res://assets/art/board/door_open.png" id="2_v3s3c"]
 [ext_resource type="Texture2D" uid="uid://61cy1a5clccs" path="res://assets/icons/flag.svg" id="3_v3s3c"]
 
 [sub_resource type="Gradient" id="Gradient_r7c7s"]

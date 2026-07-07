@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://belulk2juo1pi" path="res://source/floor/grid/grid_cell_ui.gd" id="1_2wshm"]
 [ext_resource type="PackedScene" uid="uid://dqx08ig43fc2c" path="res://source/floor/items/tile_ui.tscn" id="1_t4iqd"]
-[ext_resource type="Texture2D" uid="uid://wjiagr7bbnul" path="res://assets/art/door_closed.png" id="3_n5wvj"]
-[ext_resource type="Texture2D" uid="uid://bbu180gym3l5d" path="res://assets/art/door_open.png" id="4_dvtl3"]
+[ext_resource type="Texture2D" uid="uid://wjiagr7bbnul" path="res://assets/art/board/door_closed.png" id="3_n5wvj"]
+[ext_resource type="Texture2D" uid="uid://bbu180gym3l5d" path="res://assets/art/board/door_open.png" id="4_dvtl3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddob5"]
 content_margin_left = 0.0

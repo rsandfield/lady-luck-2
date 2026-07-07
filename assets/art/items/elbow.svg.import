@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blj6f1rmtplsx"
-path="res://.godot/imported/menu_buttons(2).png-7f9b244636503dce66f95e7f35f7f68b.ctex"
+uid="uid://ds68jq4avm8ie"
+path="res://.godot/imported/elbow.svg-bb1539a720d65bd01fbb9ace9a6aa529.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/menu_buttons(2).png"
-dest_files=["res://.godot/imported/menu_buttons(2).png-7f9b244636503dce66f95e7f35f7f68b.ctex"]
+source_file="res://assets/art/items/elbow.svg"
+dest_files=["res://.godot/imported/elbow.svg-bb1539a720d65bd01fbb9ace9a6aa529.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv71w41fhe1r5"
-path="res://.godot/imported/brick-path.png-37b0c19b282cf516ae7040778d8b7b27.ctex"
+uid="uid://cx8vthjravtv7"
+path="res://.godot/imported/menu_buttons(1).png-d6bccba409ad85ba4d8a1c8433154276.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/brick-path.png"
-dest_files=["res://.godot/imported/brick-path.png-37b0c19b282cf516ae7040778d8b7b27.ctex"]
+source_file="res://assets/art/ui/menu_buttons(1).png"
+dest_files=["res://.godot/imported/menu_buttons(1).png-d6bccba409ad85ba4d8a1c8433154276.ctex"]
 
 [params]
 

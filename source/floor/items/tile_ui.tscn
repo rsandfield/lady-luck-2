@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bxej10c887qnh" path="res://source/floor/items/tile_ui.gd" id="1_dcunu"]
 [ext_resource type="StyleBox" uid="uid://dyceeu5udi0k2" path="res://assets/themes/tile_style_box_black_border.tres" id="1_u5lu7"]
-[ext_resource type="Texture2D" uid="uid://dsh8sqgm76l5h" path="res://assets/art/edge.svg" id="4_46k2b"]
-[ext_resource type="Texture2D" uid="uid://ds68jq4avm8ie" path="res://assets/art/elbow.svg" id="5_2gohv"]
-[ext_resource type="Texture2D" uid="uid://5rwclx26hrph" path="res://assets/art/straight.svg" id="5_28wbr"]
+[ext_resource type="Texture2D" uid="uid://dsh8sqgm76l5h" path="res://assets/art/items/edge.svg" id="4_46k2b"]
+[ext_resource type="Texture2D" uid="uid://ds68jq4avm8ie" path="res://assets/art/items/elbow.svg" id="5_2gohv"]
+[ext_resource type="Texture2D" uid="uid://5rwclx26hrph" path="res://assets/art/items/straight.svg" id="5_28wbr"]
 
 [node name="TileUI" type="PanelContainer" unique_id=693043851]
 custom_minimum_size = Vector2(75, 75)

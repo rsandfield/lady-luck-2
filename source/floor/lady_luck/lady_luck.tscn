@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3gtimcic0h85"]
 
 [ext_resource type="Script" uid="uid://dmrak3edmrnox" path="res://source/floor/lady_luck/lady_luck_ui.gd" id="1_5d5k2"]
-[ext_resource type="Texture2D" uid="uid://b0v6gpju7ruf2" path="res://assets/art/wood-frame.png" id="2_3j7hh"]
+[ext_resource type="Texture2D" uid="uid://b0v6gpju7ruf2" path="res://assets/art/board/wood-frame.png" id="2_3j7hh"]
 [ext_resource type="Texture2D" uid="uid://bioopwke2pmti" path="res://assets/art/placeholder-rigging.png" id="2_e361y"]
 [ext_resource type="PackedScene" uid="uid://davnaruy5s8kg" path="res://source/floor/lady_luck/lady_luck_scripted.tscn" id="4_3j7hh"]
 
@@ -79,6 +79,16 @@ offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(42, 37)
+
+[node name="Label" type="Label" parent="Images/HandCardBackground" unique_id=942135427]
+layout_mode = 0
+offset_top = 107.0
+offset_right = 107.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Mischief"
+horizontal_alignment = 1
 
 [node name="PlaceholderRigging" type="Sprite2D" parent="Images" unique_id=235092072]
 visible = false

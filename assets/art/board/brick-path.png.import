@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddit4w3hmxgud"
-path="res://.godot/imported/wood-table.png-543e7ce1fed801e7402dd31e3ebab35e.ctex"
+uid="uid://dv71w41fhe1r5"
+path="res://.godot/imported/brick-path.png-18cdabffdf5006891e42b64e5f1775fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/wood-table.png"
-dest_files=["res://.godot/imported/wood-table.png-543e7ce1fed801e7402dd31e3ebab35e.ctex"]
+source_file="res://assets/art/board/brick-path.png"
+dest_files=["res://.godot/imported/brick-path.png-18cdabffdf5006891e42b64e5f1775fb.ctex"]
 
 [params]
 

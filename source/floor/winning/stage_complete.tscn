@@ -3,7 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://c3do76iwbhxsa" path="res://assets/themes/style_box_flat_purple_light.tres" id="1_fugea"]
 [ext_resource type="Script" uid="uid://cq8ru48bjprw8" path="res://source/floor/winning/stage_complete.gd" id="1_jfsep"]
 [ext_resource type="Texture2D" uid="uid://bttmqqhmjtuug" path="res://assets/art/background-green_velvet.png" id="2_qkxi4"]
-[ext_resource type="Texture2D" uid="uid://dfqg8euh2g38g" path="res://assets/art/wood-button.png" id="3_qkxi4"]
+[ext_resource type="Texture2D" uid="uid://dfqg8euh2g38g" path="res://assets/art/board/wood-button.png" id="3_qkxi4"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="4_jfsep"]
 
 [sub_resource type="Animation" id="Animation_qkxi4"]

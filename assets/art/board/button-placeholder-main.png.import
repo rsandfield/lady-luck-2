@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bab40rffaor7a"
-path="res://.godot/imported/Dark edge-slot_machine.png-e9cb94a7d2d54128c7c49c7461ab0f1d.ctex"
+uid="uid://br538pffgrles"
+path="res://.godot/imported/button-placeholder-main.png-056ebcbd5703ee6fd81756acf1e6c27b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Dark edge-slot_machine.png"
-dest_files=["res://.godot/imported/Dark edge-slot_machine.png-e9cb94a7d2d54128c7c49c7461ab0f1d.ctex"]
+source_file="res://assets/art/board/button-placeholder-main.png"
+dest_files=["res://.godot/imported/button-placeholder-main.png-056ebcbd5703ee6fd81756acf1e6c27b.ctex"]
 
 [params]
 

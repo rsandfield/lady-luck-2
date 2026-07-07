@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b3r8jv44uqhta"]
 
 [ext_resource type="Script" uid="uid://cb3wlhlqp3b8c" path="res://source/floor/buttons/level_buttons.gd" id="1_gstlq"]
-[ext_resource type="Texture2D" uid="uid://dfqg8euh2g38g" path="res://assets/art/wood-button.png" id="1_s5sde"]
+[ext_resource type="Texture2D" uid="uid://dfqg8euh2g38g" path="res://assets/art/board/wood-button.png" id="1_s5sde"]
 [ext_resource type="FontFile" uid="uid://vouhpit8vlis" path="res://assets/fonts/Amarante-Regular.ttf" id="2_gstlq"]
 
 [node name="LevelButtons" type="Control" unique_id=1051872753]
