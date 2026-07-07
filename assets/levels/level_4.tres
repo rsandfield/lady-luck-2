@@ -6,15 +6,17 @@
 [sub_resource type="Resource" id="Resource_q038s"]
 script = ExtResource("2_b2o7n")
 p_none = 0.0
-p_bomb = 0.2
+p_bomb = 0.15
 p_tile_single = 0.6
-p_tile_two_color = 0.2
+p_tile_two_color = 0.25
+p_brush = 0.1
 metadata/_custom_type_script = "uid://cmlwo0ordubbu"
 
 [sub_resource type="Resource" id="Resource_6fjgv"]
 script = ExtResource("2_b2o7n")
 p_tile_single = 0.2
 p_tile_two_color = 0.1
+p_brush = 0.1
 metadata/_custom_type_script = "uid://cmlwo0ordubbu"
 
 [resource]
