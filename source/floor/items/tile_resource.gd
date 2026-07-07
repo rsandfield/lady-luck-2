@@ -65,18 +65,23 @@ func get_side(direction: Direction) -> int:
 	return _sides[direction]
 
 
-func is_legal_play(cell: GridCell) -> bool:
-	if !Game.neighbor_validation:
-		return !cell.is_occupied()
-	for direction in Direction.values():
-		var neighbor = cell.get_neighbor(direction)
-		if !neighbor:
-			if get_side(direction) > 0:
+func is_legal_play(slot: ItemSlot) -> bool:
+	if slot is HandSlot:
+		return !slot.is_occupied()
+	if slot is GridCell:
+		var cell := slot as GridCell
+		if !Game.neighbor_validation:
+			return !cell.is_occupied()
+		for direction in Direction.values():
+			var neighbor = cell.get_neighbor(direction)
+			if !neighbor:
+				if get_side(direction) > 0:
+					return false
+				continue
+			if !neighbor.is_legal_neighbor(opposite(direction), self):
 				return false
-			continue
-		if !neighbor.is_legal_neighbor(opposite(direction), self):
-			return false
-	return true
+		return true
+	return false
 
 
 func is_legal_neighbor(direction: Direction, neighbor: TileResource) -> bool:
@@ -87,7 +92,7 @@ func is_legal_neighbor(direction: Direction, neighbor: TileResource) -> bool:
 	return _sides[direction] == neighbor.get_side(opposite(direction))
 
 
-func play(slot: GridCell) -> void:
+func play(slot: ItemSlot) -> void:
 	slot.set_tile(self)
 
 

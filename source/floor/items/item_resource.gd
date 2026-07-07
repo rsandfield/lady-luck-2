@@ -6,11 +6,11 @@ func ui_scene() -> PackedScene:
 	return preload("./item_ui.tscn")
 
 
-func is_legal_play(_cell: GridCell) -> bool:
+func is_legal_play(_slot: ItemSlot) -> bool:
 	return false
 
 
-func play(_slot: GridCell) -> void:
+func play(_slot: ItemSlot) -> void:
 	push_error("All item resource types must override play()")
 
 

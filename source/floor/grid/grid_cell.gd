@@ -1,10 +1,10 @@
 class_name GridCell
+extends ItemSlot
 
 signal grid_cell_exploding(cell: GridCell)
 signal grid_cell_pressed(cell: GridCell)
 
 var _ui: GridCellUI
-var _tile: ItemResource
 var is_fixed: bool = false
 
 var _neighbors: Dictionary[TileResource.Direction, GridCell]
@@ -46,16 +46,8 @@ func size() -> Vector2:
 	return _ui.size
 
 
-func is_occupied() -> bool:
-	return _tile != null
-
-
 func is_door() -> bool:
 	return _tile && _tile.is_door
-
-
-func is_legal_play(item: ItemResource) -> bool:
-	return item.is_legal_play(self)
 
 
 func is_legal_neighbor(direction: TileResource.Direction, tile: TileResource) -> bool:
@@ -64,7 +56,7 @@ func is_legal_neighbor(direction: TileResource.Direction, tile: TileResource) ->
 	return _tile.is_legal_neighbor(direction, tile)
 
 
-func set_tile(tile: TileResource) -> void:
+func set_tile(tile: ItemResource) -> void:
 	_tile = tile
 	_ui.set_tile(tile)
 
@@ -76,15 +68,16 @@ func explode() -> void:
 
 func clear() -> void:
 	_ui.set_tile(null)
-	_tile = null
+	super.clear()
 
 
 func press() -> void:
+	slot_pressed.emit(self)
 	grid_cell_pressed.emit(self)
 
 
 func _pressed() -> void:
-	grid_cell_pressed.emit(self)
+	press()
 
 
 func _on_hovered(is_hovered: bool) -> void:

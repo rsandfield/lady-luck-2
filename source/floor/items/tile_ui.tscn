@@ -26,6 +26,7 @@ metadata/_custom_type_script = "uid://bxej10c887qnh"
 
 [node name="Edges" type="Control" parent="." unique_id=1334650853]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="DoorLeft" type="TextureRect" parent="Edges" unique_id=1464179834]
 unique_name_in_owner = true

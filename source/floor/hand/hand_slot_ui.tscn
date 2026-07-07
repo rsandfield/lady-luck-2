@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://sanl3legwlqf"]
+
+[ext_resource type="Texture2D" uid="uid://b0v6gpju7ruf2" path="res://assets/art/board/wood-frame.png" id="1_cm76m"]
+[ext_resource type="Script" uid="uid://dgpe83tw7olk3" path="res://source/floor/hand/hand_slot_ui.gd" id="1_s7uoe"]
+[ext_resource type="PackedScene" uid="uid://dqx08ig43fc2c" path="res://source/floor/items/tile_ui.tscn" id="2_vltvk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpsr5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
+
+[sub_resource type="Gradient" id="Gradient_51i1i"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0.29411766)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s7uoe"]
+gradient = SubResource("Gradient_51i1i")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_asni5"]
+
+[node name="HandCardBackground" type="Panel" unique_id=1000323230]
+custom_minimum_size = Vector2(107, 107)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -53.5
+offset_right = 53.5
+offset_bottom = 53.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpsr5")
+script = ExtResource("1_s7uoe")
+
+[node name="WoodFrame" type="Sprite2D" parent="." unique_id=1731588829]
+position = Vector2(53.5, 53)
+texture = ExtResource("1_cm76m")
+
+[node name="Hand" type="Control" parent="." unique_id=1225784679]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(42, 37)
+mouse_filter = 2
+
+[node name="HoverIndicator" type="TextureRect" parent="." unique_id=975978158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_s7uoe")
+expand_mode = 2
+
+[node name="TileUI" parent="." unique_id=693043851 instance=ExtResource("2_vltvk")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1482627943]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = -2
+theme_override_constants/margin_top = -2
+theme_override_constants/margin_right = -2
+theme_override_constants/margin_bottom = -2
+
+[node name="Button" type="Button" parent="MarginContainer" unique_id=1569428860]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_asni5")

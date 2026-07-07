@@ -14,6 +14,7 @@ var _slot_machine: SlotMachine
 var _grid: Grid
 var _spinner: Spinner
 var _lady: LadyLuck
+var _hand: HandSlot
 
 
 signal moving_tile(is_clicked: bool)
@@ -42,7 +43,7 @@ func reset(config: FloorConfig = null, reset_score: bool = true):
 	var grid_size = _config.grid_size + Vector2i.DOWN
 	_grid = Grid.new()
 	_grid.set_ui(%Grid)
-	_grid.grid_cell_pressed.connect(_on_grid_cell_pressed)
+	_grid.grid_cell_pressed.connect(_on_slot_pressed)
 	_grid.set_grid_size(grid_size, _config.color_count)
 	_slot_machine.set_bomb_budget_source(_grid.count_bombable_tiles)
 
@@ -51,6 +52,11 @@ func reset(config: FloorConfig = null, reset_score: bool = true):
 	_spinner.set_row_count(grid_size.y)
 	_spinner.set_item_count(_config.spinner_item_count, _config.spinner_rewards)
 	_slot_machine.lever_pulled.connect(_on_lever_pulled)
+
+	_hand = HandSlot.new()
+	_hand.set_ui(%HandSlot)
+	_hand.slot_pressed.connect(_on_slot_pressed)
+	%HandSlot.moving_tile.connect(_on_slot_machine_moving_tile)
 
 	_lady = LadyLuck.new()
 	_lady.set_ui(%LadyLuck)
@@ -62,20 +68,26 @@ func reset(config: FloorConfig = null, reset_score: bool = true):
 		_points_counter.set_value(0)
 
 
-func _on_grid_cell_pressed(slot: GridCell) -> void:
-	var item = _slot_machine.get_selected_item()
+func _on_slot_pressed(slot: ItemSlot) -> void:
+	var item: ItemResource
+	var from_hand := Game.moving_tile_source is HandSlot
+	if from_hand:
+		item = (Game.moving_tile_source as HandSlot).get_tile()
+	else:
+		item = _slot_machine.get_selected_item()
 	if !item:
 		return
 	if !slot.is_legal_play(item):
 		return
 
 	item.play(slot)
-	_slot_machine.consume_selected()
-	
-	# for testing
-	#if true:
-	
-	if _grid.all_paths_finished():
+	if from_hand:
+		(Game.moving_tile_source as HandSlot).clear()
+		Game.moving_tile_source = null
+	else:
+		_slot_machine.consume_selected()
+
+	if slot is GridCell and _grid.all_paths_finished():
 		_grid.activate_door().connect(_on_door_pressed)
 
 
