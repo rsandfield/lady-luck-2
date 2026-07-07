@@ -6,6 +6,7 @@ extends Resource
 @export var p_tile_single := 0.3
 @export var p_tile_two_color := 0.0
 @export var p_brush := 0.0
+@export var p_spin := 0.0
 
 var _color_count: int = 1
 
@@ -15,7 +16,7 @@ func set_color_count(color_count: int) -> void:
 
 
 func get_item() -> ItemResource:
-	var total := p_none + p_bomb + p_tile_single + p_tile_two_color + p_brush
+	var total := p_none + p_bomb + p_tile_single + p_tile_two_color + p_brush + p_spin
 	var f := randf_range(0, total)
 	f -= p_none
 	if f <= 0:
@@ -32,4 +33,7 @@ func get_item() -> ItemResource:
 	f -= p_brush
 	if f <= 0:
 		return BrushResource.random_brush(_color_count)
+	f -= p_spin
+	if f <= 0:
+		return SpinResource.random_spin()
 	return ItemResource.new()

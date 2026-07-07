@@ -8,8 +8,9 @@ script = ExtResource("2_ol2i6")
 p_none = 0.0
 p_bomb = 0.2
 p_tile_single = 0.7
-p_tile_two_color = 0.1
-p_brush = 0.1
+p_tile_two_color = 0.15
+p_brush = 0.05
+p_spin = 0.05
 metadata/_custom_type_script = "uid://cmlwo0ordubbu"
 
 [sub_resource type="Resource" id="Resource_6fjgv"]
@@ -17,6 +18,7 @@ script = ExtResource("2_ol2i6")
 p_tile_single = 0.2
 p_tile_two_color = 0.1
 p_brush = 0.1
+p_spin = 0.1
 metadata/_custom_type_script = "uid://cmlwo0ordubbu"
 
 [resource]

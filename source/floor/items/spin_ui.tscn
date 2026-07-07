@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://6oecfg70vdts"]
+
+[ext_resource type="Script" uid="uid://cgwln1eugt3dd" path="res://source/floor/items/spin_ui.gd" id="1_ryw2i"]
+[ext_resource type="Texture2D" uid="uid://bkxji5pmdnod" path="res://assets/icons/spin.png" id="2_axofb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf6ay"]
+
+[node name="SpinUI" type="PanelContainer" unique_id=158941181]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mf6ay")
+script = ExtResource("1_ryw2i")
+metadata/_custom_type_script = "uid://cgwln1eugt3dd"
+
+[node name="Spin" type="TextureRect" parent="." unique_id=451993546]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("2_axofb")
+expand_mode = 2
