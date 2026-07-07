@@ -12,7 +12,7 @@ var _slices: Array[PieSlice] = []
 
 func _ready():
 	if Engine.is_editor_hint():
-		make_pie([Color.RED, Color.GREEN, Color.BLUE])
+		make_pie([Color.GREEN, Color.RED, Color.BLUE])
 
 
 func make_pie(slices: Array[Color]) -> void:
