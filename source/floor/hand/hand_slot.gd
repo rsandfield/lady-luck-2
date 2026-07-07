@@ -13,13 +13,13 @@ func set_ui(new_ui: HandSlotUI) -> void:
 	_ui.moving_tile.connect(_on_moving_tile)
 
 
-func set_tile(tile: ItemResource) -> void:
-	_tile = tile
-	_ui.set_tile(tile)
+func set_resource(resource: ItemResource) -> void:
+	_resource = resource
+	_ui.set_resource(resource)
 
 
 func clear() -> void:
-	_ui.set_tile(null)
+	_ui.set_resource(null)
 	super.clear()
 
 

@@ -29,9 +29,9 @@ func get_neighbors() -> Array[GridCell]:
 
 
 func get_side(direction: TileResource.Direction) -> int:
-	if !_tile:
+	if !_resource:
 		return -1
-	return _tile.get_side(direction)
+	return _resource.get_side(direction)
 
 
 func position() -> Vector2:
@@ -47,18 +47,18 @@ func size() -> Vector2:
 
 
 func is_door() -> bool:
-	return _tile && _tile.is_door
+	return _resource && _resource.is_door
 
 
 func is_legal_neighbor(direction: TileResource.Direction, tile: TileResource) -> bool:
-	if !_tile:
+	if !_resource:
 		return true
-	return _tile.is_legal_neighbor(direction, tile)
+	return _resource.is_legal_neighbor(direction, tile)
 
 
-func set_tile(tile: ItemResource) -> void:
-	_tile = tile
-	_ui.set_tile(tile)
+func set_resource(resource: ItemResource) -> void:
+	_resource = resource
+	_ui.set_resource(resource)
 
 
 func explode() -> void:
@@ -67,7 +67,7 @@ func explode() -> void:
 
 
 func clear() -> void:
-	_ui.set_tile(null)
+	_ui.set_resource(null)
 	super.clear()
 
 

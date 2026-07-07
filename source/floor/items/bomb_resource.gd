@@ -13,7 +13,7 @@ func is_legal_play(slot: ItemSlot) -> bool:
 
 func play(slot: ItemSlot) -> void:
 	if slot is HandSlot:
-		slot.set_tile(self)
+		slot.set_resource(self)
 	elif slot is GridCell:
 		(slot as GridCell).explode()
 

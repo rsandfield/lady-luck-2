@@ -93,7 +93,7 @@ func is_legal_neighbor(direction: Direction, neighbor: TileResource) -> bool:
 
 
 func play(slot: ItemSlot) -> void:
-	slot.set_tile(self)
+	slot.set_resource(self)
 
 
 func ui_scene() -> PackedScene:

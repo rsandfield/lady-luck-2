@@ -2,27 +2,27 @@ class_name ItemSlot
 
 signal slot_pressed(slot: ItemSlot)
 
-var _tile: ItemResource
+var _resource: ItemResource
 
 
 func is_occupied() -> bool:
-	return _tile != null
+	return _resource != null
 
 
-func get_tile() -> ItemResource:
-	return _tile
+func get_resource() -> ItemResource:
+	return _resource
 
 
 func is_legal_play(item: ItemResource) -> bool:
 	return item.is_legal_play(self)
 
 
-func set_tile(_new_tile: ItemResource) -> void:
-	push_error("ItemSlot subclasses must override set_tile()")
+func set_resource(_new_resource: ItemResource) -> void:
+	push_error("ItemSlot subclasses must override set_resource()")
 
 
 func clear() -> void:
-	_tile = null
+	_resource = null
 
 
 func press() -> void:

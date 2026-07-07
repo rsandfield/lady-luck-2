@@ -17,7 +17,7 @@ func is_legal_play(slot: ItemSlot) -> bool:
 		var cell := slot as GridCell
 		if !cell.is_occupied() || cell.is_door() || cell.is_fixed:
 			return false
-		var tile := cell.get_tile() as TileResource
+		var tile := cell.get_resource() as TileResource
 		if !tile:
 			return false
 		# Can't play if tile is single-color and already matches brush
@@ -33,11 +33,11 @@ func is_legal_play(slot: ItemSlot) -> bool:
 
 func play(slot: ItemSlot) -> void:
 	if slot is HandSlot:
-		slot.set_tile(self)
+		slot.set_resource(self)
 		return
 	if slot is GridCell:
 		var cell := slot as GridCell
-		var tile := cell.get_tile() as TileResource
+		var tile := cell.get_resource() as TileResource
 		if !tile:
 			return
 		var sides := tile.get_sides()
@@ -64,7 +64,7 @@ func play(slot: ItemSlot) -> void:
 					if sides[i] == north_color:
 						sides[i] = color
 		tile.set_sides(sides)
-		cell.set_tile(tile)
+		cell.set_resource(tile)
 
 
 func ui_scene() -> PackedScene:

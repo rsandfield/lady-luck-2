@@ -69,23 +69,18 @@ func reset(config: FloorConfig = null, reset_score: bool = true):
 
 
 func _on_slot_pressed(slot: ItemSlot) -> void:
-	var item: ItemResource
-	var from_hand := Game.moving_tile_source is HandSlot
-	if from_hand:
-		item = (Game.moving_tile_source as HandSlot).get_tile()
-	else:
-		item = _slot_machine.get_selected_item()
+	if !Game.moving_tile_source:
+		return
+	var item := Game.moving_tile_source.get_resource()
 	if !item:
 		return
 	if !slot.is_legal_play(item):
 		return
 
 	item.play(slot)
-	if from_hand:
-		(Game.moving_tile_source as HandSlot).clear()
-		Game.moving_tile_source = null
-	else:
-		_slot_machine.consume_selected()
+	if Game.moving_tile_source:
+		Game.moving_tile_source.clear()
+	Game.moving_tile_source = null
 
 	if slot is GridCell and _grid.all_paths_finished():
 		_grid.activate_door().connect(_on_door_pressed)

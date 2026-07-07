@@ -77,16 +77,7 @@ func _wheel_finished():
 
 func select_wheel(wheel: SlotWheel) -> void:
 	_selected = wheel
-
-
-func get_selected_item() -> ItemResource:
-	if !_selected:
-		return null
-	return _selected.get_reward()
-
-
-func consume_selected() -> void:
-	_selected.set_resource(null)
+	Game.moving_tile_source = wheel
 
 
 func _on_lever_pulled():

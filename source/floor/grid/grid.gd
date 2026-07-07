@@ -52,7 +52,7 @@ func _set_bottom_row():
 			sides[0] = i + 1
 			sides[2] = i + 1
 		var tile = TileResource.new(sides)
-		cell.set_tile(tile)
+		cell.set_resource(tile)
 		cell.is_fixed = true
 
 
@@ -65,7 +65,7 @@ func _set_door():
 	sides.shuffle()
 	var tile = TileResource.new(sides)
 	tile.is_door = true
-	cell.set_tile(tile)
+	cell.set_resource(tile)
 	_door = cell
 
 

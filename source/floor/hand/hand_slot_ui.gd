@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 		hovered.emit(false)
 
 
-func set_tile(tile: ItemResource) -> void:
+func set_resource(tile: ItemResource) -> void:
 	# Remove previous item UI
 	if _item_ui:
 		remove_child(_item_ui)

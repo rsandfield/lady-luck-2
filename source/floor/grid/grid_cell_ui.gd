@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 		hovered.emit(false)
 
 
-func set_tile(tile: TileResource) -> void:
+func set_resource(tile: TileResource) -> void:
 	_tile_ui.set_resource(tile)
 	_tile_ui.visible = tile != null
 	_tile_ui.mouse_filter = Control.MOUSE_FILTER_IGNORE

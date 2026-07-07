@@ -21,11 +21,11 @@ func is_legal_play(slot: ItemSlot) -> bool:
 
 func play(slot: ItemSlot) -> void:
 	if slot is HandSlot:
-		slot.set_tile(self)
+		slot.set_resource(self)
 		return
 	if slot is GridCell:
 		var cell := slot as GridCell
-		var tile := cell.get_tile() as TileResource
+		var tile := cell.get_resource() as TileResource
 		if !tile:
 			return
 		var sides := tile.get_sides()
@@ -34,7 +34,7 @@ func play(slot: ItemSlot) -> void:
 		else:
 			sides = [sides[1], sides[2], sides[3], sides[0]]
 		tile.set_sides(sides)
-		cell.set_tile(tile)
+		cell.set_resource(tile)
 
 
 func ui_scene() -> PackedScene:

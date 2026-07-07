@@ -1,10 +1,10 @@
 class_name SlotWheel
+extends ItemSlot
 
 signal slot_wheel_pressed(wheel: SlotWheel)
 signal finished
 
 var _ui: SlotWheelUI
-var _item: ItemResource
 
 
 func set_ui(new_ui: SlotWheelUI):
@@ -13,7 +13,7 @@ func set_ui(new_ui: SlotWheelUI):
 
 
 func spin(result: ItemResource, reward_config: RewardConfig) -> void:
-	_item = result
+	_resource = result
 	var items: Array[ItemResource] = []
 	for i in 9:
 		items.append(reward_config.get_item())
@@ -27,15 +27,19 @@ func spin(result: ItemResource, reward_config: RewardConfig) -> void:
 
 
 func set_resource(resource: ItemResource) -> void:
-	_item = resource
+	_resource = resource
 	if resource:
-		_ui.populate(_item)
+		_ui.populate(_resource)
 	else:
 		_ui.clear_center()
 
 
-func get_reward() -> ItemResource:
-	return _item
+func get_resource() -> ItemResource:
+	return _resource
+
+
+func clear() -> void:
+	set_resource(null)
 
 
 func _pressed() -> void:
